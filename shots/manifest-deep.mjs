@@ -342,3 +342,86 @@ add({
 });
 
 export default shots;
+
+/* ------------------------------------------------------------------ Wave I
+ * Admin screens that are EMPTY until you choose something, plus the panels inside
+ * Branding. Capturing them in their resting state documents a blank page.
+ */
+
+add({
+  id: "admin/permissions-chosen",
+  wave: "I",
+  opts: { tall: true },
+  setup: async (page, h) => {
+    await openAdminTab("perms")(page, h);
+    /*
+     * Permissions is per USER, not per role, and the page is blank until one is chosen.
+     * The picker is a Lightning combobox - a button plus a listbox - not a native <select>,
+     * so selectOption() silently does nothing and the shot captures the empty page.
+     */
+    await page.getByText("Select a user", { exact: false }).first().click();
+    await settle(page, 1200);
+    await page
+      .locator('[role="option"], lightning-base-combobox-item, li[data-value]')
+      .first()
+      .click();
+    await settle(page, 3500);
+  },
+});
+
+add({
+  id: "admin/list-mappings-chosen",
+  wave: "I",
+  opts: { tall: true },
+  setup: async (page, h) => {
+    await openAdminTab("listmappings")(page, h);
+    // Also a Lightning combobox - see the note on admin/permissions-chosen.
+    await page.getByText("Choose a company", { exact: false }).first().click();
+    await settle(page, 1200);
+    await page
+      .locator('[role="option"], lightning-base-combobox-item, li[data-value]')
+      .first()
+      .click();
+    await settle(page, 3500);
+  },
+});
+
+for (const [slug, label] of [
+  ["name-logo", "Name & Logo"],
+  ["colour-theme", "Color Theme"],
+  ["navigation", "Navigation"],
+  ["login-page", "Login Page"],
+  ["login-design", "Login Design"],
+]) {
+  add({
+    id: `admin/branding-${slug}`,
+    wave: "I",
+    opts: { tall: true },
+    setup: async (page, h) => {
+      await openAdminTab("branding")(page, h);
+      await page.getByText(label, { exact: false }).first().click();
+      await settle(page, 2800);
+    },
+  });
+}
+
+add({
+  id: "admin/api-set-up-access",
+  wave: "I",
+  setup: async (page, h) => {
+    await openAdminTab("apiint")(page, h);
+    await byName(page, "Set up API access").click();
+    await settle(page, 2500);
+  },
+});
+
+add({
+  id: "admin/audit-log-filter",
+  wave: "I",
+  setup: async (page, h) => {
+    await openAdminTab("audit")(page, h);
+    const sel = page.locator("select").first();
+    if (await sel.count()) await sel.click();
+    await settle(page, 1800);
+  },
+});

@@ -1,45 +1,67 @@
 ---
-title: Folders and sharing
-sidebar_position: 10
+title: Folders
+sidebar_position: 10.2
 ---
 
-# Folders and sharing
+# Folders
 
 **What it is.** Folders hold reports and dashboards, and decide who can see them.
 
 **What it does.** A report lives in exactly one folder. Who can open the folder decides who
 can open the report.
 
-**Why it helps.** It is how one company's reports stay out of another company's sight, without
-anybody setting permissions report by report.
+**Why it helps.** It is how one company's reports stay out of another's sight, without anybody
+setting access report by report.
 
 ## The folders you always have
 
-| Folder | Who sees it |
+**Where:** **Reports** → the folder list on the left
+
+| Folder | Who sees what is in it |
 |---|---|
-| **Private Reports** | Only you. |
 | **Recent** | Not a real folder — just what you opened lately. |
 | **Favorites** | Reports you starred. |
+| **Private Reports** | Only you. |
+| Any folder you create | Whoever it is shared with. |
 
 ## Making a folder
 
-1. Click **New Folder**.
-2. Type a name.
-3. Click **Save**.
+**Where:** **Reports** → **New Folder**
 
-![A new folder](../img/shots/analytics/new-folder.png)
+1. Click **Reports** in the top menu.
+2. Click **New Folder**.
+3. Type a name.
 
-## Who can see it
+   ![A new folder](../img/shots/analytics/new-folder.png)
 
-A Super Admin decides which companies a folder is shared with, under
+4. Click **Save**.
+
+A new folder starts out visible only to you.
+
+## Letting other people see it
+
+A Super Admin shares folders with companies, under
 [Reports and Dashboards](../administration/reports-dashboards.md) in the Admin Console.
 
-A folder shared with nobody is visible only to Super Admins.
+A folder shared with nobody is visible only to Super Admins — which is why a brand-new folder
+looks empty to everybody else.
 
-## Renaming a report, or moving it
+## Moving a report into a folder
 
-Open the report and click **Edit Properties**.
+**Where:** **Reports** → the report's name → **Edit Properties**
 
-![Report properties](../img/shots/analytics/edit-properties.png)
+1. Click **Reports**, then open the report.
+2. Click **Edit Properties**.
 
-From here you change its name, its description and the folder it lives in.
+   ![Report properties](../img/shots/analytics/edit-properties.png)
+
+3. Change the **Folder**.
+4. Click **Save**.
+
+Moving a report changes who can see it, because access follows the folder. Moving something
+into **Private Reports** hides it from everybody else immediately.
+
+## Naming folders
+
+Name them for the audience or the subject — "Sales — Monthly", "Support". Avoid names like
+"New folder 2", which tell nobody anything when there are twenty of them.
