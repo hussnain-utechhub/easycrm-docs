@@ -29,7 +29,11 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
+      # --omit=dev: the only devDependencies are the screenshot harness (playwright, sharp),
+      # which the site build never touches. Skipping them keeps CI off native binaries it
+      # has no use for.
+      - run: npm ci --omit=dev
+
 
       - name: Build
         env:

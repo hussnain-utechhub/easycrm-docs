@@ -31,7 +31,18 @@ const config = {
   // quietly stops being trustworthy, and a reader cannot work around one.
   onBrokenLinks: "throw",
 
-  future: { v4: { removeLegacyPostBuildHeadAttribute: true }, faster: true },
+  /*
+   * No "faster: true" here, and no @docusaurus/faster dependency.
+   *
+   * Faster builds with rspack, whose native binary is a PLATFORM-SPECIFIC optional
+   * dependency. A package-lock.json generated on Windows pins only the win32 binding, so
+   * "npm ci" on Linux installs exactly that and the build dies with
+   * "Cannot find module '@rspack/binding-linux-x64-gnu'". It builds locally and can never
+   * build in CI - see npm/cli#4828.
+   *
+   * For a site this size the speed was worth nothing anyway.
+   */
+  future: { v4: { removeLegacyPostBuildHeadAttribute: true } },
 
   markdown: {
     // Parse .md as CommonMark, .mdx as MDX. The default runs everything through MDX, which
