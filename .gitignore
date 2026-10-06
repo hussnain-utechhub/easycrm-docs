@@ -1,0 +1,11 @@
+node_modules/
+build/
+.docusaurus/
+.cache-loader/
+npm-debug.log*
+yarn-error.log*
+
+# Capture harness: credentials and raw (pre-optimisation) screenshots never get committed.
+shots/.env
+shots/raw/
+shots/state/

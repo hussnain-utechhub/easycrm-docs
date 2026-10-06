@@ -1,0 +1,120 @@
+/*
+ * Deliberately close to stock Docusaurus.
+ *
+ * This site is mostly screenshots with short instructions between them, so the only things
+ * worth styling are the two that stock gets wrong for that shape of page: screenshots need a
+ * frame or they bleed into the prose, and numbered steps need room to breathe.
+ */
+
+:root {
+  --ifm-color-primary: #2a6fb5;
+  --ifm-color-primary-dark: #26649f;
+  --ifm-color-primary-darker: #245f96;
+  --ifm-color-primary-darkest: #1d4e7c;
+  --ifm-color-primary-light: #3179c2;
+  --ifm-color-primary-lighter: #3c80c6;
+  --ifm-color-primary-lightest: #5793d0;
+
+  --ifm-code-font-size: 92%;
+  --ifm-line-height-base: 1.7;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+
+  --ec-shot-border: #d7dde4;
+  --ec-shot-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 6px 16px rgba(16, 24, 40, 0.08);
+}
+
+[data-theme="dark"] {
+  --ifm-color-primary: #69a9e8;
+  --ifm-color-primary-dark: #4e9ae4;
+  --ifm-color-primary-darker: #4092e1;
+  --ifm-color-primary-darkest: #2278cb;
+  --ifm-color-primary-light: #84b8ec;
+  --ifm-color-primary-lighter: #92c0ee;
+  --ifm-color-primary-lightest: #bbd7f5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+
+  --ec-shot-border: #343a46;
+  --ec-shot-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Screenshots -------------------------------------------------------- */
+/* Every image in the body is a screen capture. Framing it stops a white-backed UI
+   dissolving into a white page, which is the single biggest readability problem on a
+   site that is four-fifths pictures. */
+.markdown img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--ec-shot-border);
+  border-radius: 8px;
+  box-shadow: var(--ec-shot-shadow);
+  margin: 1.25rem 0 1.75rem;
+}
+
+/* An image standing alone in a paragraph gets the same treatment without doubled margins. */
+.markdown p > img:only-child {
+  margin-top: 1rem;
+}
+
+/* ---- Steps -------------------------------------------------------------- */
+/* Instructions are numbered lists with pictures between the items. Stock spacing packs
+   them too tightly to scan. */
+.markdown ol > li,
+.markdown ul > li {
+  margin-top: 0.4rem;
+}
+
+.markdown ol {
+  padding-left: 1.3rem;
+}
+
+/* A bold run inside a step is almost always a button or field name. Give it a little
+   weight without turning it into a code span. */
+.markdown strong {
+  font-weight: 650;
+}
+
+/* ---- Readability -------------------------------------------------------- */
+.markdown h2 {
+  margin-top: 2.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.markdown h2:first-of-type {
+  margin-top: 1.5rem;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.markdown h3 {
+  margin-top: 1.75rem;
+}
+
+/* Tables here are mostly "field -> what it means" pairs. Keep the first column tight. */
+.markdown table td:first-child {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .markdown table td:first-child {
+    white-space: normal;
+  }
+}
+
+/* ---- Navbar ------------------------------------------------------------- */
+.navbar-github:hover {
+  opacity: 0.7;
+}
+
+.navbar-github::before {
+  content: "";
+  display: flex;
+  width: 24px;
+  height: 24px;
+  background-color: var(--ifm-navbar-link-color);
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
