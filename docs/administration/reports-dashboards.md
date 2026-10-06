@@ -5,6 +5,10 @@ sidebar_position: 8
 
 # Reports and Dashboards
 
+**What it is.** Which companies can see which report folders.
+
+**Why it helps.** It is how one company's reports stay out of another's sight, set once per folder rather than report by report.
+
 Click **Admin**, then **Reports & Dashboards**.
 
 ![Reports and Dashboards](../img/shots/admin/reports-dashboards-full.png)

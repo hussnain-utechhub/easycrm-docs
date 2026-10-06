@@ -5,6 +5,10 @@ sidebar_position: 11
 
 # Branding
 
+**What it is.** The portal's name, logo and colours.
+
+**Why it helps.** People see their own company's name, not a product they have never heard of.
+
 Click **Admin**, then **Branding**.
 
 ![Branding](../img/shots/admin/branding-full.png)

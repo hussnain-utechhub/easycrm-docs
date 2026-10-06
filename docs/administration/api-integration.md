@@ -5,6 +5,12 @@ sidebar_position: 17
 
 # API Integration
 
+**What it is.** A way to let another system read your portal data automatically.
+
+**What it does.** You create a key, choose exactly what it may read, and give it to the other system.
+
+**Why it is safe.** Keys can only read. Nothing can be changed or deleted through them.
+
 Click **Admin**, then **API Integration**.
 
 ![API Integration](../img/shots/admin/api-integration-full.png)

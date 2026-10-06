@@ -5,6 +5,12 @@ sidebar_position: 1
 
 # Files
 
+**What it is.** Documents stored in the portal.
+
+**What it does.** You upload a file once and anybody allowed to see it can open it.
+
+**Why it helps.** Contracts and signed paperwork sit with the customer they belong to, instead of in somebody's inbox.
+
 Click **Files** to see documents.
 
 ![Files](../img/shots/files/list.png)

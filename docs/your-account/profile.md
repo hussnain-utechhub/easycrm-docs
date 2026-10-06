@@ -5,6 +5,10 @@ sidebar_position: 1
 
 # Your profile
 
+**What it is.** Your own details, and the settings that affect only you.
+
+**Why it matters.** Changing things here never affects anybody else.
+
 Click your name in the top right, then **Settings**.
 
 ![Your profile](../img/shots/profile/view.png)

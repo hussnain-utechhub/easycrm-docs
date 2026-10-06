@@ -5,19 +5,47 @@ sidebar_position: 3
 
 # Choosing columns
 
-You decide which columns a list shows.
+**What it is.** Control over which fields the list shows as columns, and in what order.
 
-1. Click the settings button above the list.
-2. Pick fields on the left, and click the arrow to move them to the right.
-3. Drag the ones on the right to put them in order.
-4. Click **Save**.
+**What it does.** You move fields into and out of the table, and arrange them left to right.
 
-![Choosing columns](../img/shots/lists/choose-columns.png)
+**Why it helps.** Each person sees the fields that matter to their job, instead of scrolling
+sideways past twenty they never use. Your choice is remembered for next time.
 
-The list keeps your choice for next time.
+## Changing the columns
 
-## Column menus
+**Where:** **Accounts** → the gear button (top right of the list)
 
-Each column heading has its own small menu for sorting.
+1. Click the tab for the records you want — **Accounts**, for example.
+2. Above the table on the right there are three small buttons. The middle one is a gear.
+   Click it.
+3. A window opens with two lists side by side.
 
-![A column menu](../img/shots/lists/column-actions.png)
+   ![Choosing columns](../img/shots/lists/choose-columns.png)
+
+   - **Available** on the left — fields not currently shown.
+   - **Selected** on the right — the columns in your list now, top to bottom matching left to
+     right in the table.
+
+4. To add a column: click a field on the left, then click the right-pointing arrow between
+   the lists.
+5. To remove one: click a field on the right, then click the left-pointing arrow.
+6. To reorder: click a field on the right, then use the up and down arrows.
+7. Click **Save**.
+
+The table redraws with your columns.
+
+## Finding a field quickly
+
+There can be a great many fields. Type into the search box above either list to narrow it
+down.
+
+Searching never loses a field you have already chosen — the ones on the right stay where they
+are.
+
+## Who this affects
+
+Only you. Other people keep their own columns.
+
+To change what **everybody** sees on the record page itself, an administrator uses
+[Page layouts](../administration/page-layouts.md) instead.

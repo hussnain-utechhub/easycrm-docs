@@ -5,6 +5,12 @@ sidebar_position: 3
 
 # Companies
 
+**What it is.** The companies whose people use the portal.
+
+**What it does.** It groups users, and most access rules work company by company.
+
+**Why it matters.** An Admin manages only their own company's people, and report folders are shared per company. Somebody with no company set matches no company rule.
+
 Click **Admin**, then **Companies**.
 
 ![Companies](../img/shots/admin/companies-full.png)

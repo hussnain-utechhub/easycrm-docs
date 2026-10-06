@@ -5,6 +5,10 @@ sidebar_position: 9
 
 # Buttons
 
+**What it is.** Your own buttons on record pages.
+
+**Why it helps.** If your team opens another system for every customer, a button can take them straight there with the record already loaded.
+
 Click **Admin**, then **Buttons**.
 
 ![Buttons](../img/shots/admin/buttons-full.png)

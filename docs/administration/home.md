@@ -5,6 +5,10 @@ sidebar_position: 12
 
 # Home
 
+**What it is.** What everybody sees on the home page.
+
+**What it does.** You turn cards on and off. Each card shows every person their own data, so one setting suits everybody.
+
 Click **Admin**, then **Home**.
 
 ![Home](../img/shots/admin/home-full.png)

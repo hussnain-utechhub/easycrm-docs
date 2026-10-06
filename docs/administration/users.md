@@ -5,65 +5,115 @@ sidebar_position: 2
 
 # Users
 
-Click **Admin**, then **Users**.
+**What it is.** Everybody who can sign in to the portal.
+
+**What you do here.** Add people, set what kind of user they are, reset passwords, and switch
+off anybody who has left.
+
+**Why it matters.** This is the front door. Somebody switched off here cannot get in at all,
+whatever any other setting says.
+
+## Opening it
+
+**Where:** **Admin** → **Users**
+
+1. Click **Admin** in the top menu.
+2. Click **Users** in the row of tabs under the heading.
 
 ![Users](../img/shots/admin/users-full.png)
 
-Every person who can sign in is listed here.
+Every person who can sign in is listed, with their username, email, role, whether they are
+active, and when they last signed in.
 
-## Adding someone
+## Adding somebody
 
-1. Click **+ New User**.
-2. Type their username and email address.
-3. Choose a role:
-   - **Standard** sees their own records.
-   - **Admin** manages the people at their company.
-   - **Super Admin** manages everything.
-4. Choose their company.
+**Where:** **Admin** → **Users** → **+ New User**
+
+1. Click **Admin**, then **Users**.
+2. Click the blue **+ New User** button on the right.
+3. A window opens.
+
+   ![Adding a user](../img/shots/admin/modal-new-user.png)
+
+4. Fill in:
+   - **Username** — what they type to sign in. It must be unique.
+   - **Email** — where their password is sent. It must be real.
+   - **Role** — see the table below.
+   - **Company** — which company they belong to. Always set this.
 5. Click **Save**.
 
-![Adding a user](../img/shots/admin/modal-new-user.png)
+They are emailed a password automatically.
 
-They get an email with their password.
+### Which role to choose
 
-## Turning someone off
+| Role | Can do |
+|---|---|
+| **Standard** | See and work on their own records. Most people. |
+| **Admin** | The above, plus manage people at their own company. |
+| **Super Admin** | Everything, for every company. Keep this to a few people. |
 
-Use the **Active** switch. They can no longer sign in, but their records stay exactly as they
-are. This is what to use when somebody leaves.
+### Always set a company
 
-## Setting a new password
+Somebody with no company is not treated as a match for any company rule. They may end up
+seeing nothing, or being invisible to their own Admin. It is the single most common setup
+mistake.
 
-Click the key beside their name, then **Save**. They get the new password by email.
+## When somebody leaves
 
-## Logging in as someone
+**Do not delete them.** Switch them off instead.
 
-Click the person icon beside their name to see the portal exactly as they see it. Use this to
-check a problem somebody has reported.
+1. Find them in the list.
+2. Click the **Active** switch so it turns grey.
 
-Every attempt is written to the [Audit Log](./audit-log.md), and so is anything you do while
-you are in there. The person is not signed out and does not notice.
+They can no longer sign in. Their records, and the history of what they did, stay exactly as
+they are. Deleting would break both.
 
-A Super Admin can do this for anyone. An Admin can do it for the Standard users they manage
-and for other Admins at their own company, but never for a Super Admin.
+## Resetting a password
+
+1. Find the person in the list.
+2. Click the **key** symbol in the **Actions** column.
+3. Click **Save**.
+
+A new password is emailed to them. You never see it, and neither does anybody else.
+
+## Seeing the portal as somebody else
+
+Useful when a colleague reports a problem you cannot reproduce.
+
+1. Find the person in the list.
+2. Click the **person** symbol in the **Actions** column.
+
+You now see the portal exactly as they see it. A banner shows whose account you are in.
+
+**What you should know:**
+
+- Every attempt is written to the [Audit Log](./audit-log.md), allowed or refused.
+- Anything you do while in there records both names.
+- The person is not signed out and does not notice.
+
+**Who may do it:** a Super Admin for anyone. An Admin for the Standard users they manage and
+for other Admins at their own company — never for a Super Admin.
 
 This is switched off until a Super Admin turns it on.
 
-## Assign Apps, Record Types and Console Tabs
+## The three buttons above the table
 
-The three buttons above the table set, for the whole company:
-
-| Button | What it controls |
-|---|---|
-| **Assign Apps** | Which apps people can switch between. |
-| **Assign Record Types** | Which kinds of record they can create. |
-| **Console Tabs** | Which Admin Console tabs their Admins see. |
+These set things for the **whole company**, not one person.
 
 ![Console tabs](../img/shots/admin/modal-console-tabs.png)
 
-**Assign Apps** controls which apps the company can switch between.
+| Button | What it controls |
+|---|---|
+| **Assign Apps** | Which apps the company's people can switch between. |
+| **Assign Record Types** | Which kinds of record they may create. |
+| **Console Tabs** | Which Admin Console tabs their Admins can see. |
+
+**Assign Apps** decides what appears in the app launcher.
 
 ![Assign apps](../img/shots/admin/modal-assign-apps.png)
 
-**Assign Record Types** controls which kinds of record people may create.
+**Assign Record Types** decides what the **New** button offers.
 
 ![Assign record types](../img/shots/admin/modal-assign-record-types.png)
+
+Leaving a list blank usually means "all of them", not "none".

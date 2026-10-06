@@ -5,6 +5,10 @@ sidebar_position: 16
 
 # List Mappings
 
+**What it is.** How an incoming spreadsheet's columns line up with your fields.
+
+**Why it helps.** Set it up once and every later list from the same source lands in the right place without anybody re-matching columns.
+
 Click **Admin**, then **List Mappings**.
 
 ![List Mappings](../img/shots/admin/list-mappings-full.png)

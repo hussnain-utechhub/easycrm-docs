@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Changing your password
 
+**What it is.** Setting a new password for yourself.
+
+**Why it matters.** The password your administrator sent you arrived by email. Changing it to something only you know is worth doing on your first day.
+
 1. Click your name in the top right.
 2. Click **Settings**.
 3. Click **Change Password**.

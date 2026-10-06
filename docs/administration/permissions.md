@@ -5,6 +5,12 @@ sidebar_position: 4
 
 # Permissions
 
+**What it is.** What each role may DO with records.
+
+**What it does.** For each kind of record you allow read, create, edit and delete.
+
+**Why it matters.** This is only half of access. [Sharing](./sharing.md) decides WHICH records. Somebody needs both, and read permission with no sharing shows an empty list.
+
 Click **Admin**, then **Permissions**.
 
 ![Permissions](../img/shots/admin/permissions-full.png)

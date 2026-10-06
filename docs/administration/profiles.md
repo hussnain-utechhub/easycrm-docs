@@ -5,6 +5,10 @@ sidebar_position: 6
 
 # Profiles
 
+**What it is.** The baseline access for a kind of person.
+
+**How it differs from a permission set.** A profile is what that kind of person always needs. A permission set is the exception on top.
+
 Click **Admin**, then **Profiles**.
 
 ![Profiles](../img/shots/admin/profiles-full.png)

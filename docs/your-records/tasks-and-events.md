@@ -5,46 +5,66 @@ sidebar_position: 7
 
 # Tasks and events
 
-A **task** is something to do. An **event** is something in the diary.
+**What they are.** A **task** is something to do. An **event** is something in the diary, with
+a start and an end.
 
-## Your tasks
+**What they do.** They sit against the record they concern, so the next person to open that
+customer can see what has happened and what is due.
 
-Click **Task**.
+**Why they help.** Follow-up stops living in one person's inbox or memory.
+
+## Seeing your tasks
+
+**Where:** **Task** in the top menu
+
+1. Click **Task** in the row of tabs at the top.
+2. The list opens. If it is empty, switch to the **All ...** list — see
+   [Looking at a list](./lists.md).
 
 ![The Task list](../img/shots/lists/task.png)
 
-Overdue tasks are marked in red on the [home page](../getting-started/the-screen.md).
+Your open tasks also appear under **My Tasks** on the home page. Anything past its due date is
+marked **Overdue** in red.
 
-Click a task to open it.
+## Opening a task
+
+1. Click the task's **Subject** — the blue text in the first column.
 
 ![A task](../img/shots/records/task-detail.png)
 
-Mark it **Completed** when it is done.
+2. To mark it done, click **Edit**, change the status to **Completed**, and click **Save**.
 
-## Your events
+## Seeing your events
 
-Click **Event**.
+**Where:** **Event** in the top menu
+
+1. Click **Event** in the row of tabs at the top.
+2. The list opens.
 
 ![The Event list](../img/shots/lists/event.png)
 
-Click an event to see who it is with and when.
+3. Click an event's **Subject** to open it.
 
 ![An event](../img/shots/records/event-detail.png)
 
-## Tasks and events on a record
+Events in the future also appear under **Upcoming Events** on the home page.
 
-A record has its own **Activities** section showing the tasks and events linked to it. Add one
-there and it stays attached to that record.
+## Adding one against a record
 
-That is usually the better place to add one, because anybody looking at the record can then
-see it.
+This is usually the better way, because the task or event stays attached to the customer it
+concerns.
 
-## Contacts
+**Where:** **Accounts** → the record's name → **New Task** or **New Event**
 
-Contacts work the same way as accounts.
+See [Calls, tasks and meetings](./activities.md) for the full steps.
+
+## Contacts work the same way
+
+**Where:** **Contacts** in the top menu
 
 ![The Contacts list](../img/shots/lists/contacts.png)
 
-Click a contact to see their details, and the activities and files linked to them.
+Click a contact's name to open it. A contact has the same shape as an account — fields on the
+left, activities on the right, related records at the bottom.
 
 ![A contact](../img/shots/records/contacts-detail.png)

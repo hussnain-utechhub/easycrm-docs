@@ -5,6 +5,10 @@ sidebar_position: 19
 
 # Publish Schedule
 
+**What it is.** Copying portal reports into Salesforce on a timetable.
+
+**Why it helps.** People who work in Salesforce see the same numbers as people in the portal, without anybody rebuilding the report twice.
+
 Click **Admin**, then **Publish Schedule**.
 
 ![Publish Schedule](../img/shots/admin/publish-schedule-full.png)

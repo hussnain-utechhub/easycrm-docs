@@ -5,6 +5,10 @@ sidebar_position: 13
 
 # Apps
 
+**What it is.** A named group of tabs people can switch between.
+
+**Why it helps.** Sales and support see different sets of tabs without either having to ignore the other's.
+
 Click **Admin**, then **Apps**.
 
 ![Apps](../img/shots/admin/apps-full.png)

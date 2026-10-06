@@ -5,6 +5,10 @@ sidebar_position: 10
 
 # Tabs
 
+**What it is.** Which tabs appear across the top, and in what order.
+
+**What it is not.** Hiding a tab hides the way in, not the data. Use [Permissions](./permissions.md) and [Sharing](./sharing.md) to control access.
+
 Click **Admin**, then **Tabs**.
 
 ![Tabs](../img/shots/admin/tabs-full.png)

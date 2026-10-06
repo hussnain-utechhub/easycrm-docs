@@ -5,6 +5,10 @@ sidebar_position: 5
 
 # Permission Sets
 
+**What it is.** A bundle of extra access you hand to particular people.
+
+**Why it helps.** When three people need more than the rest of their role, you give them a permission set rather than widening the role for everybody.
+
 Click **Admin**, then **Permission Sets**.
 
 ![Permission Sets](../img/shots/admin/permission-sets-full.png)

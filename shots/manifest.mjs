@@ -457,4 +457,11 @@ add({
   },
 });
 
-export default shots;
+/*
+ * The deep screens - builders, layout editor, sharing panels - live in their own file.
+ * They are reached by clicking into a screen rather than by a #tab= route, which is exactly
+ * why the first pass of this manifest missed them entirely.
+ */
+import deepShots from "./manifest-deep.mjs";
+
+export default [...shots, ...deepShots];
