@@ -109,6 +109,7 @@ const config = {
         { type: "docSidebar", sidebarId: "features", position: "left", label: "Features" },
         { type: "docSidebar", sidebarId: "use", position: "left", label: "Using EasyCRM" },
         { type: "docSidebar", sidebarId: "admin", position: "left", label: "Administering" },
+        { type: "docSidebar", sidebarId: "api", position: "left", label: "API" },
         { type: "docSidebar", sidebarId: "frontspin", position: "left", label: "FrontSpin" },
         { type: "docSidebar", sidebarId: "standardBuild", position: "left", label: "Standard Build" },
         {
