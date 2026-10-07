@@ -1,6 +1,6 @@
 ---
 title: Opening a record
-sidebar_position: 4
+sidebar_position: 7
 ---
 
 # Opening a record

@@ -1,6 +1,6 @@
 ---
 title: Bucket columns
-sidebar_position: 7
+sidebar_position: 10
 ---
 
 # Bucket columns

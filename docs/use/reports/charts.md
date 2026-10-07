@@ -1,6 +1,6 @@
 ---
 title: Charts on a report
-sidebar_position: 9
+sidebar_position: 12
 ---
 
 # Charts on a report

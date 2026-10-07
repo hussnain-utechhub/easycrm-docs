@@ -1,6 +1,6 @@
 ---
 title: Folders
-sidebar_position: 10.2
+sidebar_position: 15
 ---
 
 # Folders

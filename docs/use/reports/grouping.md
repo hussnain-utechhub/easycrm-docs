@@ -1,41 +1,55 @@
 ---
-title: Grouping and totals
-sidebar_position: 5
+title: Grouping
+sidebar_position: 6
 ---
 
-# Grouping and totals
+# Grouping
 
-**What grouping is.** Gathering rows that share a value, so they appear together under one
-heading.
+## What grouping is
 
-**What a total is.** Adding up a column, for each group and for the whole report.
+Gathering rows that share a value, so they appear together under one heading with their own
+subtotal.
 
-**Why it helps.** This is the difference between a list and an answer. "How many per rep this
-month" is a grouping, not a search.
+It is the single step that turns a list into an answer. "Show me the accounts" is a list.
+"How many accounts per owner" is a grouping.
+
+## When to use it
+
+When the question contains the words *per*, *by*, or *each*. Per rep. By month. Each region.
+
+**When not to:** when somebody needs the records themselves — to work through them, or to
+export and manipulate. Grouping gets in the way of both. Leave it ungrouped and let them
+[export details only](./exporting.md).
 
 ## Grouping rows
 
-**Where:** the builder → **Outline** → **Add group…** under **Group Rows**
+**Where:** **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add group…** under **Group Rows**
 
-1. Open the report in the builder — see [The report builder](./builder-tour.md).
+1. Open the report in the builder.
 2. Click the **Outline** tab.
-3. Find **Group Rows**, and click the **Add group…** box under it.
-4. Pick the field to group by — Owner, for example.
+3. Find the **Group Rows** area and click the **Add group…** box under it.
+4. Pick the field to group by.
 
    ![Grouping rows](../../img/shots/report-builder/group-rows.png)
 
-The preview changes. Instead of a flat list you now get one block per value, each with its own
+The preview changes shape. Instead of a flat list you get one block per value, each with a
 subtotal, and a grand total at the bottom.
 
-**To group further**, add a second group. Each block is then broken down again inside itself.
+### Grouping further
 
-**To remove a group**, click the small cross beside it, or use **Remove all groups**.
+Add a second group and each block is broken down inside itself — owner, then within each
+owner, by stage. Three levels is usually the practical limit before it stops being readable.
+
+### Removing a group
+
+Click the small cross beside it, or **Remove all groups** to clear them at once.
 
 ## Grouping across the top as well
 
-**Where:** the builder → **Outline** → **Add group…** under **Group Columns**
+**Where:** **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add group…** under **Group Columns**
 
-This turns the report into a grid — a **matrix**.
+This makes the report a **matrix**: groups down the side *and* across the top, with a figure
+in every cell.
 
 1. In the **Outline** tab, find **Group Columns**.
 2. Click the **Add group…** box under it.
@@ -43,42 +57,47 @@ This turns the report into a grid — a **matrix**.
 
    ![Grouping columns](../../img/shots/report-builder/group-columns.png)
 
-You now have groups down the left **and** across the top, with a figure in every cell. Owner
-down the side and month across the top, for example.
+Owner down the side and month across the top gives you "how much did each rep do each month"
+in one screen.
 
-Use a matrix when the question has two dimensions. Use a plain grouping when it has one.
+## Choosing what to group by
 
-## Totalling a column
-
-**Where:** the builder → a column heading → **Column actions**
-
-1. In the preview, find the number column you want to total.
-2. Click **Column actions** on its heading.
-3. Choose how to summarise it.
-
-| Option | Gives you |
+| Good grouping fields | Why |
 |---|---|
-| **Sum** | Everything added together. |
-| **Average** | The mean. |
-| **Min** | The smallest value. |
-| **Max** | The largest value. |
+| Owner, team, region | Few values, each meaningful |
+| Stage, status, type | Naturally categorical |
+| Month, quarter | Time, in sensible buckets |
 
-The total now appears on every group heading and at the bottom of the report.
+| Poor grouping fields | Why |
+|---|---|
+| Anything unique, like a record name | One group per record — worse than no grouping |
+| A free-text field | "London", "london" and "London " become three groups |
+| An exact date | 365 groups a year. Group by month instead |
 
-You can pick more than one. Sum and Average together is common.
+If the field you want to group by has too many values, invent your own categories with a
+[bucket column](./buckets.md).
 
-## The three shapes a report can have
+## The three shapes
 
-| Shape | What it looks like | Use it when |
+You never pick the shape from a menu. It follows from what you group.
+
+| Groups | Shape | Looks like |
 |---|---|---|
-| **Tabular** | A plain list, no groups | You want the records themselves. |
-| **Summary** | Grouped down the side, with subtotals | You want totals per group. |
-| **Matrix** | A grid, grouped down **and** across | You are comparing two things at once. |
+| None | **Tabular** | A plain list |
+| Rows only | **Summary** | Blocks with subtotals |
+| Rows and columns | **Matrix** | A grid |
 
-You do not choose the shape from a menu — it follows from what you group. No groups is
-tabular, row groups is summary, row and column groups is matrix.
+## What goes wrong
 
-## A report must be grouped to have a chart
+| Symptom | Cause |
+|---|---|
+| Hundreds of groups with one row each | Grouped by something nearly unique. |
+| Values that should be one group are several | Free text with inconsistent spelling or spacing. |
+| Subtotals are blank | Nothing is being totalled yet. See [Totals](./totals.md). |
+| The chart option does nothing | A chart needs a grouping. Add one first. |
 
-A chart draws groups. If **Chart properties** does nothing, add a row group first. See
-[Charts on a report](./charts.md).
+## Where this fits
+
+Grouping produces the subtotals that [Totals](./totals.md) fill in, and the groups that
+[Charts](./charts.md) plot. A [summary formula](./formulas.md) also needs a grouping to
+calculate against.

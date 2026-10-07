@@ -1,6 +1,6 @@
 ---
 title: Sharing a report
-sidebar_position: 10.5
+sidebar_position: 16
 ---
 
 # Sharing a report

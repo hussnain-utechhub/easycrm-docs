@@ -1,6 +1,6 @@
 ---
 title: Related records
-sidebar_position: 9
+sidebar_position: 13
 ---
 
 # Related records

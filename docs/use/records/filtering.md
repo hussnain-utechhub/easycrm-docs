@@ -1,6 +1,6 @@
 ---
 title: Filtering a list
-sidebar_position: 2
+sidebar_position: 6
 ---
 
 # Filtering a list

@@ -1,6 +1,6 @@
 ---
 title: Changing who owns a record
-sidebar_position: 10
+sidebar_position: 12
 ---
 
 # Changing who owns a record

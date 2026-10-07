@@ -1,6 +1,6 @@
 ---
 title: Exporting a report
-sidebar_position: 10
+sidebar_position: 13
 ---
 
 # Exporting a report
