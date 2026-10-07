@@ -110,6 +110,7 @@ const config = {
         { type: "docSidebar", sidebarId: "use", position: "left", label: "Using EasyCRM" },
         { type: "docSidebar", sidebarId: "admin", position: "left", label: "Administering" },
         { type: "docSidebar", sidebarId: "frontspin", position: "left", label: "FrontSpin" },
+        { type: "docSidebar", sidebarId: "standardBuild", position: "left", label: "Standard Build" },
         {
           href: "https://github.com/hussnain-utechhub/easycrm-docs",
           position: "right",
