@@ -20,7 +20,7 @@ records through search or a report. Use [Permissions](../access/permissions.md) 
 1. Click **Admin** in the top menu.
 2. Click **Tabs** in the row of tabs.
 
-![Tabs](../../img/shots/admin/tabs-full.png)
+![Tabs](../../img/shots/admin/tabs.png)
 
 You see two lists side by side:
 

@@ -20,7 +20,7 @@ those three a permission set instead of widening the access of the whole group.
 1. Click **Admin** in the top menu.
 2. Click **Permission Sets** in the row of tabs.
 
-![Permission Sets](../../img/shots/admin/permission-sets-full.png)
+![Permission Sets](../../img/shots/admin/permission-sets.png)
 
 ## Creating one
 

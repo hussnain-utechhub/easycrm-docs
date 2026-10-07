@@ -71,7 +71,7 @@ Click **Back to list** at the top right, or your browser's back button. Both wor
 
 A record can be long. Here is a whole one:
 
-![A record in full](../../img/shots/records/accounts-detail-full.png)
+![A record in full](../../img/shots/records/accounts-detail.png)
 
 If a field you expect is missing, it is either empty, or your administrator has left it off
 this layout. See [Page layouts](../../admin/layouts/index.md).

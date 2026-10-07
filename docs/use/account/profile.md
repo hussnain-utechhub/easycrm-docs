@@ -47,4 +47,4 @@ That is not here — it is the **gear** in the top bar. See
 
 The whole page looks like this:
 
-![Your profile in full](../../img/shots/profile/view-full.png)
+![Your profile in full](../../img/shots/profile/view.png)

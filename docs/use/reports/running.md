@@ -19,7 +19,7 @@ so there is no old copy to worry about.
 3. Click the report's **name**.
 4. It runs. Large reports take a few seconds.
 
-![A report](../../img/shots/analytics/report-viewer-full.png)
+![A report](../../img/shots/analytics/report-viewer.png)
 
 ## What you are looking at
 

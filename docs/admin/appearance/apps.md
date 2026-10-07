@@ -19,7 +19,7 @@ other's.
 1. Click **Admin** in the top menu.
 2. Click **Apps** in the row of tabs.
 
-![Apps](../../img/shots/admin/apps-full.png)
+![Apps](../../img/shots/admin/apps.png)
 
 ## Creating one
 

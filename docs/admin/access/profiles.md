@@ -20,7 +20,7 @@ people.
 1. Click **Admin** in the top menu.
 2. Click **Profiles** in the row of tabs.
 
-![Profiles](../../img/shots/admin/profiles-full.png)
+![Profiles](../../img/shots/admin/profiles.png)
 
 ## Creating one
 

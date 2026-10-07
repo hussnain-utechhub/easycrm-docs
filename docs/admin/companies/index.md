@@ -20,7 +20,7 @@ shared per company. Somebody with no company matches no company rule.
 1. Click **Admin** in the top menu.
 2. Click **Companies** in the row of tabs.
 
-![Companies](../../img/shots/admin/companies-full.png)
+![Companies](../../img/shots/admin/companies.png)
 
 Each company is listed with how many people belong to it.
 

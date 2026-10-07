@@ -25,7 +25,7 @@ five reports opened one after another.
 3. Click a folder, then the dashboard's **name**.
 4. It opens and the tiles load.
 
-![A dashboard](../../img/shots/analytics/dashboard-viewer-full.png)
+![A dashboard](../../img/shots/analytics/dashboard-viewer.png)
 
 ## What you are looking at
 

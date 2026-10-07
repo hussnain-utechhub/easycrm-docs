@@ -20,7 +20,7 @@ especially on the sign-in page, which is the first thing they ever see.
 1. Click **Admin** in the top menu.
 2. Click **Branding** in the row of tabs.
 
-![Branding](../../img/shots/admin/branding-full.png)
+![Branding](../../img/shots/admin/branding.png)
 
 The screen is in five panels. Everything is saved together with **Save All Branding** at the
 bottom.

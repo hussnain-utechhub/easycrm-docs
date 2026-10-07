@@ -425,3 +425,43 @@ add({
     await settle(page, 1800);
   },
 });
+
+/* ------------------------------------------------------------------ Wave J
+ * Admin record scope - three modes deciding what every Admin can see. The control sits
+ * well down the Users tab, inside "Who manages whom", which is why it was never captured.
+ */
+
+add({
+  id: "admin/users-hierarchy",
+  wave: "J",
+  opts: { tall: true },
+  setup: async (page, h) => {
+    await openAdminTab("users")(page, h);
+    await page.getByText("Who manages whom", { exact: false }).first().scrollIntoViewIfNeeded();
+    await settle(page, 2000);
+  },
+});
+
+add({
+  id: "admin/admin-scope-mode",
+  wave: "J",
+  setup: async (page, h) => {
+    await openAdminTab("users")(page, h);
+    const box = page.locator(".pa-hier-scope").first();
+    await box.scrollIntoViewIfNeeded();
+    await settle(page, 1200);
+    // Lightning combobox: click it open so all three options are visible.
+    await box.click();
+    await settle(page, 1500);
+  },
+});
+
+add({
+  id: "admin/login-as-scope",
+  wave: "J",
+  setup: async (page, h) => {
+    await openAdminTab("users")(page, h);
+    await page.getByText("Who may log in as portal users", { exact: false }).first().scrollIntoViewIfNeeded();
+    await settle(page, 1800);
+  },
+});

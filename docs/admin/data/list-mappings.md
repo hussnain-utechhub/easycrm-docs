@@ -22,7 +22,7 @@ arrives.
 3. The page asks you to **Choose a company** first — mappings belong to a company, because
    different sources send different formats.
 
-![List Mappings](../../img/shots/admin/list-mappings-full.png)
+![List Mappings](../../img/shots/admin/list-mappings.png)
 
 4. Choose the company.
 5. Its mappings appear.

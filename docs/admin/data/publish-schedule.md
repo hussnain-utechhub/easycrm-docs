@@ -19,7 +19,7 @@ without anybody rebuilding the report twice or exporting it by hand.
 1. Click **Admin** in the top menu.
 2. Click **Publish Schedule** in the row of tabs.
 
-![Publish Schedule](../../img/shots/admin/publish-schedule-full.png)
+![Publish Schedule](../../img/shots/admin/publish-schedule.png)
 
 ## It starts switched off
 

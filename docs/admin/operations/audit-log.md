@@ -28,7 +28,7 @@ That immutability is the whole point. A log an administrator can alter is not ev
 1. Click **Admin** in the top menu.
 2. Click **Audit Log** in the row of tabs.
 
-![Audit Log](../../img/shots/admin/audit-log-full.png)
+![Audit Log](../../img/shots/admin/audit-log.png)
 
 Newest first. Each row shows who, what and when.
 

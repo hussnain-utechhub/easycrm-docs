@@ -19,7 +19,7 @@ busiest, and is anything being used far more than expected.
 1. Click **Admin** in the top menu.
 2. Click **API Usage** in the row of tabs.
 
-![API Usage](../../img/shots/admin/api-usage-full.png)
+![API Usage](../../img/shots/admin/api-usage.png)
 
 ## Choosing what to look at
 

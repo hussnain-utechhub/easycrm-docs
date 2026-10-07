@@ -19,7 +19,7 @@ everybody. You are choosing the layout, not the contents.
 1. Click **Admin** in the top menu.
 2. Click **Home** in the row of tabs.
 
-![Home](../../img/shots/admin/home-full.png)
+![Home](../../img/shots/admin/home.png)
 
 Be careful not to confuse this with the **Home** tab in the main menu — that is the home page
 itself. This one is inside the Admin Console.

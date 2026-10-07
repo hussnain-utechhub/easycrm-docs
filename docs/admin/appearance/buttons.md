@@ -19,7 +19,7 @@ the copying and pasting.
 1. Click **Admin** in the top menu.
 2. Click **Buttons** in the row of tabs.
 
-![Buttons](../../img/shots/admin/buttons-full.png)
+![Buttons](../../img/shots/admin/buttons.png)
 
 ## Adding one
 

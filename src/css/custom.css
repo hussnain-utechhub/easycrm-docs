@@ -46,6 +46,18 @@
   display: block;
   max-width: 100%;
   height: auto;
+
+  /*
+   * Cap the height of any screenshot.
+   *
+   * These are illustrations in a manual, not the product. A full-page capture of a long
+   * screen - an audit log, a wide report - ran to several thousand pixels and pushed the
+   * instructions it was meant to illustrate off the screen entirely. Capping the height and
+   * letting the width follow keeps a screenshot to roughly one screen, whatever was captured.
+   */
+  max-height: 560px;
+  width: auto;
+  object-fit: contain;
   border: 1px solid var(--ec-shot-border);
   border-radius: 8px;
   box-shadow: var(--ec-shot-shadow);

@@ -20,7 +20,7 @@ rather than report by report.
 1. Click **Admin** in the top menu.
 2. Click **Reports & Dashboards** in the row of tabs.
 
-![Reports and Dashboards](../../img/shots/admin/reports-dashboards-full.png)
+![Reports and Dashboards](../../img/shots/admin/reports-dashboards.png)
 
 ## Sharing something
 

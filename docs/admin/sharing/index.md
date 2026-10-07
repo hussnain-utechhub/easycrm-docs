@@ -20,7 +20,7 @@ everybody else's customers.
 1. Click **Admin** in the top menu.
 2. Click **Sharing** in the row of tabs.
 
-![Sharing](../../img/shots/admin/sharing-full.png)
+![Sharing](../../img/shots/admin/sharing.png)
 
 Inside Sharing there are several areas, each with its own page here:
 

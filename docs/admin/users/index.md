@@ -28,7 +28,7 @@ whatever any other setting says.
 1. Click **Admin** in the top menu.
 2. Click **Users** in the row of tabs under the heading.
 
-![Users](../../img/shots/admin/users-full.png)
+![Users](../../img/shots/admin/users.png)
 
 Every person who can sign in is listed, with their username, email, role, whether they are
 active, and when they last signed in.

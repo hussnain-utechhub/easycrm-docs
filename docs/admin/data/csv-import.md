@@ -19,7 +19,7 @@ records, just use **New** on the list instead.
 1. Click **Admin** in the top menu.
 2. Click **CSV Import** in the row of tabs.
 
-![CSV Import](../../img/shots/admin/csv-import-full.png)
+![CSV Import](../../img/shots/admin/csv-import.png)
 
 ## Preparing your spreadsheet
 

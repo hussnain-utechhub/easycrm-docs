@@ -20,7 +20,7 @@ the worst a leaked key can do is show somebody data — not alter it.
 1. Click **Admin** in the top menu.
 2. Click **API Integration** in the row of tabs.
 
-![API Integration](../../img/shots/admin/api-integration-full.png)
+![API Integration](../../img/shots/admin/api-integration.png)
 
 Everybody who currently holds a key is listed.
 

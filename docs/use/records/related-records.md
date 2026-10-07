@@ -23,7 +23,7 @@ connected records without searching for them.
 
 Each related list is a small table with its own heading.
 
-![A record in full](../../img/shots/records/accounts-detail-full.png)
+![A record in full](../../img/shots/records/accounts-detail.png)
 
 ## Using them
 
