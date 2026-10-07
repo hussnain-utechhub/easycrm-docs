@@ -106,6 +106,7 @@ const config = {
       title: "EasyCRM",
       logo: { alt: "EasyCRM", src: "img/logo.svg" },
       items: [
+        { type: "docSidebar", sidebarId: "features", position: "left", label: "Features" },
         { type: "docSidebar", sidebarId: "use", position: "left", label: "Using EasyCRM" },
         { type: "docSidebar", sidebarId: "admin", position: "left", label: "Administering" },
         {

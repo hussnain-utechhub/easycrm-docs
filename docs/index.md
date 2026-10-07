@@ -1,55 +1,104 @@
 ---
 id: index
-title: EasyCRM documentation
+title: What EasyCRM is
 slug: /
 sidebar_position: 1
 ---
 
-# EasyCRM documentation
+# What EasyCRM is
 
-EasyCRM is your company's portal. You sign in with a username and password, and you see your
-records, reports and files in one place. It runs in a web browser — there is nothing to install.
+**EasyCRM is a customer portal that gives your whole company access to your Salesforce data —
+without buying a Salesforce licence for every person.**
 
-This documentation is in two parts. Pick the one that matches what you are doing.
+It is a website your team signs in to with a username and password. They see your accounts,
+contacts, tasks, meetings, reports and files in one simple screen. It runs in an ordinary web
+browser on a computer, tablet or phone. There is nothing to install.
 
-## Using EasyCRM
+## The problem it solves
 
-**For everybody who signs in.** Finding records, editing them, logging calls, building reports
-and dashboards, and managing your own account.
+Salesforce charges for every person who signs in.
 
-Start with [Signing in](./use/start/sign-in.md), then
-[Getting around](./use/start/the-screen.md) — about five minutes, and it covers most of what
-you need day to day.
+In most companies only a handful of people genuinely work inside Salesforce all day. Everybody
+else just needs to look something up, update a field, or read a report. Licensing that second
+group at full price is expensive — and it hands them a large, complicated product when they
+needed a small part of it.
 
-| Section | Covers |
+EasyCRM gives those people the small part.
+
+| | Without EasyCRM | With EasyCRM |
+|---|---|---|
+| Licences | One per person who needs to look | Only for people who work in Salesforce |
+| What they see | The whole of Salesforce | The records and fields you choose |
+| Training | A large product built for specialists | A screen most people learn in ten minutes |
+| Reporting | Exports that go stale | Reports that read live data every time |
+
+## Your data never leaves Salesforce
+
+This is the part worth being clear about, because it is the first thing anybody technical asks.
+
+EasyCRM **reads and writes your own Salesforce org directly**. There is no second database, no
+nightly sync, and no copy of your records anywhere else.
+
+Change something in EasyCRM and it changes in Salesforce. Change it in Salesforce and EasyCRM
+shows it the moment somebody opens the page. It is the same data, not a mirror of it.
+
+If you stop using EasyCRM, your records are already where they always were.
+
+## Who uses it
+
+Everybody who signs in has one of three roles, and the role decides what they can see and do.
+
+| Role | Can | Typically |
+|---|---|---|
+| **Standard** | See and work on their own records, run reports shared with them, upload files | Most people |
+| **Admin** | All of the above, plus manage the people at their own company | One or two per company |
+| **Super Admin** | Everything, for every company | Whoever runs the portal |
+
+## Built for more than one company
+
+Every user belongs to a **company**, and almost every setting can be made company by company —
+which apps they see, which report folders they reach, which administration tabs their own
+admins get, even the branding.
+
+One installation can serve many client companies, each seeing only its own world. That makes
+it work for an agency or service provider as well as for a single business.
+
+## What is in it
+
+| Part | What it is for |
 |---|---|
-| [Getting started](./use/start/sign-in.md) | Signing in, the screen, what you can see |
-| [Records](./use/records/lists.md) | Lists, filters, record pages, editing, creating |
-| [Calls, tasks and meetings](./use/activities/index.md) | Logging activity against a record |
-| [Reports](./use/reports/finding.md) | Finding, running and building reports |
-| [Dashboards](./use/dashboards/viewing.md) | Viewing and building dashboards |
-| [Files](./use/files/index.md) | Uploading and sharing documents |
-| [Your account](./use/account/profile.md) | Your profile, password and display settings |
+| **Records** | Accounts, contacts, tasks and events — the information itself |
+| **Lists** | Many records at once, filtered, sorted and searched |
+| **Reports** | Saved questions about your data, grouped and totalled |
+| **Dashboards** | Several charts and numbers on one screen |
+| **Files** | Documents, attached to records or standing alone |
+| **Admin Console** | Eighteen areas controlling users, access, appearance and integrations |
+| **API** | A read-only way for another system to fetch your data |
 
-## Administering EasyCRM
+See [Features](./features/index.md) for the complete catalogue.
 
-**For Admins and Super Admins.** Setting up users and companies, deciding who can see what,
-designing record pages, branding the portal, and moving data in and out.
+## How it is delivered
 
-Start with [The Admin Console](./admin/index.md).
-
-| Section | Covers |
+| Aspect | Detail |
 |---|---|
-| [Users](./admin/users/index.md) | Adding people, roles, passwords, support access |
-| [Companies](./admin/companies/index.md) | The companies whose people use the portal |
-| [Permissions](./admin/access/permissions.md) | What each person may **do** |
-| [Sharing](./admin/sharing/index.md) | Which **records** they may do it to |
-| [Page layouts](./admin/layouts/index.md) | What a record page shows |
-| [Appearance](./admin/appearance/branding.md) | Branding, tabs, apps, the sign-in page |
-| [Data in and out](./admin/data/csv-import.md) | Import, mappings, the API, publishing |
-| [Operations](./admin/operations/audit-log.md) | Audit log, setup checks, licensing |
+| Form | A managed package installed into your Salesforce org |
+| Where data lives | Your own Salesforce org |
+| For end users | A web address, a username and a password |
+| Devices | Any modern browser — desktop, tablet or phone |
+| Address | The Salesforce-provided address, or your own domain |
 
-## If you are not sure which you are
+## Where to start
+
+**If you are going to use the portal** — [Using EasyCRM](./use/index.md). Start with
+[Signing in](./use/start/sign-in.md), then [Getting around](./use/start/the-screen.md). About
+five minutes, and it covers most of what you need.
+
+**If you run the portal for your company** — [Administering EasyCRM](./admin/index.md).
+
+**If you are deciding whether it fits** — [Features](./features/index.md), which lists
+everything it does and what each capability gives you.
+
+## Not sure which you are?
 
 Open the portal and look at the row of tabs across the top. If there is an **Admin** tab, you
 are an Admin or a Super Admin and both halves apply to you. If there is not, you want
