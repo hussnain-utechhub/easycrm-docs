@@ -1,6 +1,6 @@
 ---
 title: Dashboard filters
-sidebar_position: 13
+sidebar_position: 4
 ---
 
 # Dashboard filters

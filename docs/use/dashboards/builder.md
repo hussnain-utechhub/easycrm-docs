@@ -1,6 +1,6 @@
 ---
 title: The dashboard builder
-sidebar_position: 12
+sidebar_position: 2
 ---
 
 # The dashboard builder

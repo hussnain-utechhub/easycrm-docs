@@ -49,7 +49,7 @@
   },
   {
     "from": "/your-records/tasks-and-events",
-    "to": "/use/activities/tasks-and-events"
+    "to": "/use/activities/tasks"
   },
   {
     "from": "/your-records/activities",
@@ -246,5 +246,9 @@
   {
     "from": "/administration/licence",
     "to": "/admin/operations/licence"
+  },
+  {
+    "from": "/use/activities/tasks-and-events",
+    "to": "/use/activities/tasks"
   }
 ]

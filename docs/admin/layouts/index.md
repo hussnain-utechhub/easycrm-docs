@@ -1,6 +1,6 @@
 ---
 title: Page layouts
-sidebar_position: 20
+sidebar_position: 0
 ---
 
 # Page layouts
@@ -12,6 +12,15 @@ which related lists show underneath.
 
 **Why it helps.** Most records have far more fields than anybody needs. A layout shows the ten
 that matter and hides the rest, so the page is readable.
+
+## In this section
+
+| Page | Covers |
+|---|---|
+| [Choosing fields](./fields.md) | Which fields appear, and in what order |
+| [Sections](./sections.md) | Grouping fields under headings |
+| [Related lists](./related-lists.md) | The tables at the bottom of a record |
+| [The new-record window](./new-record-window.md) | What the **New** form asks for |
 
 ## Opening the editor
 

@@ -1,6 +1,6 @@
 ---
 title: Calls, tasks and meetings
-sidebar_position: 8
+sidebar_position: 0
 ---
 
 # Calls, tasks and meetings

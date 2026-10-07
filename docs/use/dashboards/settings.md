@@ -1,6 +1,6 @@
 ---
 title: Dashboard settings
-sidebar_position: 14
+sidebar_position: 5
 ---
 
 # Dashboard settings
