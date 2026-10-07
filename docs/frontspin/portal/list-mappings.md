@@ -24,43 +24,89 @@ here while the switch is off looks perfectly correct and does nothing.
 
 1. Click **Admin** in the top menu.
 2. Click **List Mappings** in the row of tabs.
-3. Choose a **Company**. Mappings belong to one, so nothing shows until you do.
+3. Nothing is shown yet — mappings belong to a company, so one has to be chosen first.
 
-![List Mappings](../../img/shots/admin/list-mappings.png)
+![List Mappings before a company is chosen](../../img/shots/frontspin/list-mappings-choose.png)
 
-Once chosen, the page names the tenant it is working with and lists that company's mappings.
+4. Click **Choose a company** and pick one.
 
-![Mappings for a company](../../img/shots/admin/list-mappings-chosen.png)
+![Choosing a company](../../img/shots/frontspin/list-mappings-company-picker.png)
 
-The blue line confirms which tenant you are editing, and that FrontSpin's scheduled job will pick
-up every active mapping on its next run — within the hour.
+## What you get
+
+![Mappings for a company](../../img/shots/frontspin/list-mappings-chosen.png)
+
+The blue line names the **tenant** you are editing and confirms that FrontSpin's scheduled job
+picks up every active mapping on its next run — within the hour.
+
+| Column | Shows |
+|---|---|
+| **Name** | What the mapping is called |
+| **Report** | The Salesforce report that fills the list |
+| **FrontSpin List** | The list, with its FrontSpin number in brackets |
+| **Tenant** | Which FrontSpin account |
+| **Active** | An **On** / **Off** switch |
+
+The count sits under the table.
+
+### "not in the portal's report list"
+
+A row can show a raw report id with **not in the portal's report list** under it.
+
+That means the mapping points at a report the portal cannot see — usually one that lives only in
+Salesforce. The mapping still runs; the portal just cannot show you its name. It is a note, not an
+error.
 
 ## Adding a mapping
 
 1. Choose the company.
-2. Click **New**.
-3. Fill in:
+2. Click **+ New Mapping**.
 
-| Field | What to put |
+![The New Mapping dialog](../../img/shots/frontspin/list-mappings-new.png)
+
+3. Fill it in:
+
+| Field | Notes |
 |---|---|
-| **Report** | The Salesforce report whose contacts should be added |
-| **FrontSpin List** | The calling list they go into |
-| **Member Type** | `Contacts` |
-| **Active** | Tick it |
+| **Report** | **Tabular reports only.** See below. |
+| **FrontSpin List** | Only lists belonging to this company's tenant are offered |
+| **Name** | Leave blank and one is generated. Up to 38 characters. |
+| **Tenant** | Not editable — set by the company you are working in |
+| **Members** | Contacts. Not editable. |
+| **Active** | Include this mapping in the next scheduled run |
 
-4. Click **Save**.
+4. Click **Save Mapping**.
 
-It takes effect on the job's next hourly run. There is nothing to restart.
+### Tabular reports only
 
-## The company must have a tenant first
+**FrontSpin cannot read Summary or Matrix reports.** Only a tabular report can fill a list, so a
+grouped report will not be offered.
 
-The page needs to know which FrontSpin account a company belongs to. If the company has no tenant
-recorded, say so first — see [A company's tenant](./company-tenant.md).
+If the report you want is grouped, make a tabular copy of it for this purpose.
+
+### A portal-only report works
+
+The report does **not** have to be published to Salesforce. A report that exists only in the
+portal can fill a FrontSpin list perfectly well.
+
+That is worth knowing because it removes a step people often assume is required.
+
+### Contacts only
+
+**Members** is fixed at Contacts, because FrontSpin refuses Leads. There is nothing to choose.
+
+## The list picker
+
+![Choosing a FrontSpin list](../../img/shots/frontspin/list-mappings-list-picker.png)
+
+Each entry shows the list name and its FrontSpin number. **Only this company's tenant's lists are
+offered**, so you cannot accidentally point one customer's report at another customer's calling
+list.
 
 ## Refresh lists
 
-The **FrontSpin List** picker can only offer lists Salesforce knows about. **Refresh lists** asks
-FrontSpin for the current set.
+The picker can only offer lists Salesforce already knows about. **Refresh lists** asks FrontSpin
+for the current set.
 
 **It can add lists that are new. It cannot update ones already recorded.**
 
@@ -69,10 +115,17 @@ permission set can change that. So refreshing a list already in Salesforce fails
 error on the list's key, which is expected rather than a fault.
 
 Keeping existing entries current is the hourly
-[List Catalog job](../lists/index.md)'s job. It runs as a real user and has no such limit.
+[List Catalog job](../lists/index.md)'s work. It runs as a real user and has no such limit.
 
 In practice: use **Refresh lists** when a brand-new list has just been created in FrontSpin and
 you do not want to wait an hour. For everything else, the hourly job handles it.
+
+## Turning one off
+
+Use the **Active** switch on the row. Off means the scheduled job skips it; the mapping is kept.
+
+Prefer this to deleting. Nothing can remove people a mapping has already added to a list, so
+switching it off is the only way to stop it growing.
 
 ## What goes wrong
 
@@ -80,9 +133,11 @@ you do not want to wait an hour. For everything else, the hourly job handles it.
 |---|---|
 | "FrontSpin is not set up in this org" | The integration is not installed. See [the boundary](../index.md#an-important-boundary). |
 | A new mapping does nothing | The [switch](../lists/where-mappings-live.md) is off, so Setup is the live source. |
+| Your report is not in the picker | It is a Summary or Matrix report. Only tabular reports can be used. |
 | A list is missing from the picker | The catalogue has not caught up. Click **Refresh lists**, or wait for the hourly job. |
 | "duplicate value found" on refresh | The guest cannot update an existing list. Expected — see above. |
-| Contacts are added but the list looks short | FrontSpin applies additions asynchronously. Give it a few minutes. |
+| A row shows a raw id | The report lives outside the portal. Harmless. |
+| Contacts added but the list looks short | FrontSpin applies additions asynchronously. Give it a few minutes. |
 
 ## Where this fits
 

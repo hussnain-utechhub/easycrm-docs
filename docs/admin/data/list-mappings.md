@@ -31,11 +31,14 @@ That message is expected, not a fault.
 2. Click **List Mappings** in the row of tabs.
 3. Choose a **company** first — mappings belong to one.
 
-![List Mappings](../../img/shots/admin/list-mappings.png)
+![List Mappings](../../img/shots/frontspin/list-mappings-choose.png)
 
 4. Its mappings appear, under a line naming the FrontSpin tenant you are editing.
 
-![Mappings for a company](../../img/shots/admin/list-mappings-chosen.png)
+![Mappings for a company](../../img/shots/frontspin/list-mappings-chosen.png)
+
+In an org **without** FrontSpin the same tab says so and stops there — see
+[the boundary](../../frontspin/index.md#an-important-boundary).
 
 ## Before you add anything
 

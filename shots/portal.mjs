@@ -195,7 +195,7 @@ export async function shoot(page, outDir, id, opts = {}) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
 
   const take = async () => {
-    await rebrand(page);
+    await rebrand(page, opts.rebrandExtra || []);
     if (opts.selector) {
       await page.locator(opts.selector).first().screenshot({ path: file });
     } else {

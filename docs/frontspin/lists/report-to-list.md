@@ -37,12 +37,28 @@ Plus **Member Type** (`Contacts`) and **Active**.
 A mapping holds **no** tenant id, no credential and no API key — those come from the configuration
 row it names. That is why the configuration row's **developer name** matters.
 
+## The report must be tabular
+
+**FrontSpin cannot read Summary or Matrix reports.** Only a tabular report can fill a list.
+
+If the report you want is grouped, make a tabular copy of it for this purpose. The portal's
+[New Mapping dialog](../portal/list-mappings.md#adding-a-mapping) will not offer a grouped report
+at all, which is the clearest way to find out.
+
+## A portal-only report works
+
+The report does **not** have to be published to Salesforce. One that exists only in the portal
+fills a FrontSpin list perfectly well.
+
+That removes a step people often assume is required.
+
 ## FrontSpin List ID must be a number
 
 It is FrontSpin's own numeric list identifier — not a list name, and not a Salesforce Id. Entering
 either of those is rejected with **LIST_ID_NOT_NUMERIC**.
 
 Find the number in the [list catalogue](./index.md), or ask whoever runs the FrontSpin account.
+The portal shows it in brackets beside each list name.
 
 ## Only Contacts
 

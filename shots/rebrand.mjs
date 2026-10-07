@@ -175,6 +175,26 @@ function applyInPage({ strings, frozen, markUri, wordmarkUri, title }) {
   swap("img.logo-img", markUri);
   swap("img.lf-head-logo, img.lf-brand-logo, .lf-blocks img, .lf-brand-inner img", wordmarkUri);
 
+  /*
+   * A portal with no uploaded logo renders the tenant's INITIALS in the chip instead, so the
+   * image swap above finds nothing and the tenant's initials survive into the screenshot.
+   * Only a childless .logo is touched, so the chip's text is replaced without disturbing the
+   * portal name that sits beside it in .brand.
+   */
+  for (const root of allRoots) {
+    let els;
+    try {
+      els = root.querySelectorAll(".logo");
+    } catch {
+      continue;
+    }
+    for (const el of els) {
+      if (el.children.length) continue;
+      const t = (el.textContent || "").trim();
+      if (t && t.length <= 3 && t === t.toUpperCase()) el.textContent = "EC";
+    }
+  }
+
   /* ---- tab title and favicon ---- */
   try {
     document.title = title;
@@ -193,10 +213,15 @@ function applyInPage({ strings, frozen, markUri, wordmarkUri, title }) {
 /**
  * Neutralise tenant branding on the page currently loaded in `page`.
  * Call immediately before taking a screenshot.
+ *
+ * `extra` is applied BEFORE the standard map, for screens carrying identities this module
+ * knows nothing about - the FrontSpin screens show a tenant's whole client roster in a list
+ * picker, so that capture supplies its own token map. The caller orders `extra` longest-first,
+ * for the same reason TENANT_STRINGS is ordered that way.
  */
-export async function rebrand(page) {
+export async function rebrand(page, extra = []) {
   await page.evaluate(applyInPage, {
-    strings: TENANT_STRINGS,
+    strings: [...extra, ...TENANT_STRINGS],
     // RegExp does not survive the structured clone into the page, so send the parts.
     frozen: FROZEN.map(([rx, rep]) => [rx.source, rx.flags, rep]),
     markUri: dataUri(MARK),
