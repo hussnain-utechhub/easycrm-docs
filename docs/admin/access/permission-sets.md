@@ -1,6 +1,6 @@
 ---
 title: Permission Sets
-sidebar_position: 5.5
+sidebar_position: 3
 ---
 
 # Permission Sets

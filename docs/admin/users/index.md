@@ -1,6 +1,6 @@
 ---
 title: Users
-sidebar_position: 2
+sidebar_position: 0
 ---
 
 # Users
@@ -12,6 +12,14 @@ off anybody who has left.
 
 **Why it matters.** This is the front door. Somebody switched off here cannot get in at all,
 whatever any other setting says.
+
+## In this section
+
+| Page | Covers |
+|---|---|
+| [Adding a user](./adding.md) | Creating somebody, choosing their role |
+| [When somebody leaves](./deactivating.md) | Deactivating, and what to do with their records |
+| [Seeing the portal as somebody else](./login-as.md) | Reproducing a reported problem |
 
 ## Opening it
 
