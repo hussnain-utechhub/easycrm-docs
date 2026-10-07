@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EasyCRM — Complete Guide</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 20mm 16mm; }
+
+  :root {
+    --ink:     #15181d;
+    --muted:   #5b6270;
+    --rule:    #d8dde5;
+    --accent:  #2a6fb5;
+    --soft:    #f4f7fa;
+    --warn-bg: #fff8e6;
+    --warn-br: #e0a800;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Segoe UI", -apple-system, system-ui, Arial, sans-serif;
+    color: var(--ink);
+    font-size: 10.6pt;
+    line-height: 1.62;
+    margin: 0;
+  }
+
+  /* ---------- cover ---------- */
+  .cover {
+    height: 247mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    page-break-after: always;
+    text-align: left;
+  }
+  .cover .mark {
+    width: 54px; height: 54px; border-radius: 12px;
+    background: var(--accent); margin-bottom: 26px;
+    position: relative;
+  }
+  .cover .mark::before {
+    content: ""; position: absolute; left: 14px; top: 17px;
+    width: 22px; height: 2.5px; background: #fff;
+    box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+    border-radius: 2px;
+  }
+  .cover h1 { font-size: 34pt; margin: 0 0 6px; letter-spacing: -0.5px; }
+  .cover .sub { font-size: 15pt; color: var(--muted); margin: 0 0 30px; font-weight: 400; }
+  .cover .line { height: 3px; width: 70px; background: var(--accent); margin-bottom: 26px; }
+  .cover .meta { color: var(--muted); font-size: 10pt; line-height: 1.9; }
+  .cover .blurb { max-width: 118mm; margin-bottom: 30px; font-size: 11.5pt; }
+
+  /* ---------- structure ---------- */
+  h2 {
+    font-size: 19pt; margin: 0 0 4px; padding-top: 2mm;
+    page-break-before: always; page-break-after: avoid;
+    letter-spacing: -0.2px;
+  }
+  h2 .num { color: var(--accent); font-weight: 700; margin-right: 10px; }
+  h2 + .lede {
+    color: var(--muted); font-size: 11pt; margin: 0 0 16px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--rule);
+  }
+  h3 {
+    font-size: 13pt; margin: 20px 0 6px;
+    page-break-after: avoid; page-break-inside: avoid;
+  }
+  h4 { font-size: 11pt; margin: 14px 0 4px; page-break-after: avoid; color: #2b3240; }
+
+  p { margin: 0 0 9px; }
+  ul, ol { margin: 0 0 10px; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  strong { font-weight: 650; }
+
+  /* ---------- tables ---------- */
+  table {
+    width: 100%; border-collapse: collapse; margin: 10px 0 14px;
+    font-size: 9.8pt; page-break-inside: avoid;
+  }
+  th {
+    text-align: left; background: var(--soft); font-weight: 650;
+    border-bottom: 1.5px solid var(--rule); padding: 6px 9px;
+  }
+  td { border-bottom: 1px solid var(--rule); padding: 6px 9px; vertical-align: top; }
+  td:first-child { white-space: nowrap; font-weight: 600; }
+  table.wide td:first-child { white-space: normal; font-weight: 400; }
+
+  /* ---------- call-outs ---------- */
+  .note, .warn, .path {
+    padding: 9px 12px; margin: 10px 0 13px; font-size: 10pt;
+    page-break-inside: avoid; border-radius: 3px;
+  }
+  .note { background: var(--soft); border-left: 3px solid var(--accent); }
+  .warn { background: var(--warn-bg); border-left: 3px solid var(--warn-br); }
+  .path {
+    background: #eef3f8; border-left: 3px solid var(--accent);
+    font-size: 9.8pt;
+  }
+  .path b { color: var(--accent); }
+  .note p:last-child, .warn p:last-child { margin-bottom: 0; }
+
+  /* ---------- figures ---------- */
+  figure { margin: 12px 0 16px; page-break-inside: avoid; }
+  figure img {
+    width: 100%; border: 1px solid var(--rule); border-radius: 4px; display: block;
+  }
+  figcaption { font-size: 8.8pt; color: var(--muted); margin-top: 5px; }
+
+  /* ---------- contents ---------- */
+  .toc { page-break-after: always; }
+  .toc h2 { page-break-before: avoid; }
+  .toc ol { list-style: none; padding: 0; margin-top: 10px; counter-reset: part; }
+  .toc > ol > li {
+    counter-increment: part; margin-bottom: 9px;
+    border-bottom: 1px dotted var(--rule); padding-bottom: 7px;
+  }
+  .toc > ol > li > b::before { content: counter(part) ".  "; color: var(--accent); }
+  .toc .sub2 { color: var(--muted); font-size: 9.6pt; margin-left: 20px; }
+
+  .kv { display: flex; gap: 6px; margin-bottom: 3px; font-size: 10pt; }
+  .kv b { min-width: 108px; }
+  .tight { margin-top: -4px; }
+</style>
+</head>
+<body>
+
+<!-- ======================= COVER ======================= -->
+<section class="cover">
+  <div class="mark"></div>
+  <h1>EasyCRM</h1>
+  <p class="sub">The complete guide</p>
+  <div class="line"></div>
+  <p class="blurb">
+    What EasyCRM is, what every part of it does, and why you would use it —
+    written for people who do not work in Salesforce and do not want to.
+  </p>
+  <div class="meta">
+    Covers every screen, every feature and every administration setting.<br>
+    Companion to the documentation site at hussnain-utechhub.github.io/easycrm-docs<br>
+    October 2026
+  </div>
+</section>
+
+<!-- ======================= CONTENTS ======================= -->
+<section class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><b>What EasyCRM is</b><div class="sub2">The problem it solves · how it is different · who uses it · the three roles</div></li>
+    <li><b>Getting in</b><div class="sub2">Signing in · forgotten passwords · signing out</div></li>
+    <li><b>Finding your way around</b><div class="sub2">The top bar · tabs · the home page · search · notifications · personal settings · apps</div></li>
+    <li><b>Working with records</b><div class="sub2">Lists · views · filters · columns · record pages · editing · creating · owners · activities · related records</div></li>
+    <li><b>Files</b><div class="sub2">Uploading · the three views · files on a record</div></li>
+    <li><b>Reports</b><div class="sub2">Report types · the builder · grouping · totals · filters · buckets · formulas · charts · export · sharing</div></li>
+    <li><b>Dashboards</b><div class="sub2">Tiles · filters · settings · whose data a dashboard counts</div></li>
+    <li><b>Administration</b><div class="sub2">All eighteen console tabs · page layouts · the sign-in designer · setup · licensing</div></li>
+    <li><b>How access really works</b><div class="sub2">Permissions versus sharing · the floor-and-raise model · diagnosing problems</div></li>
+    <li><b>Reading your data from another system</b><div class="sub2">API keys · what they can and cannot do</div></li>
+    <li><b>Glossary</b></li>
+  </ol>
+</section>
+
+<!-- ======================= 1 ======================= -->
+<h2><span class="num">1</span>What EasyCRM is</h2>
+<p class="lede">A customer portal that your whole company can use, without buying a Salesforce licence for everybody.</p>
+
+<h3>The short version</h3>
+<p>
+  EasyCRM is a website your company signs in to. It shows your customers, your contacts, your
+  tasks and meetings, your reports and your files — all in one place. It runs in an ordinary
+  web browser. There is nothing to install.
+</p>
+<p>
+  Underneath, the information lives in Salesforce. But the people using EasyCRM do not need
+  Salesforce logins, do not see Salesforce, and do not need to know it is there.
+</p>
+
+<h3>The problem it solves</h3>
+<p>
+  Salesforce charges per person. For a company where twenty people need to look things up,
+  but only three actually work inside Salesforce all day, that is expensive — and most of
+  those twenty only ever need a fraction of what Salesforce does.
+</p>
+<p>
+  EasyCRM gives those twenty people a simpler screen showing exactly the part they need. The
+  data is the same data. Change something in EasyCRM and it changes in Salesforce, and the
+  other way round.
+</p>
+
+<table>
+  <tr><th>Without EasyCRM</th><th>With EasyCRM</th></tr>
+  <tr><td>A licence for everybody who needs to look</td><td>Licences only for people who work in Salesforce</td></tr>
+  <tr><td>Everybody sees the whole of Salesforce</td><td>People see the records and fields you choose</td></tr>
+  <tr><td>Training people on a large product</td><td>A screen small enough to learn in ten minutes</td></tr>
+  <tr><td>Exports and spreadsheets going stale</td><td>Reports that read live data every time</td></tr>
+</table>
+
+<h3>Who uses it, and how much they can do</h3>
+<p>Everybody who signs in has one of three roles. The role decides what they can see and do.</p>
+
+<table class="wide">
+  <tr><th>Role</th><th>What they can do</th><th>Typical</th></tr>
+  <tr>
+    <td>Standard</td>
+    <td>See and work on their own records. Run reports shared with them. Upload files.</td>
+    <td>Most people.</td>
+  </tr>
+  <tr>
+    <td>Admin</td>
+    <td>Everything a Standard user can, plus manage the people at their own company — add
+        users, reset passwords, set what those people can see.</td>
+    <td>One or two per company.</td>
+  </tr>
+  <tr>
+    <td>Super&nbsp;Admin</td>
+    <td>Everything, for every company. Sets up companies, decides which console tabs the
+        Admins get, controls sharing and branding.</td>
+    <td>Whoever runs the portal.</td>
+  </tr>
+</table>
+
+<div class="note">
+  <p><b>Companies matter more than they look.</b> Everybody belongs to a company. An Admin
+  manages only their own company's people. Report folders are shared company by company. Apps
+  are assigned company by company. Somebody with a blank company field matches no company
+  rule at all — which is the single most common setup mistake, and it shows up as "they cannot
+  see anything" or "their Admin cannot find them".</p>
+</div>
+
+<h3>What is in it</h3>
+<table class="wide">
+  <tr><th>Part</th><th>What it is for</th></tr>
+  <tr><td>Records</td><td>Accounts, contacts, tasks, events — the information itself.</td></tr>
+  <tr><td>Lists</td><td>Many records at once, filtered and sorted how you want.</td></tr>
+  <tr><td>Reports</td><td>Saved questions about your data, grouped and totalled.</td></tr>
+  <tr><td>Dashboards</td><td>Several charts and numbers on one screen.</td></tr>
+  <tr><td>Files</td><td>Documents, attached to records or standing alone.</td></tr>
+  <tr><td>Admin Console</td><td>Eighteen areas controlling users, access, appearance and integrations.</td></tr>
+  <tr><td>API</td><td>A read-only way for another system to fetch your data.</td></tr>
+</table>
+
+<!-- ======================= 2 ======================= -->
+<h2><span class="num">2</span>Getting in</h2>
+<p class="lede">Signing in, and what to do when it does not work.</p>
+
+<h3>Signing in</h3>
+<p>Your administrator emails you a username and a password, plus the web address.</p>
+<ol>
+  <li>Open the web address in your browser.</li>
+  <li>Type your <b>username</b>. It is usually short, like <i>jsmith</i> — not your email
+      address, unless your administrator set it up that way.</li>
+  <li>Type your <b>password</b>. Click the eye symbol to check what you typed.</li>
+  <li>Click <b>Log In</b>.</li>
+</ol>
+
+<figure>
+  <img src="../docs/img/shots/login/sign-in.png" alt="The sign-in page">
+  <figcaption>The sign-in page. The left half is your company's own design; the right half is
+  always the same two boxes and a button.</figcaption>
+</figure>
+
+<h3>When the password is refused</h3>
+<p>A message appears in red. Nearly always it is one of three things:</p>
+<ul>
+  <li>A typing mistake — click the eye symbol and look.</li>
+  <li><b>Caps Lock</b> is on. Passwords care about capital letters.</li>
+  <li>An extra space at the start or end, from copying and pasting.</li>
+</ul>
+
+<h3>Forgotten passwords</h3>
+<ol>
+  <li>Click <b>Forgot password?</b> under the password box.</li>
+  <li>Type your username or email address.</li>
+  <li>Click <b>Send reset email</b>.</li>
+  <li>A new password arrives by email. Sign in with it, then change it.</li>
+</ol>
+<p>If no email arrives, check spam. Your administrator can also set a new password for you
+   directly — they never see it either; it is emailed to you.</p>
+
+<h3>Signing out</h3>
+<p>Click your name in the top right, then <b>Log Out</b>. Always do this on a shared computer.</p>
+
+<!-- ======================= 3 ======================= -->
+<h2><span class="num">3</span>Finding your way around</h2>
+<p class="lede">The bar across the top is the same on every page. Learn it once and you can reach everything.</p>
+
+<figure>
+  <img src="../docs/img/shots/home/overview.png" alt="The home page">
+  <figcaption>The home page, with the two rows of controls that appear on every screen.</figcaption>
+</figure>
+
+<h3>The top row</h3>
+<table class="wide">
+  <tr><th>Control</th><th>Where</th><th>What it does</th></tr>
+  <tr><td>Your logo</td><td>Far left</td><td>Takes you back to the home page.</td></tr>
+  <tr><td>Search</td><td>Middle</td><td>Finds any record by name, across every kind of record.</td></tr>
+  <tr><td>Gear</td><td>Right</td><td>Changes how the portal looks — to you only.</td></tr>
+  <tr><td>Bell</td><td>Right</td><td>Notifications. A red number means unread ones.</td></tr>
+  <tr><td>Your name</td><td>Far right</td><td>Settings, row spacing, and Log Out.</td></tr>
+</table>
+
+<h3>The second row — your tabs</h3>
+<p>
+  <b>Home</b>, then one tab per kind of record, then <b>Reports</b>, <b>Dashboards</b>, and
+  <b>Admin</b> if you are an administrator. The tab you are on is underlined.
+</p>
+<p>
+  Your tabs may not match somebody else's. An administrator chooses which tabs a company sees,
+  and your role affects it too.
+</p>
+
+<h3>The home page</h3>
+<table class="wide">
+  <tr><th>Card</th><th>Shows</th></tr>
+  <tr><td>Number tiles</td><td>How many records of each kind you can see. Click one to open that list.</td></tr>
+  <tr><td>My Tasks</td><td>Your open tasks. Overdue ones marked in red.</td></tr>
+  <tr><td>Recent Records</td><td>What you opened lately — usually the fastest way back.</td></tr>
+  <tr><td>Upcoming Events</td><td>Meetings on records you work with.</td></tr>
+  <tr><td>Announcement</td><td>A message your administrator has written for everybody.</td></tr>
+  <tr><td>Quick links</td><td>Shortcuts to each tab.</td></tr>
+</table>
+<p class="tight">An administrator chooses which of these appear, and can give each app its own home page.</p>
+
+<h3>Searching</h3>
+<p>
+  Click <b>Search</b>, type a few letters, and results appear underneath as you type, grouped
+  by kind of record. This searches everything you are allowed to see, so it is the quickest way
+  to find something when you are not sure which tab it is under.
+</p>
+
+<figure>
+  <img src="../docs/img/shots/shell/search.png" alt="Searching">
+  <figcaption>Search results appear as you type, grouped by kind of record.</figcaption>
+</figure>
+
+<h3>Making it look how you like</h3>
+<p>Click the gear. You can put the menu <b>across the top</b> or <b>down the left</b>, and pick
+   a colour theme. Under your name you can also set rows to <b>Comfy</b> or <b>Compact</b>.</p>
+<div class="note"><p>All of this changes only what <b>you</b> see. Nobody else is affected and
+   no data changes.</p></div>
+
+<h3>Apps</h3>
+<p>
+  An app is a named group of tabs. If your company uses them, a grid symbol beside the logo
+  lets you switch — Sales might show one set of tabs, Support another. If you only have one
+  app, there is nothing to switch to and the control does not appear.
+</p>
+
+<!-- ======================= 4 ======================= -->
+<h2><span class="num">4</span>Working with records</h2>
+<p class="lede">Records are the information itself. This is where most people spend their day.</p>
+
+<h3>Lists</h3>
+<p>Click a tab — <b>Accounts</b>, <b>Contacts</b>, <b>Task</b>, <b>Event</b> — and you get a table.</p>
+
+<figure>
+  <img src="../docs/img/shots/lists/accounts.png" alt="A list of accounts">
+  <figcaption>A list. The first column is the record's name, in blue, which means clickable.</figcaption>
+</figure>
+
+<h4>Views</h4>
+<p>
+  A tab holds several lists. <b>Recently Viewed</b> is only what you opened lately, so on a new
+  account it is often empty — that is normal. Click the list name at the top to switch; <b>All
+  Accounts</b> shows everything you are allowed to see. Click the pin to make a list your
+  default.
+</p>
+
+<h4>Filtering</h4>
+<p>
+  The funnel button opens the filter panel. A filter is three parts: a <b>field</b>, an
+  <b>operator</b> (equals, contains, greater than) and a <b>value</b>. Add as many as you like
+  — by default a record must match them all.
+</p>
+<p>
+  <b>Filter logic</b> changes that. Each filter has a number, and you write a rule with them:
+</p>
+<table>
+  <tr><th>Rule</th><th>Means</th></tr>
+  <tr><td>1 AND 2</td><td>Both must be true. The default.</td></tr>
+  <tr><td>1 OR 2</td><td>Either will do.</td></tr>
+  <tr><td>1 AND (2 OR 3)</td><td>Filter 1, plus either 2 or 3.</td></tr>
+  <tr><td>1 AND NOT 2</td><td>Filter 1, but not filter 2.</td></tr>
+</table>
+
+<h4>Columns, sorting and row actions</h4>
+<p>
+  The gear button chooses which columns the list shows and in what order — your choice is
+  remembered, and affects nobody else. Click a column heading to sort; click again to reverse.
+  The arrow at the end of a row opens a short menu of things you can do to just that record.
+</p>
+
+<h3>The record page</h3>
+<figure>
+  <img src="../docs/img/shots/records/accounts-detail.png" alt="A record">
+  <figcaption>A record: details on the left, activity on the right, related records below.</figcaption>
+</figure>
+
+<table class="wide">
+  <tr><th>Part</th><th>What it holds</th></tr>
+  <tr><td>Information</td><td>The record's fields, grouped into sections you can fold away.</td></tr>
+  <tr><td>Activity panel</td><td>Calls, tasks, meetings and emails about this record.</td></tr>
+  <tr><td>Related records</td><td>Other records linked to this one — the contacts at this account, for instance.</td></tr>
+  <tr><td>Back to list</td><td>Returns where you came from.</td></tr>
+  <tr><td>Edit</td><td>Changes the fields.</td></tr>
+  <tr><td>Change Owner</td><td>Moves the record to somebody else.</td></tr>
+</table>
+
+<p><b>Blue text always does something.</b> A record name opens that record. An email address
+   starts an email. A phone number starts a call. A web address opens in a new tab.</p>
+
+<h3>Changing a record</h3>
+<p>
+  Click <b>Edit</b>, change what you need, click <b>Save</b>. Or hover over one field, click the
+  small pencil, and change just that.
+</p>
+<div class="warn">
+  <p><b>There is no draft.</b> When you click Save it is live for everybody who can see the
+  record. There is no approval step and no undo.</p>
+</div>
+<p>
+  If a field will not change, either the system calculates it, or you do not have permission to
+  change it. If <b>Save</b> shows an error, it names the field — usually a required field left
+  empty, or a date in the wrong format. Your other changes are not lost.
+</p>
+
+<h3>Adding a record</h3>
+<p>
+  Click <b>New</b> on the list. Fill in the form — fields with a red line on the left are
+  required. Click <b>Save</b>.
+</p>
+<p>
+  If the record comes in more than one <b>kind</b>, you are asked which first. The kind decides
+  which fields you see, so a customer and a supplier can both be accounts without sharing one
+  cluttered form. If you are not asked, there is only one kind available to you.
+</p>
+<p>For more than a handful of records, use <b>CSV Import</b> instead — see part 8.</p>
+
+<h3>Who owns a record</h3>
+<p>
+  <b>Change Owner</b> moves a record to somebody else. This is not just a label: the owner
+  usually decides who can see the record. Under Private sharing, the new owner gains access and
+  the old owner may lose it.
+</p>
+<div class="note">
+  <p>If somebody says a record has "disappeared", a change of owner is the first thing to check.</p>
+</div>
+
+<h3>Calls, tasks and meetings</h3>
+<p>The panel on the right of every record is where the history lives.</p>
+<table class="wide">
+  <tr><th>Button</th><th>Use it for</th></tr>
+  <tr><td>Log a Call</td><td>A call that has <b>already happened</b>.</td></tr>
+  <tr><td>New Task</td><td>Something still <b>to do</b>, with a due date and an owner.</td></tr>
+  <tr><td>New Event</td><td>A meeting, with a start and an end time.</td></tr>
+  <tr><td>Email</td><td>A message about this record.</td></tr>
+</table>
+<p>
+  The <b>Filters</b> line narrows the timeline by date, type, or whether something is done.
+  <b>View All</b> opens the whole history on its own page, and <b>Expand All</b> opens every
+  entry so you can read the detail without clicking each one.
+</p>
+<p>
+  Tasks appear under <b>My Tasks</b> on the assignee's home page. Events appear under
+  <b>Upcoming Events</b>. Adding them against the record — rather than from the Task tab — keeps
+  them attached to the customer they concern, which is what makes the history useful later.
+</p>
+
+<h3>Related records</h3>
+<p>
+  At the bottom of a record are tables of other records linked to it. Click any name to open it.
+  An empty one says so — that means nothing is linked yet, not that something is broken. Which
+  related lists appear is set by an administrator, under page layouts.
+</p>
+
+<!-- ======================= 5 ======================= -->
+<h2><span class="num">5</span>Files</h2>
+<p class="lede">Documents, either standing alone or attached to the record they belong to.</p>
+
+<table class="wide">
+  <tr><th>View</th><th>Shows</th></tr>
+  <tr><td>Recent</td><td>What you opened lately.</td></tr>
+  <tr><td>Owned by Me</td><td>Files you uploaded — the quickest way back to your own.</td></tr>
+  <tr><td>All Files</td><td>Everything you are allowed to see.</td></tr>
+</table>
+
+<p>
+  <b>Upload Files</b> adds one from your computer. Click a file's name to preview it; the menu
+  beside it downloads or deletes it.
+</p>
+<p>
+  Attaching a file <b>to a record</b> is usually better. It then sits with the customer it
+  concerns, and access follows the record: anybody who can see the record can see the file,
+  anybody who cannot, cannot.
+</p>
+<div class="warn"><p>Deleting removes the file for everybody, not just you, and there is no undo.</p></div>
+
+<!-- ======================= 6 ======================= -->
+<h2><span class="num">6</span>Reports</h2>
+<p class="lede">A report is a saved question about your data. It reads live data every time, so it is never out of date.</p>
+
+<h3>Finding and running one</h3>
+<p>
+  Click <b>Reports</b>. Folders are on the left, reports on the right. Click a report's name and
+  it runs.
+</p>
+<table class="wide">
+  <tr><th>Folder</th><th>Who sees what is in it</th></tr>
+  <tr><td>Recent</td><td>Not a real folder — just what you opened lately.</td></tr>
+  <tr><td>Favorites</td><td>Reports you starred.</td></tr>
+  <tr><td>Private Reports</td><td>Only you.</td></tr>
+  <tr><td>Other folders</td><td>Whoever the folder is shared with.</td></tr>
+</table>
+<p>
+  While reading a report you can click <b>Filters</b> and change values. That changes only your
+  view, only until you leave the page. Some filters are <b>locked</b> by whoever built the
+  report and cannot be changed — that is how a report meant for one company stays limited to it.
+  <b>Refresh</b> fetches the very latest numbers.
+</p>
+
+<h3>Report types — the one decision you cannot undo easily</h3>
+<p>
+  A new report starts by asking what it is about. The <b>report type</b> decides which records
+  it can include and which fields are available.
+</p>
+<table class="wide">
+  <tr><th>Type</th><th>Includes</th></tr>
+  <tr><td>Accounts</td><td>Accounts and account fields only.</td></tr>
+  <tr><td>Accounts with Contacts</td><td>Both — but only accounts that <b>have</b> at least one contact.</td></tr>
+  <tr><td>Accounts with or without Contacts</td><td>Every account, whether or not it has contacts.</td></tr>
+</table>
+<div class="note">
+  <p>Choosing <b>with</b> when you meant <b>with or without</b> is the usual reason a report
+  shows fewer records than expected. Use "with or without" when you are looking for the gaps —
+  accounts nobody has a contact for.</p>
+</div>
+
+<h3>The builder</h3>
+<figure>
+  <img src="../docs/img/shots/report-builder/overview.png" alt="The report builder">
+  <figcaption>The builder. Outline and Filters on the left; a live preview on the right.</figcaption>
+</figure>
+
+<table class="wide">
+  <tr><th>Part</th><th>What it is for</th></tr>
+  <tr><td>Outline</td><td>Columns and groups — the shape of the report.</td></tr>
+  <tr><td>Filters</td><td>Which records are included.</td></tr>
+  <tr><td>Preview</td><td>What it will look like, updating as you work.</td></tr>
+  <tr><td>Run</td><td>The full result rather than a preview.</td></tr>
+  <tr><td>Save / Save&nbsp;As</td><td>Keep it, or take a copy under a new name.</td></tr>
+  <tr><td>Undo / Redo</td><td>Step back and forward. Nothing is saved until you click Save.</td></tr>
+</table>
+<p><b>Save As</b> is the safe way to experiment with somebody else's report: copy it, change
+   the copy, leave theirs alone.</p>
+
+<h3>Grouping and totals</h3>
+<p>
+  Grouping gathers rows that share a value. Totalling adds up a column, per group and overall.
+  Together they turn a list into an answer.
+</p>
+<table class="wide">
+  <tr><th>Shape</th><th>What it is</th><th>Use when</th></tr>
+  <tr><td>Tabular</td><td>A plain list, no groups</td><td>You want the records themselves.</td></tr>
+  <tr><td>Summary</td><td>Grouped down the side, with subtotals</td><td>You want totals per group.</td></tr>
+  <tr><td>Matrix</td><td>A grid, grouped down <b>and</b> across</td><td>The question has two dimensions.</td></tr>
+</table>
+<p class="tight">
+  You do not pick the shape from a menu — it follows from what you group. No groups is tabular;
+  row groups is summary; row and column groups is a matrix.
+</p>
+<p>
+  <b>Column actions</b> on a number column lets you total it: <b>Sum</b>, <b>Average</b>,
+  <b>Min</b> or <b>Max</b>. You can pick more than one.
+</p>
+
+<h3>Bucket columns</h3>
+<p>
+  A bucket column is one you invent. You take an existing field and say "these values are
+  Small, these are Medium, these are Large", and the report gains a column holding those names.
+</p>
+<p>
+  It lets you group and total by categories that matter to your business without anybody adding
+  a field to the database. Picklists are sorted by dragging values into buckets; numbers by
+  setting ranges; text by listing the values. Anything you do not place lands in <b>Unbucketed
+  Values</b> — always worth a look, because a large one usually means values you did not expect.
+</p>
+
+<h3>Formula columns</h3>
+<p>There are two kinds, and the difference matters more than anything else about them.</p>
+<table class="wide">
+  <tr><th>Kind</th><th>Calculates</th><th>Use for</th></tr>
+  <tr><td>Row-level</td><td>Once per <b>record</b></td><td>Days between two dates; a value times a rate.</td></tr>
+  <tr><td>Summary</td><td>Once per <b>group</b>, from the totals</td><td>A percentage of a total; a conversion rate.</td></tr>
+</table>
+<p>
+  The test: does the answer make sense for one record on its own? "How old is this?" — yes, so
+  row-level. "What share of the month is this rep?" — no, so summary. Picking the wrong one
+  gives a plausible but wrong number, which is worse than an error.
+</p>
+<p>A formula returning 0.25 displays as 25%. Do not also multiply by 100.</p>
+
+<h3>Charts</h3>
+<p>
+  A chart draws <b>groups</b>, so a report must be grouped before it can have one.
+  <b>Chart properties</b> sets the type and what it measures.
+</p>
+<table class="wide">
+  <tr><th>Type</th><th>Best for</th></tr>
+  <tr><td>Bar / Column</td><td>Comparing groups against each other.</td></tr>
+  <tr><td>Line</td><td>A value changing over time.</td></tr>
+  <tr><td>Pie / Donut</td><td>Parts of one whole — only with a few categories.</td></tr>
+  <tr><td>Gauge</td><td>Progress towards a target.</td></tr>
+</table>
+<p class="tight">If a report has several groupings you can choose which one the chart uses, so
+   the same report answers two questions.</p>
+
+<h3>Exporting and sharing</h3>
+<table class="wide">
+  <tr><th>Export kind</th><th>What you get</th></tr>
+  <tr><td>Formatted Report</td><td>What you see — groups, subtotals and headings kept.</td></tr>
+  <tr><td>Details Only</td><td>Just rows and columns. Better for sorting and pivoting.</td></tr>
+</table>
+<div class="warn">
+  <p>An exported file is an ordinary spreadsheet. None of your sharing rules or permissions
+  apply to it any more. Anybody who receives the file sees everything in it.</p>
+</div>
+<p>
+  <b>Share</b> gives another company Read or Edit on one report. <b>Revoke</b> takes it back.
+  Sharing a single report does not share its folder — for a whole set, share the folder, and
+  anything added later is included automatically.
+</p>
+
+<!-- ======================= 7 ======================= -->
+<h2><span class="num">7</span>Dashboards</h2>
+<p class="lede">Several charts and numbers on one screen, each reading from a report.</p>
+
+<figure>
+  <img src="../docs/img/shots/dashboard-builder/overview.png" alt="The dashboard builder">
+  <figcaption>The dashboard builder. Each tile reads from one report.</figcaption>
+</figure>
+
+<h3>Tiles</h3>
+<p><b>+ Widget</b> adds one. Choose the report it reads from, then how it should look.</p>
+<table class="wide">
+  <tr><th>Tile</th><th>Shows</th><th>Good for</th></tr>
+  <tr><td>Metric</td><td>One big number</td><td>A figure people watch daily.</td></tr>
+  <tr><td>Bar / Column</td><td>Groups side by side</td><td>Comparing.</td></tr>
+  <tr><td>Line</td><td>A value over time</td><td>Trends.</td></tr>
+  <tr><td>Pie / Donut</td><td>Parts of a whole</td><td>A few categories.</td></tr>
+  <tr><td>Gauge</td><td>Progress to a target</td><td>Targets.</td></tr>
+  <tr><td>Table</td><td>Rows from the report</td><td>Detail people need to read.</td></tr>
+</table>
+<div class="note">
+  <p>If a number on a tile looks wrong, open its <b>report</b>. That is where the figure comes
+  from; the tile is only drawing it.</p>
+</div>
+
+<h3>Filters, and the setting people miss</h3>
+<p>
+  A dashboard filter changes every tile at once — pick an owner or a region and the whole screen
+  narrows together.
+</p>
+<p>
+  But each tile reads from a different report, and those reports do not always name things the
+  same way. One might call it <b>Owner</b>, another <b>Assigned To</b>. <b>Apply to Each
+  Component</b> is where you say which field on each report the filter matches. Fields with the
+  same name are matched for you.
+</p>
+<div class="warn">
+  <p><b>A tile you leave unmapped ignores the filter</b> and keeps showing everything. Nine tiles
+  narrow and one does not — which looks like a bug to whoever is reading the dashboard. This is
+  the first place to check.</p>
+</div>
+
+<h3>Settings — whose data the dashboard counts</h3>
+<table class="wide">
+  <tr><th>View Dashboard As</th><th>What people see</th></tr>
+  <tr><td>The logged-in user</td><td>Each person sees their own numbers.</td></tr>
+  <tr><td>All data</td><td>Everybody sees the same totals, across every record.</td></tr>
+</table>
+<div class="warn">
+  <p><b>Getting this wrong is quiet.</b> A rep set to "all data" sees the whole company's
+  figures and has no reason to doubt them. A manager set to "the logged-in user" sees only their
+  own and assumes the team is idle. Neither shows an error.</p>
+</div>
+<p>
+  <b>Grid size</b> sets how finely tiles can be placed. <b>Dashboard Theme</b> and <b>Widget
+  Theme</b> are separate, so light tiles can sit on a dark page — a common look for a wall screen.
+</p>
+
+<!-- ======================= 8 ======================= -->
+<h2><span class="num">8</span>Administration</h2>
+<p class="lede">Eighteen console tabs, plus three areas that live elsewhere. Only Admins and Super Admins see any of it.</p>
+
+<figure>
+  <img src="../docs/img/shots/admin/console.png" alt="The Admin Console">
+  <figcaption>The Admin Console. A Super Admin sees all eighteen tabs; an Admin sees the ones
+  allowed for their company.</figcaption>
+</figure>
+
+<h3>Companies</h3>
+<p>
+  The companies whose people use the portal. Create the company <b>before</b> adding its people,
+  so you can set their company as you create them. <b>People</b> shows who belongs to one.
+</p>
+<div class="warn">
+  <p>Do not delete a company that still has people. Their company field goes blank, and a blank
+  company matches no rule — they stop seeing records, and their Admin stops being able to manage
+  them. Move the people first.</p>
+</div>
+
+<h3>Users</h3>
+<p>Everybody who can sign in. Add somebody with <b>+ New User</b>: username, email, role, company.</p>
+<table class="wide">
+  <tr><th>Action</th><th>What it does</th></tr>
+  <tr><td>Active switch</td><td>Switches somebody off. Use this when people leave — never delete, which would break their records and the audit history.</td></tr>
+  <tr><td>Key symbol</td><td>Emails them a new password. You never see it.</td></tr>
+  <tr><td>Person symbol</td><td>Shows you the portal exactly as they see it.</td></tr>
+  <tr><td>Assign Apps</td><td>Which apps the company may use.</td></tr>
+  <tr><td>Assign Record Types</td><td>Which kinds of record they may create.</td></tr>
+  <tr><td>Console Tabs</td><td>Which Admin Console tabs their Admins see.</td></tr>
+</table>
+<p>
+  <b>Logging in as somebody</b> is for reproducing a problem they have reported. Every attempt
+  is written to the Audit Log, allowed or refused, and anything done during that session records
+  both names. The person is not signed out and does not notice. A Super Admin can do it for
+  anyone; an Admin for the Standard users they manage and for Admins at their own company, never
+  for a Super Admin. It is switched off until a Super Admin turns it on.
+</p>
+<p class="tight"><b>Leaving an assignment list blank usually means "all", not "none".</b></p>
+
+<h3>Permissions</h3>
+<p>
+  What one person may <b>do</b> with each kind of record. This is set <b>per user</b>, not per
+  role, and the page is blank until you choose somebody.
+</p>
+
+<figure>
+  <img src="../docs/img/shots/admin/permissions-chosen.png" alt="Permissions for a chosen user">
+  <figcaption>Six columns, not four. The two notes at the bottom of the screen are important.</figcaption>
+</figure>
+
+<table class="wide">
+  <tr><th>Column</th><th>Lets them</th></tr>
+  <tr><td>Read</td><td>See the records.</td></tr>
+  <tr><td>Create</td><td>Add new ones.</td></tr>
+  <tr><td>Edit</td><td>Change existing ones.</td></tr>
+  <tr><td>Delete</td><td>Remove them permanently.</td></tr>
+  <tr><td>Edit Layout</td><td>Change the record page <b>for everybody</b>, not just themselves.</td></tr>
+  <tr><td>Editable Fields</td><td>Field-by-field control over what they may change.</td></tr>
+</table>
+<div class="note">
+  <p><b>Unticking is a baseline, not a lock.</b> If somebody also has a permission set granting
+  something, the permission set wins. If you untick something and it still works, look for a
+  permission set.</p>
+  <p><b>Greyed boxes are access you do not hold yourself.</b> You cannot grant what you do not
+  have — ask a Super Admin.</p>
+</div>
+<p>Be careful with <b>Delete</b>. It is permanent and most people never need it.</p>
+
+<h3>Permission sets and profiles</h3>
+<table class="wide">
+  <tr><th>Use</th><th>When</th></tr>
+  <tr><td>Profile</td><td>Everybody doing this job needs it. The baseline for a kind of person.</td></tr>
+  <tr><td>Permission set</td><td>A few people need extra. It only ever <b>adds</b>.</td></tr>
+  <tr><td>Permissions directly</td><td>One person, one object, one time.</td></tr>
+</table>
+<p class="tight">
+  Name profiles after the <b>job</b> ("Sales rep") and permission sets after <b>what they
+  grant</b> ("Can delete contacts") — those are what you are looking for when assigning them.
+</p>
+
+<h3>Sharing</h3>
+<p>
+  Sharing decides <b>which records</b> somebody sees. Permissions decide what they may do to
+  them. Six areas sit behind this one tab.
+</p>
+
+<h4>Org-Wide Defaults — the floor</h4>
+<table class="wide">
+  <tr><th>Setting</th><th>Means</th></tr>
+  <tr><td>Private</td><td>You see only records you own.</td></tr>
+  <tr><td>Public Read Only</td><td>Everybody sees them; only the owner changes them.</td></tr>
+  <tr><td>Public Read/Write</td><td>Everybody sees and changes them.</td></tr>
+</table>
+<p class="tight">
+  <b>Start Private and open it up.</b> It is far easier than working out later who should never
+  have had access. <b>Grant via Hierarchy</b> lets managers see what their team sees — leave it
+  on unless you have a reason not to.
+</p>
+
+<h4>Sharing rules — raising the floor</h4>
+<p>
+  A standing rule that opens access beyond the default, and keeps applying to new records.
+  Records can be chosen by <b>owner</b> ("everything the support team owns") or by
+  <b>criteria</b> ("every account in the North region"). Criteria rules keep working when people
+  change jobs. Set a rule <b>Inactive</b> rather than deleting it while you investigate.
+</p>
+
+<h4>Public groups and roles</h4>
+<p>
+  A <b>public group</b> is a named list of people, used by rules so you add somebody once rather
+  than editing every rule. Name it for who is in it ("Support Team"), not what it currently does.
+</p>
+<p>
+  <b>Roles</b> are a tree of who reports to whom. Access flows <b>upwards only</b> — a manager
+  sees what their people see, not the other way round. A role says whose records you can see; a
+  profile says what you may do with them. The two are deliberately separate.
+</p>
+
+<h4>Restriction rules — the only thing that takes access away</h4>
+<div class="warn">
+  <p>Everything else only ever adds. A restriction rule narrows, and from the user's side it
+  looks exactly like data loss. Test with one person, tell people first, and check with Record
+  Access afterwards.</p>
+</div>
+
+<h4>Record Access — the diagnostic</h4>
+<p>
+  Pick a record and it lists everybody who can see it and <b>why</b>: Owner, Org-Wide Default,
+  Sharing Rule, or Hierarchy. This is how you turn "I cannot see this" into an answer in ten
+  seconds — and the reason tells you exactly what to change.
+</p>
+
+<h3>Reports and Dashboards</h3>
+<p>
+  Which companies can see which report folders, with <b>Read</b> or <b>Edit</b>. <b>Current
+  access</b> shows who has what now. Sharing a folder covers everything in it, including
+  anything added later — less work, and less likely to be forgotten.
+</p>
+
+<h3>Appearance</h3>
+<table class="wide">
+  <tr><th>Tab</th><th>Controls</th></tr>
+  <tr><td>Branding</td><td>Five panels — name and logo, colour theme, navigation default, the sign-in page, and the sign-in designer — all saved with one <b>Save All Branding</b>.</td></tr>
+  <tr><td>Tabs</td><td>Which tabs appear and in what order. Two list boxes and <b>Save Tabs</b>.</td></tr>
+  <tr><td>Home</td><td>Which home-page cards appear. Two list boxes and <b>Save Home</b>. Each app can have its own.</td></tr>
+  <tr><td>Apps</td><td>Named groups of tabs, with <b>New App</b>.</td></tr>
+  <tr><td>Buttons</td><td>Your own buttons on record pages, with <b>New Button</b> — usually to open another system with the record loaded.</td></tr>
+</table>
+<p class="tight">
+  Hiding a tab hides the way in, not the data. People can still reach those records by search or
+  report. Use permissions and sharing for access.
+</p>
+
+<h3>Page layouts</h3>
+<p>
+  Reached from a <b>record</b>, not the console: open any record and click <b>Edit Page
+  Layout</b>. You choose which fields appear, group them into sections, and decide which related
+  lists show underneath. The <b>New Record Window</b> is set separately — keep it short.
+</p>
+<p>
+  Removing a field from a layout never deletes data; the value stays on the record and is simply
+  not displayed. <b>Reset to Default</b> loses your arrangement but touches no data.
+</p>
+<div class="warn"><p>What you change here applies to <b>everybody</b> who sees that kind of record.</p></div>
+
+<h3>The sign-in designer</h3>
+<p>
+  Build the sign-in page out of blocks — headings, text, logos, links, separators, spacers.
+  Three states keep it safe: <b>Save draft</b> (only you), <b>Live preview</b> (as you work),
+  and <b>Publish</b> (everybody). <b>Restore</b> puts back an earlier version. Check both
+  <b>Desktop</b> and <b>Phone</b> before publishing.
+</p>
+<div class="note">
+  <p>The username box, the password box and the <b>Log In</b> button cannot be moved, hidden or
+  imitated by anything you add. That is deliberate: no design change can turn the sign-in page
+  into something that collects passwords and sends them elsewhere.</p>
+</div>
+
+<h3>Data in and out</h3>
+<table class="wide">
+  <tr><th>Tab</th><th>What it does</th></tr>
+  <tr><td>CSV Import</td><td>Loads many records from a spreadsheet. Field names in the first row; save as CSV; match columns; import.</td></tr>
+  <tr><td>List Mappings</td><td>Standing column-to-field matching for lists that arrive repeatedly from the same source. Choose a company first.</td></tr>
+  <tr><td>Publish Schedule</td><td>Copies portal reports into Salesforce on a timetable. Off until somebody turns it on.</td></tr>
+</table>
+<div class="note">
+  <p><b>Import ten rows before you import ten thousand.</b> If the ten land correctly, import the
+  rest. Import <b>adds</b> records — it does not match and update, so importing the same file
+  twice gives two copies of everything.</p>
+</div>
+<p class="tight">
+  If a scheduled report is deleted, its schedule <b>pauses</b> rather than silently re-creating
+  the report somebody deliberately removed.
+</p>
+
+<h3>Audit Log</h3>
+<p>
+  Who did what, and when: sign-ins, failed sign-ins, password changes, administration changes,
+  and every "log in as" attempt. It cannot be edited, deleted or switched off by anybody,
+  including a Super Admin. That is the point of it.
+</p>
+
+<h3>Setup Assistant and licence limits</h3>
+<p>
+  Both live in <b>Salesforce</b>, not the portal. The <b>Setup Assistant</b> checks what the
+  portal itself is allowed to do — permissions on its own user, field access, whether the site is
+  active, whether email can be delivered. Run it after installing and after adding new fields,
+  which do not get access automatically.
+</p>
+<p>
+  <b>Licence limits</b> cap how many companies and users an installation may have. Reaching a
+  limit refuses <b>new</b> users with a message; nobody already created is affected.
+</p>
+
+<!-- ======================= 9 ======================= -->
+<h2><span class="num">9</span>How access really works</h2>
+<p class="lede">The one mental model worth holding. Nearly every "why can't they see it?" question comes down to this.</p>
+
+<h3>Two separate questions</h3>
+<table class="wide">
+  <tr><th>Question</th><th>Answered by</th></tr>
+  <tr><td><b>Which</b> records can they see?</td><td>Sharing — defaults, rules, groups, hierarchy.</td></tr>
+  <tr><td><b>What</b> may they do with them?</td><td>Permissions — read, create, edit, delete.</td></tr>
+</table>
+<p>
+  Somebody needs <b>both</b>. Read permission with no sharing shows an empty list. Sharing with
+  no read permission shows nothing at all. They look identical to the user and have completely
+  different fixes.
+</p>
+
+<h3>Floor, then raise, then — rarely — lower</h3>
+<ol>
+  <li><b>The default</b> sets the floor for everybody.</li>
+  <li><b>Sharing rules</b>, <b>groups</b> and the <b>role hierarchy</b> raise it for particular
+      people. None of these can ever lower it.</li>
+  <li><b>Restriction rules</b> are the only thing that lowers it again.</li>
+</ol>
+
+<h3>Diagnosing it in order</h3>
+<table class="wide">
+  <tr><th>Symptom</th><th>Look at</th></tr>
+  <tr><td>Nobody can sign in</td><td>Setup Assistant, and whether the site is active.</td></tr>
+  <tr><td>One person cannot sign in</td><td>Their <b>Active</b> switch in Users.</td></tr>
+  <tr><td>They are in, but a tab is missing</td><td>Tabs, Apps, or their role.</td></tr>
+  <tr><td>The tab opens but the list is empty</td><td><b>Sharing</b>. Use Record Access.</td></tr>
+  <tr><td>They can see it listed but cannot open it</td><td><b>Permissions</b> — Read on that object.</td></tr>
+  <tr><td>They can open it but cannot change it</td><td>Permissions — Edit, or Editable Fields.</td></tr>
+  <tr><td>A record "disappeared"</td><td>Its owner changed, or a restriction rule was added.</td></tr>
+  <tr><td>Cannot add a user, permissions look right</td><td>Licence limits.</td></tr>
+  <tr><td>A new field is not visible</td><td>Setup Assistant — field access is not automatic.</td></tr>
+</table>
+
+<!-- ======================= 10 ======================= -->
+<h2><span class="num">10</span>Reading your data from another system</h2>
+<p class="lede">An API key lets another system fetch your portal data automatically.</p>
+
+<p>
+  Under <b>API Integration</b> you create a key, attach it to a person, and choose exactly which
+  records and fields it may read. The other system uses the key; no human signs in.
+</p>
+<div class="note">
+  <p><b>Keys can only read.</b> Nothing can be changed or deleted through them. The worst a
+  leaked key can do is show somebody data — not alter it.</p>
+</div>
+<p>
+  The <b>Secret</b> is shown <b>once</b>, when the key is created. Copy it then. If it is lost
+  you cannot look it up — you must <b>Regenerate</b>, which issues a new secret and stops the old
+  one working immediately.
+</p>
+<table class="wide">
+  <tr><th>Action</th><th>When</th></tr>
+  <tr><td>Edit</td><td>Change which records and fields the key may read.</td></tr>
+  <tr><td>Regenerate</td><td>The secret may have been seen by the wrong person.</td></tr>
+  <tr><td>Revoke</td><td>The other system is being retired.</td></tr>
+</table>
+<p>
+  Attach a key to somebody with <b>only</b> the access the other system needs — a key on a Super
+  Admin can read everything. <b>API Usage</b> shows how much each key is used, by company and by
+  user, so you can spot a key nobody needs any more or one that has started looping.
+</p>
+
+<!-- ======================= 11 ======================= -->
+<h2><span class="num">11</span>Glossary</h2>
+<p class="lede">The words this guide uses, in plain terms.</p>
+
+<table class="wide">
+  <tr><th>Word</th><th>Means</th></tr>
+  <tr><td>Record</td><td>One thing — an account, a contact, a task, a meeting.</td></tr>
+  <tr><td>Object</td><td>A kind of record. "Account" is an object; "Acme Ltd" is a record.</td></tr>
+  <tr><td>Field</td><td>One piece of information on a record, such as Billing City.</td></tr>
+  <tr><td>List view</td><td>A saved set of records with chosen columns, filters and sorting.</td></tr>
+  <tr><td>Owner</td><td>The person a record belongs to. Usually decides who can see it.</td></tr>
+  <tr><td>Role</td><td>Where somebody sits in the management tree. Decides whose records they see.</td></tr>
+  <tr><td>Profile</td><td>The baseline access for a kind of person.</td></tr>
+  <tr><td>Permission set</td><td>Extra access given to particular people. Only ever adds.</td></tr>
+  <tr><td>Public group</td><td>A named list of people, used by sharing rules.</td></tr>
+  <tr><td>Org-wide default</td><td>The starting access for a kind of record, before any rule.</td></tr>
+  <tr><td>Sharing rule</td><td>A standing rule that widens access.</td></tr>
+  <tr><td>Restriction rule</td><td>A rule that narrows access. The only one that does.</td></tr>
+  <tr><td>Report type</td><td>What a report is about. Fixed when the report is created.</td></tr>
+  <tr><td>Grouping</td><td>Gathering rows that share a value, with a subtotal on each.</td></tr>
+  <tr><td>Bucket column</td><td>A column you invent, sorting values into groups you name.</td></tr>
+  <tr><td>Row-level formula</td><td>A calculation done once per record.</td></tr>
+  <tr><td>Summary formula</td><td>A calculation done once per group, from the totals.</td></tr>
+  <tr><td>Matrix</td><td>A report grouped down the side and across the top.</td></tr>
+  <tr><td>Widget / tile</td><td>One chart or number on a dashboard, reading from one report.</td></tr>
+  <tr><td>Page layout</td><td>Which fields and related lists a record page shows, for everybody.</td></tr>
+  <tr><td>App</td><td>A named group of tabs people can switch between.</td></tr>
+  <tr><td>API key</td><td>A read-only credential letting another system fetch data.</td></tr>
+</table>
+
+</body>
+</html>

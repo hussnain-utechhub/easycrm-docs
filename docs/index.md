@@ -1,30 +1,56 @@
 ---
 id: index
-title: Welcome
+title: EasyCRM documentation
 slug: /
 sidebar_position: 1
 ---
 
-# Welcome to EasyCRM
+# EasyCRM documentation
 
 EasyCRM is your company's portal. You sign in with a username and password, and you see your
-records, reports and files in one place.
+records, reports and files in one place. It runs in a web browser — there is nothing to install.
 
-You do not need to install anything. It runs in your web browser.
+This documentation is in two parts. Pick the one that matches what you are doing.
 
-## What you can do
+## Using EasyCRM
 
-| | |
+**For everybody who signs in.** Finding records, editing them, logging calls, building reports
+and dashboards, and managing your own account.
+
+Start with [Signing in](./use/start/sign-in.md), then
+[Getting around](./use/start/the-screen.md) — about five minutes, and it covers most of what
+you need day to day.
+
+| Section | Covers |
 |---|---|
-| **Records** | Look at your accounts, contacts, tasks and events. Add new ones and change existing ones. |
-| **Reports** | Build a report, run it, and save it for next time. |
-| **Dashboards** | Put charts and numbers on one screen. |
-| **Files** | Upload files and share them with your team. |
+| [Getting started](./use/start/sign-in.md) | Signing in, the screen, what you can see |
+| [Records](./use/records/lists.md) | Lists, filters, record pages, editing, creating |
+| [Calls, tasks and meetings](./use/activities/index.md) | Logging activity against a record |
+| [Reports](./use/reports/finding.md) | Finding, running and building reports |
+| [Dashboards](./use/dashboards/viewing.md) | Viewing and building dashboards |
+| [Files](./use/files/index.md) | Uploading and sharing documents |
+| [Your account](./use/account/profile.md) | Your profile, password and display settings |
 
-## Where to start
+## Administering EasyCRM
 
-New here? Read [Signing in](./getting-started/sign-in.md), then
-[Getting around](./getting-started/the-screen.md). That is about five minutes and covers most
-of what you need.
+**For Admins and Super Admins.** Setting up users and companies, deciding who can see what,
+designing record pages, branding the portal, and moving data in and out.
 
-Run the portal for your company? Go to [the Admin Console](./administration/console.md).
+Start with [The Admin Console](./admin/index.md).
+
+| Section | Covers |
+|---|---|
+| [Users](./admin/users/index.md) | Adding people, roles, passwords, support access |
+| [Companies](./admin/companies/index.md) | The companies whose people use the portal |
+| [Permissions](./admin/access/permissions.md) | What each person may **do** |
+| [Sharing](./admin/sharing/index.md) | Which **records** they may do it to |
+| [Page layouts](./admin/layouts/index.md) | What a record page shows |
+| [Appearance](./admin/appearance/branding.md) | Branding, tabs, apps, the sign-in page |
+| [Data in and out](./admin/data/csv-import.md) | Import, mappings, the API, publishing |
+| [Operations](./admin/operations/audit-log.md) | Audit log, setup checks, licensing |
+
+## If you are not sure which you are
+
+Open the portal and look at the row of tabs across the top. If there is an **Admin** tab, you
+are an Admin or a Super Admin and both halves apply to you. If there is not, you want
+**Using EasyCRM**.

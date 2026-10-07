@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EasyCRM — Website Playbook</title>
+<style>
+  @page { size:A4; margin:14mm 13mm 15mm 13mm; }
+  :root{
+    --ink:#121519; --mid:#596270; --soft:#8a93a0; --rule:#e2e6ec;
+    --blue:#2a6fb5; --blue-l:#eaf1f8;
+    --green:#1f8a4c; --green-l:#e9f7ee;
+    --amber:#b5760a; --amber-l:#fdf4e3;
+    --red:#c0304c; --red-l:#fdedf0;
+    --ink-l:#f5f7fa;
+  }
+  *{box-sizing:border-box}
+  body{font-family:"Segoe UI",-apple-system,system-ui,Arial,sans-serif;color:var(--ink);
+       font-size:10pt;line-height:1.5;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  /* ---------- cover ---------- */
+  .cover{height:252mm;display:flex;flex-direction:column;justify-content:center;page-break-after:always}
+  .cover .mark{width:50px;height:50px;border-radius:11px;background:var(--blue);margin-bottom:22px;position:relative}
+  .cover .mark::before{content:"";position:absolute;left:13px;top:16px;width:21px;height:2.4px;background:#fff;
+       box-shadow:0 6.5px 0 #fff,0 13px 0 #fff;border-radius:2px}
+  .cover h1{font-size:40pt;margin:0;letter-spacing:-1.2px;line-height:1}
+  .cover .sub{font-size:16pt;color:var(--mid);margin:8px 0 22px;font-weight:300}
+  .cover .line{height:4px;width:60px;background:var(--blue);margin-bottom:22px}
+  .cover .blurb{max-width:112mm;font-size:11.5pt;color:var(--mid);margin-bottom:30px}
+  .cover .stats{display:flex;gap:10px}
+  .cover .stat{flex:1;background:var(--ink-l);border-radius:7px;padding:12px 14px}
+  .cover .stat .n{font-size:21pt;font-weight:700;line-height:1;color:var(--blue)}
+  .cover .stat .l{font-size:8.4pt;color:var(--mid);margin-top:4px}
+
+  /* ---------- page furniture ---------- */
+  h2{font-size:22pt;margin:0 0 3px;page-break-before:always;page-break-after:avoid;letter-spacing:-.5px}
+  h2 .num{display:inline-block;min-width:30px;height:30px;line-height:30px;text-align:center;
+          background:var(--blue);color:#fff;border-radius:7px;font-size:13pt;margin-right:10px;vertical-align:3px}
+  h2+.lede{color:var(--mid);font-size:11pt;margin:0 0 16px;font-weight:300}
+  h3{font-size:12pt;margin:18px 0 7px;page-break-after:avoid}
+  h3::before{content:"";display:inline-block;width:3px;height:12px;background:var(--blue);
+             margin-right:7px;vertical-align:-1px;border-radius:2px}
+  p{margin:0 0 7px} ul{margin:0 0 8px;padding-left:16px} li{margin-bottom:3px}
+  strong{font-weight:650}
+
+  /* ---------- chips ---------- */
+  .chip{display:inline-block;font-size:7.6pt;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+        padding:2.5px 7px;border-radius:20px;white-space:nowrap}
+  .c-ok{background:var(--green-l);color:var(--green)}
+  .c-you{background:var(--amber-l);color:var(--amber)}
+  .c-no{background:var(--red-l);color:var(--red)}
+  .c-dec{background:var(--blue-l);color:var(--blue)}
+
+  /* ---------- status board ---------- */
+  .board{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  .card{border:1px solid var(--rule);border-radius:8px;padding:10px 12px;page-break-inside:avoid}
+  .card .t{font-weight:650;font-size:10.2pt;margin-bottom:3px}
+  .card .d{font-size:8.9pt;color:var(--mid);line-height:1.42}
+  .card .f{margin-top:7px}
+
+  /* ---------- copy blocks ---------- */
+  .copy{background:var(--ink);color:#fff;border-radius:10px;padding:16px 18px;margin:10px 0 14px;page-break-inside:avoid}
+  .copy .h{font-size:16pt;font-weight:650;line-height:1.22;letter-spacing:-.3px}
+  .copy .s{font-size:10.2pt;color:#c3cbd6;margin-top:7px;line-height:1.5}
+  .copy.alt{background:var(--blue-l);color:var(--ink);border:1px solid #cfe0ef}
+  .copy.alt .s{color:var(--mid)}
+
+  /* ---------- tables ---------- */
+  table{width:100%;border-collapse:collapse;margin:8px 0 12px;font-size:9.3pt;page-break-inside:avoid}
+  th{text-align:left;font-weight:650;font-size:8.4pt;text-transform:uppercase;letter-spacing:.5px;
+     color:var(--soft);padding:0 8px 5px;border-bottom:1.5px solid var(--rule)}
+  td{border-bottom:1px solid var(--rule);padding:6px 8px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.k{font-weight:650;width:30%}
+  table.cmp td:first-child{font-weight:650;color:var(--mid);width:24%;font-size:8.8pt}
+
+  /* ---------- callouts ---------- */
+  .cal{border-radius:8px;padding:10px 13px;margin:10px 0 13px;font-size:9.5pt;page-break-inside:avoid;
+       border-left:4px solid}
+  .cal .lbl{display:block;font-size:7.8pt;font-weight:700;text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px}
+  .cal p:last-child{margin-bottom:0}
+  .k-ok{background:var(--green-l);border-color:var(--green)} .k-ok .lbl{color:var(--green)}
+  .k-you{background:var(--amber-l);border-color:var(--amber)} .k-you .lbl{color:var(--amber)}
+  .k-no{background:var(--red-l);border-color:var(--red)} .k-no .lbl{color:var(--red)}
+  .k-tip{background:var(--blue-l);border-color:var(--blue)} .k-tip .lbl{color:var(--blue)}
+
+  /* ---------- do / dont ---------- */
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:9px 0 13px}
+  .dd>div{border-radius:8px;padding:10px 12px;font-size:9.3pt}
+  .dd .y{background:var(--green-l)} .dd .n{background:var(--red-l)}
+  .dd h5{margin:0 0 6px;font-size:8.6pt;text-transform:uppercase;letter-spacing:.6px}
+  .dd .y h5{color:var(--green)} .dd .n h5{color:var(--red)}
+  .dd ul{padding-left:14px;margin:0}
+
+  /* ---------- formula ---------- */
+  .calc{background:var(--ink-l);border-radius:8px;padding:13px 15px;margin:10px 0 13px;page-break-inside:avoid}
+  .calc .row{display:flex;align-items:baseline;gap:9px;margin-bottom:6px;font-size:10pt}
+  .calc .tag{width:22px;height:22px;line-height:22px;text-align:center;border-radius:5px;
+             background:var(--blue);color:#fff;font-weight:700;font-size:9pt;flex:none}
+  .calc .eq{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule);font-size:11pt;font-weight:650}
+  .calc .eq span{color:var(--blue)}
+
+  /* ---------- numbered steps ---------- */
+  .steps{counter-reset:s;margin:10px 0 13px}
+  .steps .s{counter-increment:s;display:flex;gap:11px;margin-bottom:9px;page-break-inside:avoid}
+  .steps .s::before{content:counter(s);flex:none;width:24px;height:24px;line-height:24px;text-align:center;
+       background:var(--blue);color:#fff;border-radius:50%;font-weight:700;font-size:9.5pt}
+  .steps .s b{display:block;font-size:10.2pt}
+  .steps .s span{font-size:9.3pt;color:var(--mid)}
+
+  .toc{page-break-after:always}
+  .toc h2{page-break-before:avoid}
+  .tocg{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
+  .tocg div{border:1px solid var(--rule);border-radius:7px;padding:8px 11px;font-size:9.4pt}
+  .tocg b{display:block;font-size:10pt}
+  .tocg span{color:var(--soft);font-size:8.6pt}
+</style>
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<section class="cover">
+  <div class="mark"></div>
+  <h1>EasyCRM</h1>
+  <p class="sub">Website playbook</p>
+  <div class="line"></div>
+  <p class="blurb">Ready-to-use copy for every page, the competitive argument you are missing,
+     and a short list of facts only you can supply.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">10</div><div class="l">review points answered</div></div>
+    <div class="stat"><div class="n">8</div><div class="l">pages drafted</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">decisions needed from you</div></div>
+  </div>
+</section>
+
+<!-- ================= TOC ================= -->
+<section class="toc">
+  <h2><span class="num">·</span>Contents</h2>
+  <p class="lede">One page of this document per page of the site.</p>
+  <div class="tocg">
+    <div><b>1 · Status board</b><span>All ten review points at a glance</span></div>
+    <div><b>2 · Positioning</b><span>The one sentence</span></div>
+    <div><b>3 · Home</b><span>Headline, benefits, proof, CTA</span></div>
+    <div><b>4 · Features</b><span>Grouped for a buyer</span></div>
+    <div><b>5 · How it works</b><span>Five steps</span></div>
+    <div><b>6 · Pricing</b><span>Model + savings calculator</span></div>
+    <div><b>7 · For agencies</b><span>The multi-company angle</span></div>
+    <div><b>8 · Security</b><span>What you can say today</span></div>
+    <div><b>9 · vs Experience Cloud</b><span>The question everyone asks</span></div>
+    <div><b>10 · FAQ</b><span>Including the awkward ones</span></div>
+    <div><b>11 · The .ai domain</b><span>Three honest options</span></div>
+    <div><b>12 · Screenshots + legal</b><span>Fixes and trademark rules</span></div>
+  </div>
+</section>
+
+<!-- ================= 1 BOARD ================= -->
+<h2><span class="num">1</span>Status board</h2>
+<p class="lede">Every review point, and who has to act.</p>
+
+<div class="board">
+  <div class="card"><div class="t">Experience Cloud comparison</div>
+    <div class="d">Full page drafted, including when it is the better choice.</div>
+    <div class="f"><span class="chip c-ok">Ready · §9</span></div></div>
+
+  <div class="card"><div class="t">Calls to action</div>
+    <div class="d">Primary and secondary chosen, placed on every page.</div>
+    <div class="f"><span class="chip c-ok">Ready · §3</span></div></div>
+
+  <div class="card"><div class="t">Site structure</div>
+    <div class="d">Eight pages, one section each, with copy.</div>
+    <div class="f"><span class="chip c-ok">Ready · §3–10</span></div></div>
+
+  <div class="card"><div class="t">Trademark safety</div>
+    <div class="d">Wording rules and a footer disclaimer.</div>
+    <div class="f"><span class="chip c-ok">Ready · §12</span></div></div>
+
+  <div class="card"><div class="t">Pricing</div>
+    <div class="d">Three models and a recommendation. Numbers are yours.</div>
+    <div class="f"><span class="chip c-you">Your input · §6</span></div></div>
+
+  <div class="card"><div class="t">Savings numbers</div>
+    <div class="d">Calculator specified. Needs your price and currency.</div>
+    <div class="f"><span class="chip c-you">Your input · §6</span></div></div>
+
+  <div class="card"><div class="t">Security &amp; compliance</div>
+    <div class="d">Architecture answers drafted. Certifications are a fact, not a claim.</div>
+    <div class="f"><span class="chip c-you">Your input · §8</span></div></div>
+
+  <div class="card"><div class="t">Screenshots</div>
+    <div class="d">Demo dataset specified. I regenerate them in one run.</div>
+    <div class="f"><span class="chip c-you">Your input · §12</span></div></div>
+
+  <div class="card"><div class="t">The .ai domain</div>
+    <div class="d">Three options. A positioning call, not a copy fix.</div>
+    <div class="f"><span class="chip c-dec">Decision · §11</span></div></div>
+
+  <div class="card"><div class="t">Proof — logos, quotes, results</div>
+    <div class="d">Must be real. Section 3 shows what to use meanwhile.</div>
+    <div class="f"><span class="chip c-no">Will not fabricate</span></div></div>
+</div>
+
+<div class="cal k-no">
+  <span class="lbl">The one thing I will not write</span>
+  <p>Testimonials, logos and case studies have to be real. Inventing them loses the deal the
+  moment a prospect checks, and in several markets it is unlawful.</p>
+</div>
+
+<h3>If you do only three things</h3>
+<div class="steps">
+  <div class="s"><div><b>Publish a price</b><span>Even a band plus "contact us for larger teams". Silence loses the buyers who never make contact.</span></div></div>
+  <div class="s"><div><b>Get one real customer quote</b><span>One named sentence outperforms the entire features page.</span></div></div>
+  <div class="s"><div><b>Reshoot the screenshots</b><span>A day's work. The cheapest credibility you will ever buy.</span></div></div>
+</div>
+
+<!-- ================= 2 POSITIONING ================= -->
+<h2><span class="num">2</span>Positioning</h2>
+<p class="lede">Everything downstream depends on this sentence.</p>
+
+<div class="copy">
+  <div class="h">Give your whole company access to your Salesforce data — without buying everyone a Salesforce licence.</div>
+  <div class="s">EasyCRM is a branded portal onto your real Salesforce records. Your data never leaves your org.</div>
+</div>
+
+<table>
+  <tr><th>Why it works</th><th></th></tr>
+  <tr><td class="k">Names the pain</td><td>Licence cost — not the mechanism.</td></tr>
+  <tr><td class="k">Pre-empts objection #1</td><td>"Where does my data go?" Nowhere.</td></tr>
+  <tr><td class="k">Repels the wrong visitor</td><td>Which is a feature, not a cost.</td></tr>
+</table>
+
+<div class="dd">
+  <div class="y"><h5>Say</h5><ul>
+    <li>"Access without per-user licences"</li>
+    <li>"Your data never leaves Salesforce"</li>
+  </ul></div>
+  <div class="n"><h5>Avoid</h5><ul>
+    <li>"A customer portal for Salesforce" — describes Experience Cloud too</li>
+    <li>Anything that invites the comparison before you frame it</li>
+  </ul></div>
+</div>
+
+<h3>Three audiences, three entry points</h3>
+<table>
+  <tr><th>Who</th><th>Cares about</th><th>Lands on</th></tr>
+  <tr><td class="k">Salesforce admin</td><td>Setup effort, security, what breaks</td><td>How it works · Security</td></tr>
+  <tr><td class="k">Finance / ops</td><td>Licence spend, payback</td><td>Pricing · Calculator</td></tr>
+  <tr><td class="k">Agency</td><td>Many clients, one org</td><td>For agencies</td></tr>
+</table>
+
+<!-- ================= 3 HOME ================= -->
+<h2><span class="num">3</span>Home</h2>
+<p class="lede">One job: make the right visitor book a demo.</p>
+
+<div class="copy">
+  <div class="h">Your team needs the data.<br>Not a Salesforce licence each.</div>
+  <div class="s">EasyCRM is a branded portal onto your own Salesforce org. Same records, same
+  moment, a fraction of the seats. Nothing to install — and your data never leaves Salesforce.</div>
+</div>
+
+<table>
+  <tr><th>Button</th><th>Label</th></tr>
+  <tr><td class="k">Primary</td><td>Book a 20-minute demo</td></tr>
+  <tr><td class="k">Secondary</td><td>See how it works</td></tr>
+</table>
+
+<h3>The six benefits</h3>
+<div class="board">
+  <div class="card"><div class="t">Cost</div><div class="d">Buy Salesforce seats for the people who actually work in Salesforce.</div></div>
+  <div class="card"><div class="t">Simplicity</div><div class="d">A screen small enough to learn in ten minutes.</div></div>
+  <div class="card"><div class="t">Live data</div><div class="d">Every list and report reads your org the moment it opens.</div></div>
+  <div class="card"><div class="t">Control</div><div class="d">Per-person permissions, record sharing, roles, restriction rules.</div></div>
+  <div class="card"><div class="t">Your brand</div><div class="d">Your name, logo, colours and a sign-in page you design.</div></div>
+  <div class="card"><div class="t">No code</div><div class="d">Fields, layouts, tabs, reports — all configured on screen.</div></div>
+</div>
+
+<div class="cal k-you">
+  <span class="lbl">Proof — use what is verifiably true</span>
+  <p><b>"In production with [N] companies on one installation."</b> · <b>"Managing [N] accounts
+  and [N] contacts in live orgs."</b> · An AppExchange badge, if you have one. · One short,
+  <i>named</i> quote from a real pilot customer.</p>
+  <p style="margin-top:5px"><b>Ask your first pilot for that quote this month.</b> It is the
+  biggest single gap on the site.</p>
+</div>
+
+<!-- ================= 4 FEATURES ================= -->
+<h2><span class="num">4</span>Features</h2>
+<p class="lede">A hundred items is a wall. Lead with six groups.</p>
+
+<table>
+  <tr><th>Group</th><th>The promise</th></tr>
+  <tr><td class="k">Records</td><td>Lists, filters, record pages and activity history.</td></tr>
+  <tr><td class="k">Reporting</td><td>A real builder: grouping, totals, formulas, charts, export.</td></tr>
+  <tr><td class="k">Dashboards</td><td>Several answers on one screen, filtered together.</td></tr>
+  <tr><td class="k">Security</td><td>Permissions, sharing, roles — and a tool showing who sees what, and why.</td></tr>
+  <tr><td class="k">Branding</td><td>Your identity throughout, including a designed sign-in page.</td></tr>
+  <tr><td class="k">Integration</td><td>Spreadsheet import, read-only API, scheduled publishing.</td></tr>
+</table>
+<p style="font-size:9.3pt;color:var(--mid)">Full list behind a "see all features" link.</p>
+
+<div class="cal k-tip">
+  <span class="lbl">Two features deserve their own callout</span>
+  <p><b>Record-access diagnostics.</b> Pick any record, see everybody who can access it and
+  <i>why</i>. Every admin who has been asked "why can they see this?" will recognise it.</p>
+  <p><b>Multi-company from one installation.</b> The agency story — currently invisible on the
+  site. See §7.</p>
+</div>
+
+<!-- ================= 5 HOW IT WORKS ================= -->
+<h2><span class="num">5</span>How it works</h2>
+<p class="lede">Short page. Removes the biggest objection.</p>
+
+<div class="steps">
+  <div class="s"><div><b>Install</b><span>A managed package goes into your Salesforce org.</span></div></div>
+  <div class="s"><div><b>Configure</b><span>Choose which objects, fields and tabs the portal shows.</span></div></div>
+  <div class="s"><div><b>Add people</b><span>Create portal users; set what each may see and do.</span></div></div>
+  <div class="s"><div><b>Brand it</b><span>Name, logo, colours, sign-in page.</span></div></div>
+  <div class="s"><div><b>Share the link</b><span>People sign in with a username and password.</span></div></div>
+</div>
+
+<div class="copy alt">
+  <div class="h">Your data never leaves Salesforce.</div>
+  <div class="s">EasyCRM reads and writes your org directly. No second database, no nightly
+  sync, no copy of your records on our servers.</div>
+</div>
+
+<div class="cal k-ok">
+  <span class="lbl">Lead with this</span>
+  <p>It answers most security questions before they are asked, and it is a real architectural
+  difference from any tool that mirrors your data.</p>
+</div>
+
+<div class="cal k-you">
+  <span class="lbl">Needs you</span>
+  <p><b>Setup time.</b> "Live in a day" is strong and a fair question. Use the honest number
+  from a real installation.</p>
+</div>
+
+<!-- ================= 6 PRICING ================= -->
+<h2><span class="num">6</span>Pricing</h2>
+<p class="lede">The biggest gap — and the one I cannot fill for you.</p>
+
+<table>
+  <tr><th>Model</th><th>Fits when</th><th>Risk</th></tr>
+  <tr><td class="k">Per portal user</td><td>Buyers compare it to a seat</td><td>Re-creates the problem you sell against</td></tr>
+  <tr><td class="k">Flat, banded</td><td>You want "unlimited users" as the headline</td><td>Bands must scale fairly</td></tr>
+  <tr><td class="k">Per company</td><td>Agencies, one installation</td><td>Needs its own page</td></tr>
+</table>
+
+<div class="cal k-tip">
+  <span class="lbl">Recommendation</span>
+  <p><b>Flat, banded by portal users, unlimited named users inside a band.</b> It makes
+  "add your whole team without adding seats" structurally true.</p>
+</div>
+
+<h3>The savings calculator</h3>
+<div class="calc">
+  <div class="row"><span class="tag">A</span> People who need access to the data</div>
+  <div class="row"><span class="tag">B</span> People who genuinely work <i>inside</i> Salesforce</div>
+  <div class="row"><span class="tag">C</span> Their current cost per seat, per month</div>
+  <div class="eq">Saving = <span>(A &minus; B) &times; C &times; 12</span> &minus; EasyCRM annual</div>
+</div>
+
+<div class="dd">
+  <div class="y"><h5>Keeps it credible</h5><ul>
+    <li>Let them enter their <b>own</b> seat cost</li>
+    <li>Show <b>net</b> — subtract your price</li>
+  </ul></div>
+  <div class="n"><h5>Destroys it</h5><ul>
+    <li>Hard-coding a Salesforce price</li>
+    <li>Showing gross savings and hiding yours</li>
+  </ul></div>
+</div>
+
+<div class="cal k-you">
+  <span class="lbl">Needs you</span>
+  <p>Your price, bands and currency. Send them and I will write the page with worked examples
+  at 50, 200 and 1,000 users.</p>
+</div>
+
+<!-- ================= 7 AGENCIES ================= -->
+<h2><span class="num">7</span>For agencies</h2>
+<p class="lede">A different buyer with a different problem.</p>
+
+<div class="copy">
+  <div class="h">One installation. Every client.<br>Each sees only their own.</div>
+  <div class="s">Set each client up as a company. Their people see only their records, reports
+  and branding — and their admins manage only their own users.</div>
+</div>
+
+<table>
+  <tr><th>Capability</th><th>Why an agency cares</th></tr>
+  <tr><td class="k">Company-scoped everything</td><td>Apps, tabs, report folders, admin tabs — all per company.</td></tr>
+  <tr><td class="k">Account scoping</td><td>Each client sees only records tied to their account.</td></tr>
+  <tr><td class="k">Delegated admin</td><td>Client admins manage their own users and nobody else's.</td></tr>
+  <tr><td class="k">Per-company branding</td><td>Each client gets a portal that looks like theirs.</td></tr>
+  <tr><td class="k">Licence limits</td><td>Caps per company, so nobody quietly outgrows a plan.</td></tr>
+</table>
+
+<div class="cal k-tip">
+  <span class="lbl">This page may matter more than the main one</span>
+  <p>One agency sale brings many end users. The architecture already exists — it is simply
+  invisible to anyone reading the site.</p>
+</div>
+
+<!-- ================= 8 SECURITY ================= -->
+<h2><span class="num">8</span>Security</h2>
+<p class="lede">Half of this you can publish today.</p>
+
+<table>
+  <tr><th>Question</th><th>Answer</th></tr>
+  <tr><td class="k">Where is our data?</td><td>In your own Salesforce org. We keep no copy.</td></tr>
+  <tr><td class="k">Who sees what?</td><td>Per-person permissions and record sharing, with a tool showing who can access any record and why.</td></tr>
+  <tr><td class="k">Can they change things?</td><td>Only what you allow — down to individual fields.</td></tr>
+  <tr><td class="k">Audit trail?</td><td>Yes. Cannot be edited or switched off by anybody.</td></tr>
+  <tr><td class="k">Time / location limits?</td><td>Sign-in hours and IP ranges, per profile.</td></tr>
+  <tr><td class="k">Brute force?</td><td>Accounts lock after repeated failures; sessions expire.</td></tr>
+  <tr><td class="k">Can the API write?</td><td>No. API keys are read-only.</td></tr>
+</table>
+
+<div class="cal k-you">
+  <span class="lbl">Do not guess at these</span>
+  <p><b>GDPR</b> — you need a DPA and a statement of what you can access during support.<br>
+  <b>SOC 2</b> — say which is true: have it, in progress, or not started. "SOC 2 compliant"
+  without a report is indefensible.<br>
+  <b>Hosting</b> · <b>Support terms</b> · <b>Salesforce security review</b>, if you are listed.</p>
+</div>
+
+<!-- ================= 9 vs EXPERIENCE CLOUD ================= -->
+<h2><span class="num">9</span>vs Experience Cloud</h2>
+<p class="lede">The first question any Salesforce person asks. Answer it before a competitor does.</p>
+
+<table class="cmp">
+  <tr><th></th><th>Experience Cloud</th><th>EasyCRM</th></tr>
+  <tr><td>Licensing</td><td>Per member or per login, on top of Salesforce</td><td>No per-user Salesforce licence for portal users</td></tr>
+  <tr><td>Built for</td><td>Full communities — content, self-service, forums</td><td>Records, reports and files</td></tr>
+  <tr><td>Setup</td><td>Site builder, templates, sharing sets, often a partner</td><td>Install, configure on screen, invite users</td></tr>
+  <tr><td>Configured by</td><td>Usually a developer or consultant</td><td>An administrator</td></tr>
+  <tr><td>Multi-company</td><td>Possible, typically several sites</td><td>Built in, one installation</td></tr>
+</table>
+
+<div class="copy alt">
+  <div class="h">When Experience Cloud is the better choice</div>
+  <div class="s">If you need a public community, knowledge base, forums or heavy self-service
+  branding, use Experience Cloud. EasyCRM is for giving a lot of people straightforward access
+  to records and reports, cheaply and quickly.</div>
+</div>
+
+<div class="cal k-tip">
+  <span class="lbl">Why concede that</span>
+  <p>A comparison that concedes nothing reads as marketing. One that concedes something
+  specific reads as expertise — and makes the rest of the page believable.</p>
+</div>
+
+<div class="cal k-you">
+  <span class="lbl">Verify before publishing</span>
+  <p>Salesforce licence types and prices change. Do not publish figures without checking them
+  that day, and date the page. A stale competitor price invites a correction that undermines
+  everything else.</p>
+</div>
+
+<!-- ================= 10 FAQ ================= -->
+<h2><span class="num">10</span>FAQ</h2>
+<p class="lede">Including the awkward ones. Burying them does not stop people asking.</p>
+
+<table>
+  <tr><th>Question</th><th>Answer</th></tr>
+  <tr><td class="k">Need a Salesforce licence?</td><td>No. Portal users sign in with their own username and password.</td></tr>
+  <tr><td class="k">Where does data live?</td><td>In your Salesforce org. No second database, no copy.</td></tr>
+  <tr><td class="k">Is it real-time?</td><td>Yes — every screen reads your org when it opens.</td></tr>
+  <tr><td class="k">Can they edit?</td><td>Only where you allow it, down to individual fields.</td></tr>
+  <tr><td class="k">If we stop using it?</td><td>Your data is already in your org and stays there.</td></tr>
+  <tr><td class="k">Works on a phone?</td><td>Yes, in the browser.</td></tr>
+  <tr><td class="k">Client sees only their data?</td><td>Yes — users can be tied to an account.</td></tr>
+  <tr><td class="k">Affiliated with Salesforce?</td><td>No. An independent product that works with Salesforce.</td></tr>
+  <tr><td class="k">Setup time?</td><td><span class="chip c-you">your number</span></td></tr>
+  <tr><td class="k">On AppExchange?</td><td><span class="chip c-you">yes + link, or "in progress"</span></td></tr>
+  <tr><td class="k">Pricing?</td><td><span class="chip c-you">your model</span></td></tr>
+</table>
+
+<!-- ================= 11 .AI ================= -->
+<h2><span class="num">11</span>The .ai domain</h2>
+<p class="lede">A fair criticism. Three honest answers, one dishonest one.</p>
+
+<table>
+  <tr><th>Option</th><th>Means</th><th>Cost</th></tr>
+  <tr><td class="k">A · Build something</td><td>Ship one genuine AI feature and lead with it</td><td>Engineering time</td></tr>
+  <tr><td class="k">B · Say nothing</td><td>Treat .ai as a short modern domain; never imply more</td><td>Free</td></tr>
+  <tr><td class="k">C · Change domain</td><td>Move to .com or .io</td><td>Domain + migration</td></tr>
+</table>
+
+<div class="cal k-no">
+  <span class="lbl">The dishonest option</span>
+  <p>Sprinkling "AI-powered" over search or filtering. Buyers ask what the AI does within one
+  question, and a vague answer costs more trust than having no AI at all.</p>
+</div>
+
+<h3>If you take option A, these fit the product</h3>
+<table>
+  <tr><th>Candidate</th><th>Why it fits</th></tr>
+  <tr><td class="k">Ask a question, get a report</td><td>"Accounts with no activity in 60 days" builds it. The builder exists — this is a front end.</td></tr>
+  <tr><td class="k">Summarise a record</td><td>An activity timeline into three sentences. Self-contained.</td></tr>
+  <tr><td class="k">Explain this access</td><td>Plain English for "why can they see this?", from data you already compute.</td></tr>
+</table>
+
+<div class="cal k-tip">
+  <span class="lbl">Recommendation</span>
+  <p><b>Option B now, option A next.</b> Say nothing about AI until something ships. Then make
+  "ask a question, get a report" the headline — it justifies the domain and is the smallest of
+  the three to build.</p>
+</div>
+
+<!-- ================= 12 SCREENSHOTS + LEGAL ================= -->
+<h2><span class="num">12</span>Screenshots &amp; legal</h2>
+<p class="lede">The easiest fix on the list, and the one rule you must not get wrong.</p>
+
+<h3>Why the current screenshots fail</h3>
+<table>
+  <tr><th>Problem</th><th>What a buyer reads</th></tr>
+  <tr><td class="k">"DDT Account 100"</td><td>A test harness, not a product.</td></tr>
+  <tr><td class="k">Raw record IDs</td><td>Unfinished.</td></tr>
+  <tr><td class="k">Empty columns</td><td>The product shows blank fields.</td></tr>
+  <tr><td class="k">Thin reports</td><td>Undersells your strongest feature.</td></tr>
+</table>
+
+<h3>Demo dataset to seed</h3>
+<table>
+  <tr><th>Object</th><th>Needs</th></tr>
+  <tr><td class="k">Accounts</td><td>~40 believable companies, with industry, city, phone, website.</td></tr>
+  <tr><td class="k">Contacts</td><td>2–4 per account, real-looking titles and company-domain emails.</td></tr>
+  <tr><td class="k">Tasks / events</td><td>"Follow up on renewal quote" — recent dates, some overdue.</td></tr>
+  <tr><td class="k">Reports</td><td>6–8 grouped and charted.</td></tr>
+  <tr><td class="k">Dashboard</td><td>One with 6+ populated tiles. This is the screenshot that sells.</td></tr>
+</table>
+
+<div class="cal k-ok">
+  <span class="lbl">I can do this part</span>
+  <p>Screenshots are produced by a script driving the real portal. Once a demo org has
+  believable data, every image regenerates in one run — same size, no manual cropping.</p>
+</div>
+
+<h3>Using the Salesforce name</h3>
+<div class="dd">
+  <div class="y"><h5>Do</h5><ul>
+    <li>"Works with Salesforce"</li>
+    <li>"An independent product"</li>
+    <li>Salesforce as an adjective, never your brand</li>
+  </ul></div>
+  <div class="n"><h5>Never</h5><ul>
+    <li>"Salesforce EasyCRM"</li>
+    <li>The Salesforce logo or cloud mark</li>
+    <li>"Partnered with" unless contractually true</li>
+  </ul></div>
+</div>
+
+<div class="cal k-you">
+  <span class="lbl">Footer disclaimer</span>
+  <p><i>Salesforce is a trademark of Salesforce, Inc. EasyCRM is an independent product and is
+  not affiliated with or endorsed by Salesforce.</i></p>
+  <p style="margin-top:5px">Read their current trademark guidelines before launch — they are
+  public, and they change.</p>
+</div>
+
+</body>
+</html>

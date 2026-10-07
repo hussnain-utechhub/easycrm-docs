@@ -70,6 +70,18 @@ const config = {
     ],
   ],
 
+  plugins: [
+    /*
+     * The site was flat before the two-track split, and those URLs are already shared and
+     * bookmarked. Every moved page redirects from its old address, generated from the same
+     * map the restructure used - see scripts/redirects.json.
+     */
+    [
+      "@docusaurus/plugin-client-redirects",
+      { redirects: require("./scripts/redirects.json") },
+    ],
+  ],
+
   themes: [
     [
       // Search is built at build time and ships with the site, so it needs no third-party
@@ -94,7 +106,8 @@ const config = {
       title: "EasyCRM",
       logo: { alt: "EasyCRM", src: "img/logo.svg" },
       items: [
-        { type: "docSidebar", sidebarId: "main", position: "left", label: "Documentation" },
+        { type: "docSidebar", sidebarId: "use", position: "left", label: "Using EasyCRM" },
+        { type: "docSidebar", sidebarId: "admin", position: "left", label: "Administering" },
         {
           href: "https://github.com/hussnain-utechhub/easycrm-docs",
           position: "right",

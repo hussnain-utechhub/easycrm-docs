@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EasyCRM — Introduction and Features</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 20mm 16mm; }
+  :root {
+    --ink:    #15181d;
+    --muted:  #5b6270;
+    --rule:   #d8dde5;
+    --accent: #2a6fb5;
+    --soft:   #f4f7fa;
+    --tint:   #eef4fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", -apple-system, system-ui, Arial, sans-serif;
+    color: var(--ink); font-size: 10.6pt; line-height: 1.6; margin: 0;
+  }
+
+  /* cover */
+  .cover { height: 247mm; display: flex; flex-direction: column; justify-content: center; page-break-after: always; }
+  .cover .mark { width: 54px; height: 54px; border-radius: 12px; background: var(--accent); margin-bottom: 26px; position: relative; }
+  .cover .mark::before { content:""; position:absolute; left:14px; top:17px; width:22px; height:2.5px; background:#fff; box-shadow:0 7px 0 #fff,0 14px 0 #fff; border-radius:2px; }
+  .cover h1 { font-size: 34pt; margin: 0 0 6px; letter-spacing: -0.5px; }
+  .cover .sub { font-size: 15pt; color: var(--muted); margin: 0 0 28px; }
+  .cover .line { height: 3px; width: 70px; background: var(--accent); margin-bottom: 26px; }
+  .cover .blurb { max-width: 120mm; font-size: 11.5pt; margin-bottom: 28px; }
+  .cover .meta { color: var(--muted); font-size: 10pt; line-height: 1.9; }
+
+  h2 { font-size: 19pt; margin: 0 0 4px; page-break-before: always; page-break-after: avoid; letter-spacing: -0.2px; }
+  h2 .num { color: var(--accent); margin-right: 10px; }
+  h2 + .lede { color: var(--muted); font-size: 11pt; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--rule); }
+  h3 { font-size: 13pt; margin: 20px 0 6px; page-break-after: avoid; }
+  h4 { font-size: 11pt; margin: 14px 0 3px; page-break-after: avoid; color: #2b3240; }
+  p { margin: 0 0 9px; }
+  ul { margin: 0 0 10px; padding-left: 18px; }
+  li { margin-bottom: 3px; }
+  strong { font-weight: 650; }
+
+  table { width: 100%; border-collapse: collapse; margin: 9px 0 14px; font-size: 9.8pt; page-break-inside: avoid; }
+  th { text-align: left; background: var(--soft); font-weight: 650; border-bottom: 1.5px solid var(--rule); padding: 6px 9px; }
+  td { border-bottom: 1px solid var(--rule); padding: 6px 9px; vertical-align: top; }
+  td:first-child { font-weight: 600; width: 33%; }
+  table.three td:first-child { width: 26%; }
+  table.plain td:first-child { font-weight: 400; width: auto; }
+
+  /* feature block */
+  .feat { page-break-inside: avoid; margin-bottom: 15px; }
+  .feat h4 { margin-top: 0; }
+  .feat .what { margin-bottom: 4px; }
+  .gain {
+    background: var(--tint); border-left: 3px solid var(--accent);
+    padding: 6px 10px; font-size: 9.8pt; margin: 5px 0 0;
+  }
+  .gain b { color: var(--accent); }
+
+  .note { background: var(--soft); border-left: 3px solid var(--accent); padding: 9px 12px; margin: 10px 0 13px; font-size: 10pt; page-break-inside: avoid; }
+  .note p:last-child { margin-bottom: 0; }
+
+  figure { margin: 12px 0 15px; page-break-inside: avoid; }
+  figure img { width: 100%; border: 1px solid var(--rule); border-radius: 4px; display: block; }
+  figcaption { font-size: 8.8pt; color: var(--muted); margin-top: 5px; }
+
+  .toc { page-break-after: always; }
+  .toc h2 { page-break-before: avoid; }
+  .toc ol { list-style: none; padding: 0; counter-reset: p; margin-top: 10px; }
+  .toc > ol > li { counter-increment: p; margin-bottom: 8px; border-bottom: 1px dotted var(--rule); padding-bottom: 6px; }
+  .toc > ol > li > b::before { content: counter(p) ".  "; color: var(--accent); }
+  .toc .s { color: var(--muted); font-size: 9.6pt; margin-left: 20px; }
+
+  .count { display:flex; gap:14px; margin: 14px 0 18px; }
+  .count div { flex:1; background: var(--soft); border-radius:5px; padding:10px 12px; text-align:center; }
+  .count .n { font-size: 20pt; font-weight: 700; color: var(--accent); line-height:1.1; }
+  .count .l { font-size: 8.6pt; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="mark"></div>
+  <h1>EasyCRM</h1>
+  <p class="sub">Introduction and features</p>
+  <div class="line"></div>
+  <p class="blurb">
+    What EasyCRM is, what it offers, and what each capability gives you —
+    written in plain words for anybody deciding whether it fits.
+  </p>
+  <div class="meta">
+    A complete catalogue of the product's features and functionality.<br>
+    October 2026
+  </div>
+</section>
+
+<section class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><b>Introduction</b><div class="s">What EasyCRM is · the problem it solves · who it is for</div></li>
+    <li><b>Why companies choose it</b><div class="s">The six things it changes</div></li>
+    <li><b>Records and day-to-day work</b><div class="s">Lists, record pages, activities, search, files</div></li>
+    <li><b>Reporting</b><div class="s">Report types, shapes, grouping, formulas, charts, export</div></li>
+    <li><b>Dashboards</b><div class="s">Tiles, filters, audience control</div></li>
+    <li><b>Security and access control</b><div class="s">Permissions, sharing, roles, restriction, diagnostics</div></li>
+    <li><b>Administration</b><div class="s">Users, companies, layouts, tabs, apps, buttons</div></li>
+    <li><b>Branding and white-labelling</b><div class="s">Appearance and the sign-in designer</div></li>
+    <li><b>Data in and out</b><div class="s">Import, mappings, the API, publishing to Salesforce</div></li>
+    <li><b>Audit, compliance and support</b><div class="s">Audit log, impersonation, setup checks</div></li>
+    <li><b>Performance and scale</b></li>
+    <li><b>How it is delivered</b><div class="s">Packaging, licensing, requirements</div></li>
+    <li><b>Feature checklist</b><div class="s">Everything on one page</div></li>
+  </ol>
+</section>
+
+<!-- 1 -->
+<h2><span class="num">1</span>Introduction</h2>
+<p class="lede">A customer portal that puts your Salesforce data in front of your whole company, without a Salesforce licence for each person.</p>
+
+<h3>What EasyCRM is</h3>
+<p>
+  EasyCRM is a web portal your company signs in to. It shows your customers, contacts, tasks,
+  meetings, reports and files in one simple screen. It runs in an ordinary browser on a
+  computer, tablet or phone. There is nothing to install.
+</p>
+<p>
+  The information lives in Salesforce. The people using EasyCRM do not need Salesforce logins,
+  never see Salesforce, and do not need to know it is there. Change something in one and it
+  changes in the other — it is the same data, not a copy.
+</p>
+
+<h3>The problem it solves</h3>
+<p>
+  Salesforce charges for every person who signs in. In most companies only a handful of people
+  genuinely work inside Salesforce all day. Everybody else just needs to look things up, add a
+  note, or read a report.
+</p>
+<p>
+  Paying full price for those people is expensive, and it hands them a large, complicated
+  product when they needed a small part of it. EasyCRM gives them that small part.
+</p>
+
+<h3>Who it is for</h3>
+<table class="three">
+  <tr><th>Audience</th><th>What they get</th></tr>
+  <tr><td>Companies on Salesforce</td><td>A way to open their data to more people without more licences.</td></tr>
+  <tr><td>Agencies and service providers</td><td>One portal serving several client companies, each kept separate.</td></tr>
+  <tr><td>Teams who mostly read</td><td>A screen simple enough to learn in ten minutes.</td></tr>
+  <tr><td>Managers</td><td>Live reports and dashboards instead of exported spreadsheets.</td></tr>
+</table>
+
+<h3>Built for more than one company at a time</h3>
+<p>
+  Every user belongs to a company, and almost every setting can be made company by company —
+  which apps they see, which report folders they reach, which administration tabs their own
+  admins get. One installation can serve many client companies, each seeing only its own world.
+</p>
+
+<!-- 2 -->
+<h2><span class="num">2</span>Why companies choose it</h2>
+<p class="lede">Six things it changes, and what each one is worth.</p>
+
+<div class="feat">
+  <h4>1. Cost</h4>
+  <p class="what">People who only read, or only update a few fields, use EasyCRM instead of a Salesforce seat.</p>
+  <div class="gain"><b>What you gain:</b> the number of full Salesforce licences you buy is driven by who really works in Salesforce, not by who needs to see the data.</div>
+</div>
+
+<div class="feat">
+  <h4>2. Simplicity</h4>
+  <p class="what">A short list of tabs, the fields you choose, and nothing else. No Salesforce vocabulary on screen.</p>
+  <div class="gain"><b>What you gain:</b> training measured in minutes, and fewer mistakes from people navigating a product built for specialists.</div>
+</div>
+
+<div class="feat">
+  <h4>3. Live data</h4>
+  <p class="what">Every list, report and dashboard reads the real data at the moment it is opened.</p>
+  <div class="gain"><b>What you gain:</b> no exported spreadsheets going stale, and no arguments about whose copy is right.</div>
+</div>
+
+<div class="feat">
+  <h4>4. Control</h4>
+  <p class="what">A full access model — per-person permissions, record sharing, a management hierarchy, and rules that narrow access where needed.</p>
+  <div class="gain"><b>What you gain:</b> you can open data to more people and still be specific about who sees what.</div>
+</div>
+
+<div class="feat">
+  <h4>5. It looks like your company</h4>
+  <p class="what">Your name, logo, colours and a sign-in page you design yourself.</p>
+  <div class="gain"><b>What you gain:</b> something you can put in front of customers and partners, not an obviously third-party tool.</div>
+</div>
+
+<div class="feat">
+  <h4>6. No code to change it</h4>
+  <p class="what">Fields, layouts, tabs, apps, buttons, reports, dashboards and the sign-in page are all configured on screen.</p>
+  <div class="gain"><b>What you gain:</b> an administrator makes changes the same afternoon, without a developer or a release.</div>
+</div>
+
+<!-- 3 -->
+<h2><span class="num">3</span>Records and day-to-day work</h2>
+<p class="lede">What people use every day, and what each part offers.</p>
+
+<figure>
+  <img src="../docs/img/shots/records/accounts-detail.png" alt="A record page">
+  <figcaption>A record page: details on the left, activity on the right, related records below.</figcaption>
+</figure>
+
+<div class="feat">
+  <h4>Lists and list views</h4>
+  <p class="what">Tables of records with saved sets of columns, filters and sorting. People switch between views, pin a favourite as their default, and search within a list.</p>
+  <div class="gain"><b>What you gain:</b> each person reaches the records they care about in one click instead of searching every time.</div>
+</div>
+
+<div class="feat">
+  <h4>Filtering, with real logic</h4>
+  <p class="what">Filters on any field, with operators such as equals, contains and greater than. Several filters combine with AND, OR, NOT and brackets.</p>
+  <div class="gain"><b>What you gain:</b> genuinely specific questions — "this region, this status, but not these two owners" — without exporting anything.</div>
+</div>
+
+<div class="feat">
+  <h4>Columns people choose themselves</h4>
+  <p class="what">Each person picks which fields appear as columns, and in what order. The choice is remembered and affects nobody else.</p>
+  <div class="gain"><b>What you gain:</b> no arguments about one shared layout, and no scrolling past twenty irrelevant columns.</div>
+</div>
+
+<div class="feat">
+  <h4>Record pages you design</h4>
+  <p class="what">An administrator chooses which fields appear, groups them into sections, and sets which related records show underneath — separately for the page and for the new-record window.</p>
+  <div class="gain"><b>What you gain:</b> a readable page showing the ten fields that matter instead of the hundred that exist.</div>
+</div>
+
+<div class="feat">
+  <h4>Editing, including one field at a time</h4>
+  <p class="what">Full edit mode, or a pencil beside a single field. Required fields are marked; errors name the field at fault.</p>
+  <div class="gain"><b>What you gain:</b> quick corrections without opening a whole form.</div>
+</div>
+
+<div class="feat">
+  <h4>Kinds of record</h4>
+  <p class="what">One object can come in several kinds, each with its own fields and options — a customer account and a supplier account on the same object. Which kinds a company may use is set per company.</p>
+  <div class="gain"><b>What you gain:</b> one clean form per situation instead of one cluttered form for all of them.</div>
+</div>
+
+<div class="feat">
+  <h4>Ownership and transfer</h4>
+  <p class="what">Every record has an owner, and ownership can be transferred. Ownership usually drives who can see the record.</p>
+  <div class="gain"><b>What you gain:</b> a clean handover when somebody leaves or an account moves.</div>
+</div>
+
+<div class="feat">
+  <h4>Related records</h4>
+  <p class="what">Linked records shown on the page — the contacts at an account, the tasks on a contact. Which lists appear is configurable.</p>
+  <div class="gain"><b>What you gain:</b> the whole picture of a customer on one screen.</div>
+</div>
+
+<div class="feat">
+  <h4>Activity tracking</h4>
+  <p class="what">Calls, tasks, meetings and emails recorded against the record they concern, in one timeline. Filter by date, type or whether something is done; expand everything to read detail; open the full history on its own page. Tasks appear on the assignee's home page and are flagged when overdue; events appear as upcoming.</p>
+  <div class="gain"><b>What you gain:</b> customer history that belongs to the company rather than to one person's inbox.</div>
+</div>
+
+<div class="feat">
+  <h4>Search across everything</h4>
+  <p class="what">One box that searches every kind of record the person is allowed to see, with results grouped by type as you type.</p>
+  <div class="gain"><b>What you gain:</b> people find things without knowing which tab they live under.</div>
+</div>
+
+<div class="feat">
+  <h4>Files and documents</h4>
+  <p class="what">Upload files to the portal or attach them to a record. Views for recent, your own, and everything. Preview, download or delete.</p>
+  <div class="gain"><b>What you gain:</b> contracts and paperwork stored with the customer, visible to exactly the people who can see that customer.</div>
+</div>
+
+
+<div class="feat">
+  <h4>In-portal notifications</h4>
+  <p class="what">A bell in the top bar with a count of unread items, opening a list of what has happened recently; click one to jump to what it refers to.</p>
+  <div class="gain"><b>What you gain:</b> people notice what needs them without anybody sending a chasing email.</div>
+</div>
+
+<div class="feat">
+  <h4>Email notifications</h4>
+  <p class="what">The portal emails people automatically: their credentials when an account is created, a new password when one is reset, a warning when an account is locked after repeated failed sign-ins, and a notice when an account is closed. Emails written against a record are sent from the portal too, as plain or formatted text.</p>
+  <div class="gain"><b>What you gain:</b> accounts are handed over and recovered without an administrator relaying passwords by hand.</div>
+</div>
+<div class="feat">
+  <h4>A home page you configure</h4>
+  <p class="what">Record-count tiles, an announcement you write, each person's own open tasks, their recent records, upcoming events and quick links. Cards can be turned on or off, and each app can have its own home page.</p>
+  <div class="gain"><b>What you gain:</b> a landing screen that tells each person what needs their attention today.</div>
+</div>
+
+<div class="feat">
+  <h4>Personal display settings</h4>
+  <p class="what">Each person chooses a top menu or a side menu, a colour theme, and comfortable or compact row spacing.</p>
+  <div class="gain"><b>What you gain:</b> people work how they prefer without anybody changing a shared setting.</div>
+</div>
+
+<!-- 4 -->
+<h2><span class="num">4</span>Reporting</h2>
+<p class="lede">A full report builder, not a list of canned reports.</p>
+
+<figure>
+  <img src="../docs/img/shots/report-builder/overview.png" alt="The report builder">
+  <figcaption>The report builder, with a live preview beside the outline.</figcaption>
+</figure>
+
+<div class="feat">
+  <h4>Build reports on screen</h4>
+  <p class="what">Choose what the report is about, pick columns, add filters, group and total — with a preview updating as you work. Undo and redo throughout; nothing saves until you say so.</p>
+  <div class="gain"><b>What you gain:</b> anybody who can use a spreadsheet can build a report. No request queue, no developer.</div>
+</div>
+
+<div class="feat">
+  <h4>Reports across linked records</h4>
+  <p class="what">Report types cover one object or two linked ones, in both forms: only records that have a match, or every record whether or not it has one.</p>
+  <div class="gain"><b>What you gain:</b> you can report on what exists and on what is missing — accounts with no contact, contacts with no activity.</div>
+</div>
+
+<div class="feat">
+  <h4>Three report shapes</h4>
+  <table class="plain">
+    <tr><th>Shape</th><th>What it is</th><th>Answers</th></tr>
+    <tr><td>Tabular</td><td>A plain list</td><td>"Show me the records."</td></tr>
+    <tr><td>Summary</td><td>Grouped, with subtotals</td><td>"How many per owner?"</td></tr>
+    <tr><td>Matrix</td><td>Grouped down and across</td><td>"How many per owner, per month?"</td></tr>
+  </table>
+  <div class="gain"><b>What you gain:</b> one tool covers listing, summarising and cross-tabulating.</div>
+</div>
+
+<div class="feat">
+  <h4>Grouping and totals</h4>
+  <p class="what">Group by any field, several levels deep, down the side and across the top. Total any number column with sum, average, minimum or maximum — subtotals per group and a grand total.</p>
+  <div class="gain"><b>What you gain:</b> an answer rather than a list.</div>
+</div>
+
+<div class="feat">
+  <h4>Bucket columns</h4>
+  <p class="what">Invent a column that sorts existing values into categories you name — ranges for numbers, chosen values for text and picklists. Then group, total and filter by it.</p>
+  <div class="gain"><b>What you gain:</b> report by your own categories without adding a field to the database or waiting for a change request.</div>
+</div>
+
+<div class="feat">
+  <h4>Formula columns, at two levels</h4>
+  <p class="what">Row-level formulas calculate once per record. Summary formulas calculate once per group from the totals, at whichever grouping level you choose.</p>
+  <div class="gain"><b>What you gain:</b> percentages, ratios, ages and rates computed inside the report, so the report is the finished answer.</div>
+</div>
+
+<div class="feat">
+  <h4>Charts</h4>
+  <p class="what">Bar, column, line, pie, donut and gauge, drawn from the report's groupings. Where a report has several groupings, the chart can be re-sliced by any of them.</p>
+  <div class="gain"><b>What you gain:</b> the same report answers more than one question, and trends become visible.</div>
+</div>
+
+<div class="feat">
+  <h4>Filters that readers can use safely</h4>
+  <p class="what">A reader can change filter values while looking at a report, without changing what is saved. Filters the author locks cannot be changed by anybody.</p>
+  <div class="gain"><b>What you gain:</b> one report serves many people, and a report scoped to one company stays scoped to it.</div>
+</div>
+
+<div class="feat">
+  <h4>Folders, favourites and sharing</h4>
+  <p class="what">Folders control who can see what, with private and shared folders and starred favourites. Reports and folders are shared with companies at read or edit level, and a report can also be shared with chosen people. Access can be revoked.</p>
+  <div class="gain"><b>What you gain:</b> one library serving several companies, each seeing only its own.</div>
+</div>
+
+
+<div class="feat">
+  <h4>Bringing in reports you already have</h4>
+  <p class="what">Existing Salesforce reports can be imported into the portal rather than rebuilt, carrying their columns, filters and grouping across.</p>
+  <div class="gain"><b>What you gain:</b> you start from the reports your company already trusts instead of recreating them from memory.</div>
+</div>
+
+<div class="feat">
+  <h4>Formula sync</h4>
+  <p class="what">Formula columns stay aligned between a portal report and its Salesforce counterpart, in both directions.</p>
+  <div class="gain"><b>What you gain:</b> the same calculation means the same thing wherever somebody reads it.</div>
+</div>
+<div class="feat">
+  <h4>Copying and export</h4>
+  <p class="what">Clone or "save as" any report to experiment on a copy. Export as a formatted report, keeping groups and subtotals, or as plain details for further work.</p>
+  <div class="gain"><b>What you gain:</b> people improve existing reports without risking them, and numbers leave in whatever form the recipient needs.</div>
+</div>
+
+<!-- 5 -->
+<h2><span class="num">5</span>Dashboards</h2>
+<p class="lede">Several answers on one screen, built from your reports.</p>
+
+<div class="feat">
+  <h4>Six kinds of tile</h4>
+  <table class="plain">
+    <tr><th>Tile</th><th>Shows</th></tr>
+    <tr><td>Metric</td><td>One large number.</td></tr>
+    <tr><td>Bar / Column</td><td>Groups compared side by side.</td></tr>
+    <tr><td>Line</td><td>A value over time.</td></tr>
+    <tr><td>Pie / Donut</td><td>Parts of a whole.</td></tr>
+    <tr><td>Gauge</td><td>Progress towards a target.</td></tr>
+    <tr><td>Table</td><td>Rows straight from the report.</td></tr>
+  </table>
+  <div class="gain"><b>What you gain:</b> the morning questions answered at a glance instead of five reports opened one at a time.</div>
+</div>
+
+<div class="feat">
+  <h4>Drag-and-drop layout</h4>
+  <p class="what">Move and resize tiles on a grid whose fineness you set. Separate light or dark themes for the page and for the tiles.</p>
+  <div class="gain"><b>What you gain:</b> dashboards that suit a desk or a wall screen, arranged without design help.</div>
+</div>
+
+<div class="feat">
+  <h4>Filters across every tile</h4>
+  <p class="what">A filter bar narrows the whole dashboard at once. Because each tile reads a different report, you map the filter to the matching field on each one — fields with the same name are matched automatically.</p>
+  <div class="gain"><b>What you gain:</b> one dashboard serves every team and every region, instead of a copy for each.</div>
+</div>
+
+<div class="feat">
+  <h4>Audience control</h4>
+  <p class="what">A dashboard either shows each person their own numbers, or shows everybody the same company-wide totals.</p>
+  <div class="gain"><b>What you gain:</b> one dashboard can be a personal worklist for twenty people, or a shared company view, from the same definition.</div>
+</div>
+
+<!-- 6 -->
+<h2><span class="num">6</span>Security and access control</h2>
+<p class="lede">A complete model, in two independent halves.</p>
+
+<table class="three">
+  <tr><th>Half</th><th>Decides</th><th>Set by</th></tr>
+  <tr><td>Permissions</td><td><b>What</b> somebody may do</td><td>Per person, per object</td></tr>
+  <tr><td>Sharing</td><td><b>Which</b> records they may do it to</td><td>Defaults, rules, hierarchy</td></tr>
+</table>
+
+<div class="feat">
+  <h4>Six permissions per object</h4>
+  <p class="what">Read, create, edit and delete, plus permission to change the page layout for everybody, plus field-by-field control over which fields a person may edit.</p>
+  <div class="gain"><b>What you gain:</b> somebody can maintain two fields on a record without being able to touch the rest.</div>
+</div>
+
+
+<div class="feat">
+  <h4>Account scoping</h4>
+  <p class="what">A portal user can be tied to an Account. Records are then filtered to that account automatically, using a field you nominate per object — and child records follow through a parent field, so a contact, task or file belonging to the account comes with it. A user-match field can also tie records to the person directly.</p>
+  <div class="gain"><b>What you gain:</b> the classic customer-portal arrangement: every client signs in to the same portal and sees only their own data, with no rule written per client.</div>
+</div>
+<div class="feat">
+  <h4>Profiles and permission sets</h4>
+  <p class="what">A profile is the baseline for a kind of person. A permission set is extra access handed to particular people on top, and only ever adds.</p>
+  <div class="gain"><b>What you gain:</b> exceptions handled without widening access for a whole group.</div>
+</div>
+
+<div class="feat">
+  <h4>Record sharing</h4>
+  <p class="what">A default per object — private, public read, or public read and write — then standing rules that widen it. Rules can target records by owner or by field criteria, and grant to a company, a role or a named group. Rules can be made inactive instead of deleted.</p>
+  <div class="gain"><b>What you gain:</b> a private-by-default portal where teams still see each other's work, maintained by rules rather than record by record.</div>
+</div>
+
+<div class="feat">
+  <h4>Public groups and a role hierarchy</h4>
+  <p class="what">Named groups of people — which can contain roles and other groups — used by sharing rules. A reporting hierarchy where access flows upward, so managers see what their people see.</p>
+  <div class="gain"><b>What you gain:</b> add somebody to one group and every relevant rule follows; managers get visibility automatically as teams change.</div>
+</div>
+
+<div class="feat">
+  <h4>Restriction rules</h4>
+  <p class="what">The one mechanism that narrows access: of the records somebody could otherwise see, keep only those matching your criteria.</p>
+  <div class="gain"><b>What you gain:</b> contractors and partners given broad capability on a deliberately narrow slice of data.</div>
+</div>
+
+
+<div class="feat">
+  <h4>Sharing one record with one person</h4>
+  <p class="what">Beyond standing rules, an individual record can be shared with a named person or a group, at a chosen access level, with the reason recorded.</p>
+  <div class="gain"><b>What you gain:</b> the one-off exception handled without a rule that would also catch a hundred other records.</div>
+</div>
+
+<div class="feat">
+  <h4>When and where people may sign in</h4>
+  <p class="what">A profile can limit the hours during which its people may sign in, and the IP address ranges they may sign in from.</p>
+  <div class="gain"><b>What you gain:</b> access confined to working hours and to your offices or VPN, without touching anybody's permissions.</div>
+</div>
+
+<div class="feat">
+  <h4>Lockout and session expiry</h4>
+  <p class="what">Repeated failed sign-ins lock an account for a period, and the person is emailed. Sessions expire on their own, so an abandoned browser does not stay signed in.</p>
+  <div class="gain"><b>What you gain:</b> brute-force attempts are stopped automatically, and unattended screens do not become open doors.</div>
+</div>
+
+<div class="feat">
+  <h4>Landing page per profile</h4>
+  <p class="what">Each profile can start its people on a particular tab rather than the home page.</p>
+  <div class="gain"><b>What you gain:</b> people arrive where their work is, instead of navigating there every morning.</div>
+</div>
+
+<div class="feat">
+  <h4>Linking to a Salesforce user</h4>
+  <p class="what">A portal user can be linked to a Salesforce user, and users have a manager relationship of their own alongside the role hierarchy.</p>
+  <div class="gain"><b>What you gain:</b> actions stay attributable across both systems, and management visibility works even where roles are not used.</div>
+</div>
+<div class="feat">
+  <h4>Access diagnostics</h4>
+  <p class="what">Pick any record and see everybody who can access it, with the reason for each — owner, default, a named sharing rule, or the hierarchy.</p>
+  <div class="gain"><b>What you gain:</b> access questions answered with evidence in seconds, and you know exactly which setting to change.</div>
+</div>
+
+<!-- 7 -->
+<h2><span class="num">7</span>Administration</h2>
+<p class="lede">Eighteen console areas, plus layouts and the sign-in designer. All configured on screen.</p>
+
+<figure>
+  <img src="../docs/img/shots/admin/console.png" alt="The Admin Console">
+  <figcaption>The Admin Console. What an Admin sees is itself configurable, per company.</figcaption>
+</figure>
+
+<div class="feat">
+  <h4>User management</h4>
+  <p class="what">Create users, set role and company, email passwords automatically, reset them, and deactivate anybody who leaves without deleting their records or history.</p>
+  <div class="gain"><b>What you gain:</b> joiners and leavers handled in seconds, with nothing broken behind them.</div>
+</div>
+
+<div class="feat">
+  <h4>Delegated administration</h4>
+  <p class="what">Admins manage only their own company. A Super Admin decides which console tabs each company's admins even see.</p>
+  <div class="gain"><b>What you gain:</b> client companies run their own users without reaching anything else.</div>
+</div>
+
+<div class="feat">
+  <h4>Support impersonation</h4>
+  <p class="what">An administrator can view the portal exactly as another person sees it. Every attempt is logged whether allowed or refused, actions record both names, the user is not interrupted, and the feature is off until deliberately enabled.</p>
+  <div class="gain"><b>What you gain:</b> "it looks different on my screen" solved in a minute, with a full record of who did it.</div>
+</div>
+
+<div class="feat">
+  <h4>Navigation and apps</h4>
+  <p class="what">Choose which tabs exist and in what order; group tabs into named apps; assign apps per company. Add your own buttons to record pages, which can open a web address with the record loaded, start a Salesforce flow, create a linked child record, or run a background action. Developers can add bespoke screens through a documented extension point.</p>
+  <div class="gain"><b>What you gain:</b> each team sees a portal shaped for its job, and your other tools are one click away.</div>
+</div>
+
+
+<div class="feat">
+  <h4>Automatic field setup</h4>
+  <p class="what">The portal works out which of its own fields are missing from which objects and creates them for you, rather than leaving an administrator to add each one by hand.</p>
+  <div class="gain"><b>What you gain:</b> installation and upgrades do not turn into a list of fields to create correctly.</div>
+</div>
+
+<div class="feat">
+  <h4>Importing layouts from Salesforce</h4>
+  <p class="what">Page layouts already defined in Salesforce can be pulled into the portal as a starting point.</p>
+  <div class="gain"><b>What you gain:</b> you begin from the arrangement your company already uses rather than a blank page.</div>
+</div>
+<div class="feat">
+  <h4>Page layouts</h4>
+  <p class="what">Choose fields, arrange them in named sections, order them, and choose related lists — with a separate, shorter field set for the new-record window. Removing a field never deletes data.</p>
+  <div class="gain"><b>What you gain:</b> record pages matched to how your company actually works.</div>
+</div>
+
+<!-- 8 -->
+<h2><span class="num">8</span>Branding and white-labelling</h2>
+<p class="lede">The portal can carry your identity entirely.</p>
+
+<table>
+  <tr><th>What you can set</th><th>Covers</th></tr>
+  <tr><td>Name and logo</td><td>The portal name, your logo, and the browser tab icon.</td></tr>
+  <tr><td>Colour theme</td><td>Presets or your own colours, previewed as you choose.</td></tr>
+  <tr><td>Navigation default</td><td>Top bar or side bar as the starting layout.</td></tr>
+  <tr><td>Sign-in page</td><td>Heading, tagline, bullet points and footer.</td></tr>
+  <tr><td>Sign-in designer</td><td>A block-based editor for the whole page.</td></tr>
+</table>
+
+<div class="feat">
+  <h4>A sign-in page you design</h4>
+  <p class="what">Build it from blocks — headings, text, logos, links, separators, spacers — placed across the two halves of the screen, with alignment, width, height and tone per block. Preview on desktop and phone. Save drafts privately, publish when ready, and restore an earlier version if a change was wrong. Switch back to the standard design at any time without losing your custom one.</p>
+  <div class="gain"><b>What you gain:</b> the first screen customers see looks like your company, changed in minutes without a developer.</div>
+</div>
+
+<div class="note">
+  <p><b>A deliberate limit.</b> The username box, password box and sign-in button cannot be
+  moved, hidden or imitated by anything added in the designer. No design change — by anybody —
+  can turn the sign-in page into something that collects credentials elsewhere.</p>
+</div>
+
+<!-- 9 -->
+<h2><span class="num">9</span>Data in and out</h2>
+<p class="lede">Getting information into the portal, and out to other systems.</p>
+
+<div class="feat">
+  <h4>Spreadsheet import</h4>
+  <p class="what">Load many records from a CSV file, matching columns to fields on screen. A summary reports how many were created and lists anything that failed, with the reason.</p>
+  <div class="gain"><b>What you gain:</b> onboarding a new client's data, or a bought list, without a data-loading tool or a developer.</div>
+</div>
+
+<div class="feat">
+  <h4>Standing column mappings</h4>
+  <p class="what">For lists that arrive repeatedly from the same source, save the column-to-field matching once, per company.</p>
+  <div class="gain"><b>What you gain:</b> recurring imports stop being a manual matching exercise every time.</div>
+</div>
+
+<div class="feat">
+  <h4>A read-only API</h4>
+  <p class="what">Issue keys that let another system fetch your portal data. Each key is attached to a person, scoped to chosen objects and fields, and can be filtered to a subset of records. Secrets are shown once; keys can be edited, regenerated or revoked.</p>
+  <div class="gain"><b>What you gain:</b> integrations without exposing your Salesforce org, and without any risk of an integration changing or deleting data — keys can only read.</div>
+</div>
+
+<div class="feat">
+  <h4>API usage analytics</h4>
+  <p class="what">Request volumes by period, company and user, with export, so you can see which integration is busiest and which keys are idle.</p>
+  <div class="gain"><b>What you gain:</b> integrations you can actually supervise, and unused keys you can retire.</div>
+</div>
+
+
+<div class="feat">
+  <h4>API log retention</h4>
+  <p class="what">Request logs are kept for a period and then tidied up automatically.</p>
+  <div class="gain"><b>What you gain:</b> usage history for as long as it is useful, without a log table that grows for ever.</div>
+</div>
+<div class="feat">
+  <h4>Publishing reports back to Salesforce</h4>
+  <p class="what">Portal reports can be re-created as Salesforce reports on a schedule. Off until deliberately enabled; if a published report is deleted, the schedule pauses rather than silently re-creating it.</p>
+  <div class="gain"><b>What you gain:</b> portal users and Salesforce users looking at the same numbers, without anybody maintaining the report twice.</div>
+  <p style="margin-top:6px">A digest reports what published, what did not, and why.</p>
+</div>
+
+<!-- 10 -->
+<h2><span class="num">10</span>Audit, compliance and support</h2>
+<p class="lede">A record of what happened, and tools for when something is wrong.</p>
+
+<div class="feat">
+  <h4>Audit log</h4>
+  <p class="what">Sign-ins, failed sign-ins, password changes, administration changes and every impersonation attempt — filterable and searchable. It cannot be edited, deleted or disabled by anybody, including a Super Admin.</p>
+  <div class="gain"><b>What you gain:</b> evidence rather than recollection, and a straight answer to "who changed this?".</div>
+</div>
+
+<div class="feat">
+  <h4>Installation health checks</h4>
+  <p class="what">A checklist confirming the portal's own access, field visibility, whether the site is live, and whether email can be delivered — each reported as done or needing attention.</p>
+  <div class="gain"><b>What you gain:</b> setup problems named instead of guessed at, especially after adding new fields, which do not become visible automatically.</div>
+</div>
+
+<div class="feat">
+  <h4>Access diagnostics and impersonation</h4>
+  <p class="what">Together, the record-access viewer and view-as-user cover most support questions: who can see this, and what does it look like to them.</p>
+  <div class="gain"><b>What you gain:</b> access tickets resolved from evidence in minutes.</div>
+</div>
+
+<!-- 11 -->
+<h2><span class="num">11</span>Performance and scale</h2>
+<p class="lede">Built for real data volumes, not demonstration data.</p>
+
+<table>
+  <tr><th>Capability</th><th>What it means</th></tr>
+  <tr><td>Large lists</td><td>Lists of tens of thousands of records open and scroll smoothly, drawing only what is on screen.</td></tr>
+  <tr><td>Exact counts</td><td>Totals are the true figure, not a capped approximation.</td></tr>
+  <tr><td>Wide reports</td><td>Matrix reports with many columns render without stalling the browser.</td></tr>
+  <tr><td>Dashboard caching</td><td>Dashboards reuse their last result to open quickly, with a refresh for the latest numbers.</td></tr>
+  <tr><td>Cache control</td><td>Caching can be switched off for reports, org-wide or per company, where live figures matter more than speed.</td></tr>
+</table>
+<div class="gain"><b>What you gain:</b> the portal stays usable as your data grows, and nobody has to doubt a total.</div>
+
+<!-- 12 -->
+<h2><span class="num">12</span>How it is delivered</h2>
+<p class="lede">What is involved in running it.</p>
+
+<table>
+  <tr><th>Aspect</th><th>Detail</th></tr>
+  <tr><td>Form</td><td>A managed package installed into your Salesforce org.</td></tr>
+  <tr><td>Where data lives</td><td>In your own Salesforce org. EasyCRM does not hold a separate copy.</td></tr>
+  <tr><td>For end users</td><td>A web address, a username and a password. No installation, no Salesforce login.</td></tr>
+  <tr><td>Devices</td><td>Any modern browser, on desktop, tablet or phone.</td></tr>
+  <tr><td>Address</td><td>The Salesforce-provided address, or your own domain.</td></tr>
+  <tr><td>Licensing</td><td>Limits on companies, and on administrators and standard users per company, with per-company overrides.</td></tr>
+  <tr><td>Updates</td><td>Delivered as package upgrades; configuration is preserved.</td></tr>
+</table>
+
+<!-- 13 -->
+<h2><span class="num">13</span>Feature checklist</h2>
+<p class="lede">Everything EasyCRM offers, on one page.</p>
+
+<h4>Access and users</h4>
+<ul>
+  <li>Username and password sign-in, with self-service password reset</li>
+  <li>Three roles — Standard, Admin, Super Admin</li>
+  <li>Multi-company: one portal serving many client companies</li>
+  <li>Delegated administration, with the console tabs each company's admins see</li>
+  <li>Deactivation that preserves records and history</li>
+  <li>Administrator-initiated password resets</li>
+  <li>View-as-user support impersonation, logged and opt-in</li>
+  <li>Account lockout after repeated failed sign-ins, with email warning</li>
+  <li>Automatic session expiry</li>
+  <li>Sign-in hour restrictions, per profile</li>
+  <li>IP range restrictions, per profile</li>
+  <li>Default landing tab, per profile</li>
+  <li>Portal users linkable to Salesforce users; manager relationships</li>
+  <li>In-portal notifications with unread count</li>
+  <li>Automatic emails: credentials, password reset, account locked, account closed</li>
+</ul>
+
+<h4>Records</h4>
+<ul>
+  <li>List views with saved columns, filters and sorting; pin a default</li>
+  <li>Filters with AND / OR / NOT and brackets</li>
+  <li>Per-person column selection</li>
+  <li>Search within a list, and global search across all objects</li>
+  <li>Row-level action menus</li>
+  <li>Configurable record pages with sections and related lists</li>
+  <li>Separate field set for the new-record window</li>
+  <li>Full editing and single-field inline editing</li>
+  <li>Record types, assignable per company</li>
+  <li>Ownership and transfer</li>
+  <li>Clickable emails, phone numbers, addresses and linked records</li>
+</ul>
+
+<h4>Activities and files</h4>
+<ul>
+  <li>Calls, tasks, events and emails against any record</li>
+  <li>Activity timeline with date, type and status filters, expand-all and full history</li>
+  <li>Tasks on the assignee's home page, with overdue flagging</li>
+  <li>Upcoming events on the home page</li>
+  <li>File upload, preview, download and delete</li>
+  <li>Files attached to records, inheriting record access</li>
+</ul>
+
+<h4>Reporting</h4>
+<ul>
+  <li>On-screen report builder with live preview, undo and redo</li>
+  <li>Single-object and two-object report types, with and without matches</li>
+  <li>Tabular, summary and matrix reports</li>
+  <li>Multi-level grouping down the side and across the top</li>
+  <li>Sum, average, minimum and maximum totals with subtotals and grand totals</li>
+  <li>Report filters with filter logic, and relative date ranges</li>
+  <li>Locked filters that readers cannot change</li>
+  <li>Reader-side filtering that does not alter the saved report</li>
+  <li>Bucket columns for picklist, number and text fields</li>
+  <li>Row-level and summary formula columns</li>
+  <li>Bar, column, line, pie, donut and gauge charts, re-sliceable by any grouping</li>
+  <li>Folders, favourites, clone and save-as</li>
+  <li>Export as formatted report or details only</li>
+  <li>Sharing with companies or named users, at read or edit, revocable</li>
+  <li>Import of existing Salesforce reports into the portal</li>
+  <li>Formula sync between portal and Salesforce reports</li>
+</ul>
+
+<h4>Dashboards</h4>
+<ul>
+  <li>Metric, bar, column, line, pie, donut, gauge and table tiles</li>
+  <li>Drag-and-drop layout on a configurable grid</li>
+  <li>Separate page and tile themes, light or dark</li>
+  <li>Dashboard-wide filters with per-tile field mapping</li>
+  <li>Run as the viewer, or across all data</li>
+  <li>Cached results with on-demand refresh</li>
+</ul>
+
+<h4>Security</h4>
+<ul>
+  <li>Per-user, per-object read, create, edit and delete</li>
+  <li>Layout-edit permission and field-level edit control</li>
+  <li>Profiles for baselines; permission sets for exceptions</li>
+  <li>Org-wide defaults: private, public read, public read/write</li>
+  <li>Sharing rules by owner or by field criteria, grantable to companies, roles or groups</li>
+  <li>Public groups, nestable, containing users, roles and other groups</li>
+  <li>Role hierarchy with upward access inheritance</li>
+  <li>Restriction rules to narrow access</li>
+  <li>Record-access diagnostics showing who and why</li>
+  <li>Account scoping: users tied to an account see only that account's records</li>
+  <li>Child records scoped through a parent field</li>
+  <li>User-match field tying records directly to a person</li>
+  <li>Manual sharing of a single record with a person or group</li>
+</ul>
+
+<h4>Configuration and branding</h4>
+<ul>
+  <li>Tab selection and ordering; apps assignable per company</li>
+  <li>Custom buttons on record pages — web address, Salesforce flow, new child record, or background action</li>
+  <li>Extension point for bespoke record-page screens</li>
+  <li>Automatic creation of the portal's own fields on your objects</li>
+  <li>Import of existing Salesforce page layouts</li>
+  <li>Configurable home page cards, per app, with an announcement</li>
+  <li>Portal name, logo, favicon and colour themes</li>
+  <li>Default navigation layout, overridable by each person</li>
+  <li>Block-based sign-in page designer with draft, preview, publish and restore</li>
+  <li>Desktop and phone previews</li>
+  <li>Protected credential fields that cannot be moved or imitated</li>
+</ul>
+
+<h4>Data and integration</h4>
+<ul>
+  <li>CSV import with on-screen column mapping and a failure report</li>
+  <li>Saved column mappings for recurring imports, per company</li>
+  <li>Read-only REST API with scoped, filterable keys</li>
+  <li>One-time secrets; edit, regenerate and revoke</li>
+  <li>API usage analytics by period, company and user, with export</li>
+  <li>Scheduled publishing of portal reports into Salesforce, with a result digest</li>
+  <li>Automatic retention and tidy-up of API request logs</li>
+  <li>Activity emails sent from a record, plain or formatted</li>
+</ul>
+
+<h4>Operations</h4>
+<ul>
+  <li>Tamper-proof audit log, filterable and searchable</li>
+  <li>Installation health checks</li>
+  <li>Virtualised rendering of large lists and wide reports</li>
+  <li>Exact record counts at volume</li>
+  <li>Report cache control, org-wide or per company</li>
+  <li>Licence limits with per-company overrides</li>
+</ul>
+
+</body>
+</html>

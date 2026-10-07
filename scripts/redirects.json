@@ -1,0 +1,250 @@
+[
+  {
+    "from": "/getting-started/sign-in",
+    "to": "/use/start/sign-in"
+  },
+  {
+    "from": "/getting-started/the-screen",
+    "to": "/use/start/the-screen"
+  },
+  {
+    "from": "/getting-started/roles",
+    "to": "/use/start/what-you-can-see"
+  },
+  {
+    "from": "/your-records/lists",
+    "to": "/use/records/lists"
+  },
+  {
+    "from": "/your-records/filters",
+    "to": "/use/records/filtering"
+  },
+  {
+    "from": "/your-records/columns",
+    "to": "/use/records/columns"
+  },
+  {
+    "from": "/your-records/open-a-record",
+    "to": "/use/records/opening-a-record"
+  },
+  {
+    "from": "/your-records/edit-a-record",
+    "to": "/use/records/editing"
+  },
+  {
+    "from": "/your-records/create-a-record",
+    "to": "/use/records/creating"
+  },
+  {
+    "from": "/your-records/record-types",
+    "to": "/use/records/record-types"
+  },
+  {
+    "from": "/your-records/change-owner",
+    "to": "/use/records/changing-owner"
+  },
+  {
+    "from": "/your-records/related-lists",
+    "to": "/use/records/related-records"
+  },
+  {
+    "from": "/your-records/tasks-and-events",
+    "to": "/use/activities/tasks-and-events"
+  },
+  {
+    "from": "/your-records/activities",
+    "to": "/use/activities"
+  },
+  {
+    "from": "/reports-and-dashboards/reports",
+    "to": "/use/reports/finding"
+  },
+  {
+    "from": "/reports-and-dashboards/run-a-report",
+    "to": "/use/reports/running"
+  },
+  {
+    "from": "/reports-and-dashboards/new-report",
+    "to": "/use/reports/report-types"
+  },
+  {
+    "from": "/reports-and-dashboards/report-builder",
+    "to": "/use/reports/builder-tour"
+  },
+  {
+    "from": "/reports-and-dashboards/group-and-summarise",
+    "to": "/use/reports/grouping"
+  },
+  {
+    "from": "/reports-and-dashboards/report-filters",
+    "to": "/use/reports/filters"
+  },
+  {
+    "from": "/reports-and-dashboards/bucket-columns",
+    "to": "/use/reports/buckets"
+  },
+  {
+    "from": "/reports-and-dashboards/formulas",
+    "to": "/use/reports/formulas"
+  },
+  {
+    "from": "/reports-and-dashboards/charts",
+    "to": "/use/reports/charts"
+  },
+  {
+    "from": "/reports-and-dashboards/export",
+    "to": "/use/reports/exporting"
+  },
+  {
+    "from": "/reports-and-dashboards/folders",
+    "to": "/use/reports/folders"
+  },
+  {
+    "from": "/reports-and-dashboards/share-a-report",
+    "to": "/use/reports/sharing"
+  },
+  {
+    "from": "/reports-and-dashboards/dashboards",
+    "to": "/use/dashboards/viewing"
+  },
+  {
+    "from": "/reports-and-dashboards/dashboard-builder",
+    "to": "/use/dashboards/builder"
+  },
+  {
+    "from": "/reports-and-dashboards/dashboard-filters",
+    "to": "/use/dashboards/filters"
+  },
+  {
+    "from": "/reports-and-dashboards/dashboard-properties",
+    "to": "/use/dashboards/settings"
+  },
+  {
+    "from": "/files/files",
+    "to": "/use/files"
+  },
+  {
+    "from": "/your-account/profile",
+    "to": "/use/account/profile"
+  },
+  {
+    "from": "/your-account/password",
+    "to": "/use/account/password"
+  },
+  {
+    "from": "/administration/console",
+    "to": "/admin"
+  },
+  {
+    "from": "/administration/users",
+    "to": "/admin/users"
+  },
+  {
+    "from": "/administration/companies",
+    "to": "/admin/companies"
+  },
+  {
+    "from": "/administration/permissions",
+    "to": "/admin/access/permissions"
+  },
+  {
+    "from": "/administration/profiles",
+    "to": "/admin/access/profiles"
+  },
+  {
+    "from": "/administration/permission-sets",
+    "to": "/admin/access/permission-sets"
+  },
+  {
+    "from": "/administration/sharing",
+    "to": "/admin/sharing"
+  },
+  {
+    "from": "/administration/sharing-defaults",
+    "to": "/admin/sharing/defaults"
+  },
+  {
+    "from": "/administration/sharing-rules",
+    "to": "/admin/sharing/rules"
+  },
+  {
+    "from": "/administration/public-groups",
+    "to": "/admin/sharing/public-groups"
+  },
+  {
+    "from": "/administration/roles",
+    "to": "/admin/sharing/roles"
+  },
+  {
+    "from": "/administration/restriction-rules",
+    "to": "/admin/sharing/restriction-rules"
+  },
+  {
+    "from": "/administration/record-access",
+    "to": "/admin/sharing/record-access"
+  },
+  {
+    "from": "/administration/page-layouts",
+    "to": "/admin/layouts"
+  },
+  {
+    "from": "/administration/branding",
+    "to": "/admin/appearance/branding"
+  },
+  {
+    "from": "/administration/login-design",
+    "to": "/admin/appearance/login-design"
+  },
+  {
+    "from": "/administration/tabs",
+    "to": "/admin/appearance/tabs"
+  },
+  {
+    "from": "/administration/apps",
+    "to": "/admin/appearance/apps"
+  },
+  {
+    "from": "/administration/home",
+    "to": "/admin/appearance/home"
+  },
+  {
+    "from": "/administration/buttons",
+    "to": "/admin/appearance/buttons"
+  },
+  {
+    "from": "/administration/csv-import",
+    "to": "/admin/data/csv-import"
+  },
+  {
+    "from": "/administration/list-mappings",
+    "to": "/admin/data/list-mappings"
+  },
+  {
+    "from": "/administration/api-integration",
+    "to": "/admin/data/api-integration"
+  },
+  {
+    "from": "/administration/api-usage",
+    "to": "/admin/data/api-usage"
+  },
+  {
+    "from": "/administration/publish-schedule",
+    "to": "/admin/data/publish-schedule"
+  },
+  {
+    "from": "/administration/reports-dashboards",
+    "to": "/admin/data/report-folders"
+  },
+  {
+    "from": "/administration/audit-log",
+    "to": "/admin/operations/audit-log"
+  },
+  {
+    "from": "/administration/setup-assistant",
+    "to": "/admin/operations/setup-assistant"
+  },
+  {
+    "from": "/administration/licence",
+    "to": "/admin/operations/licence"
+  }
+]
