@@ -98,6 +98,10 @@ five minutes, and it covers most of what you need.
 **If you are deciding whether it fits** — [Features](./features/index.md), which lists
 everything it does and what each capability gives you.
 
+**If your org syncs with the FrontSpin dialler** — [FrontSpin](./frontspin/index.md). That
+integration is installed separately and is not part of EasyCRM, so it has a section of its own.
+If you have never heard of FrontSpin, you do not have it, and the section does not apply to you.
+
 ## Not sure which you are?
 
 Open the portal and look at the row of tabs across the top. If there is an **Admin** tab, you

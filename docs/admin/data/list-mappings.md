@@ -5,13 +5,23 @@ sidebar_position: 16
 
 # List Mappings
 
-**What it is.** How an incoming spreadsheet's columns line up with your fields.
+**What it is.** Which Salesforce report fills which FrontSpin calling list, for a company.
 
-**What it does.** You say once that their "Company Name" is your "Account Name", and every
-later list from that source lands correctly.
+**What it does.** You say once that a report belongs to a calling list, and from then on everybody
+that report returns is added to that list, hourly, without anybody exporting a spreadsheet.
 
-**Why it helps.** Without it, somebody re-matches the same columns by hand every time a list
-arrives.
+**Why it helps.** Otherwise a calling list is only ever as fresh as the last manual export.
+
+## This tab belongs to the FrontSpin integration
+
+FrontSpin is a sales dialler. The integration between it and your org is **not part of EasyCRM** —
+it is installed separately, for customers who use FrontSpin.
+
+**In an org without it, this tab says so** and does nothing else:
+
+> FrontSpin is not set up in this org, so there is nothing to manage here.
+
+That message is expected, not a fault.
 
 ## Opening it
 
@@ -19,41 +29,41 @@ arrives.
 
 1. Click **Admin** in the top menu.
 2. Click **List Mappings** in the row of tabs.
-3. The page asks you to **Choose a company** first — mappings belong to a company, because
-   different sources send different formats.
+3. Choose a **company** first — mappings belong to one.
 
 ![List Mappings](../../img/shots/admin/list-mappings.png)
 
-4. Choose the company.
-5. Its mappings appear.
+4. Its mappings appear, under a line naming the FrontSpin tenant you are editing.
 
 ![Mappings for a company](../../img/shots/admin/list-mappings-chosen.png)
 
-## Creating a mapping
+## Before you add anything
 
-1. Choose the company.
-2. Click **New**.
-3. Name the mapping after where the list comes from.
-4. For each incoming column, choose which of your fields it belongs in.
-5. Leave anything you do not want unmapped.
-6. Click **Save**.
+Mappings can be stored in Salesforce Setup **or** here, and only one of those is live at a time.
+Adding one to the wrong side looks completely correct and has no effect.
 
-## Getting the column names right
+The full detail, and the switch that decides, is in the FrontSpin section:
+[Setup, or the portal](../../frontspin/lists/where-mappings-live.md).
 
-The incoming column names must match **exactly** — including capital letters and spaces. "Company
-Name" and "company name" are not the same thing to the mapping.
+## The full documentation
 
-The safest way is to copy the heading straight out of a real file from that source.
+This tab is covered properly in the FrontSpin section:
 
-## Changing one
+| Page | Covers |
+|---|---|
+| [List Mappings](../../frontspin/portal/list-mappings.md) | This tab, in detail |
+| [Report to List](../../frontspin/lists/report-to-list.md) | What a mapping actually does |
+| [Lists](../../frontspin/lists/index.md) | Why somebody cannot be removed from a list |
+| [Setup, or the portal](../../frontspin/lists/where-mappings-live.md) | Which source is live |
 
-Open it, change the matching, and save. It applies to lists arriving from then on. Records
-already loaded are not touched.
+## The one thing to know before using it
 
-## How it relates to CSV Import
+**Nothing can remove somebody from a FrontSpin calling list.** FrontSpin's interface has no
+removal of any kind, so narrowing the report stops *adding* people but never takes anybody off.
 
-[CSV Import](./csv-import.md) is you loading a file by hand, matching columns as you go. A
-list mapping is for lists that arrive repeatedly from the same place, so nobody has to match
-them each time.
+Check what a report returns before you map it.
 
-Same idea; one is a one-off, the other is standing.
+## Where this fits
+
+Not to be confused with [CSV Import](./csv-import.md), which is loading a spreadsheet by hand.
+They are unrelated — one is a file you upload, this is a standing link to a dialler.

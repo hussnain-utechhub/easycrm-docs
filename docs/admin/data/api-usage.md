@@ -36,6 +36,10 @@ Across the top:
 The two halves — **Portal API** and **FrontSpin sync health** — are separate: one is your own
 API keys, the other is a specific integration's health.
 
+**FrontSpin sync health** belongs to the FrontSpin integration, which is not part of EasyCRM. It
+is documented in [Sync health](../../frontspin/portal/sync-health.md). In an org without that
+integration the view is empty, which is expected rather than a fault.
+
 ## Taking the figures away
 
 Click **Export** to download them as a spreadsheet, for a report or a conversation about

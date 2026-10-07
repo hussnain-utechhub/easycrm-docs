@@ -9,3 +9,4 @@ yarn-error.log*
 shots/.env
 shots/raw/
 shots/state/
+build.log
