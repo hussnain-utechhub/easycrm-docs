@@ -11,7 +11,7 @@ For whoever received a Client ID and a Secret.
 
 Three things, all from your administrator:
 
-| Value | What it is |
+| | |
 |---|---|
 | **Endpoint** | the address you send requests to |
 | **Client ID** | identifies you — safe to share |

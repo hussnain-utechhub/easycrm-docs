@@ -61,7 +61,7 @@ by.
 
 The **Credentials** section appears, with three values:
 
-| Value | What it is |
+| | |
 |---|---|
 | **Client ID** | safe to share, identifies the key |
 | **Secret** | **shown once** — copy it now |

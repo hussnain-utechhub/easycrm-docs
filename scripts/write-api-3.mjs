@@ -1,4 +1,27 @@
----
+/*
+ * Align the API pages with the published source.
+ *
+ * content/index.md was fetched from UmerGhouri/easycrm-api-docs, which is public, so the landing
+ * page is now the real source text rather than a reconstruction. Only two things are changed,
+ * and both have to change for the page to work as a tab here rather than as its own site root:
+ * the slug, and the link paths (that site is flat under /api-integration/, this one is flat
+ * under /api/).
+ *
+ * The rest of the guide pages live in UmerGhouri/EasyCRM under docs/api-integration/, which is
+ * private and returns 404 to this account, so those are still derived from the published export.
+ * What is corrected here is the one convention the export destroyed everywhere: the source uses
+ * HEADERLESS tables ("| | |"), and the exporter promoted each table's first data row to be its
+ * header. Restoring that makes these pages render the way the original does.
+ */
+import fs from "node:fs";
+import path from "node:path";
+
+const DOCS = path.join(process.cwd(), "docs");
+
+/* ---- the landing page, verbatim from content/index.md ---- */
+fs.writeFileSync(
+  path.join(DOCS, "api/index.md"),
+  `---
 title: EasyCRM API
 slug: /api
 sidebar_position: 0
@@ -53,3 +76,30 @@ what they need to do.
 Administrators have two pages of their own: [Setting up a key](./admin-setup.md)
 and the [API Usage tab](./api-usage-tab.md), which reports what each key has
 been doing.
+`,
+  "utf8"
+);
+
+/*
+ * Restore the headerless tables the export promoted a data row into.
+ * Each entry: the file, and the header line that has to be replaced by an empty one.
+ */
+const HEADERLESS = [
+  ["api/overview.md", "| Value | What it is |"],
+  ["api/admin-setup.md", "| Value | What it is |"],
+  ["api/using-the-api.md", "| Value | What it is |"],
+  ["api/reference/index.md", "| Value | What it is |"],
+];
+
+let fixed = 0;
+for (const [rel, headerLine] of HEADERLESS) {
+  const p = path.join(DOCS, rel);
+  let s = fs.readFileSync(p, "utf8");
+  if (s.includes(headerLine)) {
+    s = s.split(headerLine).join("| | |");
+    fs.writeFileSync(p, s, "utf8");
+    fixed++;
+  }
+}
+
+console.log(`Landing page replaced with the published source. Headerless tables restored in ${fixed} files.`);

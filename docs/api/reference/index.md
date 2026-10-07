@@ -19,7 +19,7 @@ delete.
 
 Three things, all from a portal administrator:
 
-| Value | What it is |
+| | |
 |---|---|
 | **Endpoint** | the address, specific to your org. The admin has a *Copy endpoint* button next to the key. |
 | **Client ID** | identifies the key. Safe to share. |

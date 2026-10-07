@@ -33,7 +33,7 @@ Anything not granted does not exist as far as that key is concerned.
 
 ## The three things a caller needs
 
-| Value | What it is |
+| | |
 |---|---|
 | **Endpoint** | the web address to send requests to |
 | **Client ID** | identifies the key — safe to share |
