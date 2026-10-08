@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 250" width="860" height="250" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" role="img" aria-label="The API Integration tab, listing users who hold an API key">
+  <rect width="860" height="250" fill="#ffffff"/>
+
+  <!-- panel -->
+  <rect x="12" y="12" width="836" height="226" rx="8" fill="#ffffff" stroke="#dfe3ea"/>
+
+  <!-- header -->
+  <rect x="12" y="12" width="836" height="58" rx="8" fill="#fafbfc"/>
+  <rect x="12" y="55" width="836" height="15" fill="#fafbfc"/>
+  <line x1="12" y1="70" x2="848" y2="70" stroke="#eceff4"/>
+  <text x="32" y="38" font-size="16" font-weight="700" fill="#16325c">API Integration</text>
+  <text x="32" y="57" font-size="12.5" fill="#706e6b">Give a portal user a read-only API key. They can only ever read what they could see by signing in.</text>
+
+  <!-- primary button -->
+  <rect x="690" y="26" width="140" height="30" rx="4" fill="#0070d2"/>
+  <text x="760" y="46" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">Set up API access</text>
+
+  <!-- table header -->
+  <g font-size="10" font-weight="700" fill="#8a8886" letter-spacing="0.6">
+    <text x="32" y="96">USER</text>
+    <text x="180" y="96">COMPANY</text>
+    <text x="316" y="96">STATUS</text>
+    <text x="400" y="96">OBJECTS</text>
+    <text x="566" y="96">LAST USED</text>
+    <text x="682" y="96">ACTIONS</text>
+  </g>
+  <line x1="32" y1="106" x2="828" y2="106" stroke="#dfe3ea"/>
+
+  <!-- row 1 -->
+  <g font-size="12" fill="#333b48">
+    <text x="32" y="130" font-weight="600" fill="#16325c">Jane Smith</text>
+    <text x="180" y="130">Acme Corp</text>
+    <text x="400" y="130">Account, Contact</text>
+    <text x="566" y="130" fill="#706e6b">2 hours ago</text>
+  </g>
+  <rect x="316" y="118" width="52" height="18" rx="9" fill="#eaf6ef"/>
+  <text x="342" y="131" font-size="10" font-weight="700" fill="#04844b" text-anchor="middle">Active</text>
+  <g font-size="12" fill="#0070d2">
+    <text x="682" y="130">Edit</text>
+    <text x="715" y="130">Regenerate</text>
+    <text x="789" y="130">Revoke</text>
+  </g>
+  <line x1="32" y1="146" x2="828" y2="146" stroke="#f0f2f5"/>
+
+  <!-- row 2 -->
+  <g font-size="12" fill="#333b48">
+    <text x="32" y="170" font-weight="600" fill="#16325c">Data Sync</text>
+    <text x="180" y="170">Acme Corp</text>
+    <text x="400" y="170">Account</text>
+    <text x="566" y="170" fill="#706e6b">14 minutes ago</text>
+  </g>
+  <rect x="316" y="158" width="52" height="18" rx="9" fill="#eaf6ef"/>
+  <text x="342" y="171" font-size="10" font-weight="700" fill="#04844b" text-anchor="middle">Active</text>
+  <g font-size="12" fill="#0070d2">
+    <text x="682" y="170">Edit</text>
+    <text x="715" y="170">Regenerate</text>
+    <text x="789" y="170">Revoke</text>
+  </g>
+  <line x1="32" y1="186" x2="828" y2="186" stroke="#f0f2f5"/>
+
+  <!-- row 3, revoked -->
+  <g font-size="12" fill="#333b48">
+    <text x="32" y="210" font-weight="600" fill="#16325c">Old Integration</text>
+    <text x="180" y="210">Globex</text>
+    <text x="400" y="210">Contact</text>
+    <text x="566" y="210" fill="#706e6b">3 months ago</text>
+  </g>
+  <rect x="316" y="198" width="60" height="18" rx="9" fill="#f0f1f3"/>
+  <text x="346" y="211" font-size="10" font-weight="700" fill="#706e6b" text-anchor="middle">Revoked</text>
+  <g font-size="12" fill="#0070d2">
+    <text x="682" y="210">Edit</text>
+    <text x="715" y="210">Regenerate</text>
+    <text x="789" y="210">Restore</text>
+  </g>
+</svg>

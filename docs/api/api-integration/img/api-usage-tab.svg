@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="860" height="420" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" role="img" aria-label="The API Usage tab: the Portal API and FrontSpin switch, the filters, six number tiles, the calls per day chart and the Every call table">
+  <rect width="860" height="420" fill="#ffffff"/>
+  <rect x="12" y="12" width="836" height="396" rx="8" fill="#ffffff" stroke="#dfe3ea"/>
+
+  <!-- header -->
+  <rect x="12" y="12" width="836" height="52" rx="8" fill="#fafbfc"/>
+  <rect x="12" y="50" width="836" height="14" fill="#fafbfc"/>
+  <line x1="12" y1="64" x2="848" y2="64" stroke="#eceff4"/>
+  <text x="32" y="36" font-size="11" fill="#706e6b">Analytics</text>
+  <text x="32" y="54" font-size="16" font-weight="700" fill="#16325c">API Usage</text>
+
+  <!-- controls row -->
+  <rect x="32" y="78" width="104" height="28" rx="4" fill="#0070d2"/>
+  <text x="84" y="97" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Portal API</text>
+  <rect x="136" y="78" width="150" height="28" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="211" y="97" font-size="11.5" fill="#44546a" text-anchor="middle">FrontSpin sync health</text>
+
+  <rect x="624" y="78" width="88" height="28" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="668" y="97" font-size="11.5" fill="#333b48" text-anchor="middle">Refresh</text>
+  <rect x="720" y="78" width="96" height="28" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="768" y="97" font-size="11.5" fill="#333b48" text-anchor="middle">Export</text>
+
+  <!-- filters -->
+  <g>
+    <rect x="32" y="116" width="180" height="28" rx="4" fill="#fcfdfe" stroke="#c9cdd6"/>
+    <text x="46" y="135" font-size="11.5" fill="#333b48">Last 7 days</text>
+    <text x="194" y="135" font-size="10" fill="#0070d2">▾</text>
+
+    <rect x="222" y="116" width="180" height="28" rx="4" fill="#fcfdfe" stroke="#c9cdd6"/>
+    <text x="236" y="135" font-size="11.5" fill="#333b48">All companies</text>
+    <text x="384" y="135" font-size="10" fill="#0070d2">▾</text>
+
+    <rect x="412" y="116" width="180" height="28" rx="4" fill="#fcfdfe" stroke="#c9cdd6"/>
+    <text x="426" y="135" font-size="11.5" fill="#333b48">All users</text>
+    <text x="574" y="135" font-size="10" fill="#0070d2">▾</text>
+  </g>
+
+  <!-- KPI tiles -->
+  <g>
+    <rect x="32"  y="158" width="124" height="54" rx="6" fill="#fcfdfe" stroke="#dfe3ea"/>
+    <text x="94"  y="182" font-size="17" font-weight="700" fill="#16325c" text-anchor="middle">1,284</text>
+    <text x="94"  y="200" font-size="10" fill="#706e6b" text-anchor="middle">Calls</text>
+
+    <rect x="164" y="158" width="124" height="54" rx="6" fill="#fcfdfe" stroke="#dfe3ea"/>
+    <text x="226" y="182" font-size="17" font-weight="700" fill="#04844b" text-anchor="middle">1,251</text>
+    <text x="226" y="200" font-size="10" fill="#706e6b" text-anchor="middle">Successful</text>
+
+    <rect x="296" y="158" width="124" height="54" rx="6" fill="#fcfdfe" stroke="#dfe3ea"/>
+    <text x="358" y="182" font-size="17" font-weight="700" fill="#a61c1c" text-anchor="middle">33</text>
+    <text x="358" y="200" font-size="10" fill="#706e6b" text-anchor="middle">Refused</text>
+
+    <rect x="428" y="158" width="124" height="54" rx="6" fill="#fcfdfe" stroke="#dfe3ea"/>
+    <text x="490" y="182" font-size="17" font-weight="700" fill="#16325c" text-anchor="middle">248k</text>
+    <text x="490" y="200" font-size="10" fill="#706e6b" text-anchor="middle">Rows returned</text>
+
+    <rect x="560" y="158" width="124" height="54" rx="6" fill="#fcfdfe" stroke="#dfe3ea"/>
+    <text x="622" y="182" font-size="17" font-weight="700" fill="#16325c" text-anchor="middle">3</text>
+    <text x="622" y="200" font-size="10" fill="#706e6b" text-anchor="middle">Active keys</text>
+
+    <rect x="692" y="158" width="124" height="54" rx="6" fill="#fcfdfe" stroke="#dfe3ea"/>
+    <text x="754" y="182" font-size="17" font-weight="700" fill="#16325c" text-anchor="middle">412</text>
+    <text x="754" y="200" font-size="10" fill="#706e6b" text-anchor="middle">Busiest day</text>
+  </g>
+
+  <!-- chart -->
+  <text x="32" y="240" font-size="10" font-weight="700" fill="#706e6b" letter-spacing="0.5">CALLS PER DAY</text>
+  <rect x="32" y="248" width="360" height="86" rx="5" fill="#fcfdfe" stroke="#eceff4"/>
+  <g fill="#0070d2">
+    <rect x="52"  y="306" width="26" height="20"/>
+    <rect x="96"  y="290" width="26" height="36"/>
+    <rect x="140" y="298" width="26" height="28"/>
+    <rect x="184" y="272" width="26" height="54"/>
+    <rect x="228" y="282" width="26" height="44"/>
+    <rect x="272" y="296" width="26" height="30"/>
+    <rect x="316" y="278" width="26" height="48"/>
+  </g>
+
+  <!-- every call table -->
+  <text x="424" y="240" font-size="10" font-weight="700" fill="#706e6b" letter-spacing="0.5">EVERY CALL</text>
+  <g font-size="9.5" font-weight="700" fill="#8a8886" letter-spacing="0.4">
+    <text x="424" y="262">TIME</text>
+    <text x="484" y="262">USER</text>
+    <text x="574" y="262">COMPANY</text>
+    <text x="654" y="262">OBJECT</text>
+    <text x="722" y="262">RESULT</text>
+    <text x="786" y="262">ROWS</text>
+  </g>
+  <line x1="424" y1="270" x2="816" y2="270" stroke="#dfe3ea"/>
+  <g font-size="10.5" fill="#333b48">
+    <text x="424" y="288">09:14</text><text x="484" y="288">Jane Smith</text><text x="574" y="288">Acme Corp</text><text x="654" y="288">Account</text><text x="722" y="288" fill="#04844b">OK</text><text x="786" y="288">200</text>
+    <text x="424" y="308">09:12</text><text x="484" y="308">Data Sync</text><text x="574" y="308">Acme Corp</text><text x="654" y="308">Contact</text><text x="722" y="308" fill="#04844b">OK</text><text x="786" y="308">200</text>
+    <text x="424" y="328">09:07</text><text x="484" y="328">Data Sync</text><text x="574" y="328">Acme Corp</text><text x="654" y="328">Opportunity</text><text x="722" y="328" fill="#a61c1c">Denied</text><text x="786" y="328">0</text>
+  </g>
+
+  <!-- pager -->
+  <rect x="694" y="348" width="58" height="24" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="723" y="364" font-size="11" fill="#b6bcc7" text-anchor="middle">Previous</text>
+  <rect x="758" y="348" width="58" height="24" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="787" y="364" font-size="11" fill="#333b48" text-anchor="middle">Next</text>
+
+  <!-- footer note -->
+  <line x1="32" y1="356" x2="660" y2="356" stroke="#f0f2f5"/>
+  <text x="32" y="376" font-size="11" fill="#706e6b">Successful calls are kept for 7 days; refusals for 12 months.</text>
+  <text x="32" y="392" font-size="11" fill="#706e6b">A Super Admin sees every company. A company Admin sees only their own.</text>
+</svg>

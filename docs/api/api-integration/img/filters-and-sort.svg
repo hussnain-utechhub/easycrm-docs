@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" width="860" height="330" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" role="img" aria-label="The Filters section and the Sort by section, showing Field Operator Value, the filter logic box, and the two sort drop-downs">
+  <rect width="860" height="330" fill="#ffffff"/>
+  <rect x="12" y="12" width="836" height="306" rx="8" fill="#ffffff" stroke="#dfe3ea"/>
+
+  <!-- FILTERS -->
+  <text x="32" y="42" font-size="14" font-weight="700" fill="#16325c">Filters — which rows come back</text>
+  <text x="32" y="61" font-size="12" fill="#706e6b">These always apply. A caller can never see a row excluded here.</text>
+
+  <g font-size="10" font-weight="700" fill="#8a8886" letter-spacing="0.6">
+    <text x="32" y="86">FIELD</text>
+    <text x="300" y="86">OPERATOR</text>
+    <text x="552" y="86">VALUE</text>
+  </g>
+  <rect x="32" y="94" width="252" height="32" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="46" y="115" font-size="12.5" fill="#333b48">Type</text>
+  <text x="266" y="115" font-size="11" fill="#0070d2">▾</text>
+
+  <rect x="300" y="94" width="236" height="32" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="314" y="115" font-size="12.5" fill="#333b48">equals</text>
+  <text x="518" y="115" font-size="11" fill="#0070d2">▾</text>
+
+  <rect x="552" y="94" width="264" height="32" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="566" y="115" font-size="12.5" fill="#333b48">Customer</text>
+
+  <text x="32" y="150" font-size="12.5" font-weight="700" fill="#0070d2">+ Add filter</text>
+
+  <!-- filter logic -->
+  <text x="32" y="178" font-size="10" font-weight="700" fill="#8a8886" letter-spacing="0.6">FILTER LOGIC (OPTIONAL)</text>
+  <rect x="32" y="186" width="784" height="32" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="46" y="207" font-size="12.5" fill="#a8a6a4">1 AND 2 — leave blank to AND them all</text>
+
+  <line x1="32" y1="238" x2="816" y2="238" stroke="#eceff4"/>
+
+  <!-- SORT BY -->
+  <text x="32" y="264" font-size="14" font-weight="700" fill="#16325c">Sort by</text>
+
+  <rect x="32" y="276" width="384" height="32" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="46" y="297" font-size="12.5" fill="#333b48">Name</text>
+  <text x="398" y="297" font-size="11" fill="#0070d2">▾</text>
+
+  <rect x="432" y="276" width="384" height="32" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="446" y="297" font-size="12.5" fill="#333b48">A to Z (ascending)</text>
+  <text x="798" y="297" font-size="11" fill="#0070d2">▾</text>
+
+  <!-- the two captions that solve the unlabelled-dropdown confusion -->
+  <text x="32" y="268" font-size="9.5" font-weight="700" fill="#b05e00" letter-spacing="0.4" text-anchor="start" transform="translate(300,0)">← THE FIELD TO SORT ON</text>
+  <text x="432" y="268" font-size="9.5" font-weight="700" fill="#b05e00" letter-spacing="0.4" transform="translate(268,0)">← THE DIRECTION</text>
+</svg>

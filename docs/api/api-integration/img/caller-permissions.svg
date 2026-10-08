@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 250" width="860" height="250" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" role="img" aria-label="Caller permissions: two tick boxes, plus the audit log row which is shown ticked and locked">
+  <rect width="860" height="250" fill="#ffffff"/>
+  <rect x="12" y="12" width="836" height="226" rx="8" fill="#ffffff" stroke="#dfe3ea"/>
+
+  <text x="32" y="42" font-size="14" font-weight="700" fill="#16325c">Caller permissions</text>
+
+  <!-- filters checkbox (unticked) -->
+  <rect x="32" y="58" width="15" height="15" rx="3" fill="#ffffff" stroke="#9a9a9a"/>
+  <text x="58" y="71" font-size="13" font-weight="700" fill="#16325c">Allow the caller to add their own filters</text>
+  <text x="58" y="90" font-size="12" fill="#706e6b">Off = they always get exactly the filter above. On = they may narrow it further, but</text>
+  <text x="58" y="107" font-size="12" fill="#706e6b">never widen it — your filter is always applied on top.</text>
+
+  <!-- sort checkbox (ticked) -->
+  <rect x="32" y="126" width="15" height="15" rx="3" fill="#0070d2" stroke="#0070d2"/>
+  <path d="M35.5 133.5 l3 3 l6 -6.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="58" y="139" font-size="13" font-weight="700" fill="#16325c">Allow the caller to choose their own sort</text>
+  <text x="58" y="158" font-size="12" fill="#706e6b">Off = they always get the sort above. On = they may send their own sortField and</text>
+  <text x="58" y="175" font-size="12" fill="#706e6b">sortDir. This changes only the ORDER, never which rows come back.</text>
+
+  <!-- locked audit row -->
+  <rect x="32" y="190" width="784" height="36" rx="5" fill="#f0f3f7"/>
+  <rect x="46" y="200" width="15" height="15" rx="3" fill="#b6bcc7" stroke="#b6bcc7"/>
+  <path d="M49.5 207.5 l3 3 l6 -6.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="72" y="206" font-size="12.5" font-weight="700" fill="#44546a">Write every call to the audit log</text>
+  <text x="72" y="221" font-size="11.5" fill="#706e6b">Always on — the rate limit is counted from these rows, so it cannot be switched off.</text>
+</svg>

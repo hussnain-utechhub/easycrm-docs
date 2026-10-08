@@ -40,16 +40,16 @@ Three values, and all three come from **your administrator** — there is no sel
 | **Endpoint URL** | the address you send requests to, which is specific to your portal |
 
 If you have not been given all three, ask your administrator before going further. The
-[Setting up a key](./admin-setup.md) page is written for them and lists exactly
+[Setting up a key](./api-integration/admin-setup.md) page is written for them and lists exactly
 what they need to do.
 
 ## Start here
 
-- **[Using the API](./using-the-api.md)** — your first request, start to finish
-- **[Filters and sorting](./filters-and-sorting.md)** — narrowing what comes back
-- **[Paging](./paging.md)** — reading more than one page of results
+- **[Using the API](./api-integration/using-the-api.md)** — your first request, start to finish
+- **[Filters and sorting](./api-integration/filters-and-sorting.md)** — narrowing what comes back
+- **[Paging](./api-integration/paging.md)** — reading more than one page of results
 - **[API reference](./reference/index.md)** — every parameter and response, with copyable samples
 
-Administrators have two pages of their own: [Setting up a key](./admin-setup.md)
-and the [API Usage tab](./api-usage-tab.md), which reports what each key has
+Administrators have two pages of their own: [Setting up a key](./api-integration/admin-setup.md)
+and the [API Usage tab](./api-integration/api-usage-tab.md), which reports what each key has
 been doing.

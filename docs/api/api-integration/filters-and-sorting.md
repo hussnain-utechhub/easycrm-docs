@@ -1,16 +1,17 @@
 ---
 title: Filters and sorting
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Filters and sorting
 
-Two things a caller can control — **if** the administrator allowed it. Both are off by default.
+Two things a caller can control — **if** the administrator allowed it. Both are off by
+default.
 
 ## The rule that governs both
 
-> The administrator's settings always apply. A caller can only ever **narrow** the result, never
-> widen it.
+> The administrator's settings always apply. A caller can only ever **narrow** the result,
+> never widen it.
 
 A caller's filter is combined with the administrator's, not swapped for it. A caller's sort
 changes only the order rows arrive in, never which rows those are.
@@ -19,7 +20,7 @@ changes only the order rows arrive in, never which rows those are.
 
 Send a `filters` parameter holding a JSON array:
 
-```text
+```
 &filters=[{"field":"Type","operator":"eq","value":"Customer"}]
 ```
 
@@ -56,16 +57,17 @@ happened. Ask your administrator whether the box is ticked.
 
 ### A malformed filter is ignored too
 
-If the JSON cannot be read, it is dropped and the administrator's filter still applies. It never
-fails open: a broken caller filter cannot accidentally remove the filter protecting the data.
+If the JSON cannot be read, it is dropped and the administrator's filter still applies. It
+never fails open: a broken caller filter cannot accidentally remove the filter protecting
+the data.
 
 ## Filter logic
 
-This is the **administrator's** setting, not something a caller sends. In the admin screen, under
-Filters, the **Filter logic** box takes an expression where the numbers are the filter rows in
-order:
+This is the **administrator's** setting, not something a caller sends. In the admin screen,
+under Filters, the **Filter logic** box takes an expression where the numbers are the filter
+rows in order:
 
-```text
+```
 1 AND 2
 1 OR 2
 (1 OR 2) AND 3
@@ -73,12 +75,12 @@ order:
 
 Blank means all filters must match.
 
-A caller's filters are added after the administrator's and the logic is extended to include them,
-so `1 AND 2` becomes `(1 AND 2) AND 3` once a caller adds one. Both still apply.
+A caller's filters are added after the administrator's and the logic is extended to include
+them, so `1 AND 2` becomes `(1 AND 2) AND 3` once a caller adds one. Both still apply.
 
 ## Sorting
 
-```text
+```
 &sortField=Name&sortDir=desc
 ```
 
@@ -93,8 +95,8 @@ Selected list is refused:
 { "error": "You cannot sort by Industry - it is not one of the fields available to this key." }
 ```
 
-This is deliberate. Ordering by a field you cannot see would let you work out its values from the
-sequence the records arrive in — a slower way of reading it, not a safer one.
+This is deliberate. Ordering by a field you cannot see would let you work out its values
+from the sequence the records arrive in — a slower way of reading it, not a safer one.
 
 **Address and long text fields cannot be sorted on at all.** Not by a caller, and not by an
 administrator either — they are left out of the admin's Sort by picker for the same reason:
@@ -107,14 +109,14 @@ This is a Salesforce limitation rather than a portal one. Choose another field.
 
 ### When it is not allowed
 
-Like filters, if **Allow the caller to choose their own sort** is not ticked, `sortField` and
-`sortDir` are ignored and you get the administrator's saved order.
+Like filters, if **Allow the caller to choose their own sort** is not ticked, `sortField`
+and `sortDir` are ignored and you get the administrator's saved order.
 
 ## Combining everything
 
 Filters, sorting and paging all work together in one request:
 
-```text
+```
 ?object=Account
 &limit=25
 &filters=[{"field":"Type","operator":"eq","value":"Customer"}]

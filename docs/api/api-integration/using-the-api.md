@@ -1,6 +1,6 @@
 ---
 title: Calling the API
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Calling the API
@@ -17,7 +17,7 @@ Three things, all from your administrator:
 | **Client ID** | identifies you — safe to share |
 | **Secret** | like a password — keep it private |
 
-:::note Ask for the endpoint, do not guess it
+:::tip Ask for the endpoint, do not guess it
 The address depends on how your portal's site was set up. Your administrator has a
 **Copy endpoint** button next to your key that gives you the exact one.
 :::
@@ -26,24 +26,24 @@ The address depends on how your portal's site was set up. Your administrator has
 
 Take the endpoint you were sent and add the object you want:
 
-```text
+```
 <the endpoint they sent you>?object=Account
 ```
 
-Your administrator decides which objects you may read. Ask them if you are not sure — a request
-for one you were not given comes back refused.
+Your administrator decides which objects you may read. Ask them if you are not sure — a
+request for one you were not given comes back refused.
 
 ## 2. The two headers
 
 Every request carries both:
 
-```text
+```
 x-easycrm-client-id: <your Client ID>
 x-easycrm-secret:    <your Secret>
 ```
 
-Header names are matched ignoring case, so `X-EasyCRM-Client-Id` works just as well. The same is
-true of the query parameters: `sortfield` and `sortField` are both understood.
+Header names are matched ignoring case, so `X-EasyCRM-Client-Id` works just as well. The
+same is true of the query parameters: `sortfield` and `sortField` are both understood.
 
 ## 3. What comes back
 
@@ -68,8 +68,8 @@ true of the query parameters: `sortfield` and `sortField` are both understood.
 
 Every record carries `Id`, plus one key for each field your administrator selected.
 
-A **lookup** field arrives as three keys — the display value, the record it points at, and that
-record's object:
+A **lookup** field arrives as three keys — the display value, the record it points at, and
+that record's object:
 
 ```json
 {
@@ -81,21 +81,21 @@ record's object:
 
 ## Asking for fewer records
 
-```text
+```
 &limit=25
 ```
 
-The maximum is **200**. If you need more data, take more pages rather than asking for a bigger one
-— see [Paging](./paging.md).
+The maximum is **200**. If you need more data, take more pages rather than asking for a
+bigger one — see [Paging](./paging.md).
 
 ## Fetching one specific record
 
-```text
+```
 &externalId=EXT-000001
 ```
 
-Every record has its own **Portal External Id**, shown on the record in the portal. This returns
-that one record instead of a page.
+Every record has its own **Portal External Id**, shown on the record in the portal. This
+returns that one record instead of a page.
 
 ## If something goes wrong
 
@@ -103,24 +103,24 @@ The reply always contains an `error` field explaining what to change.
 
 | Code | What it means |
 |---|---|
-| 400 | Something in the request is not right — the message says what. |
-| 401 | Your Client ID or Secret is wrong, or the key has been switched off. |
-| 403 | You asked for an object your administrator did not give you. |
-| 429 | Too many requests this hour. Wait, then continue. |
+| **400** | Something in the request is not right — the message says what. |
+| **401** | Your Client ID or Secret is wrong, or the key has been switched off. |
+| **403** | You asked for an object your administrator did not give you. |
+| **429** | Too many requests this hour. Wait, then continue. |
 
 :::note Why 401 is vague
-"Not authorised" is returned whether the Client ID is unknown, the Secret is wrong, or the key was
-revoked. That is deliberate — otherwise the endpoint could be used to work out which Client IDs
-exist.
+"Not authorised" is returned whether the Client ID is unknown, the Secret is wrong, or the
+key was revoked. That is deliberate — otherwise the endpoint could be used to work out
+which Client IDs exist.
 :::
 
 ## Lost the Secret?
 
-It cannot be looked up — it is stored hashed. Ask your administrator to press **Regenerate**,
-which gives you a new one. The old Secret stops working the moment they do.
+It cannot be looked up — it is stored hashed. Ask your administrator to press
+**Regenerate**, which gives you a new one. The old Secret stops working the moment they do.
 
 ## Full reference
 
 Every parameter, every response field and copy-paste code samples in HTTP, Httpie, Python,
-JavaScript, Node and PHP are in the [API Reference](./reference/read-records.md). Those pages are
-generated from the API's own specification, so they always match the live behaviour.
+JavaScript, Node and PHP are in the **API Reference** section of the sidebar. Those pages
+are generated from the API's own specification, so they always match the live behaviour.

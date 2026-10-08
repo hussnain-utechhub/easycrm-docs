@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" width="860" height="300" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" role="img" aria-label="The field picker: two lists side by side, Available on the left and Selected on the right">
+  <rect width="860" height="300" fill="#ffffff"/>
+  <rect x="12" y="12" width="836" height="276" rx="8" fill="#ffffff" stroke="#dfe3ea"/>
+
+  <text x="32" y="42" font-size="14" font-weight="700" fill="#16325c">Fields for: Account</text>
+  <text x="32" y="62" font-size="12" fill="#706e6b">Only the fields on the right are ever returned by the API.</text>
+
+  <!-- LEFT: available -->
+  <text x="32" y="92" font-size="10" font-weight="700" fill="#8a8886" letter-spacing="0.6">AVAILABLE</text>
+  <rect x="32" y="100" width="330" height="30" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <circle cx="50" cy="115" r="5" fill="none" stroke="#706e6b" stroke-width="1.4"/>
+  <line x1="54" y1="119" x2="58" y2="123" stroke="#706e6b" stroke-width="1.4"/>
+  <text x="68" y="119" font-size="12" fill="#a8a6a4">Search fields…</text>
+
+  <rect x="32" y="138" width="330" height="134" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <g font-size="12.5" fill="#333b48">
+    <text x="48" y="160">Phone</text>
+    <text x="48" y="184">Industry</text>
+    <text x="48" y="208">BillingCity</text>
+    <text x="48" y="232">Website</text>
+    <text x="48" y="256">AnnualRevenue</text>
+  </g>
+
+  <!-- move buttons -->
+  <rect x="380" y="180" width="44" height="28" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="402" y="199" font-size="14" font-weight="700" fill="#0070d2" text-anchor="middle">›</text>
+  <rect x="380" y="214" width="44" height="28" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <text x="402" y="233" font-size="14" font-weight="700" fill="#706e6b" text-anchor="middle">‹</text>
+
+  <!-- RIGHT: selected -->
+  <text x="442" y="92" font-size="10" font-weight="700" fill="#8a8886" letter-spacing="0.6">SELECTED — RETURNED BY THE API</text>
+  <rect x="442" y="100" width="374" height="30" rx="4" fill="#ffffff" stroke="#c9cdd6"/>
+  <circle cx="460" cy="115" r="5" fill="none" stroke="#706e6b" stroke-width="1.4"/>
+  <line x1="464" y1="119" x2="468" y2="123" stroke="#706e6b" stroke-width="1.4"/>
+  <text x="478" y="119" font-size="12" fill="#a8a6a4">Search fields…</text>
+
+  <rect x="442" y="138" width="374" height="134" rx="4" fill="#f8fcff" stroke="#9dc6ee"/>
+  <g font-size="12.5" fill="#16325c" font-weight="600">
+    <text x="458" y="160">Id</text>
+    <text x="458" y="184">Name</text>
+    <text x="458" y="208">AccountNumber</text>
+    <text x="458" y="232">Type</text>
+    <text x="458" y="256">CreatedDate</text>
+  </g>
+</svg>

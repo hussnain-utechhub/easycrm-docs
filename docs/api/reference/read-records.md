@@ -5,175 +5,194 @@ sidebar_position: 1
 
 # Read records
 
-```text
+```
 GET /query
 ```
 
 Returns a page of records for one object.
 
-Only the fields the administrator selected for this key are returned, and only rows that pass both
-their filter and the portal's own sharing rules.
+Only the fields the administrator selected for this key are returned, and only rows
+that pass both their filter and the portal's own sharing rules.
 
 ### Reading the response
 
-`records` holds the rows. Each row always carries `Id`, plus one key per selected field. A
-**lookup** field arrives as three keys: the display value, the same name with `_id` for the
-record it points at, and `_obj` for that record's object. So a selected `RecordTypeId` returns
-`RecordTypeId`, `RecordTypeId_id` and `RecordTypeId_obj`.
+`records` holds the rows. Each row always carries `Id`, plus one key per selected
+field. A **lookup** field arrives as three keys: the display value, the same name
+with `_id` for the record it points at, and `_obj` for that record's object. So a
+selected `RecordTypeId` returns `RecordTypeId`, `RecordTypeId_id` and
+`RecordTypeId_obj`.
 
 ### Moving between pages
 
-You do not get everything at once. The response carries `nextUrl` and `prevUrl` — complete
-addresses, with your own parameters already carried over. Open `nextUrl` to go forward and
-`prevUrl` to go back; an empty value means there is nothing in that direction. On the first page
-`prevUrl` is always empty.
+You do not get everything at once. The response carries `nextUrl` and `prevUrl` —
+complete addresses, with your own parameters already carried over. Open `nextUrl`
+to go forward and `prevUrl` to go back; an empty value means there is nothing in
+that direction. On the first page `prevUrl` is always empty.
 
-Following those links is the intended way to page. Building the address yourself means handling
-the cursor, which is deliberately opaque and may change form.
+Following those links is the intended way to page. Building the address yourself
+means handling the cursor, which is deliberately opaque and may change form.
 
-## Request
+## Parameters
 
-### Header parameters
+### `object` — **required**, string
 
-| Name | | Description |
-|---|---|---|
-| `x-easycrm-client-id` | **required** | Your Client ID — identifies the key. |
-| `x-easycrm-secret` | **required** | Your Secret — like a password, keep it private. |
+API name of the object to read, for example `Account` or `Contact`. Must be one
+the administrator granted to this key, otherwise the request is refused.
 
-### Query parameters
+### `limit` — integer, default `200`
 
-| Name | | Description |
-|---|---|---|
-| `object` | **required** | The object you want, for example `Account`. Your administrator decides which objects you may read. |
-| `limit` | | How many records per page. The maximum is **200**. |
-| `filters` | | A JSON array of `field`, `operator`, `value` entries. Applied on top of the administrator's filter, and ignored unless the administrator allowed it. See [Filters and sorting](../filters-and-sorting.md). |
-| `sortField` | | A field to sort by. Must be one of the key's selected fields, and ignored unless the administrator allowed it. |
-| `sortDir` | | `asc` or `desc`. Anything else is refused with a `400`. |
-| `cursor` | | The `nextCursor` or `prevCursor` from a previous response. Following `nextUrl` and `prevUrl` is the supported way. See [Paging](../paging.md). |
-| `externalId` | | A record's **Portal External Id**. Returns that one record instead of a page. |
+How many records to return. Maximum **200**. If you need more data, follow
+`nextUrl` for further pages rather than asking for a larger one.
 
-### Samples
+### `cursor` — string
 
-```http
-GET <the endpoint they sent you>?object=Account
-x-easycrm-client-id: <your Client ID>
-x-easycrm-secret: <your Secret>
-Accept: application/json
+Marks the place to continue from. Opaque — send back exactly what you were
+given and do not try to read or construct one. You will normally never set this
+by hand, because `nextUrl` and `prevUrl` already contain it.
+
+### `externalId` — string
+
+Fetch the single record whose **Portal External Id** matches this value, instead
+of a page of records. Every record carries its own, shown on the record in the
+portal.
+
+Refused with `400` on an object where the field has not been set up.
+
+### `filters` — string
+
+Extra filters, as a JSON array. **Only honoured when the administrator ticked
+"Allow the caller to add their own filters"** — otherwise it is ignored, not
+refused.
+
+These narrow the result. They are combined with the administrator's own filter,
+which always applies, so this can never return rows they excluded.
+
+Each entry is `{"field": ..., "operator": ..., "value": ...}`. Operators:
+`eq`, `ne`, `contains`, `ncontains`, `starts`, `lt`, `le`, `gt`, `ge` —
+meaning equals, not equal to, contains, does not contain, starts with,
+is before, is on or before, is after, is on or after.
+
+```json
+[{"field":"Type","operator":"eq","value":"Customer"}]
 ```
 
-```bash
-http GET '<the endpoint they sent you>?object=Account' \
-  x-easycrm-client-id:'<your Client ID>' \
-  x-easycrm-secret:'<your Secret>'
-```
+### `sortField` — string
 
-```python
-import requests
+Field to order by. **Only honoured when the administrator ticked "Allow the
+caller to choose their own sort"** — otherwise the saved order is used.
 
-response = requests.get(
-    "<the endpoint they sent you>",
-    params={"object": "Account"},
-    headers={
-        "x-easycrm-client-id": "<your Client ID>",
-        "x-easycrm-secret": "<your Secret>",
-    },
-)
-print(response.json())
-```
+Must be one of the fields granted to this key. Address and long text fields
+cannot be sorted on at all and are refused with `400`.
 
-```javascript
-const response = await fetch("<the endpoint they sent you>?object=Account", {
-  method: "GET",
-  headers: {
-    "x-easycrm-client-id": "<your Client ID>",
-    "x-easycrm-secret": "<your Secret>",
-  },
-});
-const data = await response.json();
-console.log(data);
-```
+### `sortDir` — string, default `asc`
 
-```javascript title="Node"
-const https = require("https");
-
-const url = new URL("<the endpoint they sent you>");
-url.searchParams.set("object", "Account");
-
-https.get(url, {
-  headers: {
-    "x-easycrm-client-id": "<your Client ID>",
-    "x-easycrm-secret": "<your Secret>",
-  },
-}, (res) => {
-  let body = "";
-  res.on("data", (chunk) => (body += chunk));
-  res.on("end", () => console.log(JSON.parse(body)));
-});
-```
-
-```php
-<?php
-$ch = curl_init("<the endpoint they sent you>?object=Account");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "x-easycrm-client-id: <your Client ID>",
-    "x-easycrm-secret: <your Secret>",
-]);
-$response = curl_exec($ch);
-curl_close($ch);
-echo $response;
-```
+Direction for `sortField`. One of `asc` or `desc`.
 
 ## Responses
 
-### 200 — a page of records
+### `200` — A page of records
 
-| Field | Type | Means |
+| Field | Type | What it is |
 |---|---|---|
-| `object` | string | The object you asked for. |
-| `records` | array | The rows. Each carries `Id`, plus one key per selected field. |
-| `count` | integer | How many records are in **this page**, not how many exist in total. |
-| `hasMore` | boolean | Whether there is another page after this one. |
-| `nextUrl` | string | Open to go forward. Empty at the end. |
-| `prevUrl` | string | Open to go back. Always empty on the first page. |
-| `nextCursor` | string | Opaque marker for the next page. |
-| `prevCursor` | string | Opaque marker for the previous page. |
+| `object` | string | The object these records came from. |
+| `records` | array | The rows. Each always carries `Id`, plus one key per field the administrator selected. A lookup field also returns `<field>_id` and `<field>_obj`. |
+| `count` | integer | How many records are in **this page**. Not the total available. |
+| `hasMore` | boolean | Whether a further page exists after this one. |
+| `nextCursor` | string | Opaque marker for the next page. Empty on the last page. Prefer `nextUrl`. |
+| `nextUrl` | string | The complete address of the next page, with your own parameters carried over. Empty when there are no more pages. |
+| `prevCursor` | string | Opaque marker for the previous page. Empty on the first page. Prefer `prevUrl`. |
+| `prevUrl` | string | The complete address of the previous page. Empty on the first page, which is how you know you have reached the start. |
 
 ```json
 {
   "object": "Account",
   "records": [
-    { "Id": "001Bi00000UMyF1IAL", "Name": "Acme Corporation", "Type": "Customer" }
+    {
+      "Id": "001Bi00000UMyF1IAL",
+      "Name": "Acme Corporation",
+      "Type": "Customer",
+      "RecordTypeId": "Enterprise",
+      "RecordTypeId_id": "012Bi0000016H8rIAE",
+      "RecordTypeId_obj": "RecordType"
+    },
+    {
+      "Id": "001Bi00000UN3jLIAT",
+      "Name": "Globex",
+      "Type": "Prospect",
+      "RecordTypeId": "Small Business",
+      "RecordTypeId_id": "012Bi0000016H8sIAE",
+      "RecordTypeId_obj": "RecordType"
+    }
   ],
-  "count": 1,
+  "count": 2,
   "hasMore": true,
-  "nextCursor": "eyJ2IjoiQWNtZSIsImlkIjoiMDAxQmkuLi4ifQ",
-  "nextUrl": "https://.../api/v1/query?object=Account&cursor=eyJ2...",
+  "nextCursor": "eyJ2IjoiR2xvYmV4IiwiaWQiOiIwMDFCaTAwMDAwVU4zakxJQVQifQ",
+  "nextUrl": "https://your-portal.my.salesforce-sites.com/portalcrm/services/apexrest/EasyCRM/api/v1/query?object=Account&limit=2&cursor=eyJ2IjoiR2xvYmV4IiwiaWQiOiIwMDFCaTAwMDAwVU4zakxJQVQifQ",
   "prevCursor": "",
   "prevUrl": ""
 }
 ```
 
-### 400 — something in the request is not right
+### `400` — The request could not be completed
 
-The message says what.
+The `error` field says what to change — for example an object that was not named, an
+External Id field that is not set up on that object, or a sort field that is not granted
+or cannot be sorted on.
 
 ```json
-{ "error": "You cannot sort by Industry - it is not one of the fields available to this key." }
+{
+  "error": "Records cannot be sorted by BillingAddress. Address and long text fields are not sortable - choose another field."
+}
 ```
 
-### 401 — not authorised
+```json
+{
+  "error": "You cannot sort by Industry - it is not one of the fields available to this key."
+}
+```
 
-Your Client ID or Secret is wrong, or the key has been switched off.
+```json
+{
+  "error": "sortDir must be asc or desc."
+}
+```
 
-### 403 — object not granted
+```json
+{
+  "error": "No object requested."
+}
+```
 
-You asked for an object your administrator did not give you.
+### `401` — Not authorised
 
-### 429 — rate limited
+The Client ID is unknown, the Secret does not match, or the key has been revoked — the
+response is deliberately the same for all three, so the endpoint cannot be used to work
+out which.
 
-Too many requests this hour. Wait, then continue.
+```json
+{
+  "error": "Not authorised."
+}
+```
 
-| Response header | Means |
-|---|---|
-| `Retry-After` | Seconds to wait before trying again. |
+### `403` — The object is not available to this key
+
+Either the administrator never granted it, or the key's portal user has since lost
+permission to read it. Both give the same answer on purpose.
+
+```json
+{
+  "error": "That object is not available to this key."
+}
+```
+
+### `429` — Too many requests this hour
+
+The ceiling is set per key and defaults to 500. Wait, then continue — a `Retry-After`
+header is returned alongside, giving the seconds to wait before trying again.
+
+```json
+{
+  "error": "Too many requests. The limit is 500 per hour."
+}
+```
