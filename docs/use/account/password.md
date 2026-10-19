@@ -13,7 +13,7 @@ day.
 
 ## Changing it
 
-**Where:** your name (top right) → **Settings** → **Change Password**
+**Where:** In the portal → your name (top right) → **Settings** → **Change Password**
 
 1. Click your name in the top right corner.
 2. Click **Settings**.

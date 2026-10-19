@@ -17,7 +17,7 @@ There are two kinds, and the difference matters more than anything else on this 
 
 ## Row-level formula — calculates per record
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…** → **Add Row-Level Formula**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…** → **Add Row-Level Formula**
 
 1. Open the report in the builder.
 2. In the **Outline** tab, click **Add column…**
@@ -31,7 +31,7 @@ rate, two fields added together.
 
 ## Summary formula — calculates per group
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…** → **Add Summary Formula**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…** → **Add Summary Formula**
 
 1. Open the report in the builder.
 2. Click **Add column…**

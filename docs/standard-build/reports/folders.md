@@ -8,7 +8,7 @@ sidebar_position: 5
 Three folders, all under a parent called **Buckets**. Which folder a report is in says what it is
 for and who should be changing it.
 
-**Where:** **Reports** → **All Folders** → **Buckets**
+**Where:** In Salesforce → **Reports** → **All Folders** → **Buckets**
 
 ## Buckets Reports
 
@@ -69,7 +69,7 @@ reads them.
 
 ## Folder access
 
-**Where:** **Reports** → **All Folders** → the folder's row menu → **Share**
+**Where:** In Salesforce → **Reports** → **All Folders** → the folder's row menu → **Share**
 
 | Folder | Sensible access |
 |---|---|

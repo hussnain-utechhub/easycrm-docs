@@ -22,7 +22,7 @@ means nothing, and printing it invites somebody to believe it does.
 
 ## Adding a total
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → the column heading → **Column actions**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → the column heading → **Column actions**
 
 1. Open the report in the builder.
 2. In the preview, find the number column you want.

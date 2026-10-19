@@ -23,7 +23,7 @@ records are there; this particular view has no history to list yet.
 
 ## Switching view
 
-**Where:** a tab → the list name at the top → choose
+**Where:** In the portal → a tab → the list name at the top → choose
 
 1. Click the tab — **Accounts**, for example.
 2. Click the **list name** in large text at the top (it will say "Recently Viewed" or similar).

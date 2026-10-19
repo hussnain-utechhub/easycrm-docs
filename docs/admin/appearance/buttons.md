@@ -14,7 +14,7 @@ the copying and pasting.
 
 ## Opening it
 
-**Where:** **Admin** → **Buttons**
+**Where:** In the portal → **Admin** → **Buttons**
 
 1. Click **Admin** in the top menu.
 2. Click **Buttons** in the row of tabs.
@@ -23,7 +23,7 @@ the copying and pasting.
 
 ## Adding one
 
-**Where:** **Admin** → **Buttons** → **New Button**
+**Where:** In the portal → **Admin** → **Buttons** → **New Button**
 
 1. Click **Admin**, then **Buttons**.
 2. Click **New Button**.
@@ -52,3 +52,39 @@ If nothing happens, the address is wrong. Edit the button and try again.
 
 Find it in the list and delete it. Nothing on any record changes — the button simply stops
 appearing.
+
+## The whole screen, control by control
+
+| Control | What it does |
+|---|---|
+| **New Button** | Creates a button on the chosen object. |
+| **Object** | What the button appears on. |
+| **Button Label** | The words on the button. |
+| **Button color** | Its colour. |
+| **Icon (e.g. utility:send)** | The icon, given by name. |
+| **Order** | Where it sits among the other buttons. |
+| **Active** | Whether it appears at all. |
+| **Show button on** / **Show on** | The screens it appears on. |
+| **Record Types** | Limits it to particular record types. |
+| **Who can use it** | Which roles see it. |
+
+### What the button does
+
+| **Type** | What it needs |
+|---|---|
+| **Flow** | **Flow API Name** — the flow to run. |
+| **Screen** | The screen to open. |
+| **Server action name** | A named server action. |
+| **Component Key** | A component to render. |
+| **Child Object API Name** | The related object, where the action works on children. |
+| **Argument** | A value passed to whatever is being called. |
+
+### Confirmation
+
+| Control | What it does |
+|---|---|
+| **Ask for confirmation first** | Makes the user confirm before anything happens. |
+| **Confirmation message** | What that prompt says. |
+
+Turn confirmation on for anything that writes, sends or deletes. **No buttons yet for this
+object** simply means none have been created.

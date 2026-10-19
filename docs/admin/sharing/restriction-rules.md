@@ -15,7 +15,7 @@ Everything else — defaults, sharing rules, groups, hierarchy — only ever add
 
 ## Opening it
 
-**Where:** **Admin** → **Sharing** → **Restriction Rules**
+**Where:** In the portal → **Admin** → **Sharing** → **Restriction Rules**
 
 1. Click **Admin** in the top menu.
 2. Click **Sharing**, then **Restriction Rules**.

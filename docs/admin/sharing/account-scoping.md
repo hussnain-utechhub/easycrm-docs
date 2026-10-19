@@ -38,7 +38,7 @@ automatically. There is nothing for them to switch on and nothing they can switc
 
 ### 1 · Tie the user to an account
 
-**Where:** **Admin** → **Users** → the person → **Account**
+**Where:** In the portal → **Admin** → **Users** → the person → **Account**
 
 Set the account they belong to. A user with no account is not scoped at all — they fall back
 to ordinary [sharing](./index.md).

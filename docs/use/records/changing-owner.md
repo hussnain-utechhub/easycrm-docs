@@ -14,7 +14,7 @@ change who has access, so this is not just a label.
 
 ## Changing the owner
 
-**Where:** **Accounts** → the record's name → **Change Owner**
+**Where:** In the portal → **Accounts** → the record's name → **Change Owner**
 
 1. Click **Accounts** (or any tab) in the top menu.
 2. Click the record's **name** to open it.

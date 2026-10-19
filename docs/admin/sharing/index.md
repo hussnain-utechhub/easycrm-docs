@@ -15,7 +15,7 @@ everybody else's customers.
 
 ## Opening it
 
-**Where:** **Admin** → **Sharing**
+**Where:** In the portal → **Admin** → **Sharing**
 
 1. Click **Admin** in the top menu.
 2. Click **Sharing** in the row of tabs.
@@ -58,3 +58,62 @@ should never have seen what.
 
 Use [Record Access](./record-access.md). It lists everybody who can see a given record and
 why, which turns a guess into an answer in about ten seconds.
+
+## The whole screen, control by control
+
+### Org-Wide Defaults
+
+The starting position for every object: what somebody can see before any rule widens it.
+
+| Control | What it does |
+|---|---|
+| **Object** | The object this row is about. |
+| **Default Access** | The baseline — what everyone gets without a rule. |
+| **Grant access using hierarchies** | Whether a manager inherits what the people below them can see. |
+| **Controls this object's records** / **Controlled by these parent objects** | Where an object takes its access from a parent instead of having its own. |
+
+Set defaults **tight** and open them with rules. A default that is too broad cannot be narrowed
+by adding rules on top.
+
+### Sharing rules
+
+| Control | What it does |
+|---|---|
+| **New Sharing Rule** | Creates a rule that widens access. |
+| **Rule Type** / **Owned By / Criteria** | Share by who owns the record, or by what is in its fields. |
+| **Filter Criteria** / **Field** / **Operator** / **Add Filter** / **Filter Logic** | Which records a criteria rule covers. |
+| **Applies To** | Who gains the access. |
+| **Access Level** | How much they gain. |
+
+### Groups and roles
+
+| Control | What it does |
+|---|---|
+| **New Group** / **Group Name** / **Public Group** | A named set of people to share with. |
+| **Member** / **Members** / **Add** | Who is in the group. |
+| **New Role** / **Role Name** | A position in the hierarchy. |
+| **Grant via Hierarchy** | Whether this role inherits from below. |
+
+### Restriction rules
+
+| Control | What it does |
+|---|---|
+| **New Restriction Rule** | Narrows what somebody can see, even where another rule grants it. |
+| **Object (optional)** | What it applies to. |
+| **Active** / **Inactive** | Whether it is enforced. |
+
+A restriction rule **wins**. If access is missing and the rules look right, check here first.
+
+### One record at a time
+
+| Control | What it does |
+|---|---|
+| **Find a record** / **Find record** / **Browse by owner** | Locate a specific record. |
+| **Owner** / **Current owner:** / **New owner** / **Set Owner** | See and change who owns it. |
+| **Access** | Who can reach this record now, and why. |
+
+### Empty states
+
+**No public groups yet**, **No restriction rules**, **No shares on this record**,
+**No portal objects are configured yet** and **No active portal users** all mean exactly what
+they say — nothing has been set up yet, not that something failed.

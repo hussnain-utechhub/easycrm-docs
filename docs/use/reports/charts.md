@@ -22,7 +22,7 @@ Add a row group first — see [Grouping and totals](./grouping.md).
 
 ## Adding a chart
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Chart properties**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Chart properties**
 
 1. Click **Reports** in the top menu.
 2. Click the folder, then the report's **name**, then **Edit**.

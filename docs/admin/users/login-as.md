@@ -20,7 +20,7 @@ names, and it muddies who actually did what.
 
 ## Using it
 
-**Where:** **Admin** → **Users** → the person's row → the person icon
+**Where:** In the portal → **Admin** → **Users** → the person's row → the person icon
 
 1. Click **Admin**, then **Users**.
 2. Find the person in the list.

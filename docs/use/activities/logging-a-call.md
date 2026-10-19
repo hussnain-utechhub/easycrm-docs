@@ -20,7 +20,7 @@ tense — a call is past, a task is future.
 
 ## Logging one
 
-**Where:** **Accounts** → the record's name → **Log a Call**
+**Where:** In the portal → **Accounts** → the record's name → **Log a Call**
 
 1. Click the tab and open the record.
 2. In the panel on the right, click **Log a Call**.

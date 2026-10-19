@@ -26,7 +26,7 @@ So one number is chosen and copied into **Best Phone**, with its status copied i
 | **Optimised for** | Fast Field Updates |
 | **Status** | Active |
 
-**Where:** **Setup** → search **Flows** → **Best Phone Best Status Update**
+**Where:** In Salesforce → **Setup** → search **Flows** → **Best Phone Best Status Update**
 
 ![The flow, and its trigger configuration](../../img/shots/standard-build/flow-trigger.png)
 

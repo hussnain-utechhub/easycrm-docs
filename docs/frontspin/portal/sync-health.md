@@ -12,7 +12,7 @@ without needing a Salesforce login.
 
 ## Opening it
 
-**Where:** **Admin** → **API Usage** → **FrontSpin sync health**
+**Where:** In the portal → **Admin** → **API Usage** → **FrontSpin sync health**
 
 1. Click **Admin** in the top menu.
 2. Click **API Usage**.

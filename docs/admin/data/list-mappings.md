@@ -25,7 +25,7 @@ That message is expected, not a fault.
 
 ## Opening it
 
-**Where:** **Admin** → **List Mappings** → **Choose a company**
+**Where:** In the portal → **Admin** → **List Mappings** → **Choose a company**
 
 1. Click **Admin** in the top menu.
 2. Click **List Mappings** in the row of tabs.

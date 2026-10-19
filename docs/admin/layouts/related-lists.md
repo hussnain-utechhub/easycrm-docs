@@ -17,7 +17,7 @@ no contacts list forces every user to go to Contacts and filter, every time.
 
 ## Adding one
 
-**Where:** the layout editor → **Related Lists** → **Add related list…**
+**Where:** In the portal → the layout editor → **Related Lists** → **Add related list…**
 
 1. Open the layout editor from any record.
 2. Scroll to the **Related Lists** area.

@@ -15,7 +15,7 @@ every rule that should apply to them.
 
 ## Opening it
 
-**Where:** **Admin** → **Sharing** → **Public Groups**
+**Where:** In the portal → **Admin** → **Sharing** → **Public Groups**
 
 1. Click **Admin** in the top menu.
 2. Click **Sharing**, then **Public Groups**.

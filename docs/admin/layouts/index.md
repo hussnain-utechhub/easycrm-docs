@@ -26,7 +26,7 @@ that matter and hides the rest, so the page is readable.
 
 It is **not** in the Admin Console. You reach it from a record.
 
-**Where:** **Accounts** → any record's name → **Edit Page Layout**
+**Where:** In the portal → **Accounts** → any record's name → **Edit Page Layout**
 
 1. Click **Accounts** (or whichever tab) in the top menu.
 2. Click any record's **name** to open it. It does not matter which — the layout applies to
@@ -71,7 +71,7 @@ can never lose your work.
 A section is a heading with fields grouped under it, such as "Billing" or "System
 Information".
 
-**Where:** the layout editor → **Add Section**
+**Where:** In the portal → the layout editor → **Add Section**
 
 1. Click **Add Section**.
 2. Type a name for it.
@@ -87,7 +87,7 @@ to delete one. Removing a section does not delete its fields or any data.
 
 These are the tables at the bottom of a record — the contacts at this account, for example.
 
-**Where:** the layout editor → **Related Lists** → **Add related list…**
+**Where:** In the portal → the layout editor → **Related Lists** → **Add related list…**
 
 1. Scroll to the **Related Lists** part of the editor.
 2. Click the **Add related list…** box.
@@ -113,3 +113,45 @@ just what is required — so creating a record is quick.
 | **Reset to Default** | Puts the layout back to how it started. |
 
 **Reset to Default** loses your field arrangement but touches no record data.
+
+## The whole editor, control by control
+
+| Control | What it does |
+|---|---|
+| **Fields & Sections** | The record page itself. |
+| **Add Section** / **Section title** | Groups fields under a heading. |
+| **Available** / **Shown (in order)** | Which fields appear, and in what order. |
+| **Components** | Non-field blocks on the page. |
+| **Activity position** / **Files position** | Where activities and files sit relative to the fields. |
+
+### Related lists
+
+| Control | What it does |
+|---|---|
+| **Related Lists** | Lists of connected records on the page. |
+| **Available columns** / **Shown columns (in order)** | Which columns each list shows. |
+| **Rows to show** | How many rows before it needs expanding. |
+
+### The New Record window
+
+| Control | What it does |
+|---|---|
+| **New Record Window Fields** / **New record fields** | The fields on the create form. |
+| **Shown in New window (in order)** | Their order. |
+
+Keep this short. Every field here is one more thing somebody must pass to create a record, and
+anything not required is better filled in afterwards on the record itself.
+
+### Saving
+
+| Control | What it does |
+|---|---|
+| **Save Layout** | Saves your changes. |
+| **Apply as default for all users** | Makes this the layout everyone gets. |
+| **Your personal layout for this object** | Indicates you are editing only your own view. |
+| **Reset to Default** | Discards your personal layout. |
+
+:::note Personal, or everybody's
+Without **Apply as default for all users**, you are changing only what **you** see. That is the
+usual reason a colleague reports that a layout change "did not work".
+:::

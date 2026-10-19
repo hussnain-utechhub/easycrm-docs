@@ -23,7 +23,7 @@ whatever any other setting says.
 
 ## Opening it
 
-**Where:** **Admin** → **Users**
+**Where:** In the portal → **Admin** → **Users**
 
 1. Click **Admin** in the top menu.
 2. Click **Users** in the row of tabs under the heading.
@@ -35,7 +35,7 @@ active, and when they last signed in.
 
 ## Adding somebody
 
-**Where:** **Admin** → **Users** → **+ New User**
+**Where:** In the portal → **Admin** → **Users** → **+ New User**
 
 1. Click **Admin**, then **Users**.
 2. Click the blue **+ New User** button on the right.

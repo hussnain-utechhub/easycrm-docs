@@ -7,6 +7,8 @@ sidebar_position: 8
 
 Getting information in, and out to other systems.
 
+![API Integration](../img/shots/admin/api-integration.png)
+
 ## Spreadsheet import
 
 **What it is.** Loading many records from a CSV file, matching columns to fields on screen.
@@ -61,3 +63,8 @@ anybody maintaining the report twice.
 **What it is.** Emails composed against a record and sent from the portal, plain or formatted.
 
 **What you gain:** correspondence recorded with the customer it concerns.
+
+## Where to do it
+
+- [CSV Import](../admin/data/csv-import.md)
+- [API Integration](../admin/data/api-integration.md)

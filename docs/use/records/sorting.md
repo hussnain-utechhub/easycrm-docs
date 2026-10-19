@@ -12,7 +12,7 @@ the order you see them in.
 
 ## Sorting a list
 
-**Where:** a tab → click a column heading
+**Where:** In the portal → a tab → click a column heading
 
 1. Open a tab and its list.
 2. Click a **column heading** — **Account Name**, for example.

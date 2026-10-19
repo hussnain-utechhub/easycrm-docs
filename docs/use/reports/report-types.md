@@ -15,7 +15,7 @@ means starting again, so it is worth a moment's thought.
 
 ## Starting one
 
-**Where:** **Reports** → **New Report**
+**Where:** In the portal → **Reports** → **New Report**
 
 1. Click **Reports** in the top menu.
 2. Click **New Report** at the top right.

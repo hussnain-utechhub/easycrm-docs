@@ -15,7 +15,7 @@ records through search or a report. Use [Permissions](../access/permissions.md) 
 
 ## Opening it
 
-**Where:** **Admin** → **Tabs**
+**Where:** In the portal → **Admin** → **Tabs**
 
 1. Click **Admin** in the top menu.
 2. Click **Tabs** in the row of tabs.

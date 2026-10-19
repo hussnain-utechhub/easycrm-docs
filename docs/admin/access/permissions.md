@@ -16,7 +16,7 @@ permission with no sharing shows an empty list.
 
 ## Opening it
 
-**Where:** **Admin** → **Permissions** → **Select a user**
+**Where:** In the portal → **Admin** → **Permissions** → **Select a user**
 
 1. Click **Admin** in the top menu.
 2. Click **Permissions** in the row of tabs.

@@ -15,7 +15,7 @@ the worst a leaked key can do is show somebody data — not alter it.
 
 ## Opening it
 
-**Where:** **Admin** → **API Integration**
+**Where:** In the portal → **Admin** → **API Integration**
 
 1. Click **Admin** in the top menu.
 2. Click **API Integration** in the row of tabs.
@@ -26,7 +26,7 @@ Everybody who currently holds a key is listed.
 
 ## Creating a key
 
-**Where:** **Admin** → **API Integration** → **Set up API access**
+**Where:** In the portal → **Admin** → **API Integration** → **Set up API access**
 
 1. Click **Admin**, then **API Integration**.
 2. Click **Set up API access**.
@@ -76,3 +76,69 @@ The technical documentation — endpoints, paging, filters — is on its own sit
 
 Send that link to whoever is building the integration. They do not need portal access to read
 it.
+
+## The whole screen, control by control
+
+![Who can configure: each Admin's access to a key's configuration](../../img/shots/admin/api-who-can-configure.png)
+
+
+### The list
+
+| Control | What it does |
+|---|---|
+| **API keys** | Everyone who holds a key, one per row. |
+| **Company** / **Objects** / **Last used** | Who the key belongs to, what it reaches, when it was last called. |
+| **No one has API access yet** | No keys exist. |
+| **Refresh** | Re-reads the list. |
+
+### Credentials
+
+| Control | What it does |
+|---|---|
+| **Credentials** | The Client ID, the Secret and the endpoint. |
+| **Copy** | Copies a value. |
+| **Copy endpoint** | Copies the full address the caller uses — the real one, not a guess. |
+| **Endpoint the user calls** | The address itself. |
+| **Regenerate** / **Regenerate secret** | Issues a new Secret and stops the old one immediately. |
+| **Revoke** / **Revoke access** | Switches the key off. |
+
+:::caution The Secret is shown once
+It cannot be looked back up. If it is lost, **Regenerate** — which also stops whatever was using
+the old one.
+:::
+
+### What a key can reach
+
+| Control | What it does |
+|---|---|
+| **Add object** / **Objects this user may pull (multi-select)** | Which objects the key may read. |
+| **Remove this object** | Takes one back out of the grant. |
+| **Fields for:** / **Available** / **Readable** / **Writable fields** | Which fields come back, and which may be written. |
+| **Lookup fields** | How a lookup is returned — the name, the id, or both. |
+| **Hidden** | Fields deliberately excluded. |
+| **Filters — which rows come back** / **Field** / **Operator** / **Filter logic** | A filter that always applies, whatever the caller sends. |
+| **Direction** | The order rows arrive in. |
+
+### Operations and caller permissions
+
+| Control | What it does |
+|---|---|
+| **Operations** / **Read** / **Create** / **Edit** / **Delete** | Which verbs this key may use. |
+| **Ticking an operation lets the API…** | The explanation shown beside those boxes. |
+| **Allow the caller to add their own filters** | They may narrow the result. They can never widen it. |
+| **Allow the caller to choose their own sort** | They may reorder. This changes order only, never which rows. |
+| **Reads per hour** / **Writes per hour** | Separate ceilings. Writes get the lower one. |
+| **Always on — this is not a choice** | Every call is written to the audit log; it cannot be switched off. |
+| **Who can configure** | Which Admins may change a key's scope — see the note below. |
+
+**Delete cannot be undone.** Revoking is the reversible action; deleting is not.
+
+### Editing an existing key
+
+**Edit** on a row opens everything that key reaches — its objects, fields, filters, operations
+and limits — in one panel.
+
+![Editing a key: objects, fields, filters, operations and limits](../../img/shots/admin/api-edit-key.png)
+
+Changes take effect on the key's **next call**. There is no need to reissue the secret, and doing
+so would break whatever is already using it.

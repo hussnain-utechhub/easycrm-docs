@@ -7,6 +7,8 @@ sidebar_position: 7
 
 Everything shaped on screen, without code.
 
+![Branding](../img/shots/admin/branding.png)
+
 ## Page layouts
 
 **What it is.** Choosing which fields appear, grouping them into named sections, ordering them,
@@ -94,3 +96,8 @@ by hand.
 
 **What you gain:** you begin from the arrangement your company already uses rather than a blank
 page.
+
+## Where to do it
+
+- [Branding](../admin/appearance/branding.md)
+- [Layouts](../admin/layouts/index.md)

@@ -33,7 +33,7 @@ Changing it is written to the [Audit Log](../operations/audit-log.md) as a permi
 
 ## Where it is
 
-**Where:** **Admin** → **Users** → scroll to **Who manages whom** → **What an Admin can see**
+**Where:** In the portal → **Admin** → **Users** → scroll to **Who manages whom** → **What an Admin can see**
 
 ![What an Admin can see](../../img/shots/admin/admin-scope-mode.png)
 

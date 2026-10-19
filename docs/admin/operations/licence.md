@@ -51,3 +51,32 @@ user is refused.
 Either set a per-company override, if the overall licence allows it, or arrange a larger
 licence. The console shows what is currently in use against what is allowed, which is the
 number to quote when asking.
+
+## Opening it
+
+**Where:** In Salesforce → **App Launcher** → **EasyCRM** → **License Console**
+
+1. Sign in to **Salesforce**.
+2. Open the **App Launcher** (the nine dots, top left) and choose **EasyCRM**.
+3. Click the **License Console** tab.
+
+![The License Console sign-in](../../img/shots/sf/app-license-console.png)
+
+## It has its own password
+
+The console does not use your Salesforce login. It asks for **console credentials** of its own.
+
+| Control | What it does |
+|---|---|
+| **Username** / **Password** | The console's own credentials, issued with your licence. |
+| **Log in** | Opens the console. |
+| **Forgot password?** | Starts a reset. |
+
+That separation is deliberate: being a Salesforce administrator does not let you raise your own
+licence limits. If you do not have these credentials, whoever bought the licence does.
+
+:::note Reaching the tab is not the same as getting in
+Seeing **License Console** in the app only means you can open the tab. The sign-in is what
+decides whether you can change anything, so a colleague who can see the tab may still not be
+able to help.
+:::

@@ -15,7 +15,7 @@ live data every time somebody opens it. There is no such thing as an out-of-date
 
 ## Opening the reports area
 
-**Where:** **Reports** in the top menu
+**Where:** In the portal → **Reports** in the top menu
 
 1. Click **Reports** in the row of tabs across the top.
 2. The reports area opens.
@@ -57,7 +57,7 @@ Click the star again to remove it.
 
 ## Making a folder
 
-**Where:** **Reports** → **New Folder**
+**Where:** In the portal → **Reports** → **New Folder**
 
 1. Click **Reports** in the top menu.
 2. Click **New Folder** at the top.

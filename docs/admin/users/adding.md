@@ -12,7 +12,7 @@ and a user created without one is the most common setup mistake in the product.
 
 ## Adding somebody
 
-**Where:** **Admin** → **Users** → **+ New User**
+**Where:** In the portal → **Admin** → **Users** → **+ New User**
 
 1. Click **Admin** in the top menu.
 2. Click **Users** in the row of tabs.

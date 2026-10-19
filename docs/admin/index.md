@@ -12,7 +12,7 @@ appear at all.
 
 ## Opening it
 
-**Where:** **Admin** in the top menu
+**Where:** In the portal → **Admin** in the top menu
 
 1. Click **Admin** in the row of tabs across the top of the screen.
 2. The console opens.

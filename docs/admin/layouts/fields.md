@@ -12,7 +12,7 @@ record, not just you.
 
 ## Opening the editor
 
-**Where:** **Accounts** → any record's name → **Edit Page Layout**
+**Where:** In the portal → **Accounts** → any record's name → **Edit Page Layout**
 
 It is reached from a record, not the Admin Console. Any record of that kind will do — the
 layout applies to all of them.

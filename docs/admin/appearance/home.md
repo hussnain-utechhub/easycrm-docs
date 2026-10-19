@@ -14,7 +14,7 @@ everybody. You are choosing the layout, not the contents.
 
 ## Opening it
 
-**Where:** **Admin** → **Home**
+**Where:** In the portal → **Admin** → **Home**
 
 1. Click **Admin** in the top menu.
 2. Click **Home** in the row of tabs.
@@ -65,3 +65,17 @@ something different.
 3. Click **Save Home**.
 
 Everybody sees it on their home page. Clear the text and save again to remove it.
+
+## The whole screen, control by control
+
+| Control | What it does |
+|---|---|
+| **Home for** | Which app's Home you are editing. Each app can have its own. |
+| **Cards** / **Available** / **Shown (in order)** | Which cards appear, and their order. |
+| **Metric tile objects** / **Objects** | The objects counted by the metric tiles. |
+| **Announcement** | Switches the announcement card on. |
+| **Message** | What it says. *Shown only when the Announcement card is on.* |
+| **Reset to default** | Returns to the standard Home. |
+
+**This app has its own Home** means you are editing that app alone — changing it does not touch
+the others.

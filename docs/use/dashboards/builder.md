@@ -14,7 +14,7 @@ reports opened one at a time.
 
 ## Opening the builder
 
-**Where:** **Dashboards** → a folder → the dashboard's name → **Edit**
+**Where:** In the portal → **Dashboards** → a folder → the dashboard's name → **Edit**
 
 For a new one: **Dashboards** → **New Dashboard**.
 
@@ -28,7 +28,7 @@ If **Edit** is missing you have read-only access. Use **Save As** to take your o
 
 ## Adding a tile
 
-**Where:** the dashboard builder → **+ Widget**
+**Where:** In the portal → the dashboard builder → **+ Widget**
 
 1. Click **+ Widget** at the top.
 2. Choose the **report** the tile reads from.

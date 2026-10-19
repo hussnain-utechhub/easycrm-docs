@@ -20,7 +20,7 @@ here while the switch is off looks perfectly correct and does nothing.
 
 ## Opening it
 
-**Where:** **Admin** → **List Mappings** → choose a company
+**Where:** In the portal → **Admin** → **List Mappings** → choose a company
 
 1. Click **Admin** in the top menu.
 2. Click **List Mappings** in the row of tabs.

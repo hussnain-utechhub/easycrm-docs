@@ -11,7 +11,7 @@ sidebar_position: 1
 
 ## Opening it
 
-**Where:** your name (top right) → **Settings**
+**Where:** In the portal → your name (top right) → **Settings**
 
 1. Click your name in the top right corner of the screen.
 2. Click **Settings**.

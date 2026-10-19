@@ -14,7 +14,7 @@ sideways past twenty they never use. Your choice is remembered for next time.
 
 ## Changing the columns
 
-**Where:** **Accounts** → the gear button (top right of the list)
+**Where:** In the portal → **Accounts** → the gear button (top right of the list)
 
 1. Click the tab for the records you want — **Accounts**, for example.
 2. Above the table on the right there are three small buttons. The middle one is a gear.

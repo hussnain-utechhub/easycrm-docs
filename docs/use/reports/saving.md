@@ -19,7 +19,7 @@ That makes the builder safe to explore in. It also means closing the tab loses e
 
 ## The three ways to save
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Save**, **Save & Run**, or **Save options**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Save**, **Save & Run**, or **Save options**
 
 ![Save options](../../img/shots/report-builder/save-options.png)
 

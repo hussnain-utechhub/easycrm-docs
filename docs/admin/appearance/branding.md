@@ -15,7 +15,7 @@ especially on the sign-in page, which is the first thing they ever see.
 
 ## Opening it
 
-**Where:** **Admin** → **Branding**
+**Where:** In the portal → **Admin** → **Branding**
 
 1. Click **Admin** in the top menu.
 2. Click **Branding** in the row of tabs.
@@ -27,7 +27,7 @@ bottom.
 
 ## Name and logo
 
-**Where:** **Admin** → **Branding** → **Name & Logo**
+**Where:** In the portal → **Admin** → **Branding** → **Name & Logo**
 
 ![Name and logo](../../img/shots/admin/branding-name-logo.png)
 
@@ -40,7 +40,7 @@ bottom.
 
 ## Colours
 
-**Where:** **Admin** → **Branding** → **Color Theme**
+**Where:** In the portal → **Admin** → **Branding** → **Color Theme**
 
 ![Colour theme](../../img/shots/admin/branding-colour-theme.png)
 
@@ -51,7 +51,7 @@ the preview is where to notice that.
 
 ## Navigation
 
-**Where:** **Admin** → **Branding** → **Navigation**
+**Where:** In the portal → **Admin** → **Branding** → **Navigation**
 
 ![Navigation](../../img/shots/admin/branding-navigation.png)
 
@@ -61,7 +61,7 @@ It is only a default. Anybody can change it for themselves with the gear in the 
 
 ## The sign-in page
 
-**Where:** **Admin** → **Branding** → **Login Page**
+**Where:** In the portal → **Admin** → **Branding** → **Login Page**
 
 ![Login page](../../img/shots/admin/branding-login-page.png)
 
@@ -69,7 +69,7 @@ The simple settings: heading, tagline, the bullet points, and the footer line.
 
 ## The sign-in designer
 
-**Where:** **Admin** → **Branding** → **Login Design**
+**Where:** In the portal → **Admin** → **Branding** → **Login Design**
 
 ![Login design](../../img/shots/admin/branding-login-design.png)
 

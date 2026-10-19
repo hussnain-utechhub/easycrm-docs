@@ -12,7 +12,7 @@ see [CSV Import](../../admin/data/csv-import.md).
 
 ## Adding one
 
-**Where:** **Accounts** (or any tab) → **New**
+**Where:** In the portal → **Accounts** (or any tab) → **New**
 
 1. Click the tab for the kind of record you want to add — **Accounts**, for example.
 2. The list opens.

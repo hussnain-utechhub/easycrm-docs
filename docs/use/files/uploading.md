@@ -19,7 +19,7 @@ and access follows the record automatically — no separate decision to get wron
 
 ## Uploading to a record
 
-**Where:** **Accounts** → the record's name → the **Files** section
+**Where:** In the portal → **Accounts** → the record's name → the **Files** section
 
 1. Open the record.
 2. Scroll to the **Files** section.
@@ -29,7 +29,7 @@ Anybody who can see the record can now see the file. Anybody who cannot, cannot.
 
 ## Uploading to the Files tab
 
-**Where:** **Files** → **Upload Files**
+**Where:** In the portal → **Files** → **Upload Files**
 
 1. Click **Files** in the top menu.
 2. Click **Upload Files**.

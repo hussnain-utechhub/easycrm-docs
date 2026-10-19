@@ -20,7 +20,7 @@ leaves the rest of the record untouched.
 
 ## Changing a field
 
-**Where:** **Accounts** → the record's name → hover the field → the pencil
+**Where:** In the portal → **Accounts** → the record's name → hover the field → the pencil
 
 1. Click the tab, then the record's **name** to open it.
 2. Move your pointer over the field you want to change.

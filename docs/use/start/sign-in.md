@@ -74,7 +74,7 @@ can set a new password for you directly.
 
 ## Signing out
 
-**Where:** your name (top right) → **Log Out**
+**Where:** In the portal → your name (top right) → **Log Out**
 
 1. Click your name in the top right corner of the screen.
 2. Click **Log Out**.

@@ -7,6 +7,8 @@ sidebar_position: 4
 
 A full report builder, not a list of canned reports.
 
+![The report builder](../img/shots/report-builder/new-report.png)
+
 ## Build reports on screen
 
 **What it is.** Choose what the report is about, pick columns, add filters, group and total —
@@ -138,3 +140,8 @@ rebuilding it.
 counterpart.
 
 **What you gain:** the same calculation means the same thing wherever somebody reads it.
+
+## Where to do it
+
+- [Starting a new report](../use/reports/report-types.md)
+- [The report builder](../use/reports/builder-tour.md)

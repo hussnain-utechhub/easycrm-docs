@@ -14,7 +14,7 @@ of in somebody's inbox.
 
 ## Opening the files area
 
-**Where:** **Files** in the top menu
+**Where:** In the portal → **Files** in the top menu
 
 1. Click **Files** in the row of tabs across the top.
 
@@ -38,7 +38,7 @@ Choose along the top:
 
 ## Uploading a file
 
-**Where:** **Files** → **Upload Files**
+**Where:** In the portal → **Files** → **Upload Files**
 
 1. Click **Files** in the top menu.
 2. Click **Upload Files**.
@@ -52,7 +52,7 @@ Choose along the top:
 
 This is usually better, because the file then sits with the customer it concerns.
 
-**Where:** **Accounts** → the record's name → the **Files** section
+**Where:** In the portal → **Accounts** → the record's name → the **Files** section
 
 1. Open the record.
 2. Find the **Files** section.

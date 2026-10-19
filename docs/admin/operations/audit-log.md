@@ -23,7 +23,7 @@ That immutability is the whole point. A log an administrator can alter is not ev
 
 ## Opening it
 
-**Where:** **Admin** → **Audit Log**
+**Where:** In the portal → **Admin** → **Audit Log**
 
 1. Click **Admin** in the top menu.
 2. Click **Audit Log** in the row of tabs.

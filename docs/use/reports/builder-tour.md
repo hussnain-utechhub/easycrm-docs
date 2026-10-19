@@ -47,7 +47,7 @@ Nothing is saved until you click **Save**, so you can experiment freely.
 
 ## Adding a column
 
-**Where:** the builder → **Outline** → **Add column…**
+**Where:** In the portal → the builder → **Outline** → **Add column…**
 
 1. Click the **Outline** tab if you are not already on it.
 

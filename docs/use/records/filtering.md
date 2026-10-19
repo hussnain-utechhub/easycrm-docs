@@ -15,7 +15,7 @@ answers a question.
 
 ## Adding a filter
 
-**Where:** **Accounts** → the filter button (top right of the list) → **Add Filter**
+**Where:** In the portal → **Accounts** → the filter button (top right of the list) → **Add Filter**
 
 1. Click the tab for the records you want — **Accounts**, for example.
 2. Look at the three small buttons above the table on the right. The last one, shaped like a
@@ -41,7 +41,7 @@ By default a record must match **every** filter. Two filters means both must be 
 
 ## Changing that with filter logic
 
-**Where:** the filters panel → **Add Filter Logic**
+**Where:** In the portal → the filters panel → **Add Filter Logic**
 
 Each filter has a number — 1, 2, 3 — in the order you added them. Filter logic lets you
 combine them differently.

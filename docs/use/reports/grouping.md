@@ -23,7 +23,7 @@ export and manipulate. Grouping gets in the way of both. Leave it ungrouped and 
 
 ## Grouping rows
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add group…** under **Group Rows**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add group…** under **Group Rows**
 
 1. Open the report in the builder.
 2. Click the **Outline** tab.
@@ -46,7 +46,7 @@ Click the small cross beside it, or **Remove all groups** to clear them at once.
 
 ## Grouping across the top as well
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add group…** under **Group Columns**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add group…** under **Group Columns**
 
 This makes the report a **matrix**: groups down the side *and* across the top, with a figure
 in every cell.

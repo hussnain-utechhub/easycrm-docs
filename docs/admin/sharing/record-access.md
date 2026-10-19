@@ -15,7 +15,7 @@ turns a guess into an answer in about ten seconds.
 
 ## Opening it
 
-**Where:** **Admin** → **Sharing** → **Record Access**
+**Where:** In the portal → **Admin** → **Sharing** → **Record Access**
 
 1. Click **Admin** in the top menu.
 2. Click **Sharing**, then **Record Access**.

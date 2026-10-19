@@ -16,7 +16,7 @@ customer and a supplier can both be accounts without sharing one cluttered form.
 
 ## Choosing a kind
 
-**Where:** **Accounts** → **New** → pick a kind
+**Where:** In the portal → **Accounts** → **New** → pick a kind
 
 1. Click **Accounts** (or any tab) in the top menu.
 2. Click **New** at the top right of the list.

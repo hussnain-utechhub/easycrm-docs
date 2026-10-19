@@ -12,7 +12,7 @@ so there is no old copy to worry about.
 
 ## Running one
 
-**Where:** **Reports** → a folder → the report's name
+**Where:** In the portal → **Reports** → a folder → the report's name
 
 1. Click **Reports** in the top menu.
 2. Click the folder the report is in, on the left.
@@ -30,7 +30,7 @@ so there is no old copy to worry about.
 
 ## Changing what it shows, just for now
 
-**Where:** an open report → **Filters**
+**Where:** In the portal → an open report → **Filters**
 
 1. With the report open, click **Filters**.
 2. The panel opens showing the report's filters.

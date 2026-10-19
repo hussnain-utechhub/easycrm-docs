@@ -54,7 +54,7 @@ Here is the whole page:
 
 ## Searching for anything
 
-**Where:** **Search...** at the top → type → click a result
+**Where:** In the portal → **Search...** at the top → type → click a result
 
 1. Click the **Search...** box in the middle of the top bar.
 2. Start typing a name. You do not need the whole thing — a few letters is enough.
@@ -69,7 +69,7 @@ find something when you are not sure which tab it lives under.
 
 ## Your notifications
 
-**Where:** the bell (top right)
+**Where:** In the portal → the bell (top right)
 
 1. Click the bell in the top right.
 2. The list opens, newest first.
@@ -82,7 +82,7 @@ The red number on the bell is how many you have not read.
 
 ## Changing how the portal looks
 
-**Where:** the gear (top right)
+**Where:** In the portal → the gear (top right)
 
 1. Click the gear symbol in the top right.
 2. The panel opens.
@@ -99,7 +99,7 @@ The red number on the bell is how many you have not read.
 
 ## Your account menu
 
-**Where:** your name (top right)
+**Where:** In the portal → your name (top right)
 
 1. Click your name in the top right.
 

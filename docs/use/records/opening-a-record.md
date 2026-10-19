@@ -15,7 +15,7 @@ together from email and memory.
 
 ## Getting to a record
 
-**Where:** **Accounts** (or any tab) → click the record's **name**
+**Where:** In the portal → **Accounts** (or any tab) → click the record's **name**
 
 1. Click the tab for the kind of record you want — **Accounts**, for example.
 2. The list opens. If it is empty, switch to the **All ...** list — see

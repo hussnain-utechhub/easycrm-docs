@@ -16,7 +16,7 @@ The portal has two, and reaching for the wrong one wastes time.
 
 ## Global search — when you do not know where it lives
 
-**Where:** the **Search...** box at the top of any page
+**Where:** In the portal → the **Search...** box at the top of any page
 
 1. Click **Search...** in the middle of the top bar.
 2. Start typing. A few letters is enough — you do not need the whole name.
@@ -31,7 +31,7 @@ whether "Acme" is an account or a contact.
 
 ## Search this list — when you are already there
 
-**Where:** a tab → **Search this list...**
+**Where:** In the portal → a tab → **Search this list...**
 
 1. Open a tab and its list.
 2. Click **Search this list...** above the table on the right.

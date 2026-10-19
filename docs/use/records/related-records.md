@@ -15,7 +15,7 @@ connected records without searching for them.
 
 ## Finding them
 
-**Where:** **Accounts** → the record's name → scroll to the bottom
+**Where:** In the portal → **Accounts** → the record's name → scroll to the bottom
 
 1. Click **Accounts** (or any tab) in the top menu.
 2. Click the record's **name** to open it.

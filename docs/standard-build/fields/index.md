@@ -30,7 +30,7 @@ here, something downstream reads it.
 
 ## How a field gets added
 
-**Where:** **Setup** → **Object Manager** → **Contact** → **Fields & Relationships** → **New**
+**Where:** In Salesforce → **Setup** → **Object Manager** → **Contact** → **Fields & Relationships** → **New**
 
 1. Click the gear, top right, then **Setup**.
 2. Click **Object Manager** in the top bar.

@@ -15,7 +15,7 @@ those three a permission set instead of widening the access of the whole group.
 
 ## Opening it
 
-**Where:** **Admin** → **Permission Sets**
+**Where:** In the portal → **Admin** → **Permission Sets**
 
 1. Click **Admin** in the top menu.
 2. Click **Permission Sets** in the row of tabs.
@@ -24,7 +24,7 @@ those three a permission set instead of widening the access of the whole group.
 
 ## Creating one
 
-**Where:** **Admin** → **Permission Sets** → **New Permission Set**
+**Where:** In the portal → **Admin** → **Permission Sets** → **New Permission Set**
 
 1. Click **Admin**, then **Permission Sets**.
 2. Click **New Permission Set**.
@@ -37,7 +37,7 @@ those three a permission set instead of widening the access of the whole group.
 
 ## Giving it to somebody
 
-**Where:** **Admin** → **Users** → the person's row → **Manage permission sets**
+**Where:** In the portal → **Admin** → **Users** → the person's row → **Manage permission sets**
 
 1. Click **Admin**, then **Users**.
 2. Find the person in the list.

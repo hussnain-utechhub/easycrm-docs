@@ -15,7 +15,7 @@ concern, in date order.
 
 ## Finding the panel
 
-**Where:** **Accounts** → the record's name → the panel on the right
+**Where:** In the portal → **Accounts** → the record's name → the panel on the right
 
 1. Click **Accounts** (or any tab) in the top menu.
 2. Click the record's **name** to open it.
@@ -38,7 +38,7 @@ the other a reminder for the future.
 
 ## Logging a call
 
-**Where:** a record → **Log a Call**
+**Where:** In the portal → a record → **Log a Call**
 
 1. Open the record.
 2. Click **Log a Call** in the right-hand panel.
@@ -54,7 +54,7 @@ The call appears in the timeline below, dated today.
 
 ## Setting a task
 
-**Where:** a record → **New Task**
+**Where:** In the portal → a record → **New Task**
 
 1. Open the record.
 2. Click **New Task**.
@@ -70,7 +70,7 @@ The task now appears under **My Tasks** on that person's home page.
 
 ## Scheduling a meeting
 
-**Where:** a record → **New Event**
+**Where:** In the portal → a record → **New Event**
 
 1. Open the record.
 2. Click **New Event**.

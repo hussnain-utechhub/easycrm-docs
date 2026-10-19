@@ -16,7 +16,7 @@ anybody adding a field to the database. No developer, no waiting.
 
 ## Creating one
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…** → **Add Bucket Column**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…** → **Add Bucket Column**
 
 1. Click **Reports** in the top menu.
 2. Click the folder, then the report's **name**, then **Edit**.

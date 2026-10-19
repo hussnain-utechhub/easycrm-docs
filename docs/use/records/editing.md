@@ -15,7 +15,7 @@ live for everybody.
 
 ## Changing a record
 
-**Where:** **Accounts** → the record's name → **Edit**
+**Where:** In the portal → **Accounts** → the record's name → **Edit**
 
 1. Click the tab for the kind of record — **Accounts**, for example.
 2. Click the record's **name** to open it.

@@ -7,6 +7,8 @@ sidebar_position: 5
 
 Several answers on one screen, built from your reports.
 
+![A dashboard](../img/shots/analytics/dashboard-viewer.png)
+
 ## Six kinds of tile
 
 **What it is.** Metric, bar or column, line, pie or donut, gauge, and table.
@@ -50,3 +52,7 @@ latest numbers.
 
 **What you gain:** a twenty-tile dashboard opens in a usable time, and anybody who needs the
 very latest figure can ask for it.
+
+## Where to do it
+
+- [Dashboards](../use/dashboards/index.md)

@@ -15,7 +15,7 @@ other's work. You set the rule once instead of sharing records one at a time.
 
 ## Opening it
 
-**Where:** **Admin** → **Sharing** → **Sharing Rules**
+**Where:** In the portal → **Admin** → **Sharing** → **Sharing Rules**
 
 1. Click **Admin** in the top menu.
 2. Click **Sharing**, then **Sharing Rules**.

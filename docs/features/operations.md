@@ -7,6 +7,8 @@ sidebar_position: 9
 
 Running it, and running it at volume.
 
+![The audit log](../img/shots/admin/audit-log.png)
+
 ## Audit log
 
 **What it is.** Sign-ins, failed sign-ins, password changes, administration changes and every
@@ -59,3 +61,8 @@ company, with per-company overrides.
 is affected.
 
 **What you gain:** an installation that cannot quietly outgrow what was agreed.
+
+## Where to do it
+
+- [Audit log](../admin/operations/audit-log.md)
+- [Publish Schedule](../admin/data/publish-schedule.md)

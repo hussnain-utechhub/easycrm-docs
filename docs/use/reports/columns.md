@@ -21,7 +21,7 @@ harder to read than a short grouped one.
 
 ## Adding a column
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…**
 
 1. Click **Reports** in the top menu.
 2. Click the folder, then the report's **name**. It runs.

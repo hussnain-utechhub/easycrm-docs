@@ -15,7 +15,7 @@ nobody can do their job, or everybody sees everybody else's customers.
 
 ## Opening it
 
-**Where:** **Admin** → **Sharing** → **Org-Wide Defaults**
+**Where:** In the portal → **Admin** → **Sharing** → **Org-Wide Defaults**
 
 1. Click **Admin** in the top menu.
 2. Click **Sharing** in the row of tabs.

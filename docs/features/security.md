@@ -7,6 +7,8 @@ sidebar_position: 6
 
 A complete access model, in two independent halves.
 
+![Org-wide defaults](../img/shots/admin/sharing-org-wide-defaults.png)
+
 | Half | Decides | Set by |
 |---|---|---|
 | **Permissions** | What somebody may **do** | Per person, per object |
@@ -94,3 +96,8 @@ owner, default, a named sharing rule, or the hierarchy.
 
 **What you gain:** access questions answered with evidence in seconds, and you know exactly
 which setting to change.
+
+## Where to do it
+
+- [Sharing](../admin/sharing/index.md)
+- [Permission sets](../admin/access/permission-sets.md)

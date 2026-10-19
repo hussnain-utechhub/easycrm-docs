@@ -15,7 +15,7 @@ narrower: this quarter, this owner, this status.
 
 ## Adding a filter
 
-**Where:** the builder → **Filters** → **Add Filter**
+**Where:** In the portal → the builder → **Filters** → **Add Filter**
 
 1. Open the report in the builder — see [The report builder](./builder-tour.md).
 2. Click the **Filters** tab at the top left.

@@ -15,7 +15,7 @@ the team changes.
 
 ## Opening it
 
-**Where:** **Admin** → **Sharing** → **Roles**
+**Where:** In the portal → **Admin** → **Sharing** → **Roles**
 
 1. Click **Admin** in the top menu.
 2. Click **Sharing**, then **Roles**.
@@ -33,7 +33,7 @@ Build from the top down, so the role you need to report to already exists.
 
 ## Putting people in roles
 
-**Where:** **Admin** → **Users** → the person's row → **Set portal role**
+**Where:** In the portal → **Admin** → **Users** → the person's row → **Set portal role**
 
 1. Click **Admin**, then **Users**.
 2. Find the person.

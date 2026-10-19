@@ -15,7 +15,7 @@ people.
 
 ## Opening it
 
-**Where:** **Admin** → **Profiles**
+**Where:** In the portal → **Admin** → **Profiles**
 
 1. Click **Admin** in the top menu.
 2. Click **Profiles** in the row of tabs.
@@ -24,7 +24,7 @@ people.
 
 ## Creating one
 
-**Where:** **Admin** → **Profiles** → **New**
+**Where:** In the portal → **Admin** → **Profiles** → **New**
 
 1. Click **Admin**, then **Profiles**.
 2. Click **New**.
@@ -37,7 +37,7 @@ people.
 
 ## Giving it to somebody
 
-**Where:** **Admin** → **Users** → the person's row → **Set profile**
+**Where:** In the portal → **Admin** → **Users** → the person's row → **Set profile**
 
 1. Click **Admin**, then **Users**.
 2. Find the person.

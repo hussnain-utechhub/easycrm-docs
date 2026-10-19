@@ -14,7 +14,7 @@ other's.
 
 ## Opening it
 
-**Where:** **Admin** → **Apps**
+**Where:** In the portal → **Admin** → **Apps**
 
 1. Click **Admin** in the top menu.
 2. Click **Apps** in the row of tabs.
@@ -23,7 +23,7 @@ other's.
 
 ## Creating one
 
-**Where:** **Admin** → **Apps** → **New App**
+**Where:** In the portal → **Admin** → **Apps** → **New App**
 
 1. Click **Admin**, then **Apps**.
 2. Click **New App**.
@@ -36,7 +36,7 @@ first if it is missing.
 
 ## Deciding who gets which app
 
-**Where:** **Admin** → **Users** → **Assign Apps**
+**Where:** In the portal → **Admin** → **Users** → **Assign Apps**
 
 1. Click **Admin**, then **Users**.
 2. Click **Assign Apps** above the table.

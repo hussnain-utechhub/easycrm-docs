@@ -15,7 +15,7 @@ setting access report by report.
 
 ## The folders you always have
 
-**Where:** **Reports** → the folder list on the left
+**Where:** In the portal → **Reports** → the folder list on the left
 
 | Folder | Who sees what is in it |
 |---|---|
@@ -26,7 +26,7 @@ setting access report by report.
 
 ## Making a folder
 
-**Where:** **Reports** → **New Folder**
+**Where:** In the portal → **Reports** → **New Folder**
 
 1. Click **Reports** in the top menu.
 2. Click **New Folder**.
@@ -48,7 +48,7 @@ looks empty to everybody else.
 
 ## Moving a report into a folder
 
-**Where:** **Reports** → the report's name → **Edit Properties**
+**Where:** In the portal → **Reports** → the report's name → **Edit Properties**
 
 1. Click **Reports**, then open the report.
 2. Click **Edit Properties**.

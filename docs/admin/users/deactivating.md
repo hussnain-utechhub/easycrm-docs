@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ## Switch them off — never delete
 
-**Where:** **Admin** → **Users** → the **Active** switch
+**Where:** In the portal → **Admin** → **Users** → the **Active** switch
 
 1. Click **Admin**, then **Users**.
 2. Find the person.

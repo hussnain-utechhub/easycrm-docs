@@ -7,6 +7,8 @@ sidebar_position: 2
 
 The part of the portal people spend their day in.
 
+![A record](../img/shots/records/accounts-detail.png)
+
 ## List views
 
 **What it is.** Saved sets of records with their own columns, filters and sorting.
@@ -120,3 +122,8 @@ their recent records, upcoming events and quick links.
 **What it is.** Top menu or side menu, a colour theme, and comfortable or compact rows.
 
 **What you gain:** people work how they prefer without anybody changing a shared setting.
+
+## Where to do it
+
+- [Records](../use/records/index.md)
+- [List views](../use/records/list-views.md)

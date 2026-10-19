@@ -15,7 +15,7 @@ obvious from looking at the dashboard that anything is amiss.
 
 ## Opening the settings
 
-**Where:** **Dashboards** → the dashboard's name → **Edit** → **Properties**
+**Where:** In the portal → **Dashboards** → the dashboard's name → **Edit** → **Properties**
 
 1. Click **Dashboards** in the top menu.
 2. Open the dashboard, then click **Edit**.

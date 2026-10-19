@@ -14,7 +14,7 @@ numbers somewhere else.
 
 ## Exporting
 
-**Where:** **Reports** → a folder → the report's name → **Export**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Export**
 
 1. Click **Reports** in the top menu.
 2. Click the folder, then the report's **name**. It runs.

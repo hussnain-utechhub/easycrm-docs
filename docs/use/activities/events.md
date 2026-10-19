@@ -24,7 +24,7 @@ Friday" is a task; "Review call, Thursday 2pm" is an event.
 
 ## Creating one
 
-**Where:** **Accounts** → the record's name → **New Event**
+**Where:** In the portal → **Accounts** → the record's name → **New Event**
 
 1. Click the tab and open the record.
 2. Click **New Event** in the panel on the right.

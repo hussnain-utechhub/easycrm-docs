@@ -23,7 +23,7 @@ somebody else's is unless you are an administrator.
 
 ## Finding out your own role
 
-**Where:** your name (top right) → **Settings**
+**Where:** In the portal → your name (top right) → **Settings**
 
 1. Click your name in the top right corner.
 2. Click **Settings**.

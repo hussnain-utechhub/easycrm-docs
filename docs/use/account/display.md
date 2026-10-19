@@ -19,7 +19,7 @@ Nobody else is affected and no data changes.
 
 ## Changing the menu and theme
 
-**Where:** the gear (top right)
+**Where:** In the portal → the gear (top right)
 
 1. Click the **gear** symbol in the top right of any page.
 
@@ -33,7 +33,7 @@ Nobody else is affected and no data changes.
 
 ## Changing row spacing
 
-**Where:** your name (top right)
+**Where:** In the portal → your name (top right)
 
 1. Click your **name** in the top right.
 2. Choose **Comfy** or **Compact**.

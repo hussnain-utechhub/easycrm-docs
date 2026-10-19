@@ -14,7 +14,7 @@ five reports opened one after another.
 
 ## Opening a dashboard
 
-**Where:** **Dashboards** in the top menu → a folder → the dashboard's name
+**Where:** In the portal → **Dashboards** in the top menu → a folder → the dashboard's name
 
 1. Click **Dashboards** in the row of tabs across the top.
 2. The list opens, laid out the same way as Reports — folders on the left, dashboards on the

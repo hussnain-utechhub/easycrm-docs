@@ -20,7 +20,7 @@ is an [event](./events.md).
 
 ## Creating one
 
-**Where:** **Accounts** → the record's name → **New Task**
+**Where:** In the portal → **Accounts** → the record's name → **New Task**
 
 1. Open the record.
 2. Click **New Task** in the panel on the right.

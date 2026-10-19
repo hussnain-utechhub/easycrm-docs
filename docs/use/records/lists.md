@@ -14,7 +14,7 @@ in the portal.
 
 ## Opening a list
 
-**Where:** the tab for the records you want — for example **Accounts**
+**Where:** In the portal → the tab for the records you want — for example **Accounts**
 
 1. Look at the row of tabs across the top of the screen.
 2. Click the tab for the kind of record you want: **Accounts**, **Contacts**, **Task** or
@@ -40,7 +40,7 @@ Reading the screen from the top:
 A tab can hold several lists. **Recently Viewed** is only what you opened lately, so on a new
 account it is often empty — that is normal, not a fault.
 
-**Where:** a tab → the list name at the top → choose a list
+**Where:** In the portal → a tab → the list name at the top → choose a list
 
 1. Click the list name at the top (for example **Recently Viewed**).
 2. A menu opens showing every list you can use.
@@ -54,7 +54,7 @@ this tab, it starts there.
 
 ## Searching inside a list
 
-**Where:** a tab → **Search this list...**
+**Where:** In the portal → a tab → **Search this list...**
 
 1. Click the **Search this list...** box above the table on the right.
 2. Type part of a name.
@@ -78,7 +78,7 @@ sorting options.
 
 ## Doing something to one row
 
-**Where:** a tab → the arrow at the end of a row
+**Where:** In the portal → a tab → the arrow at the end of a row
 
 1. Find the row you want.
 2. Click the small arrow at the far right of that row.

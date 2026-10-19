@@ -7,6 +7,8 @@ sidebar_position: 1
 
 How people get in, what kind of user they are, and how one installation serves many companies.
 
+![The Users tab in the admin console](../img/shots/admin/users.png)
+
 ## Username and password sign-in
 
 **What it is.** Portal users sign in with their own credentials, created in EasyCRM.
@@ -128,3 +130,8 @@ closed.
 
 **What you gain:** accounts are handed over and recovered without an administrator relaying
 passwords by hand.
+
+## Where to do it
+
+- [Users](../admin/users/index.md)
+- [Permissions](../admin/access/index.md)

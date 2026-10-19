@@ -16,7 +16,7 @@ writing code.
 
 ## Opening the designer
 
-**Where:** **Admin** → **Branding** → **Login Design**
+**Where:** In the portal → **Admin** → **Branding** → **Login Design**
 
 1. Click **Admin** in the top menu.
 2. Click **Branding** in the row of tabs.
@@ -93,3 +93,92 @@ can move them, hide them, or imitate them.
 
 That is deliberate. It means no design change — by anybody, deliberate or not — can turn the
 sign-in page into something that collects passwords and sends them elsewhere.
+
+## The whole editor, control by control
+
+**Where:** In the portal → **Admin** → **Branding** → **Login Design** → **Open the design editor**
+
+### Standard or Custom
+
+| Control | What it does |
+|---|---|
+| **Standard** | The design that ships with the portal. The default. |
+| **Custom** | Applies your own stylesheet instead. |
+| **Open the design editor** | Opens the editor below. |
+
+Switching back to **Standard** keeps your work — nothing is deleted, so it is a safe way to
+compare the two.
+
+:::note It saves separately
+Login Design saves on its own, **not** with **Save All Branding**. Saving the rest of the
+Branding tab does not save your design, and vice versa.
+:::
+
+### The editor
+
+![The login design editor: the CSS tab beside the live preview](../../img/shots/admin/login-design-editor.png)
+
+Five tabs on the left, a live preview on the right.
+
+| Tab | What it is for |
+|---|---|
+| **Layout** | The blocks on the page — add them, label them, link them, and set which opens first. |
+| **CSS** | The stylesheet itself. This is where most of the work happens. |
+| **Variables** | The design variables the stylesheet reads, such as `--lf-accent` and `--lf-ink`. Change these to restyle without writing rules. |
+| **Guide** | The written instructions, in the product. |
+| **History** | Previously published versions, so you can go back to one. |
+
+**Variables before CSS.** Most changes — colours, fonts, spacing — are a variable, not a rule.
+Reach for the CSS tab when a variable cannot express what you want.
+
+### Blocks, on the Layout tab
+
+| Control | What it does |
+|---|---|
+| **Insert** | Adds a block to the page. |
+| **Label** | Its visible text. |
+| **Link (https:// or mailto:)** | Where it goes when clicked. |
+| **Clickable** | Whether it is a link at all — untick for a fixed panel. |
+| **Or upload an image for this block** | Uses an image instead of text. |
+| **Align** / **Left** / **Centre** | Horizontal placement. |
+| **Height** / **Colour & size** | Its size and appearance. |
+| **Highlight** | Marks it as the emphasised block. |
+| **Opens first** | The block the visitor lands on. |
+
+### Live preview
+
+| Control | What it does |
+|---|---|
+| **Live preview** | The sign-in page as it will look, updating as you type. |
+| **1440 / 1280 / 1024 / 860 / 430** | Preview at that width — the last is a phone. |
+| **Fit** | Scales the preview to the space available. |
+
+Check **430** before publishing. A design that works on a laptop and not on a phone is the
+common failure, and the preview is the only place you will see it first.
+
+### Saving and publishing
+
+| Control | What it does |
+|---|---|
+| **Save this design** | Saves your work as a draft. Visitors still see the old page. |
+| **Publish** | Makes it the live sign-in page. |
+| **History** → **Open** | Loads an earlier published version. |
+| **Reset to Default** | Returns to the standard sign-in page. |
+
+:::caution Saving is not publishing
+**Save this design** keeps your work and changes nothing for visitors. Only **Publish** does. You
+can leave the editor mid-change without anybody seeing it.
+:::
+
+### Building it with AI
+
+| Control | What it does |
+|---|---|
+| **I want to…** | Describe the design you want. |
+| **Copy AI prompt** | Copies a prompt to paste into an AI assistant. |
+| **Paste AI answer** | Paste the reply back — all of it, exactly as it came. |
+| **Recipes** | Ready-made designs to start from. |
+| **JSON** | The design as text, to keep a copy or edit by hand. |
+
+The AI route expects the assistant's **whole reply**, both sections. A trimmed paste is the usual
+reason an import is rejected.

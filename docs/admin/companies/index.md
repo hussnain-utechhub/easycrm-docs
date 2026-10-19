@@ -15,7 +15,7 @@ shared per company. Somebody with no company matches no company rule.
 
 ## Opening it
 
-**Where:** **Admin** → **Companies**
+**Where:** In the portal → **Admin** → **Companies**
 
 1. Click **Admin** in the top menu.
 2. Click **Companies** in the row of tabs.
@@ -26,7 +26,7 @@ Each company is listed with how many people belong to it.
 
 ## Adding a company
 
-**Where:** **Admin** → **Companies** → **New Company**
+**Where:** In the portal → **Admin** → **Companies** → **New Company**
 
 1. Click **Admin**, then **Companies**.
 2. Click **New Company**.
@@ -65,3 +65,40 @@ It is the most common setup mistake, and it shows up in confusing ways:
 - An app assigned to a company does not appear for them.
 
 All three are the same cause: a blank company field. Set it when you create the user.
+
+## The whole screen, control by control
+
+| Control | What it does |
+|---|---|
+| **New Company** | Creates a company. |
+| **Company name** | Its name. |
+| **Company logo** / **No logo** / **Remove logo** | A logo for this company's people. |
+| **Status** / **Active** | Whether it is in use. |
+| **People** / **Username** / **Role** / **Manager** | Who belongs to it. |
+| **Add to company** / **Add a user who has no company** | Moves an unassigned user in. |
+
+### What this company's Admins may do
+
+| Control | What it does |
+|---|---|
+| **Admin Console tabs** / **Admin Tabs** | Which console tabs their Admins see. |
+| **Let this company's Admins assign apps** | Lets them run **Assign Apps** themselves. |
+| **Let this company's Admins assign record types** | The same for **Assign Record Types**. |
+| **Allow company admins to manage API access** | Lets them issue API keys. Super Admin only. |
+
+**Leave this empty and the company…** gets the default — an empty list means *everything*, not
+*nothing*, for tab access.
+
+### Data and integration
+
+| Control | What it does |
+|---|---|
+| **Always run reports live** | Never use cached results for this company. Slower, always current. |
+| **FrontSpin tenant** | The FrontSpin tenant to match. Left blank, the company name is used with spaces replaced by underscores. |
+| **Apps** / **Assign Apps** | Which apps the company sees. |
+| **Record Types** / **Assign Record Types** | Which record types it may use. |
+
+### Limits
+
+**Company limit reached** means your licence will not allow another company — **Contact support**
+to raise it. Existing companies keep working.

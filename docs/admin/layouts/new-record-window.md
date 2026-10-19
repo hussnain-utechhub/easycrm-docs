@@ -21,7 +21,7 @@ records at all.
 
 ## Setting it
 
-**Where:** the layout editor → **New Record Window Fields**
+**Where:** In the portal → the layout editor → **New Record Window Fields**
 
 1. Open the layout editor from any record.
 2. Find the **New Record Window Fields** area.

@@ -17,7 +17,7 @@ company.
 
 ## Setting it
 
-**Where:** **Admin** → **Companies** → the pencil on a company → **Branding**
+**Where:** In the portal → **Admin** → **Companies** → the pencil on a company → **Branding**
 
 1. Click **Admin** in the top menu.
 2. Click **Companies**.

@@ -9,7 +9,7 @@ Two layouts matter: what a caller sees on a **Contact**, and what they see on a 
 
 ## The Contact layout
 
-**Where:** **Setup** → **Object Manager** → **Contact** → **Page Layouts**
+**Where:** In Salesforce → **Setup** → **Object Manager** → **Contact** → **Page Layouts**
 
 It is arranged so the things a caller needs mid-call are at the top and the research sits below.
 
@@ -60,7 +60,7 @@ been tried.
 
 ## The Task layout
 
-**Where:** **Setup** → **Object Manager** → **Task** → **Page Layouts**
+**Where:** In Salesforce → **Setup** → **Object Manager** → **Task** → **Page Layouts**
 
 ![The Task layout](../../img/shots/standard-build/task-layout.png)
 

@@ -7,6 +7,8 @@ sidebar_position: 3
 
 Keeping the history of a customer with the customer.
 
+![Files](../img/shots/files/all-files.png)
+
 ## Activity tracking
 
 **What it is.** Calls, tasks, meetings and emails recorded against the record they concern, in
@@ -67,3 +69,8 @@ cannot, cannot. No separate decision to get wrong.
 **What it is.** Recent, Owned by Me, and All Files.
 
 **What you gain:** finding your own upload again without searching everything.
+
+## Where to do it
+
+- [Calls, tasks and meetings](../use/activities/index.md)
+- [Files](../use/files/index.md)

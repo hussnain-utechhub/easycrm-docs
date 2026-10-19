@@ -15,7 +15,7 @@ copy per team.
 
 ## Adding a filter
 
-**Where:** **Dashboards** → the dashboard's name → **Edit** → **+ Filter**
+**Where:** In the portal → **Dashboards** → the dashboard's name → **Edit** → **+ Filter**
 
 1. Click **Dashboards** in the top menu.
 2. Open the dashboard, then click **Edit**.

@@ -9,6 +9,8 @@ slug: /features
 The complete catalogue of what EasyCRM does, grouped by area. Each feature says what it is,
 what it does, and what it gives you.
 
+![The portal home page](../img/shots/home/overview.png)
+
 If you want the short version, the [feature checklist](./checklist.md) lists everything on one
 page.
 
@@ -74,3 +76,8 @@ release.
 | [Data and integration](./data.md) | Import, mappings, the API, publishing back |
 | [Operations and scale](./operations.md) | Audit, health checks, performance, licensing |
 | [Checklist](./checklist.md) | Everything, on one page |
+
+## Where to do it
+
+- [Using EasyCRM](../use/index.md)
+- [Administering](../admin/index.md)

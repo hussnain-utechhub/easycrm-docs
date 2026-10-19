@@ -17,7 +17,7 @@ above it, an ungrouped wall of fields is genuinely hard to read.
 
 ## Adding one
 
-**Where:** the layout editor → **Add Section**
+**Where:** In the portal → the layout editor → **Add Section**
 
 1. Open the layout editor from any record.
 2. Click **Add Section**.

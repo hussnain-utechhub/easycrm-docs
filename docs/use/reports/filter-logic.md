@@ -24,7 +24,7 @@ somebody has to understand later.
 
 ## Writing a rule
 
-**Where:** **Reports** → a folder → the report's name → **Edit** → **Filters** → **Filter Logic**
+**Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Filters** → **Filter Logic**
 
 1. Open the report in the builder.
 2. Click the **Filters** tab.

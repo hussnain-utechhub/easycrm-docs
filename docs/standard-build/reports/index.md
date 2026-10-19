@@ -47,7 +47,7 @@ the mistake this split exists to prevent.
 
 ## Building one
 
-**Where:** **Reports** → **New Report**
+**Where:** In Salesforce → **Reports** → **New Report**
 
 1. Click **Reports** in the top bar.
 2. Click **New Report**.
