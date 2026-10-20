@@ -44,7 +44,3 @@ See [Changing your password](./password.md).
 
 That is not here — it is the **gear** in the top bar. See
 [Getting around](../start/the-screen.md).
-
-The whole page looks like this:
-
-![Your profile in full](../../img/shots/profile/view.png)
