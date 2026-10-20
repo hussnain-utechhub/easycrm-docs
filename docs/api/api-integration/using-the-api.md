@@ -30,8 +30,21 @@ Take the endpoint you were sent and add the object you want:
 <the endpoint they sent you>?object=Account
 ```
 
-Your administrator decides which objects you may read. Ask them if you are not sure — a
+Your administrator decides which objects you may reach. Ask them if you are not sure — a
 request for one you were not given comes back refused.
+
+### Two ways to write the address
+
+Both work on every verb, so use whichever suits your tool:
+
+| Style | Example |
+|---|---|
+| **Query parameter** | `<endpoint>?object=Account` |
+| **Path** | `<endpoint>/Account/001Bi00000UMyF1IAL` |
+
+The path form is read first and the parameter form is the fallback. A path segment that is
+not a Salesforce Id is treated as the portal **External Id**, so `<endpoint>/Account/EXT-000001`
+addresses a record too.
 
 ## 2. The two headers
 
@@ -85,8 +98,14 @@ that record's object:
 &limit=25
 ```
 
-The maximum is **200**. If you need more data, take more pages rather than asking for a
-bigger one — see [Paging](./paging.md).
+| | |
+|---|---|
+| **Default** | 200 records per page |
+| **Maximum** | 2000 |
+
+Ask for more than 2000 and you get 2000 — the request is not refused. Ask for less than 1
+and you get the default. For large exports, take more pages rather than one huge one; see
+[Paging](./paging.md).
 
 ## Fetching one specific record
 
@@ -97,6 +116,26 @@ bigger one — see [Paging](./paging.md).
 Every record has its own **Portal External Id**, shown on the record in the portal. This
 returns that one record instead of a page.
 
+You can also address it by its Salesforce Id in the path:
+
+```
+<endpoint>/Account/001Bi00000UMyF1IAL
+```
+
+Either way the answer keeps the same shape — a `records` array with one row in it, and
+`count: 1`. The envelope never changes, so code that reads a page reads a single record too.
+
+## Changing records
+
+This page covers reading. The same endpoint and the same two headers also create, update
+and delete, when the administrator has granted those operations:
+
+| | |
+|---|---|
+| [Creating records](./creating-records.md) | `POST` a new record |
+| [Updating records](./updating-records.md) | `PATCH` the fields you want changed |
+| [Deleting records](./deleting-records.md) | `DELETE` a record |
+
 ## If something goes wrong
 
 The reply always contains an `error` field explaining what to change.
@@ -105,8 +144,12 @@ The reply always contains an `error` field explaining what to change.
 |---|---|
 | **400** | Something in the request is not right — the message says what. |
 | **401** | Your Client ID or Secret is wrong, or the key has been switched off. |
-| **403** | You asked for an object your administrator did not give you. |
+| **403** | You asked for an object, or an operation, your administrator did not give you. |
+| **404** | No such record — or one you are not allowed to see. |
 | **429** | Too many requests this hour. Wait, then continue. |
+
+Every code, every message and both hourly ceilings are listed in
+[Errors and limits](./errors-and-limits.md).
 
 :::note Why 401 is vague
 "Not authorised" is returned whether the Client ID is unknown, the Secret is wrong, or the

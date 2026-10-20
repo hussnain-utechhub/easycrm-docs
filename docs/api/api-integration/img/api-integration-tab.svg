@@ -9,7 +9,7 @@
   <rect x="12" y="55" width="836" height="15" fill="#fafbfc"/>
   <line x1="12" y1="70" x2="848" y2="70" stroke="#eceff4"/>
   <text x="32" y="38" font-size="16" font-weight="700" fill="#16325c">API Integration</text>
-  <text x="32" y="57" font-size="12.5" fill="#706e6b">Give a portal user a read-only API key. They can only ever read what they could see by signing in.</text>
+  <text x="32" y="57" font-size="12.5" fill="#706e6b">Give a portal user an API key. It can only ever do what they could do by signing in.</text>
 
   <!-- primary button -->
   <rect x="690" y="26" width="140" height="30" rx="4" fill="#0070d2"/>

@@ -41,7 +41,8 @@ the administrator granted to this key, otherwise the request is refused.
 
 ### `limit` — integer, default `200`
 
-How many records to return. Maximum **200**. If you need more data, follow
+How many records to return per page. Defaults to **200**, maximum **2000**. A larger number is
+capped rather than refused. If you need more data, follow
 `nextUrl` for further pages rather than asking for a larger one.
 
 ### `cursor` — string

@@ -1,6 +1,6 @@
 ---
 title: API Usage tab
-sidebar_position: 5
+sidebar_position: 10
 ---
 
 # API Usage tab
@@ -37,6 +37,22 @@ Plus **Refresh** and **Export**, which saves what you are currently looking at.
 :::note Who sees what
 A **Super Admin** sees every company. A **company Admin** sees only their own — the company
 filter cannot be used to look at anyone else's traffic.
+:::
+
+## Reads and writes are counted apart
+
+The tab has a **Writes** tile and a **By operation** block listing all four operations —
+Read, Create, Update and Delete — with a zero stated rather than hidden, so you can always
+tell "none happened" from "not counted".
+
+| Figure | Counts |
+|---|---|
+| **Writes** | every create, update and delete |
+| **Rows returned** | reads only — a write would otherwise add a phantom row |
+
+:::note Writes stuck at zero after a successful create?
+That is an older build. The usage tab once counted only reads and auth, so create, update
+and delete were invisible even though the audit rows were being written.
 :::
 
 ## The six numbers
@@ -79,8 +95,8 @@ automatically**. Until an administrator schedules it from Setup, nothing is dele
 audit log grows without limit.
 
 This matters more than it sounds: every API call writes one row, because the rate limit is
-counted from those rows. A key working at the full 500 per hour produces roughly 12,000 rows
-a day.
+counted from those rows. A key working at the full 500 reads an hour produces roughly 12,000
+rows a day, and writes are counted on top of that.
 :::
 
 ## Why every call is logged

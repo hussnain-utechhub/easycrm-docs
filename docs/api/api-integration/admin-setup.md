@@ -25,7 +25,7 @@ themselves.
 Once delegated, an Admin may issue keys to **their own company's Standard users only** —
 never to another Admin, never to another company, never to a Super Admin.
 
-## The five steps
+## The steps
 
 ### 1. Open the tab
 
@@ -42,9 +42,16 @@ Press **Set up API access** to add one, or **Edit** on a row to change an existi
 Pick the person the key belongs to — you can search by name or company. The key acts as
 that user, which is what keeps it inside their existing permissions.
 
-**Calls per hour** caps how many requests the key may make in any hour. 500 is the normal
-setting. It exists to protect the portal: the API shares the site's request budget with it,
-so one runaway export could otherwise slow the portal down for everyone.
+Then set the two ceilings, counted separately per user over a rolling hour:
+
+| | Normal setting |
+|---|---|
+| **Reads per hour** | 500 |
+| **Writes per hour** | 100 |
+
+They exist to protect the portal: the API shares the site's request budget with it, so one
+runaway export could otherwise slow the portal down for everyone. Writes are capped lower
+on purpose — a runaway read loop is slow, a runaway write loop is damage.
 
 ### 3. Add the objects
 
@@ -63,7 +70,55 @@ may sort by.
 
 ![The field picker: Available on the left, Selected on the right](./img/fields-picker.svg)
 
-### 5. Save
+### 5. Choose the operations
+
+For each object, tick what this key may do:
+
+| Tick | Lets the key |
+|---|---|
+| **Read** | fetch records — `GET` |
+| **Create** | add records — `POST` |
+| **Update** | change records — `PATCH` |
+| **Delete** | remove records — `DELETE` |
+
+**Operations are per object, not per key.** The same key can be read-only on Account and
+full CRUD on Contact.
+
+:::note Leave them all unticked and the object is read-only
+That is also what every key created before operations existed does, so nothing changed
+underneath an existing integration when this arrived. Absence means read, never full access.
+:::
+
+:::caution Delete is the one with no undo
+It is off by default and granted separately for a reason. A deleted record cannot be brought
+back from here.
+:::
+
+Ticking an operation does not grant it outright — it permits the key to **ask**. The portal
+user's own permission still decides, so this screen can only ever narrow what that person
+could already do by hand.
+
+### 6. Choose the writable fields
+
+Of the fields you selected in step 4, choose which ones a create or update may actually
+**set**.
+
+| Leave it | And |
+|---|---|
+| untouched | writable is the same as readable |
+| cleared entirely | the key may read this object but never change it |
+
+:::tip Read and write are different risks
+Returning `AnnualRevenue` is disclosure. *Setting* it corrupts a reporting figure. It costs
+nothing to grant read on a field and withhold write, and starting strict is painless —
+loosening later never breaks anything, while tightening later breaks a live integration.
+:::
+
+A field sent in a request body that is not on this list is **refused by name** with a `400`.
+The request does not partly succeed, because a silently dropped field is how an integration
+appears to work for a month while never setting the value somebody was watching.
+
+### 7. Save
 
 The **Credentials** section appears, with three values:
 
@@ -129,7 +184,7 @@ Each row in the list has three actions:
 
 | Action | What it does |
 |---|---|
-| **Edit** | change objects, fields, filters, sort or calls per hour at any time |
+| **Edit** | change objects, operations, fields, filters, sort or either ceiling at any time |
 | **Regenerate** | issue a new Secret — the old one stops working straight away |
 | **Revoke** | switch the key off until you switch it back on |
 

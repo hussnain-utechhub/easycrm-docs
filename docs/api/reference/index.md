@@ -7,13 +7,16 @@ sidebar_position: 0
 
 **Version 1.0**
 
-A read-only REST API over the data a portal user can already see.
+A REST API over the data a portal user can already see and change.
 
-The API answers every request through the same code that renders the portal's own list
-views, so object permissions, field-level access and record sharing are applied by the
-portal's rules rather than a second copy of them. It follows that **the API can never
-return anything the key's portal user could not open by logging in**, and that it can
-only ever read: there is no create, update or delete.
+The API answers every request through the same code that renders the portal's own screens,
+so object permissions, field-level access, record sharing, record types and validation rules
+are applied by the portal's rules rather than a second copy of them. It follows that **the
+API can never read or write anything the key's portal user could not do by logging in**.
+
+It reads, creates, updates and deletes — `GET`, `POST`, `PATCH` and `DELETE` — **one record
+per call**. There are no arrays and no bulk operations. There is no upsert, because the
+External Id is a Salesforce AutoNumber that no caller can supply.
 
 ## What you need
 
@@ -32,8 +35,10 @@ which issues a new one and immediately stops the old one working.
 
 An administrator decides, per key:
 
-- which **objects** it may read
+- which **objects** it may reach
+- which **operations** it may perform on each: read, create, update, delete
 - which **fields** of each come back
+- which of those fields a write may **set**
 - a **filter** limiting which rows it sees at all
 - the **order** rows arrive in
 - whether the caller may add filters or choose their own sort
@@ -68,7 +73,8 @@ Both headers are required on every request.
 
 | | |
 |---|---|
-| [**Read records**](./read-records.md) | `GET /query` — returns a page of records for one object. |
+| [**Read records**](./read-records.md) | `GET /query` — a page of records, or one record. |
+| [**Create, update and delete**](./write-records.md) | `POST`, `PATCH` and `DELETE` on `/query/{object}` — one record per call. |
 
 ## The specification
 

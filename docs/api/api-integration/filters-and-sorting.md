@@ -1,6 +1,6 @@
 ---
 title: Filters and sorting
-sidebar_position: 3
+sidebar_position: 6
 ---
 
 # Filters and sorting

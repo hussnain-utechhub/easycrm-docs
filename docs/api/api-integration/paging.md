@@ -1,12 +1,12 @@
 ---
 title: Paging
-sidebar_position: 4
+sidebar_position: 9
 ---
 
 # Paging
 
-You do not get everything at once. The maximum is **200 records** per request, so anything
-larger arrives a page at a time.
+You do not get everything at once. A request returns **200 records** by default and **2000**
+at most, so anything larger arrives a page at a time.
 
 ## Follow the links
 
