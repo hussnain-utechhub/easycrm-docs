@@ -60,8 +60,13 @@ They can give specific people **Read** or **Edit** on:
 - a single report or dashboard, or
 - a whole folder, so anything added to it later is included automatically
 
-Ask them for what you need — *"please give the sales team read access to this report"* — and point
-them at [Reports and Dashboards](../../admin/data/report-folders.md), which is the screen they use.
+Ask them for what you need — *"please give the sales team read access to this report"*. There are
+two screens they might use, depending on where the report came from:
+
+| If the report | They use |
+|---|---|
+| was built in the portal | [Reports and Dashboards](../../admin/data/report-folders.md), in the portal's admin console |
+| came from Salesforce | [Sync & Share Folders](../../admin/salesforce/portal-users.md#sharing-folders-with-companies-step-by-step), on the Salesforce Portal Users tab |
 
 | Access | Lets them |
 |---|---|
