@@ -34,6 +34,30 @@ Three things, and only three:
 
 Plus **Member Type** (`Contacts`) and **Active**.
 
+### Adding a mapping in Setup
+
+This is the route when the switch is off — the default. The portal route is
+[List Mappings](../portal/list-mappings.md#adding-a-mapping), and
+[which one is live](./where-mappings-live.md) is worth checking first.
+
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Type `custom meta` into the **Quick Find** box on the left.
+3. Click **Custom Metadata Types**.
+4. Find **FrontSpin Report List Mapping** and click **Manage Records**.
+5. Click **New**.
+6. In **Label**, name it after the list it fills.
+7. In **Report ID**, paste the report's 15- or 18-character Id — it is the part of the report's
+   web address after `/Report/`, or after `reportId=` in the portal.
+8. In **FrontSpin Config**, type the **developer name** of the
+   [configuration row](../setup/configuration.md) that owns this tenant. Not its label.
+9. In **FrontSpin List ID**, put FrontSpin's own **number** for the list.
+10. Set **Member Type** to `Contacts`.
+11. Leave **Active** ticked.
+12. Click **Save**.
+
+It joins the hourly run. To check it without waiting, use the health check on
+[Checking it](../setup/checking-it.md).
+
 A mapping holds **no** tenant id, no credential and no API key — those come from the configuration
 row it names. That is why the configuration row's **developer name** matters.
 

@@ -30,6 +30,19 @@ So one number is chosen and copied into **Best Phone**, with its status copied i
 
 ![The flow, and its trigger configuration](../../img/shots/standard-build/flow-trigger.png)
 
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Type `flows` into the **Quick Find** box on the left.
+3. Click **Flows**.
+4. Click **Best Phone Best Status Update** in the list.
+5. The canvas opens. Click any element to read it; nothing is saved unless you click **Save**.
+
+:::caution Deactivate before you edit, and test on one record
+This flow runs on **every** Contact save. A mistake in it is a mistake on every record anybody
+touches, immediately and without a prompt. Use **Debug** on the canvas against a single Contact
+before clicking **Activate**.
+:::
+
+
 ## Why "before save" matters
 
 A before-save flow changes the record **on its way into the database**, in the same transaction

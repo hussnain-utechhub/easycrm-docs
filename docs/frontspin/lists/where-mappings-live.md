@@ -21,6 +21,20 @@ a single switch decides which.
 
 One tick box: **Use Custom Setting**.
 
+### Changing it, step by step
+
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Type `custom settings` into the **Quick Find** box on the left.
+3. Click **Custom Settings**.
+4. Find **FrontSpin Report List Control** and click **Manage** beside it.
+5. Click **New** — or **Edit**, if a row already exists.
+6. Tick or untick **Use Custom Setting**.
+7. Click **Save**.
+
+It takes effect on the next run of the hourly job. Nothing is copied between the two stores, so
+whatever is in the source you just switched to is what runs.
+
+
 | State | The live source is |
 |---|---|
 | Unticked (the default) | Custom Metadata, in Setup |

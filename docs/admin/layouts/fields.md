@@ -32,6 +32,21 @@ Two lists sit side by side:
 | Remove one | Click it on the right, then **Move selection to Available** |
 | Reorder | Click it on the right, then **Move selection up** / **down** |
 
+### Adding a field, step by step
+
+1. Click **Accounts** — or whichever object you are changing — in the top menu.
+2. Click any record's **name**. Any one will do; the layout applies to all of them.
+3. Click **Edit Page Layout**.
+4. Find the field in the **Available** list on the left. If the list is long, click
+   **Search fields…** and type part of the name.
+5. Click the field to select it. Hold **Ctrl** (**Cmd** on a Mac) to pick several at once.
+6. Click **Move selection to Shown (in order)**.
+7. With the field still selected on the right, click **Move selection up** or **down** until it
+   sits where you want it to read.
+8. Click **Save Layout**.
+
+People with the record already open see the change after they reload.
+
 ## Finding a field among hundreds
 
 Click **Search fields…** and type part of the name.

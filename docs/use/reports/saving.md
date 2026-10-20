@@ -29,6 +29,20 @@ That makes the builder safe to explore in. It also means closing the tab loses e
 | **Save & Run** | Saves, then shows the full result | You want to check it against real volume |
 | **Save options → Save As** | A copy under a new name | The report is somebody else's, or you are experimenting |
 
+### Saving for the first time, step by step
+
+1. Click **Reports** in the top menu.
+2. Click the folder, then the report's **name**, then **Edit** — or click **New Report** if you
+   are starting from nothing.
+3. Build the report, and watch the preview until it answers the question you meant to ask.
+4. Click **Save**.
+5. Type a **Report Name**. Make it say what the report answers — see
+   [naming](#naming-so-somebody-else-can-find-it) below.
+6. Add a **Description** if anybody other than you will open it. One line is enough.
+7. Choose a **Folder**. This is the part that decides who can find the report, so it is worth a
+   moment — see [Report folders](./folders.md).
+8. Click **Save**.
+
 The first time you save, you are asked for a **name** and a **folder**.
 
 ## Save As is the one to reach for

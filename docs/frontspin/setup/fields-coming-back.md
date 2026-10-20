@@ -19,6 +19,21 @@ otherwise FrontSpin could overwrite the number your team just corrected.
 
 ![An inbound field mapping](../../img/shots/frontspin/setup-field-mapping-in.png)
 
+### Adding one, step by step
+
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Type `custom meta` into the **Quick Find** box on the left.
+3. Click **Custom Metadata Types**.
+4. Find **FrontSpin Inbound Field Mapping** — note the word **Inbound**; the outbound type sits
+   right beside it and looks almost identical — and click **Manage Records**.
+5. Click **New**.
+6. Fill in **Label**, **Object API Name**, **Salesforce Field** and **FrontSpin Path**.
+7. Leave **Active** ticked and **Overwrite With Blank** unticked.
+8. Click **Save**.
+
+The next message that arrives carrying that value writes it.
+
+
 ## What a mapping holds
 
 | Field | Means |

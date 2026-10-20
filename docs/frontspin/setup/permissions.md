@@ -30,6 +30,39 @@ That user needs:
 **Schedule the jobs as a dedicated, permanent admin user.** If they are scheduled by somebody who
 later leaves and is deactivated, the jobs stop.
 
+## Granting the access, step by step
+
+**Where:** Salesforce **Setup** → **Permission Sets**
+
+Do this once per permission set — one for the scheduling user, and the portal's own set for the
+guest.
+
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Type `permission` into the **Quick Find** box on the left.
+3. Click **Permission Sets**.
+4. Click the name of the set you are granting through — or **New** to make one, giving it a
+   **Label** such as `FrontSpin Integration` and clicking **Save**.
+5. Click **Object Settings**.
+6. Click **FrontSpin List**.
+7. Click **Edit**.
+8. Tick **Read**, **Create** and **Edit** under **Object Permissions**.
+9. Click **Save**.
+10. Click **Object Settings** again and repeat steps 6–9 for **FrontSpin List Membership** and
+    **FrontSpin Sync Error**.
+
+Then assign it:
+
+1. From the permission set, click **Manage Assignments**.
+2. Click **Add Assignment**.
+3. Tick the user, and click **Assign** → **Done**.
+
+:::note The guest user is assigned differently
+A Site Guest User is not in that list. Assign its permission set from **Setup** → **Sites** → the
+site's label → **Public Access Settings**, or through the site's **Guest User** record. Grant the
+guest **Read** only on FrontSpin List Membership, and **Read** plus **Create** on FrontSpin List —
+Edit and Delete cannot be granted at all, for the reason below.
+:::
+
 ## Contact visibility bounds what syncs
 
 Contact's org-wide default is normally **Private**, and the Report-to-List sync respects sharing.

@@ -34,6 +34,18 @@ The address FrontSpin posts to ends in:
 /services/apexrest/frontspin/v1/<your url token>
 ```
 
+### Finding your org's address, step by step
+
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Type `sites` into the **Quick Find** box on the left.
+3. Click **Sites**.
+4. Click the **Site Label** of the receiving site.
+5. Copy the **Site URL** shown at the top — that is the first half of the address.
+6. Add the path below to the end of it, putting this tenant's own token in place of
+   `<your url token>`.
+
+The finished address is what you give FrontSpin.
+
 The **url token** on the end is how the receiver knows which tenant the message is about — the
 message body does not reliably say. That is why each tenant gets its own token.
 
@@ -42,6 +54,19 @@ message body does not reliably say. That is why each tenant gets its own token.
 **Setup** → **Custom Metadata Types** → **FrontSpin Webhook Config** → **Manage Records**
 
 ![A webhook configuration](../../img/shots/frontspin/setup-webhook-instance.png)
+
+### Adding one, step by step
+
+1. In **Setup**, type `custom meta` into the **Quick Find** box.
+2. Click **Custom Metadata Types**.
+3. Find **FrontSpin Webhook Config** and click **Manage Records**.
+4. Click **New**.
+5. Fill in the fields in the table below.
+6. Click **Save**.
+
+Then give FrontSpin the address from the section above — that part happens in FrontSpin, not in
+Salesforce, and is usually done by whoever runs the FrontSpin account.
+
 
 | Field | What to put |
 |---|---|

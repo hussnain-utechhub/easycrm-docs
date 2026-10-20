@@ -88,6 +88,33 @@ permanent.
 |---|---|---|
 | Call Recording | URL | `Call_Recording__c` |
 
+## Creating these fields
+
+**Where:** Salesforce **Setup** → **Object Manager** → **Contact** → **Fields & Relationships**
+
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Click **Object Manager** along the top.
+3. Type `Contact` into the search box at the right, and click **Contact**.
+4. Click **Fields & Relationships** in the left column.
+5. Click **New**.
+6. Choose the **Data Type** from the table above — **Phone**, **Text**, **Picklist**, **Date**,
+   **URL** or **Text Area (Long)** — and click **Next**.
+7. Type the **Field Label** exactly as the table gives it. The **Field Name** fills itself in,
+   and with `__c` appended it becomes the API name — check it matches the table before going on,
+   because renaming it afterwards breaks every report and formula that uses it.
+8. For a Text field, set **Length** to `255`. For a Long Text Area, `131072`. For a Picklist,
+   type the values one per line.
+9. Click **Next**.
+10. Tick **Visible** for the profiles that need it, and click **Next**.
+11. Tick the page layouts it should appear on, and click **Save** — or **Save & New** to carry
+    straight on to the next field.
+
+:::caution The API name is the part that matters
+Reports, formulas and the [Best Phone flow](../automation/best-phone.md) all refer to a field by
+its **API name**, never its label. Relabelling a field later is harmless; renaming it is not. The
+five mismatches below are exactly this problem, found after the fact.
+:::
+
 ## Where the original document is wrong {#where-the-original-document-is-wrong}
 
 Every API name above was read back from a live org. Five entries in the original build document

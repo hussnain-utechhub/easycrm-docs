@@ -78,6 +78,31 @@ seven numbers actually worked.
 
 **FS Call Recording** links to the recording in FrontSpin.
 
+## Editing one of these layouts
+
+**Where:** Salesforce **Setup** → **Object Manager** → the object → **Page Layouts**
+
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Click **Object Manager** along the top.
+3. Type `Contact` — or `Task` — into the search box at the right, and click the object's name.
+4. Click **Page Layouts** in the left column.
+5. Click the layout's **name** to open the editor.
+6. Drag a field from the palette at the top into the section where you want it. Drag one already
+   on the layout to move it, or back up to the palette to take it off.
+7. To add a section, drag **Section** from the palette, give it a **Name**, choose **1-Column**
+   or **2-Column**, and tick **Collapsed by default** if it is reference rather than
+   mid-call reading.
+8. Click **Save**.
+
+:::caution Check which layout you are editing
+An org usually has more than one layout per object, assigned by profile and record type. Editing
+the wrong one changes nothing for the people complaining. **Page Layout Assignment**, on the same
+screen, says which profile sees which.
+:::
+
+Taking a field off a layout does not delete it or clear its data — the field still exists, still
+holds its value, and reports still read it. It is only hidden from this screen.
+
 ## What is deliberately not on these layouts
 
 The enrichment-vendor fields — the various supplier phone numbers and their statuses — are not

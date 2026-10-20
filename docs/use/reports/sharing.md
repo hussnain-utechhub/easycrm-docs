@@ -27,6 +27,15 @@ Alongside the name, description and folder there is:
 
 > **Shared (visible to all portal users)**
 
+### Ticking it, step by step
+
+1. Click **Reports** in the top menu.
+2. Click the folder, then the report's **name**.
+3. Click **Edit**.
+4. Click **Properties**.
+5. Tick **Shared (visible to all portal users)**.
+6. Click **Save**.
+
 Tick it and the report is marked as shared. You can also filter your report list by **Shared** or
 **Private** to see which is which.
 

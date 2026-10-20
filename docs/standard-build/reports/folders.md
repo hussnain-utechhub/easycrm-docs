@@ -71,6 +71,22 @@ reads them.
 
 **Where:** In Salesforce → **Reports** → **All Folders** → the folder's row menu → **Share**
 
+1. Click the **App Launcher** (the grid at the top left), then **Reports**.
+2. Click **All Folders** in the left column.
+3. Find the folder's row, click the **▾** at the right-hand end of it, and click **Share**.
+4. In **Share With**, choose **Users**, **Roles**, **Roles and Subordinates** or **Public
+   Groups**.
+5. Start typing the name and pick it from the list.
+6. Choose the **Access** level — **Viewer**, **Editor** or **Manager**.
+7. Click **Share**, then **Done**.
+
+| Access | Lets them |
+|---|---|
+| **Viewer** | open and run the reports in the folder |
+| **Editor** | also change them, for everybody |
+| **Manager** | also share the folder and delete reports from it |
+
+
 | Folder | Sensible access |
 |---|---|
 | Buckets Reports | Viewer for the calling team |

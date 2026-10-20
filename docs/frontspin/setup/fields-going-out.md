@@ -18,6 +18,21 @@ go anyway; this is for your own.
 
 ![An outbound field mapping](../../img/shots/frontspin/setup-field-mapping-out.png)
 
+### Adding one, step by step
+
+1. Click the **gear** at the top right of Salesforce, then **Setup**.
+2. Type `custom meta` into the **Quick Find** box on the left.
+3. Click **Custom Metadata Types**.
+4. Find **FrontSpin Field Mapping** in the list and click **Manage Records** beside it.
+5. Click **New**.
+6. Fill in the fields described below. **Label**, **Object API Name**, **Salesforce Field** and
+   **FrontSpin Field** are the four that matter; the rest have sensible defaults.
+7. Leave **Active** ticked.
+8. Click **Save**.
+
+The mapping takes effect on the next record that saves. There is no deploy and no cache to clear.
+
+
 ## What a mapping holds
 
 | Field | Means |
