@@ -29,6 +29,8 @@ There are two kinds, and the difference matters more than anything else on this 
 Use it for things that are true of a single record: days between two dates, a value times a
 rate, two fields added together.
 
+![The Columns menu, offering both kinds of formula](../../img/shots/report-builder/column-actions.png)
+
 ## Summary formula — calculates per group
 
 **Where:** In the portal → **Reports** → a folder → the report's name → **Edit** → **Outline** → **Add column…** → **Add Summary Formula**

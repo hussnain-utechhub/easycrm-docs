@@ -10,6 +10,8 @@ sidebar_position: 9
 A rule that says how your filters combine. By default every filter must match. Filter logic
 lets you say "either of these" or "this but not that".
 
+![The Filter Logic box](../../img/shots/report-builder/filters.png)
+
 ## When you need it
 
 The moment a question contains **or**, or **except**.

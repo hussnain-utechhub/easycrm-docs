@@ -30,15 +30,24 @@ If **Edit** is missing you have read-only access. Use **Save As** to take your o
 
 **Where:** the dashboard builder → **+ Widget**
 
-1. Click **+ Widget** at the top.
-2. Under **Report**, choose the report this tile reads from.
+1. Click **+ Widget** at the top. A short menu opens.
 
    ![Adding a widget](../../img/shots/dashboard-builder/add-widget.png)
 
-3. Under **Display As**, choose the kind of tile — see [the kinds](#the-kinds-of-tile) below.
-4. Fill in the settings for that kind. They change depending on what you picked; every one of
+2. Choose what sort of widget you want:
+
+   | | |
+   |---|---|
+   | **Chart or Table** | reads a report — this is the one you want nearly every time |
+   | **Text** | a heading or a note, reading no data at all |
+   | **Image** | a logo or a picture, from a web address |
+
+3. For **Chart or Table**, pick the report under **Report**. This is the tile's source, and
+   every number on it comes from there.
+4. Under **Display As**, choose how to draw it — see [the kinds](#the-kinds-of-tile) below.
+5. Fill in the settings for that kind. They change depending on what you picked; every one of
    them is listed in [the settings](#every-setting-and-what-it-does).
-5. Click **Save**.
+6. Click **Save**.
 
 **Every tile reads from a report.** If a number on a tile looks wrong, open its report — that is
 where the figure comes from, and the tile is only drawing it.

@@ -15,6 +15,8 @@ sidebar_position: 2
 
 They can no longer sign in. Everything else stays exactly as it was.
 
+![The Active switch on each user row](../../img/shots/admin/users.png)
+
 ## Why not delete
 
 Deleting breaks two things that matter later:

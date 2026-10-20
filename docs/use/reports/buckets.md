@@ -28,6 +28,8 @@ anybody adding a field to the database. No developer, no waiting.
 
 The new column appears in the preview straight away.
 
+![Add Bucket Column, on the Columns menu](../../img/shots/report-builder/column-actions.png)
+
 ## How values are sorted depends on the field
 
 | Field type | How you define the buckets |
