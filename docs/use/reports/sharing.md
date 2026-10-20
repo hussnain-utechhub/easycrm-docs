@@ -5,52 +5,95 @@ sidebar_position: 16
 
 # Sharing a report
 
-**What it is.** Giving another company access to a report or dashboard you own.
+**What it is.** Letting somebody other than you open a report you saved.
 
-**What it does.** It grants that company read, or read and edit, on that one item.
+**What it does.** There are two ways, and only one of them is yours to use.
 
-**Why it helps.** You do not have to rebuild the same report for each company, and you do not
-have to ask an administrator every time.
+**Why it matters.** The one you can reach yourself does nothing at all in some portals — so it is
+worth knowing which situation you are in before relying on it.
 
-## Sharing one
+## The two ways
 
-**Where:** In the portal → **Reports** → a folder → the report's name → **Share**
+| | Who does it | What it gives |
+|---|---|---|
+| **The Shared tick box** | you, the report's author | read access, and only in some portals — see below |
+| **Sharing to named people** | an administrator | read or edit, to the people they choose |
 
-1. Click **Reports** in the top menu.
-2. Click the folder, then the report's **name**.
-3. Click **Share**.
-4. Choose the company.
-5. Choose the access:
+## The Shared tick box
+
+**Where:** open the report → **Properties**
+
+Alongside the name, description and folder there is:
+
+> **Shared (visible to all portal users)**
+
+Tick it and the report is marked as shared. You can also filter your report list by **Shared** or
+**Private** to see which is which.
+
+:::caution It does not reach your colleagues in most portals
+This is the part worth reading twice. If your portal has **companies** set up — the usual
+arrangement when more than one organisation uses the same portal — then an ordinary **Standard**
+user only ever sees reports they **own themselves**, or reports an administrator has explicitly
+shared with them.
+
+In that setup, ticking **Shared** changes nothing for the people you work with. The report does not
+appear in their list, and nothing on screen tells you it has not.
+:::
+
+So where does it work?
+
+| Your portal | Does the tick box share the report? |
+|---|---|
+| No companies — one organisation using the portal | **Yes**, every portal user can read it |
+| Companies in use, and the other person is a **Standard** user | **No** |
+| Companies in use, and the other person is an **Admin** or **Super Admin** | **Yes**, they can read it |
+
+If you are not sure which kind of portal you are in, ask your administrator — or simply use the
+second route below, which works in every case.
+
+## Sharing to named people
+
+This is the reliable one, and an **administrator** does it, not you.
+
+They can give specific people **Read** or **Edit** on:
+
+- a single report or dashboard, or
+- a whole folder, so anything added to it later is included automatically
+
+Ask them for what you need — *"please give the sales team read access to this report"* — and point
+them at [Reports and Dashboards](../../admin/data/report-folders.md), which is the screen they use.
 
 | Access | Lets them |
 |---|---|
-| **Read** | Open and run it. |
-| **Edit** | Open it and change it for everybody it is shared with. |
+| **Read** | open and run it |
+| **Edit** | open it and change it for everybody it is shared with |
 
-6. Click **Save**.
+**Read is the right default.** Edit means their changes land for everyone the report is shared
+with, including you.
 
-Give **Read** unless somebody has specifically asked to change it.
+## Who can always see your report
 
-## Who you can share with
+Two people see it whatever you do:
 
-Only companies you are allowed to reach. A Super Admin sets that ceiling under
-[Reports and Dashboards](../../admin/data/report-folders.md).
+- **you**, because you own it
+- a **Super Admin**, who can see and edit everything
 
-So there are two levels: an administrator decides which companies are available to you, and
-within that you decide who actually gets this report.
+## Taking access away
 
-## Taking it back
+You cannot revoke what an administrator granted — ask them. They can remove one person's access,
+or lower it from Edit to Read, without affecting anybody else.
 
-1. Open the report.
-2. Click **Share**.
-3. Click **Revoke** beside the company.
+Unticking **Shared** stops that tick box's own effect immediately, in the portals where it had one.
 
-They lose access immediately.
+## Folders are usually the better unit
 
-## Sharing one report does not share its folder
+If you are asking for access to several related reports, ask for the **folder** instead. Anything
+added to it later is included automatically, rather than needing another request each time.
 
-Somebody given a single report sees that report and nothing else beside it. They do not get
-the folder it lives in.
+## Related
 
-If you want somebody to have a whole set, share the [folder](./folders.md) instead — and
-anything added to it later is included automatically.
+| | |
+|---|---|
+| [Report folders](./folders.md) | organising reports into folders |
+| [Reports and Dashboards](../../admin/data/report-folders.md) | the administrator's sharing screen |
+| [Exporting](./exporting.md) | sending the numbers to somebody with no portal login |

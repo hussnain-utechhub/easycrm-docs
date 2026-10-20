@@ -86,6 +86,7 @@ when somebody adds the next report.
 - [Publishing a portal report to Salesforce](../salesforce/publish-reports.md) — the opposite
   direction: a report built in the portal, pushed out to Salesforce.
 - [Publish Schedule](./publish-schedule.md) — doing that automatically, on a timetable.
-- [Sharing a report](../../use/reports/sharing.md) — what an ordinary portal user can share for
-  themselves, within the ceiling you set here.
+- [Sharing a report](../../use/reports/sharing.md) — what a report's author can and cannot do
+  without you. Worth reading: the **Shared** tick box they can reach does nothing for Standard
+  users once companies are in use, so those requests have to come to this screen.
 

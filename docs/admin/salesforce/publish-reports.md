@@ -64,19 +64,52 @@ quietly producing something that looks right and counts differently. These are t
 knowing.
 
 :::caution A different number in Salesforce than in the portal
-If a message mentions the **join** or the **report type**, read it before trusting the figure.
-Salesforce has no report type for some of the combinations the portal supports — an "all rows, with
-or without" join is the common one. The nearest Salesforce type counts **fewer** rows, so the
-published report can show a lower total than the portal. The message says so explicitly; it is not
-a failure, it is a warning that the two will not agree.
+If a message mentions the **join**, the **report type** or a **filter**, read it before trusting
+the figure. It is not a failure — the report published — it is a warning that the two will not
+agree, and the message says which way.
+
+**The count can move either way.** It is worth reading rather than assuming: the most common case,
+where Salesforce has no combined report type at all, makes the published count **higher**, not
+lower.
 :::
 
 | If the message says | What has happened |
 |---|---|
-| *"Salesforce would not accept the formula column…"* | The report published, but without that formula column. Everything else is correct. |
-| *"…no matching report type"* / *"all rows (with or without)"* | The join could not be reproduced exactly. Expect a lower count in Salesforce. |
-| *"Salesforce counts an activity once per related…"* | An activity shared with several contacts is counted differently by Salesforce than by the portal. |
-| *"Could not create the activity report in Salesforce"* | Nothing was published. Nothing in Salesforce was changed. |
+| *"Salesforce would not accept the formula column…"* | The report published without that formula column. Everything else is correct. |
+| *"…no combined … report type here"* | Salesforce has no report type for this pair, so the published report shows the base object only and the related columns were dropped. See the table below for which way the count moves. |
+| *"…so the published report keeps only … that HAVE a related …"* | Your "all rows" join became a Salesforce type that drops base records with nothing related. |
+| *"The matched Salesforce report type also includes … without a related …"* | The opposite: your join required a related record, and the Salesforce type does not. |
+| *"The filter on … could not be represented…"* | A filter was left out, so the published count is **higher**. |
+| *"Salesforce counts an activity once per related…"* | Shared activities. See below. |
+| *"Could not create the activity report in Salesforce"* | Nothing was published, and nothing in Salesforce was changed. |
+
+### Which way the count moves
+
+| Situation | Published count |
+|---|---|
+| No combined report type, and your join was **"with"** (related record required) | **Higher** — base records with nothing related are now included |
+| No combined report type, and your join was **"all rows (with or without)"** | **Matches** — an all-rows join already kept every base record |
+| Your **all-rows** join, published into a type that requires a related record | **Lower**, but only if some base records have none. Otherwise it matches |
+| Your **"with"** join, published into a type that allows records with none | **Higher**, on the same condition |
+| A filter could not be represented | **Higher** |
+
+:::note Why the warnings say "if" rather than "will"
+Whether the number actually moves depends on your data. An all-rows report published into a
+stricter type loses nothing when every record happens to have a related one. The messages state the
+condition instead of a verdict, so a warning that turns out not to matter does not teach everyone
+to ignore the ones that do.
+:::
+
+### Shared activities
+
+An activity linked to several contacts is **one row in the portal** and **one row per contact in
+Salesforce**. No filter can undo it: the Salesforce report type exposes a relation count but
+nothing that marks which contact is the primary one, so restricting on it would drop the shared
+activity altogether rather than keep it once.
+
+If no activity has more than one contact the counts match exactly. Otherwise each shared activity
+adds one row for every extra contact on it — which is usually a handful of rows, not a discrepancy
+worth investigating.
 
 ## Row-level formulas do not come across
 

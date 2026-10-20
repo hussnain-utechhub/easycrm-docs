@@ -37,6 +37,34 @@ Each kind of record has its own setting, so accounts and tasks can be different.
 | **Private** | You see only records you own. |
 | **Public Read Only** | Everybody sees them. Only the owner can change them. |
 | **Public Read/Write** | Everybody sees and changes them. |
+| **Controlled by Parent** | This record has no access of its own. Whoever can see the record it belongs to can see it. |
+
+## Controlled by Parent
+
+Choose this for records that only make sense as part of something else — a note on an account,
+a line on an order. Rather than deciding who can see them, you say **which field points at the
+parent**, and access follows that parent.
+
+Picking it reveals a second control: **the parent field**. Choose the lookup that points at the
+record this one belongs to.
+
+| | |
+|---|---|
+| **You set** | the parent field, not who can see the record |
+| **A person sees it** | whenever they can see the parent |
+| **They lose it** | the moment they lose the parent |
+
+:::note Why this is often better than Private
+With Private you would have to grant access twice — once to the account, once to every note on
+it — and keep the two in step for ever. Controlled by Parent has one rule, on the parent, and the
+children follow it automatically.
+:::
+
+:::caution Pick the parent field carefully
+Access flows down whichever field you choose. If it points at the wrong record, people will see
+children of records they were never meant to reach — and it will look like the sharing rules are
+wrong rather than the parent field.
+:::
 
 ## How to choose
 
@@ -47,6 +75,8 @@ Use **Public Read Only** for reference data everybody needs and nobody should ed
 
 Use **Public Read/Write** only where a team genuinely shares ownership of everything, which is
 rarer than people expect.
+
+Use **Controlled by Parent** for records that have no meaning on their own.
 
 ## Grant via Hierarchy
 

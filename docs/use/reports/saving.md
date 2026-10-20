@@ -66,5 +66,5 @@ clicking the wrong thing.
 ## Where this fits
 
 A saved report lands in a [folder](./folders.md), and the folder decides who can see it. Once
-saved it can be [shared with another company](./sharing.md), [exported](./exporting.md), or
+saved it can be [shared](./sharing.md), [exported](./exporting.md), or
 used as the source for a [dashboard tile](../dashboards/builder.md).

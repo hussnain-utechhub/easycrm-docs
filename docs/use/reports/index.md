@@ -41,7 +41,7 @@ undo.
 | [Saving](./saving.md) | Save, Save As, and working on somebody else's report |
 | [Exporting](./exporting.md) | Spreadsheet downloads |
 | [Folders](./folders.md) | Where reports live and who sees them |
-| [Sharing](./sharing.md) | Giving another company access |
+| [Sharing](./sharing.md) | Letting somebody else open your report |
 
 ## The order that works
 

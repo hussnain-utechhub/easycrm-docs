@@ -38,6 +38,52 @@ Salesforce on a timer, and that should be a decision rather than a default.
 1. Click **Turn on** at the top.
 2. Set the schedule for each report.
 
+## Publishing the moment a report is saved
+
+Separate from the timetable, and off by default, there is a second switch: **Publish on save**.
+
+| Setting | What happens when somebody saves a report in the portal |
+|---|---|
+| **OFF** *(default)* | Nothing. Reports publish on their schedule only. |
+| **ON** | A report that is **already linked to Salesforce** republishes within seconds. |
+
+Only a **Super Admin** can switch it.
+
+:::note It never creates anything new
+Publish on save only refreshes a report that has already been published once. A portal-only report
+is never published automatically by it — somebody has to publish it the first time, by hand or on a
+schedule, before this switch has anything to act on.
+:::
+
+A save normally reaches Salesforce in **one to four seconds**.
+
+### Why it is not instant, exactly
+
+The portal runs as the site's guest user, and a Guest User licence can never hold API access. A
+publish attempted as the guest comes back refused. So saving a report does not call Salesforce
+directly — it raises an internal request, and a subscriber in Salesforce does the work as a proper
+licensed user a moment later.
+
+That is also why the delay is a second or two rather than instant, and why this needs one piece of
+Salesforce setup before it works at all.
+
+### The setup step in Salesforce, which is easy to miss
+
+Without it the subscriber runs as **Automated Process**, which has no API access either, and every
+publish fails with a permissions error that does not obviously point here.
+
+1. In Salesforce, create a **Platform Event Subscriber Configuration** for
+   `Portal_Publish_Request__e`, naming a user who has API access and can edit reports.
+2. **Restart the subscriber**: go to the `PortalPublishRequestTrigger` trigger, deactivate it, save,
+   then reactivate it and save again.
+
+:::caution Step 2 is not optional
+Creating the configuration alone does not take effect. The subscriber keeps running as the old user
+until the trigger is restarted — so it looks correctly configured and still fails.
+:::
+
+If publish-on-save is switched on and nothing happens, check these two before anything else.
+
 ## What the list shows you
 
 | Column | What it means |
