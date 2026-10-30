@@ -38,7 +38,6 @@ report, publishing carries their changes into the Salesforce original.
 3. Click the **Publish Portal Reports** tab.
 
 ![The Publish Portal Reports screen, listing every portal report with a Publish button](../../img/shots/sf/app-publish-reports.png)
-<!-- SHOT-RETAKE: ../../img/shots/sf/app-publish-reports.png | the Native Report column now reads "Not published" on reports never published, and "Open in Salesforce" on reports synced from Salesforce even before any publish — capture a list with both -->
 
 Every report saved in the portal is listed here, one per row, in name order — the ones built in
 the portal and the ones synced from Salesforce alike.

@@ -21,7 +21,6 @@ from scratch whenever you need the very latest numbers.
 4. It runs. Large reports take a few seconds.
 
 ![A report](../../img/shots/analytics/report-viewer.png)
-<!-- SHOT-RETAKE: analytics/report-viewer.png | The header has no Enable Field Editing button and the column headings show no sort arrow or Column options chevron. Retake the same summary report with Enable Field Editing in the header and one column sorted (arrow showing) -->
 
 ## What you are looking at
 
@@ -82,7 +81,7 @@ On a matrix report the grouping headings have their own menu: **Sort Ascending**
 **Make a Detail Column** and **Remove Group**. The column headings in its **Details** pane have
 the same menu as a tabular report.
 
-<!-- SHOT: report-viewer/report-column-options.png | A tabular Contacts report with the Column options menu open on the Last Name heading (Sort Ascending greyed because it is already sorted ascending, arrow showing beside the name) -->
+![Column options on a sorted column](../../img/shots/report-viewer/report-column-options.png)
 
 **None of this is saved.** It changes only what you are looking at. Open the report again and it
 is back as saved, for you and for everybody else. To sort a report for good, set the sort in the
@@ -117,7 +116,7 @@ out. A row-level formula column has no menu at all.
 - A very large Activities summary may show: **These detail rows are not sorted: the report is
   too large to sort them in one run. Add a filter to narrow the report, then sort again.**
 
-<!-- SHOT: report-viewer/report-sort-notice.png | An Activities report of more than 45,000 rows sorted by a contact column, the notice "These rows are not sorted by …" showing above the table -->
+![The notice that a large report could not be sorted](../../img/shots/report-viewer/report-sort-notice.png)
 
 ## Matrix reports: the Details pane
 
@@ -133,7 +132,7 @@ the grid, headed **Details (N Rows)**.
 
 You can [edit values](./editing.md) in the Details rows.
 
-<!-- SHOT: report-viewer/report-matrix-details-pane.png | A matrix report with Detail Rows on: the Details (N Rows) pane docked below the grid, a grid cell clicked so the heading shows a "Field = value" chip and Clear -->
+![The Details pane of a matrix report narrowed to one group, with Clear](../../img/shots/report-viewer/report-matrix-details-pane.png)
 
 ## Changing what it shows, just for now
 
@@ -232,7 +231,7 @@ note across the top saying why. Dismiss it with its **✕**.
 | **Showing the full report — a value containing a comma is read as a list of values.** | The value has a comma in it. |
 | **Filtered by** *field* **only — the "…" series cannot be filtered from a chart yet, so this shows the whole group.** | You clicked one segment of a stacked bar. The report is narrowed to the whole bar, not that segment. |
 
-<!-- SHOT: report-viewer/report-from-dashboard-filters.png | A report opened by clicking a dashboard chart segment on a dashboard with two filters selected: "Back to <dashboard>" at top left, "Filters (3)" on, the panel open showing the chart card and two dashboard cards under Custom -->
+![A report opened from a dashboard chart, with the chart card, the dashboard card and its own filter](../../img/shots/report-viewer/report-from-dashboard-filters.png)
 
 ## Getting the very latest numbers
 

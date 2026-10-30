@@ -31,7 +31,6 @@ somebody else's is unless you are an administrator.
    **Admin User** or **SuperAdmin User**.
 
 ![Your profile](../../img/shots/profile/view.png)
-<!-- SHOT-RETAKE: ../../img/shots/profile/view.png | The current picture is the Profiles object list, not the user's own settings. Capture Settings → Personal Information for a Standard user, showing the username and "Standard User" under it -->
 
 ## Why a tab might be missing
 

@@ -50,7 +50,7 @@ short menu:
 | **Recent Records** | Up to five records of this kind that you opened lately. Click one to open it. |
 | **Recent Lists** → **All Accounts** | Opens the full list. |
 
-<!-- SHOT: shell/tab-menu.png | Top bar layout, the Accounts tab's arrow clicked: menu showing New Account, Recent Records with a few names, Recent Lists → All Accounts -->
+![The Accounts tab's menu](../../img/shots/shell/tab-menu.png)
 
 When there are more tabs than fit across the screen, the ones on the right fold into **More** at
 the end of the row. Click **More** to reach them.

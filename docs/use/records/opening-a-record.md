@@ -26,7 +26,6 @@ together from email and memory.
 The record opens.
 
 ![A record](../../img/shots/records/accounts-detail.png)
-<!-- SHOT-RETAKE: ../../img/shots/records/accounts-detail.png | Field labels now follow the Salesforce page layout (e.g. "Parent Account" rather than "Parent Account ID"); retake the same Account in the same state, showing both columns -->
 
 **A faster way:** if you know the name, type it into **Search...** in the top bar and click the
 result. That skips the list entirely. The small arrow beside each tab also lists the records of
@@ -70,8 +69,11 @@ columns stack, and the right-hand column follows the fields.
 
 ## Field names
 
-Fields carry the names Salesforce shows on its own page layout — **Account Name** rather than
-"Account ID", **Contact Record Type** rather than "Record Type ID". Hovering over a field's name
+When your administrator has set up a page layout for this kind of record, fields carry the names
+Salesforce shows on its own page layout — **Account Name** rather than "Account ID", **Contact
+Record Type** rather than "Record Type ID". Without one, the record page shows Salesforce's
+underlying field names, such as **Parent Account ID** — even where the list's column says
+**Parent Account**. Hovering over a field's name
 shows its technical name, which is useful when an administrator asks exactly which field you
 mean.
 

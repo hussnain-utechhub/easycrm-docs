@@ -39,7 +39,7 @@ Your administrator sets how many rows each table shows; five is the usual.
 
 ## Using them
 
-<!-- SHOT: records/related-list-card.png | An Account with 7 contacts: the Contacts (5+) related list with Refresh, Change Owner and New, two rows ticked, the ▾ row menu open showing Edit and Delete, View All at the bottom -->
+![A Contacts related list with two rows ticked and a row menu open](../../img/shots/records/related-list-card.png)
 
 | Control | What it does |
 |---|---|

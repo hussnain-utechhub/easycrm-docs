@@ -40,7 +40,6 @@ company's. Bear that in mind before you give the tab to a company's Admins under
 2. Click **Audit Log** in the row of tabs.
 
 ![Audit Log](../../img/shots/admin/audit-log.png)
-<!-- SHOT-RETAKE: ../../img/shots/admin/audit-log.png | The filter row now has three boxes — Action, User contains, Record contains — before Search; capture the tab with a mix of Login, Edit, Report Edit and Change Permission rows -->
 
 The newest **300** entries are shown, newest first.
 
@@ -61,7 +60,6 @@ With nothing to show, the tab reads **No audit entries.**
 1. Choose an **Action**. **All actions** is the default.
 
    ![Filtering the audit log](../../img/shots/admin/audit-log-filter.png)
-   <!-- SHOT-RETAKE: ../../img/shots/admin/audit-log-filter.png | The Action list now also offers "Reports — every action", the Report: … options, "Dashboards — every action" and the Dashboard: … options; capture it open and scrolled to show them -->
 
 2. Type part of a username into **User contains**.
 3. Type part of a name, or an Id, into **Record contains** — a report, dashboard or record name, or
@@ -125,7 +123,7 @@ records what really happened, not what was asked for.
 | **Report Publish** | `Published to Salesforce - updated Salesforce report …`, or `Publish to Salesforce failed - nothing in Salesforce was changed by the portal: …`. |
 | **Report Schedule** | Changes on the [Publish Schedule](../data/publish-schedule.md) tab: `Schedule: Off -> Daily at 02:00`, `Publish on save: off -> on`. |
 
-<!-- SHOT: admin/audit-log-reports.png | Audit Log with Action = "Reports — every action" after Search; rows include a Report Edit whose Details show "Saved - 3 changes:" over several lines, a Report Export, and a red Denied row reading "Refused: You have read-only access to this report. …" -->
+![The Audit Log filtered to Reports — every action, showing Report Edit details over several lines, failed publishes and a Denied edit](../../img/shots/admin/audit-log-reports.png)
 
 ### Refused attempts
 
@@ -144,7 +142,8 @@ removing a snapshot, publishing, the Sync & Share wizard. Those entries carry th
 user's** username, and their details begin **In Salesforce (not the portal).**
 
 Background jobs — scheduled publishing and publishing on save — are logged under the user
-**System**, with the job's name first: `Scheduled auto-publish. …` or `Auto-publish on save. …`.
+**System**, with the job's name first: `Scheduled auto-publish. …` or `Auto-publish on save. …` —
+a failure reads, for example, `Auto-publish on save. Auto-publish on save failed: Analytics API 403: …`.
 
 ## Log in as user, in detail
 

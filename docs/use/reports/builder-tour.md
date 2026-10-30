@@ -61,10 +61,12 @@ Nothing is saved until you click **Save**, so you can experiment freely.
 
 Opening an existing report takes a moment. Until it has loaded, **Save**, **Save & Run** and
 **Save options** are greyed out — and if it fails to load, they stay greyed out. That stops a
-half-loaded, empty-looking report being saved over the real one. See
+half-loaded, empty-looking report being saved over the real one. Meanwhile the canvas can look
+like a brand-new report, with an empty name and **Choose a report type (object) to start
+building your report.** — wait for your report to appear rather than starting again. See
 [Saving](./saving.md#what-goes-wrong).
 
-<!-- SHOT: report-builder/report-save-disabled-loading.png | The builder opened with Edit on a large report, a moment after opening: preview spinner showing, Save & Run, Save and the Save options arrow greyed out -->
+![The builder while a report loads, Save & Run, Save and Save options greyed out](../../img/shots/report-builder/report-save-disabled-loading.png)
 
 ## Adding a column
 

@@ -153,7 +153,7 @@ copies of the text. On by default. See
 **List Mappings** tab, and **Sync all** above it, for every company. Off by default. See
 [List Mappings](../../frontspin/portal/list-mappings.md#syncing-now).
 
-<!-- SHOT: admin/users-super-admin-panels.png | Super Admin; Admin → Users scrolled below the user list, showing the Long text filters on large reports card and the FrontSpin sync buttons panel one above the other -->
+![The Super Admin settings below the user list](../../img/shots/admin/users-super-admin-panels.png)
 
 ## Where this fits
 

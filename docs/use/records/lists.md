@@ -22,7 +22,6 @@ in the portal.
 3. The list opens.
 
 ![The Accounts list](../../img/shots/lists/accounts.png)
-<!-- SHOT-RETAKE: ../../img/shots/lists/accounts.png | Column names now follow the Salesforce page layout ("Parent Account", not "Parent Account ID") and the toolbar has the Edit List pencil between the gear and the funnel; retake All Accounts in the same state -->
 
 ## What you are looking at
 

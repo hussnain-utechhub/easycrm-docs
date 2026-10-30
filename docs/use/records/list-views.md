@@ -52,7 +52,7 @@ Set the list up first: the columns, filters and sort you want. Then:
 2. Click **New List View** at the bottom of the menu.
 3. The **New List View** window opens.
 
-   <!-- SHOT: lists/new-list-view.png | Accounts list with a filter applied, New List View window open: List View Name filled in, "Who sees this list view?" set to "Only I can see this list view", the hint line underneath -->
+   ![The New List View window](../../img/shots/lists/new-list-view.png)
 
 4. Type a **List View Name**.
 5. Under **Who sees this list view?**, choose **Only I can see this list view** or **All users

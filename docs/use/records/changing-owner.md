@@ -64,7 +64,7 @@ Use it rarely.
 The list says **Owner changed.** If you click **Change Owner** with nothing ticked, it says
 **Select at least one record first.**
 
-<!-- SHOT: records/change-owner-several.png | An Account with several contacts: two ticked in the Contacts related list, the "Change Owner" window open showing "You’ve selected 2 records." and a portal user chosen under Select New Owner -->
+![Change Owner for two ticked contacts](../../img/shots/records/change-owner-several.png)
 
 ## The Salesforce owner
 

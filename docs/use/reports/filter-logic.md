@@ -11,7 +11,6 @@ A rule that says how your filters combine. By default every filter must match. F
 lets you say "either of these" or "this but not that".
 
 ![The Filter Logic box](../../img/shots/report-builder/filters.png)
-<!-- SHOT-RETAKE: report-builder/filters.png | The hint under the Filter Logic box now reads "Use filter numbers with AND, OR, NOT and ( ). Clear the box to go back to matching ALL filters." Retake with three custom filters so the box shows the greyed "1 AND 2 AND 3" -->
 
 ## When you need it
 
@@ -29,10 +28,12 @@ a rule somebody has to understand later.
 There is no button to press. The **Filter Logic** box sits below your filters in the
 **Filters** tab as soon as the report has a filter.
 
-- With two or more filters and nothing typed, the box shows what happens anyway —
-  `1 AND 2 AND 3`. That is only a display: it is not saved into the report, so a filter you add
-  later is still included.
-- Type into the box and the rule is yours. It stays exactly as you typed it.
+- With two or more filters and nothing typed, the box is filled in with what happens anyway —
+  `1 AND 2 AND 3`. Left as it is, it is not saved into the report, so a filter you add later is
+  still included.
+- Type into the box and the rule is yours. It stays exactly as you typed it. That filled-in text
+  is real text in the box, so **clear it first**: clicking in and typing adds to it, and
+  `1 AND 2 AND 3` followed by your rule cannot be read.
 - Typing just `OR` means any one filter will do.
 - Below it: **Use filter numbers with AND, OR, NOT and ( ). Clear the box to go back to matching
   ALL filters.**
@@ -45,13 +46,13 @@ There is no button to press. The **Filter Logic** box sits below your filters in
 2. Click the **Filters** tab.
 3. Add the filters you need first. Each takes a number, shown on its card, in the order you add
    it.
-4. Click in the **Filter Logic** box below them.
+4. Click in the **Filter Logic** box below them and delete what is in it.
 5. Type a rule using those numbers.
 
 If the rule cannot be read, a message replaces the hint under the box — see
 [What goes wrong](#what-goes-wrong). Save the report to keep the rule.
 
-<!-- SHOT: report-builder/filter-logic-error.png | Filters tab with three custom filters, "1 AND (2 OR 4" typed in the Filter Logic box and the red message "Unbalanced parentheses." below it -->
+![Filter Logic with an unbalanced bracket and its message](../../img/shots/report-builder/filter-logic-error.png)
 
 ## The operators
 

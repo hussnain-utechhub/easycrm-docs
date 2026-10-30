@@ -33,7 +33,7 @@ form you want to work through top to bottom, the [edit window](./editing.md) may
 5. A bar docks at the bottom of the screen with **Cancel** and **Save**, and
    **\* = Required Information** on its right.
 
-   <!-- SHOT: records/inline-edit-mode.png | An Account record after clicking one pencil: every editable field open as an input, padlocks on read-only fields, the docked Cancel / Save bar with "* = Required Information" -->
+   ![A record in inline edit, with padlocks on read-only fields and the Cancel / Save bar](../../img/shots/records/inline-edit-mode.png)
 
 6. Change the value — or several values.
 7. Click **Save** in the bar.

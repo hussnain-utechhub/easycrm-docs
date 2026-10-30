@@ -79,7 +79,7 @@ Admin can manage them. Move the people to their new company first.
 
 **Edit** opens **Edit Company**, with four tabs.
 
-<!-- SHOT: admin/companies-edit-branding.png | Super Admin; Companies → Edit on a company; "Edit Company" window on its Branding tab showing Company name, Active, FrontSpin tenant with its note, the "Always run reports live" switch and the Company logo block -->
+![The Edit Company window on its Branding tab](../../img/shots/admin/companies-edit-branding.png)
 
 ### Branding
 

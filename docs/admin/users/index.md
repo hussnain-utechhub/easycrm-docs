@@ -146,7 +146,7 @@ Each of these sets something for **one person**. The company-wide versions are u
 It then opens **Console Tabs — *username***: *Only tabs this Admin's company allows are offered. Nothing selected means they see
 every tab the company allows.*
 
-<!-- SHOT: admin/modal-console-tabs-user.png | Super Admin; Users → Console Tabs → pick an Admin → Next; dialog "Console Tabs — acmeadmin" with its note and a few tabs ticked -->
+![The Console Tabs window for an Admin, with a few tabs ticked](../../img/shots/admin/modal-console-tabs-user.png)
 
 In all three, leaving everything unticked means "everything allowed", not "nothing".
 

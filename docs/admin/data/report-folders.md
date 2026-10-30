@@ -38,7 +38,6 @@ portal, and sharing it with a company, happens in Salesforce — see
 2. Click **Reports & Dashboards** in the row of tabs.
 
 ![Reports and Dashboards](../../img/shots/admin/reports-dashboards.png)
-<!-- SHOT-RETAKE: ../../img/shots/admin/reports-dashboards.png | capture as a Super Admin on the Share view: Company picker ("Name · N users · M shares"), the Share / Current access (N) buttons, Reports / Dashboards, the folder tree with Built here / Synced tags and Read/Edit levels, the Standard users list, and the "Share the selected reports as Read / Edit" footer with "Share with selected users" -->
 
 The heading reads **Reports shared with your company** for an Admin, and
 **Company report sharing** for a Super Admin (or the same with "dashboard" once you switch to
@@ -109,7 +108,7 @@ The **Company access** box lists each item or folder with **Read** and **Edit**.
 is the same as changing it in the Salesforce wizard; to remove it altogether, use **Revoke** on
 the wizard's **Already shared** tab.
 
-<!-- SHOT: admin/reports-dashboards-current-access.png | Admin → Reports & Dashboards as a Super Admin, Current access view: "Shared with this company" with the Company access box, and below it the re-shares list with Read/Edit and Revoke -->
+![Reports & Dashboards on Current access, showing what is shared with the company](../../img/shots/admin/reports-dashboards-current-access.png)
 
 ## Folders versus single reports
 

@@ -77,12 +77,12 @@ values straight after saving.
 6. Click **Save**. The message **Field Scoped saved. Give companies and users their values with
    Values.** confirms it.
 
-<!-- SHOT: admin/sharing-owd-dialog-field-scoped.png | Super Admin; Sharing → Org-Wide Defaults → pencil on Contacts; dialog "Org-Wide Default — Contacts" with Default Access = Field Scoped, the explanatory note visible, Scope field = Account ID (AccountId), Access to records in scope = Read/Write -->
+![The Org-Wide Default window for Contacts set to Field Scoped](../../img/shots/admin/sharing-owd-dialog-field-scoped.png)
 
 The object's row now reads **Field Scoped**, with a line under it naming the field and the access —
-for example **on AccountId · Read/Write** — and a **Values** button beside the pencil.
+for example **on Email · Read/Write** — and a **Values** button beside the pencil.
 
-<!-- SHOT: admin/sharing-owd-field-scoped.png | Super Admin; Sharing → Org-Wide Defaults list with the Contacts row showing "Field Scoped", the line "on AccountId · Read/Write" under it, and the Values button beside the pencil -->
+![Org-Wide Defaults with Contacts set to Field Scoped on Email, and its Values button](../../img/shots/admin/sharing-owd-field-scoped.png)
 
 **Which fields can be chosen.** Text, email, phone, URL, picklist, number, currency, percent,
 checkbox, date, and lookup fields — one exact value per record. Not offered: long text and text
@@ -103,7 +103,7 @@ Record** fields.
    saved. The message **Field scope saved for *name*.** confirms it.
 5. Click **Close** when you are done.
 
-<!-- SHOT: admin/sharing-field-scope-values.png | Super Admin; Values on the Field Scoped Contacts row; dialog "Field Scope — Contacts (Account ID)" with one company holding two account Ids, and three users showing "Uses these values", "Uses the company values" and "No values: sees no records" under their names -->
+![The Field Scope window for Contacts, with company and user values](../../img/shots/admin/sharing-field-scope-values.png)
 
 Under each person's name is their company — **No company** if they have none — and which values
 apply to them:

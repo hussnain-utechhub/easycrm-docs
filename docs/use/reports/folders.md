@@ -68,7 +68,6 @@ The list switches to the new folder, which is empty.
 3. Click **Edit Properties**.
 
    ![Report properties](../../img/shots/analytics/edit-properties.png)
-   <!-- SHOT-RETAKE: ../../img/shots/analytics/edit-properties.png | this capture shows a report open in the viewer, not the dialog. Retake: Reports list → a report's row menu ▾ → Edit Properties, the "Edit Properties" dialog showing Name, Description, Folder and the Shared (visible to all portal users) box -->
 
 4. Change the **Folder**. Pick **— No folder —** to take it out of every folder.
 5. Click **Save**.

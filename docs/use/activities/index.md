@@ -51,7 +51,7 @@ Each panel has three small buttons on its title bar:
 
 When you save, the panel closes and the portal says **Activity saved.** — or **Email sent.**
 
-<!-- SHOT: records/activity-docked-panels.png | An Account record with two docked panels open at the bottom: New Task expanded with Subject, Due Date, Assigned To, Status, Priority filled; Log a Call minimised beside it -->
+![New Task open and Log a Call minimised, docked at the bottom of a record](../../img/shots/records/activity-docked-panels.png)
 
 ## Logging a call
 
@@ -130,7 +130,7 @@ Under the buttons, the record's activities are grouped:
 
 Click a group's heading to fold it away.
 
-<!-- SHOT: records/activity-timeline.png | An Account timeline with an Upcoming & Overdue group and a "This Month" group, one row expanded showing Description, Related To, Name and Assigned To, the ▾ menu open on another row -->
+![An activity timeline with one entry expanded and another's menu open](../../img/shots/records/activity-timeline.png)
 
 Each entry shows:
 
@@ -175,7 +175,7 @@ Your administrator can switch this off in Salesforce, so that an account shows o
 activities logged on the account itself. See
 [Settings only Salesforce can change](../../admin/salesforce/switches.md).
 
-<!-- SHOT: records/activity-account-rollup.png | An Account timeline showing a task that was logged on one of its contacts: the summary line naming the contact as a link -->
+![An account's activity timeline, each entry naming the contact it was with](../../img/shots/records/activity-account-rollup.png)
 
 ## Narrowing what the timeline shows
 
@@ -187,7 +187,7 @@ Under the four buttons is a line reading **Filters: All time • All activities 
 4. The timeline changes as you click — there is no **Save**. Click anywhere else to close the
    panel.
 
-<!-- SHOT: records/activity-filters.png | The activity filter panel open under "Filters: Last 30 days • All activities • Calls" with Last 30 days and Calls highlighted -->
+![The activity filter panel set to Last 30 days and Calls](../../img/shots/records/activity-filters.png)
 
 The middle words, **All activities**, never change. The filter is not kept: open the record
 again and it is back to everything.

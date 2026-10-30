@@ -89,8 +89,8 @@ rebuilt.
 Point at a bar, slice or point and a dark box beside it gives the exact figures:
 
 - the group's name and value — "Call Result" and "Connected";
-- the measure and its **full** value — "Record Count" and "1,151", even where the axis shows
-  "1.2K";
+- the **full** value — "1,151", even where the axis shows "1.2K" — usually with the measure's
+  name, such as "Record Count" (the builder's preview can show the value without its name);
 - on a donut, pie or funnel, its share of the whole too — "(25.88% of 4.4K)";
 - on a stacked or matrix chart, which series the segment belongs to;
 - on a scatter plot, the group and both of its values;
@@ -98,7 +98,7 @@ Point at a bar, slice or point and a dark box beside it gives the exact figures:
 
 The same box appears on dashboard tiles and in the builder's preview.
 
-<!-- SHOT: report-viewer/report-chart-hover.png | A summary report with a Pie chart, the pointer resting on one slice and the dark hover box showing the group name and value, Record Count with its full value and "(…% of …)" -->
+![The hover box over a slice of a pie chart](../../img/shots/report-viewer/report-chart-hover.png)
 
 ## Charts on dashboards
 

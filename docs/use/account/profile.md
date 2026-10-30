@@ -18,13 +18,12 @@ most: a forgotten password is sent there.
 2. Click **Settings**.
 
 ![Your profile](../../img/shots/profile/view.png)
-<!-- SHOT-RETAKE: ../../img/shots/profile/view.png | The current picture is the Profiles object list, not the user's own settings. Capture Settings → Personal Information for a Standard user, showing the username and "Standard User" under it -->
 
 The page is headed **Settings** — **Personal Information**. On the left, under **My Personal
 Information**, are its two parts: **Personal Information** and **Change Password**.
 
 At the top of **Personal Information** are your username and your role — **Standard User**,
-for example.
+**Admin User** or **SuperAdmin User**.
 
 ## What you can see
 

@@ -30,7 +30,7 @@ views do.
 5. Change as many cells as you like, in any rows. Each one turns yellow.
 6. Click **Save** in the bar at the bottom of the list.
 
-<!-- SHOT: records/list-edit-drafts.png | Accounts list filtered to one record type, three cells edited and yellow (e.g. Type, Phone, Rating), the Cancel / Save bar at the bottom of the table -->
+![Edited cells in a list, yellow until saved](../../img/shots/records/list-edit-drafts.png)
 
 The rows that saved show their new values and lose the yellow. To throw all the drafts away
 instead, click **Cancel**.
@@ -47,7 +47,7 @@ instead, click **Cancel**.
 5. Every ticked row now has that value as a yellow draft.
 6. Click **Save**.
 
-<!-- SHOT: records/list-edit-mass.png | Accounts list, three rows ticked, the Type editor open in one of them with "Update 3 selected items" visible -->
+![Editing one cell with three rows ticked](../../img/shots/records/list-edit-mass.png)
 
 After a save the ticks are cleared.
 
@@ -98,7 +98,7 @@ button is greyed out. Hover over it and it says:
 
 > Inline Edit is disabled. To edit, filter by one record type.
 
-<!-- SHOT: records/list-edit-recordtype-locked.png | All Accounts on an org with several active Account record types: the greyed Edit List button with its tooltip "Inline Edit is disabled. To edit, filter by one record type." -->
+![The greyed Edit List button and its tooltip](../../img/shots/records/list-edit-recordtype-locked.png)
 
 To unlock it, filter the list to exactly one record type:
 

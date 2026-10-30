@@ -8,5 +8,6 @@ yarn-error.log*
 # Capture harness: credentials and raw (pre-optimisation) screenshots never get committed.
 shots/.env
 shots/raw/
+shots/raw-2026-10/
 shots/state/
 build.log

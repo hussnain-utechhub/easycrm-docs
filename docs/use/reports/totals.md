@@ -30,7 +30,7 @@ means nothing, and printing it invites somebody to believe it does.
 4. Click **Sum**, **Average**, **Max**, **Min** or **Median**. A tick shows which are on; click
    one again to take it off.
 
-<!-- SHOT: report-builder/column-options-totals.png | Builder preview of an Opportunities summary report, the Column options menu open on the Amount heading showing ✓ Sum, Average, Max, Min, Median, Show Unique Count -->
+![Column options on a number column, Sum ticked](../../img/shots/report-builder/column-options-totals.png)
 
 The total now appears on every group heading and at the bottom of the report.
 

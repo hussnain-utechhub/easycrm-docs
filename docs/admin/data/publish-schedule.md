@@ -37,7 +37,6 @@ report** with the portal's version.
 2. Click **Publish Schedule** in the row of tabs.
 
 ![Publish Schedule](../../img/shots/admin/publish-schedule.png)
-<!-- SHOT-RETAKE: ../../img/shots/admin/publish-schedule.png | the screen now has the Auto-publish card (and Publish on save card while on), the summary line "N scheduled · M paused · <engine status>" with Refresh, the "Set all reports to … Apply to all" bar, and table columns Report, How often, Time, Day, Next run, Last published, Status — capture with Auto-publish ON and a mix of Daily, Weekly and Off rows -->
 
 ## Two things must be true before anything publishes
 
@@ -70,7 +69,7 @@ Until it is installed, the screen shows:
 publish until an administrator schedules PortalPublishScheduler once in Setup → Apex Classes →
 Schedule Apex.*
 
-<!-- SHOT: admin/publish-schedule-not-installed.png | Publish Schedule with Auto-publish ON and the yellow banner "The hourly job is not installed in Salesforce yet…", the summary line ending "not installed - schedules will not run" -->
+![Publish Schedule with Auto-publish on and the banner saying the hourly job is not installed](../../img/shots/admin/publish-schedule-not-installed.png)
 
 A Salesforce administrator does this once. The simplest way is one line of Apex, run from the
 Developer Console (**Debug** → **Open Execute Anonymous Window**):
@@ -156,7 +155,7 @@ time you chose lands somewhere unexpected, you see it now rather than at 2am.
 Click a status to open the last result in full, with the report's name as its title. **Close**
 puts it away.
 
-<!-- SHOT: admin/publish-schedule-status-dialog.png | Publish Schedule with the dialog opened from a Warning status, showing "OK - " followed by the fidelity note, and the Close button -->
+![The status window opened from a Warning on Publish Schedule](../../img/shots/admin/publish-schedule-status-dialog.png)
 
 ### Choosing a frequency
 

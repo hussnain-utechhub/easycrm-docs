@@ -49,7 +49,6 @@ Dates should be in a consistent format throughout. Mixed formats are a common ca
 The **Submit a contact list** page opens.
 
 ![Starting an import: the upload step](../../img/shots/admin/csv-import-new-list.png)
-<!-- SHOT-RETAKE: ../../img/shots/admin/csv-import-new-list.png | The current capture stops at "Match existing contacts by" and misses the new "When a record is already in Salesforce" choice and the drop area below it; scroll so the whole settings card (with Replace what is already there selected) and "Drop in your CSV or Excel file" with a chosen file are visible -->
 
 
 1. Under **Which Salesforce record types is this list for?**, choose an **Account record type** and
@@ -201,7 +200,7 @@ so these rows cannot be re-sent automatically. Download them and submit them as 
 
 Every list you have submitted is kept here, with the lists of the users you manage.
 
-<!-- SHOT: admin/csv-import-my-lists-results.png | My lists with one list's Results open: "Salesforce upload" heading, the five counter tiles, the Repeats in the file tile, a failure reason, and the Fix the rows that failed button -->
+![My lists with one list's Results open under Salesforce upload](../../img/shots/admin/csv-import-my-lists-results.png)
 
 | Control | What it does |
 |---|---|

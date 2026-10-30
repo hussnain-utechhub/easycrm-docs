@@ -26,8 +26,18 @@ const RAW = path.join(HERE, "raw", "sf");
 const ORG = process.env.SF_ORG || "EasyCrmNS31";
 const NS = "EasyCRM__";
 
-/** instanceUrl + accessToken straight from the CLI, so nothing is kept in this repo. */
+/**
+ * instanceUrl + accessToken straight from the CLI, so nothing is kept in this repo.
+ *
+ * SF_INSTANCE_URL + SF_ACCESS_TOKEN in the environment win over the CLI. That is for machines
+ * where node cannot spawn the CLI (its .cmd shim needs cmd.exe): read the two values from
+ * `sf org display --json` yourself and pass them in for the one run. Never write them into
+ * this repo. (capture-2026-10.mjs reads the same two variables for its Salesforce shots.)
+ */
 function session() {
+  if (process.env.SF_INSTANCE_URL && process.env.SF_ACCESS_TOKEN) {
+    return { url: process.env.SF_INSTANCE_URL.replace(/\/$/, ""), token: process.env.SF_ACCESS_TOKEN };
+  }
   // shell:true is required on Windows: the CLI is a .cmd shim, and execFileSync cannot spawn one
   // without a shell - it fails with EINVAL before the command ever runs.
   const out = execFileSync(

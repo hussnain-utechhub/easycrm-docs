@@ -21,7 +21,6 @@ narrower: this quarter, this owner, this status.
 2. Click the **Filters** tab at the top left.
 
    ![Report filters](../../img/shots/report-builder/filters.png)
-   <!-- SHOT-RETAKE: report-builder/filters.png | Same image as on filter-logic.md: the hint under Filter Logic is out of date (now "…Clear the box to go back to matching ALL filters."). One retake serves both pages -->
 
 3. Click the **Add filter...** box under **Custom** and type part of the field's name.
 4. Click the field. The **New Filter** box opens with that field chosen.
@@ -122,7 +121,7 @@ need one takes noticeably longer while it is prepared. A Super Admin can switch 
 off — see [Long text filters on large reports](../../admin/operations/long-text-filters.md).
 With them off, such a report is refused instead (see below).
 
-<!-- SHOT: report-builder/long-text-operators.png | The New Filter box on an Accounts report with the Description field chosen and the Operator list open, showing equals, not equal to, contains, does not contain, starts with -->
+![The operators offered for a long text field](../../img/shots/report-builder/long-text-operators.png)
 
 ## Filtering a report while you read it
 

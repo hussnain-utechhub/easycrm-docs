@@ -56,7 +56,7 @@ Picking it reveals a two-column picker, **Controlled by these parent objects**:
 
 Move one or more parents to the right, then click **Save**.
 
-<!-- SHOT: admin/sharing-owd-controlled-by-parent.png | Sharing → Org-Wide Defaults → pencil on Tasks; dialog with Default Access = Controlled by Parent and the "Controlled by these parent objects" picker showing Account and Contact under "Controls this object's records" -->
+![The Org-Wide Default window for Task set to Controlled by Parent, with Account and Contact as the parents](../../img/shots/admin/sharing-owd-controlled-by-parent.png)
 
 | | |
 |---|---|
@@ -69,7 +69,9 @@ Account and Contact, a task linked only to an opportunity is reached only throug
 such as owning it.
 
 If the object has no lookups to other portal objects, the picker is replaced by **This object has
-no lookups to other portal objects, so there is no parent to control it by.**
+no lookups to other portal objects, so there is no parent to control it by.** That message can
+also appear for a moment the first time you open the dialog after loading the page, for an object
+that does have lookups — if you see it on Tasks or Events, close the dialog and open it again.
 
 If a parent is itself [Field Scoped](./field-scoped.md), the children follow it: people see only the
 children of in-scope parents.

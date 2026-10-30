@@ -38,7 +38,7 @@ directly, exactly as before.
 The card sits with the other Super Admin settings below the user list, between **Report speed**
 and **FrontSpin sync buttons**. Only a Super Admin sees it.
 
-<!-- SHOT: admin/long-text-filters.png | Super Admin; Admin → Users, scrolled to the "Long text filters on large reports" card with the switch ticked and two prepared copies listed, e.g. "Contact · Description — 52,310 records checked, 1,204 with text · prepared …" -->
+![The Long text filters on large reports card with its switch ticked and a prepared copy listed](../../img/shots/admin/long-text-filters.png)
 
 ## The switch
 

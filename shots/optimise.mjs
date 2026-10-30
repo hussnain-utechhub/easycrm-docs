@@ -20,7 +20,9 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const RAW = path.join(HERE, "raw");
+// --raw <folder under shots/> optimises another capture run, e.g. --raw raw-2026-10. Default: raw.
+const rawArg = process.argv.indexOf("--raw");
+const RAW = path.join(HERE, rawArg >= 0 ? process.argv[rawArg + 1] : "raw");
 const OUT = path.join(HERE, "..", "docs", "img", "shots");
 
 const TARGET_WIDTH = 1760;

@@ -50,7 +50,7 @@ the records behind the grid.
 | **ISO-8859-1 (General US & Western European)** | An older system that cannot read UTF-8. |
 | **Unicode (UTF-16)** | The program receiving it asks for UTF-16. |
 
-<!-- SHOT: analytics/export-csv-progress.png | Export box on a large report with Details Only chosen, Format "Comma Delimited .csv", Encoding showing, and the progress line "Fetching rows... 24,000 of 116,686" while Export is greyed out -->
+![The Export box counting rows as it fetches a large report](../../img/shots/analytics/export-csv-progress.png)
 
 ## What gets exported
 

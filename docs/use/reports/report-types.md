@@ -87,7 +87,6 @@ saved** — a new report, or a copy made with **Clone** before its first save. O
 saved, its type is fixed: build a new report instead.
 
 ![Changing the report type](../../img/shots/report-builder/change-report-type.png)
-<!-- SHOT-RETAKE: report-builder/change-report-type.png | The current image shows a saved report, which has no Change Report Type button. Retake on a new, never-saved report with a couple of columns added, the Change Report Type button visible at the top right -->
 
 Choosing a new type there **clears the whole report** — columns, groups, filters, formulas and
 sort — **without asking first**, and **Undo** cannot bring them back. Change the type before you

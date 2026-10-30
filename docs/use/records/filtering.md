@@ -26,7 +26,6 @@ and the same operators.
 3. The Filters panel opens on the right of the list, with **Cancel** and **Save** at the top.
 
    ![The Filters panel](../../img/shots/lists/filters-panel.png)
-   <!-- SHOT-RETAKE: ../../img/shots/lists/filters-panel.png | The toolbar now has a fourth button (the Edit List pencil, between the gear and the funnel) and the column names follow the Salesforce page layout ("Parent Account", not "Parent Account ID"); retake with two filters in the panel, Remove All visible and filter logic shown -->
 
 4. Click **Add Filter**. A small box titled **New Filter** opens.
 5. Under **Field**, click the **Search Fields...** box and type part of the field's name — for
@@ -38,7 +37,7 @@ and the same operators.
 
 The list now shows only matching records, and the count at the top changes.
 
-<!-- SHOT: lists/filter-field-search.png | Accounts list, Filters panel open, New Filter box with "owner" typed in Search Fields... showing Account Owner Alias, Owner First Name, Owner Last Name -->
+![Searching for a field in the New Filter box](../../img/shots/lists/filter-field-search.png)
 
 Until you click **Save** at the top, nothing has changed. **Cancel** at the top throws away
 everything you did since you opened the panel.

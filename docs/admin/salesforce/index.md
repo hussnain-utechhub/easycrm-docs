@@ -82,4 +82,4 @@ To find them, choose one of these in the Audit Log's **Action** list:
 
 Automatic publishing has no person behind it, so its rows carry the username **System**.
 
-<!-- SHOT: admin/audit-log-sf-import.png | Portal → Admin → Audit Log, Action set to "Report: Import from Salesforce", showing a row whose User is a Salesforce username and whose Details begin "In Salesforce (not the portal)." -->
+![The Audit Log filtered to Report: Import from Salesforce, a row by a Salesforce username starting In Salesforce (not the portal)](../../img/shots/admin/audit-log-sf-import.png)

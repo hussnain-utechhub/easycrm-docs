@@ -23,7 +23,6 @@ latest numbers. See [Running a report](./running.md).
 2. The reports area opens on **Recent**.
 
 ![The Reports list](../../img/shots/analytics/reports-list.png)
-<!-- SHOT-RETAKE: ../../img/shots/analytics/reports-list.png | the list now has a gear (Select Fields to Display) beside the search box, which this capture lacks. Retake: Reports tab, All Reports selected, list sorted by Name, one report starred, gear visible -->
 
 The **Dashboards** tab works the same way. Everything on this page applies there too. The
 differences are the names (**Private Dashboards**, **All Dashboards** and so on) and that the
@@ -95,7 +94,7 @@ to choose. By default they are **Name**, **Description**, **Folder**, **Created 
 3. Put them in order. *The order in "Selected" sets the column order. Use the arrows to reorder.*
 4. Click **Apply**.
 
-<!-- SHOT: analytics/list-columns-popover.png | Reports tab signed in as an Admin, gear clicked, "Select Fields to Display" box open with Owner and Visibility moved into Selected and the "Save as default columns for all users" tick visible -->
+![Select Fields to Display on the Reports list, with Save as default columns for all users](../../img/shots/analytics/list-columns-popover.png)
 
 **Name** cannot be removed.
 
@@ -155,7 +154,7 @@ Stars are saved on your portal user, so they follow you to any computer.
 
 Click ▾ at the end of a row.
 
-<!-- SHOT: analytics/list-row-menu.png | Reports tab, All Reports, the ▾ row menu open on one report showing Open, Edit, Edit Properties, Clone, Favorite, Delete -->
+![The row menu of a report in the Reports list](../../img/shots/analytics/list-row-menu.png)
 
 | Item | What it does |
 |---|---|

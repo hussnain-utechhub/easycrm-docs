@@ -22,7 +22,6 @@ sideways past twenty they never use. Your choice is remembered for next time.
 3. A panel opens with two lists side by side.
 
    ![Choosing columns](../../img/shots/lists/choose-columns.png)
-   <!-- SHOT-RETAKE: ../../img/shots/lists/choose-columns.png | Field names now follow the Salesforce page layout ("Parent Account" rather than "Parent Account ID") and the toolbar has the Edit List pencil between the gear and the funnel; same state otherwise (Select Fields to Display open, admin user so "Save as default columns for all users" shows) -->
 
    - **Available** on the left — fields not currently shown, in alphabetical order.
    - **Selected** on the right — the columns in your list now, top to bottom matching left to

@@ -35,7 +35,7 @@ In the last five minutes of your session a small clock appears in the top bar, r
 **Session ends in** and the minutes and seconds left — **Session ends in 4:59**, for example.
 It turns red in the final minute.
 
-<!-- SHOT: session/countdown-chip.png | Any portal page, top bar, about 3 minutes left in the session: the "Session ends in 2:59" chip beside the gear (a second capture with the chip red in the last minute is welcome) -->
+![The Session ends in countdown in the top bar](../../img/shots/session/countdown-chip.png)
 
 Hovering over it says **Time left in this session - click for options**. Click it to open the
 warning described below.
@@ -47,7 +47,7 @@ Outside the last five minutes there is nothing to see. That is normal.
 When five minutes are left, a box opens over whatever you are doing. The page behind it is not
 touched.
 
-<!-- SHOT: session/expiry-warning.png | Any record page with the session at about 4:30 left: the "Your session is about to expire" box with the countdown and the Log out / Stay signed in buttons -->
+![The Your session is about to expire box](../../img/shots/session/expiry-warning.png)
 
 It says **Your session is about to expire**, then **For your security you'll be signed out in**
 with a countdown in minutes and seconds, then:
@@ -94,7 +94,7 @@ session has not been extended yet — click **Try again** once you are back onli
 If the time runs out, a box opens over the page. **What you were looking at, and anything you had
 typed, is still there underneath.**
 
-<!-- SHOT: session/sign-in-again.png | A record page in inline edit with one field changed, session expired: the "Your session has expired" box with the username shown, the Password box and "Sign in and continue" -->
+![The Your session has expired box over a record in inline edit](../../img/shots/session/sign-in-again.png)
 
 It says **Your session has expired**, then **Sign in again to carry on. Your work on this page is
 still here.** Your username is shown and cannot be changed.

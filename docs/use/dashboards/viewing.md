@@ -21,7 +21,6 @@ five reports opened one after another.
    the right. It works exactly as described in [Finding a report](../reports/finding.md).
 
    ![The Dashboards list](../../img/shots/analytics/dashboards-list.png)
-   <!-- SHOT-RETAKE: ../../img/shots/analytics/dashboards-list.png | the list now has a gear (Select Fields to Display) beside the search box, which this capture lacks. Retake: Dashboards tab, All Dashboards, two or three dashboards, one starred, gear visible -->
 
 3. Click a view or folder, then the dashboard's **name**.
 4. It opens. Tiles appear at once from their last stored result. A tile that has none yet shows a
@@ -79,7 +78,7 @@ that reads **All**.
 
 The tiles reload a moment after your last click, so ticking three values reloads them once.
 
-<!-- SHOT: analytics/dashboard-filters-selected.png | a dashboard with two filters, one box reading "2 selected" with its list open and two values ticked, "Clear all" visible at the end of the bar, tiles showing their View Report / As of lines -->
+![A dashboard filter reading 3 selected, its list open](../../img/shots/analytics/dashboard-filters-selected.png)
 
 The box tells you what is set:
 
@@ -101,7 +100,7 @@ itself does not change. See [Dashboard filters](./filters.md#your-selection-is-r
 Rest the pointer on a bar, slice, point or number. A dark box appears beside it with the exact
 figure.
 
-<!-- SHOT: analytics/chart-hover-box.png | a dashboard Donut tile with the pointer resting on one slice, the dark hover box showing the group, Record Count with its full value and the "(…% of …)" share -->
+![The dark hover box over a slice of a dashboard donut](../../img/shots/analytics/chart-hover-box.png)
 
 | Chart | The box shows |
 |---|---|
@@ -132,16 +131,17 @@ What you see:
 - The back button reads **Back to** followed by the dashboard's name. It returns you to the
   dashboard with the filters as you left them.
 - **Filters** shows how many are applied, for example **Filters (3)**. Click it, and under
-  **Custom** you find:
+  **Custom** you find, in this order:
+  - **the chart click**, if you opened the report from a chart, with a chart icon. It shows the
+    field, **equals** and the value you clicked, and **from** the tile's title. Click the card to
+    change its operator or value. The ✕ (tooltip **Remove this filter and show the whole
+    report**) removes it.
   - **one card per dashboard filter** that was applied, with a dashboard icon. It shows the
     filter's name, the values (for example *Prospect, Direct*) and **from** the dashboard's
     name. These cannot be changed here. The ✕ on any of them (tooltip
     **Remove the dashboard's filters and show the whole report**) removes them all.
-  - **the chart click**, with a chart icon. It shows the field, **equals** and the value you
-    clicked, and **from** the tile's title. Click the card to change its operator or value. The ✕
-    (tooltip **Remove this filter and show the whole report**) removes it.
 
-<!-- SHOT: report-viewer/opened-from-dashboard.png | a report opened by clicking a donut slice on a dashboard with one filter set: "Back to <dashboard>" at top left, "Filters (n)" clicked, the panel showing the chart-click card and the dashboard filter card above the report's own numbered filters -->
+![A report opened from a dashboard chart, its Filters panel showing the chart and dashboard cards](../../img/shots/report-viewer/opened-from-dashboard.png)
 
 These filters belong to this visit only. The report itself is not changed. Open it again from the
 Reports list and it is whole. The address bar keeps them, though, so a page refresh, the browser's
@@ -175,7 +175,7 @@ the chart click. See [Exporting](../reports/exporting.md).
 Some groups cannot be written as one exact filter. Rather than show you the wrong records, the
 report opens **whole**, with a pale yellow note above it saying why. Click ✕ on the note to dismiss it.
 
-<!-- SHOT: report-viewer/drill-refused-note.png | a report opened by clicking the "(blank)" slice of a dashboard donut: the info note "Showing the full report — an empty group on a chart cannot be written as a filter." above the report -->
+![The note shown when a chart click cannot become a filter](../../img/shots/report-viewer/drill-refused-note.png)
 
 | The note says **Showing the full report —** … | Because |
 |---|---|

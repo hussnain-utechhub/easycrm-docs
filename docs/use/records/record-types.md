@@ -23,7 +23,7 @@ customer and a supplier can both be accounts without sharing one cluttered form.
 3. If there is more than one kind available, you are asked to choose before the form appears:
    **Select a record type**.
 
-   <!-- SHOT: records/record-type-picker.png | Accounts → New on an org with two or more Account record types available to the user: the "New Account" window at its first step, "Select a record type" with the kinds as round buttons, Cancel / Next -->
+   ![Choosing a record type for a new account](../../img/shots/records/record-type-picker.png)
 
 4. Pick the kind, then click **Next**.
 

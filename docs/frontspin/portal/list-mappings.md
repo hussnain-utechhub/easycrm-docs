@@ -172,7 +172,7 @@ buttons that push it immediately, doing exactly what the schedule does.
 1. As a Super Admin, scroll below the user list to **FrontSpin sync buttons**.
 2. Tick **Show the Sync buttons on List Mappings**.
 
-<!-- SHOT: frontspin/list-mappings-sync-switch.png | Super Admin; Admin → Users scrolled to the "FrontSpin sync buttons" panel with "Show the Sync buttons on List Mappings" ticked -->
+![The FrontSpin sync buttons panel with Show the Sync buttons on List Mappings ticked](../../img/shots/frontspin/list-mappings-sync-switch.png)
 
 The message **The Sync buttons now appear on the List Mappings tab.** confirms it. It applies to
 every company. Unticking it shows **The Sync buttons are hidden again, and the sync action is

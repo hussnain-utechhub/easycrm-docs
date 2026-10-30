@@ -28,7 +28,7 @@ use its own edit form — see [Editing a record](../records/editing.md).
 The **Enable Field Editing** button appears only when the report is showing rows that can be
 edited.
 
-<!-- SHOT: report-viewer/edit-matrix-details.png | A matrix report with Detail Rows on and the Details pane docked below the grid, Field Editing Enabled, pencils showing in the Details rows -->
+![Field editing in the Details pane of a matrix report](../../img/shots/report-viewer/edit-matrix-details.png)
 
 ## Turning editing on
 
@@ -40,7 +40,7 @@ edited.
 4. Every cell you may edit now shows a small **pencil**. A cell you may not edit shows a
    **padlock** — point at it to see why.
 
-<!-- SHOT: report-viewer/edit-enabled.png | Contacts & Accounts tabular report with Field Editing Enabled: pencils on most cells, padlocks on a few, the dark padlock tooltip "Inline editing isn't supported for this cell." showing -->
+![A report with field editing on, a padlock tooltip showing](../../img/shots/report-viewer/edit-enabled.png)
 
 Editing belongs to the report you are reading. Opening another report starts with it off.
 
@@ -53,7 +53,7 @@ Editing belongs to the report you are reading. Opening another report starts wit
 3. Change the value.
 4. Click **Apply**.
 
-<!-- SHOT: report-viewer/edit-date.png | Same Contacts & Accounts report, the date editor open under a Birthdate cell with the stored date in the picker -->
+![The date editor open under a Birthdate cell](../../img/shots/report-viewer/edit-date.png)
 
 Nothing is written yet. The cell shows its new value, highlighted, and a bar at the bottom of
 the screen counts what you have changed: **1 value edited**, **3 values edited**.
@@ -71,7 +71,7 @@ Carry on with as many cells as you need.
 
 To throw away everything you have not saved, click **Cancel** in the bar.
 
-<!-- SHOT: report-viewer/edit-bar.png | Three highlighted cells with staged values and the bottom bar reading "3 values edited" with Cancel and Save -->
+![Three staged values and the bar reading 3 values edited](../../img/shots/report-viewer/edit-bar.png)
 
 ### Apply and Save are different
 
@@ -118,7 +118,7 @@ picklist shows its real value even where the report prints a label.
 | Rich text | A formatting editor. The report itself shows only the text. |
 | Lookup | **Current:** and the record it points to, then a **Search...** box. Type, pause, and click a record in the list. The **X** (**Clear the lookup**) empties it. If you pick nothing, nothing changes. |
 
-<!-- SHOT: report-viewer/edit-lookup.png | Contacts & Accounts report, the Account Name cell's editor open: "Current:" with the account name, a few letters typed in Search..., the matching accounts listed below -->
+![The lookup editor under an Account Name cell](../../img/shots/report-viewer/edit-lookup.png)
 
 ## Which record a cell changes
 

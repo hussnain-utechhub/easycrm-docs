@@ -49,7 +49,7 @@ successfully signed in, rather than that something stopped working.
    | **Email** | Where their login details are emailed when you create them or reset their password. Leave it blank and a username that looks like an email address is used instead. |
    | **Password** | New users only. At least 8 characters. They sign in with this. |
    | **Role** | **Standard**, **Admin — sees the users they manage** or **Super Admin — sees everything**. |
-   | **Manager** | Standard users only — it disappears for the other two roles. Lists every active Admin as *username (Company)*, up to 500. **— None —** means nobody manages them, so only a Super Admin will see them. |
+   | **Manager** | Standard users only — it disappears for the other two roles. Lists every active Admin as *username (Company)* — just the username for an Admin with no company — up to 500. **— None —** means nobody manages them, so only a Super Admin will see them. |
    | **Active** | Ticked by default. |
 
 3. Click **Save**.
@@ -58,7 +58,7 @@ A new user gets an email with their username, password and the portal's address,
 there is an address to send it to. The toast says which: **Portal user created — login details
 emailed to** *address*, or just **Portal user created.**
 
-<!-- SHOT: sf/portal-users-new-user.png | Salesforce → EasyCRM → Portal Users → New User, Role set to Standard, Manager list open showing "— None —" and Admins as "username (Company)" -->
+![The New Portal User window with the Manager list open](../../img/shots/sf/portal-users-new-user.png)
 
 :::caution Users created here belong to no company
 This dialog has no **Company** field. An **Admin** or **Super Admin** made here belongs to no
@@ -100,7 +100,7 @@ The old password cannot be shown — it is stored hashed — so this always sets
 toast reads **Password updated for** *username*, and the person is emailed their new login
 details if they have an email address.
 
-<!-- SHOT: sf/portal-users-reset-password.png | Reset Password dialog for a portal user, a new password typed in clear text -->
+![The Reset Password window with a new password typed](../../img/shots/sf/portal-users-reset-password.png)
 
 ### The other row actions
 
@@ -110,7 +110,7 @@ details if they have an email address.
 | **Unlock** | Only offered while the user is locked out. Clears the lock and the failed-attempt count at once. Toast **User unlocked.** |
 | **Delete** | Asks *Delete portal user "…"? This cannot be undone.* and then deletes the user and emails them an account-closed notice. Prefer **Deactivate** — see [Deactivating a user](../users/deactivating.md). |
 
-<!-- SHOT: sf/portal-users-row-menu.png | Portal Users list with the row menu open on a locked user, showing Edit, Reset Password, Deactivate, Unlock, Delete -->
+![The row menu on a portal user](../../img/shots/sf/portal-users-row-menu.png)
 
 ## Portal Reports
 
@@ -147,7 +147,7 @@ anything already pointing at it — company grants, re-shares, dashboard tiles �
 exception is a report that can no longer run live: see the caution under
 [Changing or removing access later](#changing-or-removing-access-later).
 
-<!-- SHOT: sf/portal-reports-search.png | Portal Reports card with "Account" typed in Find a report, the results table showing Sync to Site and Snapshot buttons, and the Snapshots — cached results table below -->
+![Find a report with matching Salesforce reports and their Sync to Site and Snapshot buttons](../../img/shots/sf/portal-reports-search.png)
 
 ### Live or snapshot
 

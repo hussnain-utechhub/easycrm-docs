@@ -45,7 +45,7 @@ picked.
 
 A column can have up to **20** buckets.
 
-<!-- SHOT: report-builder/bucket-picklist.png | New Bucket Column box on a Contacts report bucketing Lead Source: two buckets made on the left, several values ticked on the right, the Move To menu open -->
+![The New Bucket Column box with the Move To menu open](../../img/shots/report-builder/bucket-picklist.png)
 
 ## Anything left over
 

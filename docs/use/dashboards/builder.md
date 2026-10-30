@@ -41,7 +41,7 @@ A dashboard opens in the builder in two stages, and the toolbar follows them.
 | The layout is still arriving | **Loading dashboard…** on the canvas | nothing yet. **Save**, **Save As**, **+ Widget**, **+ Filter** and **Properties** are greyed out. **Close** works. |
 | The tiles' data is still arriving | the tiles in place, each with a spinner | **Save** and **Save As**. Editing waits: adding, changing, moving, resizing and removing tiles and filters, **Undo**, **Redo** and typing in text tiles are all off until every tile has drawn. |
 
-<!-- SHOT: dashboard-builder/dashboard-loading.png | the builder a moment after Edit on a large dashboard: "Loading dashboard…" on the canvas, Save / Save As / + Widget / + Filter / Properties greyed out -->
+![The dashboard builder while the dashboard is still loading, its buttons greyed out](../../img/shots/dashboard-builder/dashboard-loading.png)
 
 This protects your dashboard. A save made before the layout had arrived used to store an empty
 dashboard. Now it is refused:
@@ -78,7 +78,7 @@ Removing every widget yourself and then saving is fine. That save goes through.
    follows your choices.
 6. Click **Add Widget** at the bottom of the dialog.
 
-<!-- SHOT: dashboard-builder/widget-dialog-display-as.png | Add Widget dialog with a summary report picked, the Display As grid showing all eleven icons with Donut selected, Value and Sliced By filled in, the Preview showing the donut -->
+![The Add Widget dialog with Donut chosen under Display As](../../img/shots/dashboard-builder/widget-dialog-display-as.png)
 
 Clicking **Add Widget** without a report gives **Pick a source report.**
 
@@ -323,7 +323,7 @@ original's folder. You only need to be able to open the original, not edit it.
 Click **Close** with unsaved work and the **Unsaved Changes** dialog asks:
 *You have unsaved changes to this dashboard. If you leave now, those changes will be lost.*
 
-<!-- SHOT: dashboard-builder/dashboard-unsaved-changes.png | the builder after moving a tile, Close clicked: the "Unsaved Changes" dialog with Stay and Leave & Discard -->
+![The Unsaved Changes window with Stay and Leave & Discard](../../img/shots/dashboard-builder/dashboard-unsaved-changes.png)
 
 | | |
 |---|---|

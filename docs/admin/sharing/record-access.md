@@ -44,7 +44,7 @@ Click the record in **Results**. Three panels open:
 **Access** is **Full Access**, **Read/Write**, **Read Only** or **No Access**. The **Reason** is the
 thing that gave that level — when several things grant access, the one that gave the most is named.
 
-<!-- SHOT: admin/sharing-record-access-field-scope.png | Sharing → Record Access on a Contact of a Field Scoped object; "Who has access — and why" showing one user with "In your field scope (AccountId)" and another with "Outside your field scope" / No Access -->
+![Who has access to a contact, with In your field scope and Outside your field scope reasons](../../img/shots/admin/sharing-record-access-field-scope.png)
 
 | Reason | Means | To change it |
 |---|---|---|

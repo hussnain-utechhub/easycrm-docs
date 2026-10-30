@@ -88,7 +88,7 @@ a dashboard with no report tiles offers none.
    and added at least one value.
 8. Click **Save** on the builder. Nothing is stored until you save the dashboard.
 
-<!-- SHOT: dashboard-builder/add-filter-relative-date.png | Add Filter dialog, step 2, on a date field: a value being added with "Relative date (e.g. Last Month, Last 30 Days)" ticked and "Last 30 Days" chosen, the Apply to Each Component rows below -->
+![Adding a relative date value to a dashboard filter](../../img/shots/dashboard-builder/add-filter-relative-date.png)
 
 ### The value box
 

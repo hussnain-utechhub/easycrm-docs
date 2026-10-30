@@ -26,7 +26,6 @@ Both search **names**: an account's name, a contact's name, a task's subject.
    **Account**, **Contact**, a report or a dashboard.
 
    ![Searching](../../img/shots/shell/search.png)
-   <!-- SHOT-RETAKE: ../../img/shots/shell/search.png | Global search now also returns reports and dashboards; retake with a term that matches an account, a contact and a report (e.g. "pipe" or a customer name used in a report title) so all three kinds show -->
 
 4. Click a result to open it — or move with the arrow keys and press Enter.
 
