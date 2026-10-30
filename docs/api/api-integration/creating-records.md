@@ -110,6 +110,15 @@ says what to change.
 It is owned by the portal user the key belongs to, and it is visible to that user straight
 away — so you can read it back through the API immediately.
 
+On a **Field Scoped** object the new record must carry one of the user's own values in the
+scope field. Leave that field out and, if the user has exactly one value, it is filled in for
+you; if they have several, the create is refused until you choose one. See
+[Errors and limits](./errors-and-limits.md#field-scoped-objects).
+
+An `Id` in the body never turns a create into an update. Unless your administrator made `Id`
+writable it is refused like any other field the key may not write; if they did, it is ignored
+and a new record is created all the same.
+
 ## Next
 
 | | |

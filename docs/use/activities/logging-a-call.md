@@ -23,16 +23,19 @@ tense — a call is past, a task is future.
 **Where:** In the portal → **Accounts** → the record's name → **Log a Call**
 
 1. Click the tab and open the record.
-2. In the panel on the right, click **Log a Call**.
-3. A short form opens.
+2. In the activity panel, click **Log a Call**.
+3. A short form opens in a panel at the bottom of the screen.
 
    ![Logging a call](../../img/shots/records/log-a-call.png)
 
-4. Type a **Subject** — what the call was about.
-5. Add detail in the comments box.
-6. Click **Save**.
+4. Type a **Subject** — what the call was about. Left empty, it is saved as "Call".
+5. Add detail in **Comments**.
+6. Under **Name**, pick who you spoke to: choose **Contacts** or **Leads**, then type in
+   **Search Contacts…**. **Related To** usually starts as the record you are on.
+7. Click **Save**.
 
-It appears in the timeline below, dated today.
+The portal says **Activity saved.** The call appears in the timeline, dated today and already
+marked as done — it is a record of something that happened, not a reminder.
 
 ## Writing a subject somebody else can use
 
@@ -59,13 +62,17 @@ Against the **most specific** record that applies.
 
 Logging against the account when you spoke to one of five contacts loses who you spoke to.
 
+Logging on the contact loses nothing at account level: an account's timeline also shows the
+calls logged on its contacts, unless your administrator has switched that off. See
+[Calls, tasks and meetings](./index.md).
+
 ## What goes wrong
 
 | Symptom | Cause |
 |---|---|
-| The call is not in the timeline | Timeline filters may exclude it. Check the Filters line. |
-| It is on the wrong record | Open it, and change the related record. |
-| You cannot edit it later | You may only change your own entries, depending on permissions. |
+| The call is not in the timeline | Timeline filters may exclude it. Check the **Filters** line. |
+| It is on the wrong record | Editing a call cannot move it. Delete it (▾ → **Delete**) and log it again on the right record. |
+| You cannot edit it later | The portal refuses with a message when your access does not allow it. |
 
 ## Where this fits
 

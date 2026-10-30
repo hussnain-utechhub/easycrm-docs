@@ -11,6 +11,7 @@ A rule that says how your filters combine. By default every filter must match. F
 lets you say "either of these" or "this but not that".
 
 ![The Filter Logic box](../../img/shots/report-builder/filters.png)
+<!-- SHOT-RETAKE: report-builder/filters.png | The hint under the Filter Logic box now reads "Use filter numbers with AND, OR, NOT and ( ). Clear the box to go back to matching ALL filters." Retake with three custom filters so the box shows the greyed "1 AND 2 AND 3" -->
 
 ## When you need it
 
@@ -20,9 +21,21 @@ The moment a question contains **or**, or **except**.
 already contacted." Neither is expressible with filters alone, because filters are joined with
 *and*.
 
-**When not to:** if all your conditions must be true, leave it alone. Writing
-`1 AND 2 AND 3` is exactly what happens without it, and a rule you did not need is a rule
-somebody has to understand later.
+**When not to:** if all your conditions must be true, leave it alone. A rule you did not need is
+a rule somebody has to understand later.
+
+## The Filter Logic box
+
+There is no button to press. The **Filter Logic** box sits below your filters in the
+**Filters** tab as soon as the report has a filter.
+
+- With two or more filters and nothing typed, the box shows what happens anyway —
+  `1 AND 2 AND 3`. That is only a display: it is not saved into the report, so a filter you add
+  later is still included.
+- Type into the box and the rule is yours. It stays exactly as you typed it.
+- Typing just `OR` means any one filter will do.
+- Below it: **Use filter numbers with AND, OR, NOT and ( ). Clear the box to go back to matching
+  ALL filters.**
 
 ## Writing a rule
 
@@ -30,10 +43,15 @@ somebody has to understand later.
 
 1. Open the report in the builder.
 2. Click the **Filters** tab.
-3. Add the filters you need first. Each one takes a number in the order you add it.
-4. Click **Filter Logic**.
+3. Add the filters you need first. Each takes a number, shown on its card, in the order you add
+   it.
+4. Click in the **Filter Logic** box below them.
 5. Type a rule using those numbers.
-6. Click **Apply**.
+
+If the rule cannot be read, a message replaces the hint under the box — see
+[What goes wrong](#what-goes-wrong). Save the report to keep the rule.
+
+<!-- SHOT: report-builder/filter-logic-error.png | Filters tab with three custom filters, "1 AND (2 OR 4" typed in the Filter Logic box and the red message "Unbalanced parentheses." below it -->
 
 ## The operators
 
@@ -54,6 +72,9 @@ Brackets work exactly as they do in arithmetic, and they matter just as much:
 
 **Bracket anything with an OR in it.** It costs nothing and removes the ambiguity.
 
+The [standard filters](./filters.md#standard-filters) — the date range, and on activity reports
+**Show** and **Type** — always apply on top of the rule. They have no numbers.
+
 ## A worked example
 
 You want open opportunities, in the North or the West, that are not already marked lost.
@@ -70,15 +91,26 @@ Rule: `1 AND (2 OR 3) AND NOT 4`
 ## A shortcut worth knowing
 
 For several values of the **same field**, you usually do not need logic at all. One filter
-with multiple values — Region equals North, West — behaves as an OR between them.
+with several values — Region equals North, West — matches any of them.
 
 Reach for filter logic when the OR spans **different fields**.
+
+## Filter logic and hidden fields
+
+If a report with filter logic filters on a field that is hidden from somebody, the report
+cannot simply leave that filter out for them, so it refuses to run for that person with
+**Invalid Report. You cannot run this report because its formulas or filters are invalid or it
+references fields that are inaccessible to you. Please contact your administrator to update the
+report.** Without filter logic, the filter is just left out. See
+[Running a report](./running.md#fields-you-are-not-allowed-to-see).
 
 ## What goes wrong
 
 | Symptom | Cause |
 |---|---|
-| "Filter logic is invalid" | A number with no matching filter, usually after deleting one. Renumber the rule. |
+| **Unbalanced parentheses.** | A bracket is opened and not closed, or closed and never opened. |
+| **Filter 4 doesn't exist (you have 3).** | A number with no matching filter — usually after deleting one. Renumber the rule. |
+| **Unexpected "XOR" in filter logic.** | Something that is not a filter number, **AND**, **OR**, **NOT** or a bracket. |
 | Far more records than expected | An unbracketed OR. `1 AND 2 OR 3` often means "or everything in 3". |
 | Far fewer than expected | ANDs that cannot all be true at once — Region equals North AND Region equals West. |
 | The rule stops working | A filter was removed and the numbers shifted. Logic does not renumber itself. |

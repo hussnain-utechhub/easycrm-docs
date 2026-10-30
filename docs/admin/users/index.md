@@ -20,6 +20,7 @@ whatever any other setting says.
 | [Adding a user](./adding.md) | Creating somebody, choosing their role |
 | [When somebody leaves](./deactivating.md) | Deactivating, and what to do with their records |
 | [Seeing the portal as somebody else](./login-as.md) | Reproducing a reported problem |
+| [What an Admin can see](./what-admins-can-see.md) | The Super Admin settings below the user list |
 
 ## Opening it
 
@@ -30,8 +31,19 @@ whatever any other setting says.
 
 ![Users](../../img/shots/admin/users.png)
 
-Every person who can sign in is listed, with their username, email, role, whether they are
-active, and when they last signed in.
+**Portal Users** lists every person who can sign in, with a count beside the heading. Click the
+heading to fold the list away.
+
+| Column | Shows |
+|---|---|
+| **Username**, **Email**, **Role** | Who they are. |
+| **Permission Sets**, **Profile**, **Portal Role** | Their access — the **+** beside each changes it. |
+| **Active** | Whether they can sign in. |
+| **Last Login** | When they last signed in. |
+| **Actions** | **Log in as this user**, **Edit**, **Reset password**, **Delete**. |
+
+A Super Admin sees everybody. An Admin sees the users they manage and the Standard users at their
+company; other Admins at their company are listed too, but without any controls.
 
 ## Adding somebody
 
@@ -39,32 +51,29 @@ active, and when they last signed in.
 
 1. Click **Admin**, then **Users**.
 2. Click the blue **+ New User** button on the right.
-3. A window opens.
+3. The **New Portal User** window opens.
 
    ![Adding a user](../../img/shots/admin/modal-new-user.png)
 
 4. Fill in:
    - **Username** — what they type to sign in. It must be unique.
-   - **Email** — where their password is sent. It must be real.
+   - **Email** — where their sign-in details are sent.
+   - **Password** — you choose it. It is e-mailed to them with their username.
    - **Role** — see the table below.
-   - **Company** — which company they belong to. Always set this.
+   - **Manager** — for a Standard user only: the Admin who manages them.
 5. Click **Save**.
 
-They are emailed a password automatically.
+There is **no Company box**. A Standard user given a **Manager** joins that Admin's company. Anybody
+else is added to a company afterwards, by a Super Admin, under [Companies](../companies/index.md) →
+**People** → **Add a user who has no company**. See [Adding a user](./adding.md).
 
 ### Which role to choose
 
-| Role | Can do |
-|---|---|
-| **Standard** | See and work on their own records. Most people. |
-| **Admin** | The above, plus manage people at their own company. |
-| **Super Admin** | Everything, for every company. Keep this to a few people. |
-
-### Always set a company
-
-Somebody with no company is not treated as a match for any company rule. They may end up
-seeing nothing, or being invisible to their own Admin. It is the single most common setup
-mistake.
+| Role | Shown as | Can do |
+|---|---|---|
+| **Standard** | **Standard** | See and work on their own records. Most people. |
+| **Admin** | **Admin — sees the users they manage** | The above, plus manage the people at their own company. |
+| **Super Admin** | **Super Admin — sees everything** | Everything, for every company. Keep this to a few people. Only a Super Admin can give it. |
 
 ## When somebody leaves
 
@@ -74,24 +83,28 @@ mistake.
 2. Click the **Active** switch so it turns grey.
 
 They can no longer sign in. Their records, and the history of what they did, stay exactly as
-they are. Deleting would break both.
+they are. Deleting would break both. See [When somebody leaves](./deactivating.md).
 
 ## Resetting a password
 
 1. Find the person in the list.
-2. Click the **key** symbol in the **Actions** column.
-3. Click **Save**.
+2. Click the **key** symbol — **Reset password** — in the **Actions** column.
+3. The **Reset password — *username*** window opens. Type the **New password**.
+4. Click **Reset**.
 
-A new password is emailed to them. You never see it, and neither does anybody else.
+The new password is e-mailed to them. The message **Password reset.** confirms it, followed by a
+note on whether the e-mail went.
 
 ## Seeing the portal as somebody else
 
 Useful when a colleague reports a problem you cannot reproduce.
 
 1. Find the person in the list.
-2. Click the **person** symbol in the **Actions** column.
+2. Click **Log in as this user** in the **Actions** column.
+3. Read the **Log in as *username*** window, then click **Log in as user**.
 
-You now see the portal exactly as they see it. A banner shows whose account you are in.
+You now see the portal exactly as they see it. A banner reads **You are logged in as *username*.
+Everything you do is recorded as them.** Click **Return to my account** in it to come back.
 
 **What you should know:**
 
@@ -99,29 +112,46 @@ You now see the portal exactly as they see it. A banner shows whose account you 
 - Anything you do while in there records both names.
 - The person is not signed out and does not notice.
 
-**Who may do it:** a Super Admin for anyone. An Admin for the Standard users they manage and
-for other Admins at their own company — never for a Super Admin.
+**Who may do it** depends on **Who may log in as portal users**, a Super Admin setting below the
+list. It is **Off** until a Super Admin changes it. See
+[Seeing the portal as somebody else](./login-as.md).
 
-This is switched off until a Super Admin turns it on.
+## The buttons above the table
 
-## The three buttons above the table
+Each of these sets something for **one person**. The company-wide versions are under
+[Companies](../companies/index.md) → **Edit**.
 
-These set things for the **whole company**, not one person.
+| Button | Who sees it | What it controls |
+|---|---|---|
+| **Assign Record Types** | A Super Admin; an Admin whose company allows it | Which record types one Standard user may use. |
+| **Assign Apps** | A Super Admin; an Admin whose company allows it | Which apps one Standard user sees in the app launcher. |
+| **Console Tabs** | A Super Admin only | Which Admin Console tabs one Admin sees. |
 
-![Console tabs](../../img/shots/admin/modal-console-tabs.png)
-
-| Button | What it controls |
-|---|---|
-| **Assign Apps** | Which apps the company's people can switch between. |
-| **Assign Record Types** | Which kinds of record they may create. |
-| **Console Tabs** | Which Admin Console tabs their Admins can see. |
-
-**Assign Apps** decides what appears in the app launcher.
-
-![Assign apps](../../img/shots/admin/modal-assign-apps.png)
-
-**Assign Record Types** decides what the **New** button offers.
+**Assign Record Types** and **Assign Apps** each start by asking for the user: choose one in
+**Standard user** (**— pick a Standard user —**) and click **Next**.
 
 ![Assign record types](../../img/shots/admin/modal-assign-record-types.png)
 
-Leaving a list blank usually means "all of them", not "none".
+- **Record Types — *username*** offers only what the user's company holds. Unticking everything
+  for an object falls back to the site's own assignments.
+- **Apps — *username*** offers only the apps the user's company allows. Nothing selected means
+  they see all of the company's apps.
+
+![Assign apps](../../img/shots/admin/modal-assign-apps.png)
+
+**Console Tabs** asks for an **Admin** (**— pick an Admin —**) and **Next**.
+
+![Console tabs](../../img/shots/admin/modal-console-tabs.png)
+
+It then opens **Console Tabs — *username***: *Only tabs this Admin's company allows are offered. Nothing selected means they see
+every tab the company allows.*
+
+<!-- SHOT: admin/modal-console-tabs-user.png | Super Admin; Users → Console Tabs → pick an Admin → Next; dialog "Console Tabs — acmeadmin" with its note and a few tabs ticked -->
+
+In all three, leaving everything unticked means "everything allowed", not "nothing".
+
+## The settings below the list
+
+A Super Admin also sees five panels under the user list: **Log in as user**, **Report speed**,
+**Long text filters on large reports**, **FrontSpin sync buttons**, and **Who manages whom**.
+They are described in [What an Admin can see](./what-admins-can-see.md#the-settings-beside-it).

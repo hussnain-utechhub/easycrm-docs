@@ -5,18 +5,30 @@ sidebar_position: 8
 
 # Reports and Dashboards
 
-**What it is.** Who can see which reports and dashboards.
+**What it is.** The screen where reports and dashboards a company holds are passed on to that
+company's **Standard users**.
 
-**What it does.** You share a report, a dashboard or a whole folder with a company, or with
-chosen people inside it.
+**What it does.** You tick reports (or dashboards) on one side and Standard users on the other,
+and share them at **Read** or **Edit**. You can also see, change and revoke what has already been
+passed on.
 
-**Why it helps.** One company's reports stay out of another's sight, and you set it once rather
-than report by report.
+**Why it is needed.** Sharing with a company — done in Salesforce, with the **Sync & Share
+Folders** wizard — reaches only that company's **Admins**. A Standard user who belongs to a
+company sees only the reports they own and the ones shared with them here. This screen is the
+second half of the job.
 
-:::note Getting reports into the portal is a separate job
-This screen shares what is already in the portal. Bringing a Salesforce report **into** the portal
-happens in Salesforce — see [Portal Users](../salesforce/portal-users.md).
+:::note Getting reports to a company is a separate job
+This screen passes on what a company already holds. Bringing a Salesforce report **into** the
+portal, and sharing it with a company, happens in Salesforce — see
+[Portal Users and Portal Reports](../salesforce/portal-users.md).
 :::
+
+## Who uses it
+
+| Role | What they see |
+|---|---|
+| **Admin** (with this tab) | Their own company: what it holds, and the Standard users they look after — the ones they manage plus every Standard user at their company. |
+| **Super Admin** | Any company, chosen from a **Company** list, with all of that company's Standard users. Also the company's own access, which only a Super Admin can change. |
 
 ## Opening it
 
@@ -26,63 +38,108 @@ happens in Salesforce — see [Portal Users](../salesforce/portal-users.md).
 2. Click **Reports & Dashboards** in the row of tabs.
 
 ![Reports and Dashboards](../../img/shots/admin/reports-dashboards.png)
+<!-- SHOT-RETAKE: ../../img/shots/admin/reports-dashboards.png | capture as a Super Admin on the Share view: Company picker ("Name · N users · M shares"), the Share / Current access (N) buttons, Reports / Dashboards, the folder tree with Built here / Synced tags and Read/Edit levels, the Standard users list, and the "Share the selected reports as Read / Edit" footer with "Share with selected users" -->
 
-## Sharing something
+The heading reads **Reports shared with your company** for an Admin, and
+**Company report sharing** for a Super Admin (or the same with "dashboard" once you switch to
+**Dashboards**).
 
-**Where:** In the portal → **Admin** → **Reports & Dashboards** → **Share**
+## Sharing with Standard users
 
-1. Find the report, dashboard or folder in the list.
-2. Click **Share**.
-3. Choose the company.
-4. Choose the access:
+**Where:** **Admin** → **Reports & Dashboards** → **Share**
 
-| Access | Lets them |
-|---|---|
-| **Read** | Open it and run it. |
-| **Edit** | Open it and change it. |
+1. **Super Admin only:** choose the company from **Company**. Each entry shows how many Standard
+   users it has and how many shares it holds.
+2. Make sure **Share** is selected at the top, then choose **Reports** or **Dashboards**.
+3. In the left box — **Shared with your company** (or **Shared with** *company*) — tick what to
+   share.
+   - Items are grouped by folder. Tick a folder to tick every item in it; click **▾** to fold a
+     folder away.
+   - Each item is tagged **Built here** (made in the portal) or **Synced** (from Salesforce), and
+     shows the company's level on it — **Read** or **Edit**. That level is the most you can pass
+     on.
+4. In the right box — **Your Standard users** (or the company's **Standard users**) — click each
+   person to tick them. Each shows how many items they already have (**2 shared**), **none**, or
+   **inactive**. Inactive users are greyed and cannot be ticked.
+5. Under **Share the selected reports as**, choose **Read** or **Edit**.
+6. Click **Share with selected users**. It stays greyed until at least one item and one person
+   are ticked.
 
-5. Click **Save**.
+The toast confirms it — for example **3 re-shares written (capped at your company’s level).**
+"Capped" means exactly that: choosing **Edit** on an item your company holds at **Read** gives
+those people **Read**.
 
 Give **Read** unless somebody has asked to change the report. **Edit** means they can change it
 for everybody it is shared with.
 
-Before it saves, **About to share** and **Will share** show exactly what is going to happen, and
-**Already shared** lists anything in your selection that a company has already — so re-sharing a
-folder does not create duplicates or alarm you with a bigger number than you expected.
+### What appears in the left box
 
-## Sharing with particular people
+- Everything shared with the company from Salesforce — single reports and dashboards, and whole
+  folders where a folder grant exists.
+- Reports or dashboards built in the portal and saved with **My company** visibility.
+- For an Admin, reports they built in the portal themselves; for a Super Admin, reports built by
+  any of the company's users. These can be shared at up to **Edit**.
 
-Sometimes a whole company is too broad.
+## Seeing and changing who has access
 
-1. Click **Share** on the item.
-2. Choose the people instead of the company.
-3. Click **Share with selected users**.
+**Where:** **Admin** → **Reports & Dashboards** → **Current access**
 
-## Seeing who has access now
+The button carries a count, such as **Current access (7)**. **Reports** and **Dashboards** switch
+between the two kinds here too.
 
-Each item shows **Current access** with a count. Click it to see exactly which companies and
-people, and what level each has.
+**Currently shared reports with your users** (or with the company's users) lists every re-share,
+one row per item and person:
 
-**Existing company grants** is the same information gathered in one place — every grant any
-company holds, on one list, which is the quickest way to answer "what can this customer see?"
+| Control | What it does |
+|---|---|
+| **Read** / **Edit** | Changes that person's level in place. Asking for more than the company holds keeps it at the company's level, and says so: **Kept at Read — capped at the company’s level.** |
+| **Revoke** | Removes that person's access immediately. There is no confirmation. |
 
-## Taking access away
+If nothing has been passed on yet it says *No user has been given access to anything of this kind
+yet.* Revoking takes away access only; anything the person built from it, such as their own copy,
+stays theirs.
 
-1. Open **Current access** for the item, or find the grant under **Existing company grants**.
-2. Remove the company or person.
+### The company's own access — Super Admins only
 
-They lose it immediately. Anything they built on top of it stays theirs.
+Above the re-shares, a Super Admin also sees **Shared with this company**: *What Salesforce shared
+to this company. This is the ceiling — a user can never be given more than this, and lowering it
+to Read pulls any Edit already handed out back down.*
+
+The **Company access** box lists each item or folder with **Read** and **Edit**. Changing it here
+is the same as changing it in the Salesforce wizard; to remove it altogether, use **Revoke** on
+the wizard's **Already shared** tab.
+
+<!-- SHOT: admin/reports-dashboards-current-access.png | Admin → Reports & Dashboards as a Super Admin, Current access view: "Shared with this company" with the Company access box, and below it the re-shares list with Read/Edit and Revoke -->
 
 ## Folders versus single reports
 
-Sharing a **folder** shares everything in it, including anything added later. Sharing a single
-**report** shares only that one.
+Re-shares are made **report by report**. Ticking a folder here ticks the reports in it **today**;
+a report added to that folder later is not passed on until you share it too.
 
-Use folders for a set that belongs together — it is less work and less likely to be forgotten
-when somebody adds the next report.
+A company's own grant can be on a whole folder, and then it does cover reports added later — for
+the company's Admins. Their Standard users still need each new report shared with them here.
+
+## What is recorded
+
+Every re-share, level change and revoke — and any refused attempt — is written to the
+[Audit Log](../operations/audit-log.md), naming each person and the level they now have.
+
+## What goes wrong
+
+| Symptom | Cause |
+|---|---|
+| The left box is empty | The company holds nothing yet. A Super Admin shares to it from the Salesforce **Sync & Share Folders** wizard first. The screen says so: *This company holds no shared reports yet …* or *Nothing to share yet …* |
+| A Standard user still cannot see a report shared to their company | A company grant reaches Admins only. Share it with them here. |
+| You chose **Edit** but they only have **Read** | The company holds that item at **Read**. Only a Super Admin can raise it. |
+| A person cannot be ticked | They are inactive. |
+| A person you expect is not listed | They are not a Standard user at the company, or — for an Admin — not one you look after. |
+| A new report in a shared folder is missing for Standard users | Re-shares are per report. Share the new one. |
+| **Shared with this company** is not shown | It is for Super Admins only. |
 
 ## Related
 
+- [Portal Users and Portal Reports](../salesforce/portal-users.md) — bringing Salesforce reports in
+  and sharing them with companies.
 - [Publishing a portal report to Salesforce](../salesforce/publish-reports.md) — the opposite
   direction: a report built in the portal, pushed out to Salesforce.
 - [Publish Schedule](./publish-schedule.md) — doing that automatically, on a timetable.

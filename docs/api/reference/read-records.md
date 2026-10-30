@@ -14,6 +14,12 @@ Returns a page of records for one object.
 Only the fields the administrator selected for this key are returned, and only rows
 that pass both their filter and the portal's own sharing rules.
 
+On an object an administrator has made **Field Scoped**, that includes the scope: only
+records whose scope field holds one of the key's user's values come back. A user with no
+values gets an empty page, and a record outside the scope is simply not returned — even when
+you ask for it by its Id or External Id, you get `count: 0`. See
+[Errors and limits](../api-integration/errors-and-limits.md#field-scoped-objects).
+
 ### Reading the response
 
 `records` holds the rows. Each row always carries `Id`, plus one key per selected
@@ -21,6 +27,10 @@ field. A **lookup** field arrives as three keys: the display value, the same nam
 with `_id` for the record it points at, and `_obj` for that record's object. So a
 selected `RecordTypeId` returns `RecordTypeId`, `RecordTypeId_id` and
 `RecordTypeId_obj`.
+
+A **`HYPERLINK()` formula field** arrives as the link's visible text only — for
+example `"Open in maps"` — not the web address and not HTML. When the formula gives the
+link no text, the value is the address itself.
 
 ### Moving between pages
 

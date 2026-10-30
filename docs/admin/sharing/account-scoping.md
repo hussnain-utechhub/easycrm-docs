@@ -7,103 +7,71 @@ sidebar_position: 7
 
 ## What it is
 
-Tying a portal user to an **Account**, so they see only the records belonging to that account.
+An older way of tying a portal user to an **Account**, so that records belonging to that account
+are opened up to them — the portal's version of a Salesforce Sharing Set.
 
-This is the arrangement most customer portals need: every client signs in to the same portal
-and sees only their own data, without you writing a sharing rule per client.
+## There is no screen for it in the portal any more
 
-## When to use it
+The portal no longer has any control for account scoping. The **New User** dialog has no Account
+field, and the org-wide default dialog no longer shows the match fields.
 
-**Use it when** your portal users are customers, partners or franchisees — people who belong
-to one account and must never see another's records.
+**To limit people to their own accounts from inside the portal, use
+[Field Scoped sharing](./field-scoped.md).** For example: set Contact to **Field Scoped** on
+**Account ID**, and give each company its account Ids as values. Its people then see only the
+contacts under their own accounts.
 
-**Do not use it when** your portal users are your own staff. Staff usually need to see many
-accounts, and scoping them to one is exactly wrong. Use
-[sharing rules](./rules.md) and the [role hierarchy](./roles.md) instead.
+## How the two differ
 
-## How it works
+| | Account scoping | Field Scoped |
+|---|---|---|
+| Set up | In Salesforce, on records with no portal screen | In the portal, by a Super Admin |
+| What it does | **Adds** access: matching records are opened up, on top of whatever else the person can see | **Narrows** access: only records carrying the person's values, and nothing else |
+| A person's own records outside the match | Still visible | Hidden |
+| Per company | No — set per user | Yes — per company, or per person |
+| Shown in Record Access as | **Field match: *field* matches this user** | **In your field scope (*field*)** |
 
-Three settings do the work, and they build on each other.
+The key difference: account scoping never hides anything. Under a **Public** default it changes
+nothing at all; under **Private** it adds the matching records to what the person already sees.
 
-| Setting | Does |
-|---|---|
-| The user's **Account** | Ties that person to one account |
-| **Account scope field** | Names the field on each object that points back to an account |
-| **Parent field** | Lets child records inherit the scope from their parent |
+## If your portal already uses it
 
-Once set, every list, report and dashboard that person opens is filtered to their account
-automatically. There is nothing for them to switch on and nothing they can switch off.
+Existing configuration keeps working. The sharing engine still honours an account match set up in
+Salesforce, on two records:
 
-## Setting it up
+| Where in Salesforce | Field | Holds |
+|---|---|---|
+| The person's **Portal User** record | **Account** | The account they belong to. |
+| The object's **Portal Sharing Setting** record | **Match Field (Record)** | The field on the object that points at the account, for example `AccountId`. |
+| The same record | **Match Field (Portal User)** | The field on the Portal User it is compared with, normally `Account__c`. |
+| The same record | **Match Access** | **Read/Write** or **Read Only** — what a match grants. |
 
-### 1 · Tie the user to an account
+**Both match fields must be filled** for the match to work. When a record's field holds the same
+value as the person's, they get the **Match Access** level.
 
-**Where:** In the portal → **Admin** → **Users** → the person → **Account**
-
-Set the account they belong to. A user with no account is not scoped at all — they fall back
-to ordinary [sharing](./index.md).
-
-### 2 · Name the scope field per object
-
-For each object, say which field points at the account.
-
-| Object | Typical scope field |
-|---|---|
-| Account | The record itself |
-| Contact | The account it belongs to |
-| Task, Event | The related account |
-
-If an object has no sensible field pointing at an account, it cannot be scoped this way — use
-a [sharing rule](./rules.md) with criteria instead.
-
-### 3 · Follow the chain for child records
-
-The **parent field** lets a record inherit scope from its parent. A task attached to a contact
-has no account of its own, but the contact does — so the task follows the contact, which
-follows the account.
-
-Without this, child records fall outside the scope and the user cannot see the tasks on their
-own contacts, which looks like a bug and is a configuration gap.
-
-### 4 · Matching records to a person, not an account
-
-A **user match field** ties records directly to the individual rather than their account. Use
-it where a person should see only their own items within an account their colleagues also use.
-
-## Choosing the access level
-
-Scoping says *which* records. It does not say what the person may do with them — that is still
-[Permissions](../access/permissions.md). A scoped user with no edit permission can see their
-account's records and change nothing.
+Changing any of it means editing those records in Salesforce. There is nothing to change in the
+portal.
 
 ## What goes wrong
 
 | Symptom | Cause |
 |---|---|
-| A user sees everything, not just their account | No account set on the user, or no scope field on that object. |
-| They see their account but none of its contacts | Contact has no scope field, or needs the parent chain. |
-| They see accounts but no tasks | Tasks need the parent field to follow the contact or account. |
-| A client briefly saw another client's record | The object was not scoped. Check every object on a tab, not just the main one. |
-| Reports show more than lists do | Older configurations set scope per tab rather than per object. Set it on the object. |
+| A client still sees other clients' records | Account scoping only adds access. If the default is **Public**, or a rule grants more, nothing is hidden. Use [Field Scoped](./field-scoped.md) to narrow. |
+| A client cannot see their account's records on one object | One of the two match fields is blank on that object's Portal Sharing Setting, or the person has no **Account**. |
+| Account matching started working after somebody saved an org-wide default | Saving an object's default in the portal fills **Match Field (Portal User)** with `Account__c` when it was blank. If **Match Field (Record)** is already set for that object, matching then applies. |
+| You cannot find where to set a user's account | There is no portal screen for it. It is the **Account** field on the Portal User record in Salesforce. |
 
-That fourth row is the one to take seriously. **Scoping is per object** — adding a tab without
-setting its scope field exposes that object to everybody.
+## Testing it
 
-## Testing it before you trust it
+1. Open [Record access](./record-access.md) on a record belonging to one account.
+2. Find a user tied to that account. The reason should read **Field match: *field* matches this
+   user**.
+3. Find a user tied to a *different* account and confirm they do not have that reason.
 
-Do not assume. For each new client:
-
-1. Create a test user on that account.
-2. Use **Log in as user** from [Users](../users/index.md).
-3. Open every tab and check the counts.
-4. Open [Record access](./record-access.md) on a record belonging to a *different* account and
-   confirm that user is not listed.
-
-Step 4 is the one people skip, and it is the one that catches a missing scope field.
+Step 3 is the one people skip, and it is the one that catches a wrong match field.
 
 ## Where this fits
 
-Account scoping narrows what somebody sees before any other rule applies.
-[Sharing rules](./rules.md) can still widen access, and
-[restriction rules](./restriction-rules.md) can narrow it further. When they disagree,
-[Record access](./record-access.md) tells you which one is deciding.
+Account scoping is one of the grants listed in [Sharing](./index.md): it raises access, like a
+sharing rule. [Restriction rules](./restriction-rules.md) and [Field Scoped](./field-scoped.md) are
+the two things that narrow it. When they disagree, [Record access](./record-access.md) tells you
+which one is deciding.

@@ -9,9 +9,10 @@ slug: /use/reports
 A report is a saved question about your data. It gathers the records matching your rules and
 shows them grouped and totalled however you chose.
 
-The important part: **a report stores the question, not the answer.** It re-reads your live
-data every time somebody opens it, so there is no such thing as an out-of-date report and no
-copy to get stale.
+The important part: **a report stores the question, not the answer.** It reads your live data,
+not a copy somebody exported. To open quickly it may reuse its last result for up to a day;
+**Refresh** works the answer out again whenever you need the very latest numbers. See
+[Running a report](./running.md).
 
 ## The two things you will do
 
@@ -28,6 +29,7 @@ undo.
 |---|---|
 | [Finding a report](./finding.md) | Folders, favourites, who can see what |
 | [Running a report](./running.md) | Opening one, reading it, refreshing |
+| [Editing values in a report](./editing.md) | Changing field values straight from the rows |
 | [Report types](./report-types.md) | What a report is about. Fixed at creation |
 | [The builder](./builder-tour.md) | Every control on the screen |
 | [Columns](./columns.md) | Adding, ordering, removing |

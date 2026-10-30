@@ -31,7 +31,7 @@ harder to read than a short grouped one.
    ![The outline](../../img/shots/report-builder/outline.png)
 
 5. Click the **Add column…** box.
-6. A list of available fields appears. Type to narrow it.
+6. A list of available fields appears, sorted into sections. Type to narrow it.
 
    ![Adding a column](../../img/shots/report-builder/add-column.png)
 
@@ -39,40 +39,88 @@ harder to read than a short grouped one.
 
 It appears in the preview immediately. Nothing is saved until you click **Save**.
 
+You can also open the **Fields** strip down the left edge of the builder and drag a field onto
+the **Add column…** box.
+
 ## Which fields are offered
 
-Only fields from the report's [type](./report-types.md). An Accounts report offers account
-fields; an Accounts with Contacts report offers both.
+Only fields from the report's [type](./report-types.md). A Contacts report offers contact
+fields; a **Contacts & Accounts** report offers contact fields and account fields.
 
 If a field you expect is missing, the usual reasons are:
 
 | Reason | What to do |
 |---|---|
-| Wrong report type | The type is fixed. See [Report types](./report-types.md). |
-| You have no permission for that field | Ask your administrator. |
+| Wrong report type | The type is fixed once the report is saved. See [Report types](./report-types.md). |
+| The field is hidden from you | A field you may not read is not offered at all, anywhere in the builder. Ask your administrator. |
 | It is on a related record the type does not reach | A different type may pair them. |
+
+### Column names on activity reports
+
+Activity reports name some columns the way Salesforce's own activity reports do, so they do
+not match the field names on a task or event:
+
+| Column | What it holds |
+|---|---|
+| **Assigned** | The task's or event's owner. |
+| **Name** | The contact or lead it is about. |
+| **Related To** | The account, opportunity or other record it is related to. |
+| **Date** | A task's due date, or an event's date. |
+| **Full Comments** | The whole of the Comments field. Searching the field list for "Comments" finds it too. |
+| **Call Duration (seconds)** | How long the call lasted. |
+| **Call Result** | The call's result. |
+
+A report brought across from Salesforce may also show **Assigned Alias** and **Created Alias**.
 
 ## Reordering
 
 Drag a column in the **Outline** list. The order top-to-bottom there is the order
-left-to-right in the report.
+left-to-right in the report. In the preview, a column heading's menu also has **Move Left** and
+**Move Right**.
 
 Put the record's name first. A report whose first column is a date is hard to scan, because
 there is nothing to anchor each row to.
 
 ## Removing
 
-1. In the preview, find the column heading.
-2. Click **Column actions** on it.
+Any of these:
 
-   ![Column actions](../../img/shots/report-builder/column-actions.png)
+- In the **Outline**, click the **X** (**Remove column**) on the column.
+- In the **Outline**, open the column's own menu (**Column actions**) and click **Remove Column**.
+- In the preview, click the chevron beside the column's heading (**Column options**) and click
+  **Remove Column**.
 
-3. Click **Remove column**.
+**Remove All Columns** clears them in one go. It is in the menu beside the **Columns** heading
+in the **Outline** (**Column actions**). Useful when you have inherited a report and want to
+start the layout again without losing the filters.
 
-**Remove all columns** clears them in one go. Useful when you have inherited a report and want
-to start the layout again without losing the filters.
+![The Columns menu, with Remove All Columns](../../img/shots/report-builder/column-actions.png)
 
-Removing a column never deletes data. It changes what this one report displays, nothing else.
+Removing a column never deletes data. It changes what this one report displays, nothing else. A
+report you empty on purpose still saves.
+
+## Sorting a report
+
+**Where:** In the portal → the builder → the preview → a column heading
+
+The sort you set here is **saved with the report**: it is the order everybody sees when they
+open it.
+
+1. In the preview, click a column's **name** to sort by it. Click it again to reverse.
+2. Or click the chevron beside the name (**Column options**) and choose **Sort Ascending** or
+   **Sort Descending**.
+3. Click **Save**.
+
+People reading the report can sort it differently while they read, but that is never saved —
+see [Running a report](./running.md#sorting-and-reshaping-while-you-read), which also explains
+exactly how rows are ordered.
+
+Long text fields, bucket columns and row-level formula columns cannot be sorted.
+
+## Long text columns
+
+A long text column (a Description, say) is shown wide, wraps onto several lines and keeps its
+line breaks, so a paragraph reads as a paragraph. Shorter text areas wrap too.
 
 ## What goes wrong
 
@@ -81,6 +129,8 @@ Removing a column never deletes data. It changes what this one report displays, 
 | The column shows but is always empty | The field is genuinely empty on those records. |
 | Numbers will not total | It is a text field that looks numeric. Totals need a number field. |
 | The report is very wide | Too many columns. Group instead — see [Grouping](./grouping.md). |
+| **Sort Ascending** is greyed out | Long text, bucket and row-level formula columns cannot be sorted. |
+| A colleague sees a column you do not | That field is hidden from you, so every report hides it. You cannot save over a report that uses it — use **Save As**. See [Saving](./saving.md). |
 
 ## Where this fits
 

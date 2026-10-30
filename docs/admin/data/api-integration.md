@@ -5,13 +5,16 @@ sidebar_position: 17
 
 # API Integration
 
-**What it is.** A way to let another system read your portal data automatically.
+**What it is.** A way to let another system read your portal data automatically — and, only if
+you allow it, create, update or delete records.
 
-**What it does.** You create a key, choose exactly what it may read, and give it to whoever is
-building the other system.
+**What it does.** You create a key, choose exactly what it may reach and do, and give it to
+whoever is building the other system.
 
-**Why it is safe.** Keys can only **read**. Nothing can be changed or deleted through them, so
-the worst a leaked key can do is show somebody data — not alter it.
+**Why it is safe.** A key does only what you tick. Each object it reaches has four
+**Operations** — **Read**, **Create**, **Update** and **Delete** — and a key you leave on **Read**
+alone can change nothing. Whatever you tick, it can never do more than its user could do in the
+portal.
 
 ## Opening it
 
@@ -35,7 +38,8 @@ Everybody who currently holds a key is listed.
 
 3. Choose the person the key belongs to. The key sees what that person can see, so choose
    somebody whose access matches what the other system should get.
-4. Choose which kinds of record it may read, and which fields.
+4. Choose which kinds of record it may reach, which fields, and — under **Operations** — what it
+   may do with each.
 5. Add filters if it should only see some records.
 6. Click **Save**.
 
@@ -55,12 +59,14 @@ Two habits worth keeping:
   Admin can read everything.
 - Choose fields deliberately. If the other system needs names and emails, do not give it
   everything else as well.
+- Tick only the operations the other system needs. A system that only reports on your data needs
+  **Read** and nothing else.
 
 ## Managing an existing key
 
 | Button | What it does |
 |---|---|
-| **Edit** | Change which records and fields the key may read. |
+| **Edit** | Change which records and fields the key may reach, and what it may do with them. |
 | **Regenerate** | Issue a new secret. The old one stops working at once. |
 | **Revoke** | Switch the key off completely. |
 
@@ -111,27 +117,30 @@ the old one.
 
 | Control | What it does |
 |---|---|
-| **Add object** / **Objects this user may pull (multi-select)** | Which objects the key may read. |
+| **Add object** / **Objects this user may pull (multi-select)** | Which objects the key may reach. |
 | **Remove this object** | Takes one back out of the grant. |
-| **Fields for:** / **Available** / **Readable** / **Writable fields** | Which fields come back, and which may be written. |
+| **Fields for:** / **Fields** (**Available** / **Selected — returned by the API**) | Which fields come back. |
+| **Writable fields** (**Readable** / **Writable — may be set by create and update**) | Which of those a create or update may set. |
 | **Lookup fields** | How a lookup is returned — the name, the id, or both. |
 | **Hidden** | Fields deliberately excluded. |
 | **Filters — which rows come back** / **Field** / **Operator** / **Filter logic** | A filter that always applies, whatever the caller sends. |
-| **Direction** | The order rows arrive in. |
+| **Sort by** / **Sort field** / **Direction** | The order rows arrive in. |
 
 ### Operations and caller permissions
 
 | Control | What it does |
 |---|---|
-| **Operations** / **Read** / **Create** / **Edit** / **Delete** | Which verbs this key may use. |
-| **Ticking an operation lets the API…** | The explanation shown beside those boxes. |
+| **Operations** — **Read** (GET), **Create** (POST), **Update** (PATCH), **Delete** (DELETE) | What this key may do with the object. Each names the call it switches on. **Read** stays ticked while any of the other three is. |
+| **Ticking an operation lets the API ask…** | The explanation under those boxes: the user's own portal permissions, record sharing and field access still decide, so ticking can only narrow what they could already do — never widen it. |
 | **Allow the caller to add their own filters** | They may narrow the result. They can never widen it. |
 | **Allow the caller to choose their own sort** | They may reorder. This changes order only, never which rows. |
 | **Reads per hour** / **Writes per hour** | Separate ceilings. Writes get the lower one. |
-| **Always on — this is not a choice** | Every call is written to the audit log; it cannot be switched off. |
+| **Write every call to the audit log** — **Always on — this is not a choice.** | Every call is written to the [Audit Log](../operations/audit-log.md); it cannot be switched off. |
 | **Who can configure** | Which Admins may change a key's scope — see the note below. |
 
-**Delete cannot be undone.** Revoking is the reversible action; deleting is not.
+**Delete cannot be undone.** That warning appears when **Delete** is ticked: a record the other
+system deletes is gone. It is not about the key itself: **Revoke** switches a key off without
+deleting anything.
 
 ### Editing an existing key
 

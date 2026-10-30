@@ -7,75 +7,117 @@ sidebar_position: 16
 
 **What it is.** Letting somebody other than you open a report you saved.
 
-**What it does.** There are two ways, and only one of them is yours to use.
+**What it does.** There are three ways. Two are yours to use, and an administrator does the third.
+Dashboards are shared in exactly the same three ways.
 
-**Why it matters.** The one you can reach yourself does nothing at all in some portals — so it is
-worth knowing which situation you are in before relying on it.
+**Why it matters.** The three reach different people. The one that is easiest to find, the
+**Shared** box, does not reach ordinary colleagues in a portal with companies. So it is worth
+knowing which one you need before relying on it.
 
-## The two ways
+## The three ways
 
-| | Who does it | What it gives |
-|---|---|---|
-| **The Shared tick box** | you, the report's author | read access, and only in some portals — see below |
-| **Sharing to named people** | an administrator | read or edit, to the people they choose |
+| | Who does it | Where | What it gives |
+|---|---|---|---|
+| **The Shared box** | anybody who can edit the report | the list's row menu → **Edit Properties** | **Read**, to Admins and to people with no company. See below. |
+| **Visibility: My company** | the report's owner, or a Super Admin | in the builder: **Save options** (▾) → **Properties** | **Read** or **Edit**, to your company's **Admins** |
+| **Sharing to named people** | an Admin at your company, or a Super Admin | **Admin** → **Reports & Dashboards** | **Read** or **Edit**, to the Standard users they choose |
 
-## The Shared tick box
+In a portal with companies, the usual route to a colleague is the second and third together:
+the owner sets **My company**, then an Admin shares it on to the people who need it.
 
-**Where:** open the report → **Properties**
+## The Shared box
 
-Alongside the name, description and folder there is:
+**Where:** In the portal → **Reports** → the report's row menu (▾) → **Edit Properties**
 
-> **Shared (visible to all portal users)**
-
-### Ticking it, step by step
+The box is labelled **Shared (visible to all portal users)**. It is not in the report builder. It
+is only in the **Edit Properties** dialog on the list.
 
 1. Click **Reports** in the top menu.
-2. Click the folder, then the report's **name**.
-3. Click **Edit**.
-4. Click **Properties**.
-5. Tick **Shared (visible to all portal users)**.
-6. Click **Save**.
+2. Find the report and click ▾ at the end of its row.
+3. Click **Edit Properties**.
+4. Tick **Shared (visible to all portal users)**.
+5. Click **Save**.
 
-Tick it and the report is marked as shared. You can also filter your report list by **Shared** or
-**Private** to see which is which.
+For a dashboard, do the same from the **Dashboards** list.
 
-:::caution It does not reach your colleagues in most portals
-This is the part worth reading twice. If your portal has **companies** set up — the usual
-arrangement when more than one organisation uses the same portal — then an ordinary **Standard**
-user only ever sees reports they **own themselves**, or reports an administrator has explicitly
-shared with them.
+The ticked box is what the list calls **Public**. It decides whether the report shows under
+**Public Reports** or **Private Reports**, and what the **Visibility** column says.
 
-In that setup, ticking **Shared** changes nothing for the people you work with. The report does not
-appear in their list, and nothing on screen tells you it has not.
+:::caution "All portal users" is not what it does in a portal with companies
+Despite its label, the box gives **Read** access to these people only:
+
+| The other person | Can they open it? |
+|---|---|
+| A **Standard** user who belongs to a company | **No** |
+| A user who does not belong to a company | **Yes** |
+| An **Admin**, at any company | **Yes** |
+| A **Super Admin** | **Yes** (they can open everything anyway) |
+
+So in a portal shared by several companies, ticking **Shared** changes nothing for your ordinary
+colleagues. It does show the report to the Admins of **every** company, not just yours. Nothing
+on screen tells you either of these things.
 :::
 
-So where does it work?
+If everybody in your portal is outside any company — one organisation using the portal — the box
+does reach every portal user.
 
-| Your portal | Does the tick box share the report? |
-|---|---|
-| No companies — one organisation using the portal | **Yes**, every portal user can read it |
-| Companies in use, and the other person is a **Standard** user | **No** |
-| Companies in use, and the other person is an **Admin** or **Super Admin** | **Yes**, they can read it |
+## Visibility: My company
 
-If you are not sure which kind of portal you are in, ask your administrator — or simply use the
-second route below, which works in every case.
+**Where:** In the portal → **Reports** → the report → **Edit** → **Save options** (▾ beside
+**Save**) → **Properties**
+
+This is the setting your company's administrators work from.
+
+1. Open the report in the builder.
+2. Click the ▾ beside **Save**, then **Properties**. The **Report Properties** dialog opens.
+3. Under **Visibility**, choose **My company**.
+
+   <!-- SHOT: analytics/report-properties-visibility.png | report builder signed in as a user who belongs to a company, Save options ▾ → Properties, the "Report Properties" dialog with Visibility set to My company and Company access set to Read, the note visible -->
+
+4. Under **Company access**, choose **Read** or **Edit**.
+5. Click **Apply**, then save the report. As the dialog says: *Your company's admins can see it;
+   you can then re-share it to your team on the Reports tab. Applied when you Save.*
+
+**My company** only appears if you belong to a company. Otherwise the only choice is
+**Only me (private)**.
+
+What it does:
+
+- Every **Admin** at your company can open the report, at the level you chose.
+- **Standard** users at your company get nothing yet. An Admin shares it on to the ones who need it
+  (next section).
+
+**For a dashboard,** the same **Visibility** and **Company access** choices are in the
+**Save Dashboard** dialog. That dialog appears the first time you save a dashboard, and on
+**Save As**. See [The dashboard builder](../dashboards/builder.md#saving).
+
+**Only the owner or a Super Admin can change Visibility.** If somebody else with edit access
+changes it and saves, their change is quietly ignored. Their other edits are saved.
+
+A new report, a new dashboard and a **Clone** always start as **Only me (private)**, with the
+**Shared** box unticked.
 
 ## Sharing to named people
 
-This is the reliable one, and an **administrator** does it, not you.
+An **Admin** at your company, or a **Super Admin**, does this under **Admin** →
+**Reports & Dashboards** in the portal. They pick reports or dashboards, pick Standard users at
+your company, and choose **Read** or **Edit**. See
+[Reports and Dashboards](../../admin/data/report-folders.md).
 
-They can give specific people **Read** or **Edit** on:
+The limits they work within:
 
-- a single report or dashboard, or
-- a whole folder, so anything added to it later is included automatically
+- They can only share what your company holds. A report built here is held by your company once
+  its owner sets **Visibility** to **My company**. An Admin can also share on a dashboard they
+  own themselves.
+- They cannot give more than your company has. A report held at **Read** cannot be shared at
+  **Edit**.
+- Sharing is per report. Ticking a folder on their screen selects the reports in it at that
+  moment. A report put in the folder later has to be shared separately.
 
-Ask them for what you need — *"please give the sales team read access to this report"*. There are
-two screens they might use, depending on where the report came from:
-
-| If the report | They use |
-|---|---|
-| was built in the portal | [Reports and Dashboards](../../admin/data/report-folders.md), in the portal's admin console |
-| came from Salesforce | [Sync & Share Folders](../../admin/salesforce/portal-users.md#sharing-folders-with-companies-step-by-step), on the Salesforce Portal Users tab |
+A report that came **from Salesforce** reaches your company a different way. A Salesforce
+administrator shares it with your company from the
+[Portal Users](../../admin/salesforce/portal-users.md) tab in Salesforce, and then an Admin shares
+it on in the same way.
 
 | Access | Lets them |
 |---|---|
@@ -94,20 +136,32 @@ Two people see it whatever you do:
 
 ## Taking access away
 
-You cannot revoke what an administrator granted — ask them. They can remove one person's access,
-or lower it from Edit to Read, without affecting anybody else.
+| To undo | Do this |
+|---|---|
+| The **Shared** box | Untick it in **Edit Properties**. Its effect stops at once. |
+| **My company** | Set **Visibility** back to **Only me (private)** and save. Your company's Admins lose the access it gave them. |
+| A share to a named person | Ask the Admin who made it. They remove it, or lower it from **Edit** to **Read**, under **Admin** → **Reports & Dashboards** → **Current access**. |
 
-Unticking **Shared** stops that tick box's own effect immediately, in the portals where it had one.
+Setting **Only me** does **not** undo shares an Admin has already made to named people from your
+company. Those people keep their access until the Admin removes it.
 
-## Folders are usually the better unit
+## What goes wrong
 
-If you are asking for access to several related reports, ask for the **folder** instead. Anything
-added to it later is included automatically, rather than needing another request each time.
+| Symptom | Cause |
+|---|---|
+| I ticked **Shared** and my colleagues still cannot see it | They are Standard users at a company. The box never reaches them. Use **My company**, then ask an Admin to share it with them. |
+| I ticked **Shared**, edited the report, and now the list says **Private** again | Saving a report in the builder clears its **Shared** box. Tick it again in **Edit Properties** after each save. |
+| There is no **My company** choice | You do not belong to a company. Only **Only me (private)** is offered. |
+| My **Visibility** change did nothing | You are not the owner. Only the owner or a Super Admin can change it. |
+| I cannot find where to change a dashboard's **Visibility** | It is only asked in the **Save Dashboard** dialog, which appears on the first save and on **Save As**. To change it later, use **Save As** and set it on the copy. A Super Admin can also change your company's level between **Read** and **Edit** under **Admin** → **Reports & Dashboards**. |
+| An Admin at another company can see my report | Its **Shared** box is ticked. That box reaches every Admin in the portal. |
+| I set **Only me** and a colleague can still open it | An Admin shared it with them by name. Those shares stay until the Admin removes them. |
+| The list shows **Private** for a report my company can see | **Private** and **Public** only follow the **Shared** box, not **Visibility**. |
 
 ## Related
 
 | | |
 |---|---|
-| [Report folders](./folders.md) | organising reports into folders |
+| [Report folders](./folders.md) | organising reports into folders, which shares nothing |
 | [Reports and Dashboards](../../admin/data/report-folders.md) | the administrator's sharing screen |
 | [Exporting](./exporting.md) | sending the numbers to somebody with no portal login |

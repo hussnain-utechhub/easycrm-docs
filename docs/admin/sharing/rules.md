@@ -52,8 +52,11 @@ the person.
 A sharing rule never takes access away. If somebody can already see a record, no rule here
 will hide it.
 
-To restrict, use a [restriction rule](./restriction-rules.md) — the only thing in the portal
-that narrows access.
+To restrict, use a [restriction rule](./restriction-rules.md), or set the object to
+[Field Scoped](./field-scoped.md) — the two things in the portal that narrow access.
+
+On a Field Scoped object a rule still works, but only inside each person's values: it can raise
+access to in-scope records, and never reaches a record outside them.
 
 ## Turning one off
 
@@ -65,4 +68,9 @@ cause of something, and you can switch it back on in one click.
 ## Checking a rule did what you meant
 
 Open [Record Access](./record-access.md), find a record the rule should cover, and look at the
-**Reason** column. A rule that is working shows up there by name.
+**Reason** column. An owner-based rule that is working shows up there by name —
+**Owner-based sharing rule "*name*"**. A criteria rule shows as **Criteria-based sharing rule**,
+without its name.
+
+The reason names only the grant that gave the most access, so a person who also owns the record
+shows **Owner of this record** instead.

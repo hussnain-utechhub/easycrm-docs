@@ -19,16 +19,22 @@ will do.
 
 Then come back here when you need something specific.
 
+One more is worth a minute: [Staying signed in](./start/session.md). The portal signs you out
+after two hours unless you choose **Stay signed in**, and it tells you five minutes before.
+
 ## What you can do
 
 | I want to… | Go to |
 |---|---|
-| Find a customer or contact | [Looking at a list](./records/lists.md) or [Search](./start/the-screen.md) |
+| Find a customer or contact | [Looking at a list](./records/lists.md) or [Searching](./records/searching.md) |
 | Narrow a long list down | [Filtering a list](./records/filtering.md) |
 | Change what columns I see | [Choosing columns](./records/columns.md) |
 | Open and read a record | [Opening a record](./records/opening-a-record.md) |
 | Change something on a record | [Changing a record](./records/editing.md) |
+| Change the same field on many records at once | [Editing in a list](./records/list-editing.md) |
+| Correct a value I spotted in a report | [Editing values in a report](./reports/editing.md) |
 | Add a new record | [Adding a record](./records/creating.md) |
+| Keep working when the session is about to end | [Staying signed in](./start/session.md) |
 | Record a call I just had | [Calls, tasks and meetings](./activities/index.md) |
 | Set a reminder for myself | [Calls, tasks and meetings](./activities/index.md) |
 | Run a report somebody built | [Running a report](./reports/running.md) |

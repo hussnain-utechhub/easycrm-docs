@@ -105,11 +105,29 @@ integration appears to work for a month while never setting the value somebody w
 
 Lookup fields take the related record's **Id**, not its name.
 
+### An `Id` in the body never chooses the record
+
+The record a `PATCH` changes is always the one named in the address. An `Id` sent inside the
+body cannot point the write at a different record:
+
+- if `Id` is not on the key's writable fields — the usual case — the request is refused with
+  `These fields are not writable by this key: Id`;
+- if it is, the value is ignored and the record in the address is the one written.
+
+On a `POST` it is the same: a new record is always created, whatever `Id` the body carries.
+
+### Field Scoped objects
+
+On an object an administrator has made **Field Scoped**, a write must leave the record holding
+one of the key's user's own values in the scope field, or it is refused with a `400` naming that
+field. On a create, a blank scope field is filled in for you when the user has exactly one value.
+Every message is listed in [Errors and limits](../api-integration/errors-and-limits.md#field-scoped-objects).
+
 ## Errors
 
 | Code | When |
 |---|---|
-| `400` | unreadable JSON, no object named, a field the key may not write, a field this user may not edit, or a validation rule in your org refusing the save — its own message is passed through |
+| `400` | unreadable JSON, no object named, a field the key may not write, a field this user may not edit, a record type or field scope the user may not use, or a validation rule in your org refusing the save — its own message is passed through |
 | `401` | missing, unknown, wrong or revoked credentials, or an inactive portal user |
 | `403` | the object, or the operation on it, is not available to this key |
 | `404` | no such record — or one this key's user may not see |

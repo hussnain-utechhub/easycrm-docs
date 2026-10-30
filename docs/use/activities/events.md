@@ -27,7 +27,7 @@ Friday" is a task; "Review call, Thursday 2pm" is an event.
 **Where:** In the portal → **Accounts** → the record's name → **New Event**
 
 1. Click the tab and open the record.
-2. Click **New Event** in the panel on the right.
+2. Click **New Event** in the activity panel. A panel opens at the bottom of the screen.
 
    ![A new event](../../img/shots/records/new-event.png)
 
@@ -36,14 +36,20 @@ Friday" is a task; "Review call, Thursday 2pm" is an event.
 | Field | Notes |
 |---|---|
 | **Subject** | What the meeting is about |
-| **Start** | Date and time it begins |
-| **End** | Date and time it finishes |
 | **Description** | Agenda, dial-in, anything the attendee needs |
+| **Start Date** and **Start Time** | When it begins |
+| **End Date** and **End Time** | When it finishes |
+| **Name** | The contact (or lead) it is with |
+| **Related To** | Usually starts as the record you are on |
+| **Attendees** | Your own name is already there. Add others under **People** (**Search People…**) or **Resources** (**Search Resources…**). |
 
 4. Click **Save**.
 
-It appears under **Upcoming Events** on the home page of everybody it concerns, and in the
-record's timeline.
+The portal says **Activity saved.** and the event appears in the record's timeline. Until it
+starts it sits under **Upcoming & Overdue**; afterwards, in its month.
+
+If you leave the dates and times empty, the event is booked for today from 9:00 to 10:00. Left
+without an end date, it ends on its start date.
 
 ## Why attach it to a record
 
@@ -64,18 +70,25 @@ The event records that you met. The call log records what was said.
 
 | Where | Shows |
 |---|---|
-| **Upcoming Events** on the home page | Future events on records you work with |
+| **Upcoming Events** on the home page | Up to six events from today onwards on the 20 records you opened most recently |
 | The **Event** tab | Every event you can see — see [Lists](../records/lists.md) |
-| A record's timeline | Events on that record only |
+| A record's timeline | Events on that record (and on an account, its contacts' events too) |
 
 Past events drop off **Upcoming Events** but remain in the timeline and the Event tab.
+
+## Times and time zones
+
+There is no time-zone setting on your portal account. The record's timeline shows times by your
+computer's clock; the home page and the record page show them in the time zone Salesforce uses
+for the portal. When your computer is in a different time zone from the portal, the two can
+disagree.
 
 ## What goes wrong
 
 | Symptom | Cause |
 |---|---|
-| Not under Upcoming Events | It is in the past, or on a record you do not work with. |
-| The time is wrong | Check the time zone on your account. |
+| Not under **Upcoming Events** | It is in the past, or its record is not one of the 20 you opened most recently. Only six show. |
+| The time looks wrong | See **Times and time zones** above. If it is still wrong, tell your administrator what you entered and what the portal shows. |
 | It will not save | **End** is before **Start**. |
 | A colleague cannot see it | They may not have access to the record it is on. |
 

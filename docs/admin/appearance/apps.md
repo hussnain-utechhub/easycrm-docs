@@ -12,6 +12,10 @@ sidebar_position: 13
 **Why it helps.** Sales and support see different tabs without either having to ignore the
 other's.
 
+**Who can use it.** Only a **Super Admin**. The **Apps** tab edits the apps of every company at
+once, so it is never shown to a company Admin and cannot be granted to one — it is not offered
+under **Admin Tabs** or **Console Tabs**.
+
 ## Opening it
 
 **Where:** In the portal → **Admin** → **Apps**
@@ -21,33 +25,64 @@ other's.
 
 ![Apps](../../img/shots/admin/apps.png)
 
+Each app is listed with its **App Name**, how many **Tabs** it shows, and whether it is the
+**Default**. With none yet: **No apps yet. Click New App to create one. Until then, users see all
+tabs.**
+
 ## Creating one
 
 **Where:** In the portal → **Admin** → **Apps** → **New App**
 
 1. Click **Admin**, then **Apps**.
 2. Click **New App**.
-3. Give it a name people will recognise, such as "Sales".
-4. Choose which tabs it shows.
-5. Click **Save**.
+3. Give it an **App Name** people will recognise, such as "Sales".
+4. Pick an **App Icon**, or upload a **Custom Logo** (an image under about 90 KB), which replaces
+   the icon.
+5. Under **Tabs**, move the tabs it shows from **Available** to **Selected (in order)**, in the
+   order they should appear. **Reports** and **Dashboards** are offered too.
+6. Tick **Set as the default app** if it should be the one people land in.
+7. Click **Save**. The message **Apps saved. Users see the change on their next refresh.** confirms
+   it.
 
-The tabs available here are the ones turned on under [Tabs](./tabs.md). Turn a tab on there
+The first app you create becomes the default. When Home is shown, it always comes first, and the
+**Admin** tab stays available to admins whatever the app.
+
+The object tabs available here are the ones turned on under [Tabs](./tabs.md). Turn a tab on there
 first if it is missing.
+
+## Changing or removing one
+
+| Control | What it does |
+|---|---|
+| **Edit** (pencil) | Opens the app to change its name, icon, logo or tabs. |
+| **Delete** (bin) | Removes the app at once, without asking. If it was the default, the first remaining app becomes the default. |
+| **Set default** | Makes this the app people land in. |
+
+Every change saves immediately and is written to the [Audit Log](../operations/audit-log.md) as
+**Change Permission** — `App Launcher apps updated`.
+
+## Show the Home tab
+
+The **Show the Home tab** switch at the top (**Shown** / **Hidden**) removes the Home tab from the
+navigation for everyone — the default tab bar and every app. People land on their first available
+tab instead. It saves as soon as you change it.
+
+The same switch is on the [Tabs](./tabs.md#show-the-home-tab) screen, where a company Admin given
+that tab can use it too.
 
 ## Deciding who gets which app
 
-**Where:** In the portal → **Admin** → **Users** → **Assign Apps**
+Two places, one inside the other:
 
-1. Click **Admin**, then **Users**.
-2. Click **Assign Apps** above the table.
-3. Tick the apps that company may use.
+| Where | Decides |
+|---|---|
+| [Companies](../companies/index.md) → **Edit** → **Apps** | Which apps a company sees. Nothing ticked means all of them. |
+| [Users](../users/index.md) → **Assign Apps** | Which of the company's apps one Standard user sees. Nothing ticked means all the company's apps. |
 
-![Assign apps](../../img/shots/admin/modal-assign-apps.png)
+**Leaving a list blank means everybody sees every app**, not nobody. That catches people out.
 
-4. Click **Save**.
-
-**Leaving the list blank means everybody sees every app**, not nobody. That catches people
-out.
+An app list controls what is **shown**, not what data can be reached — record and field access are
+set separately.
 
 ## Switching app
 

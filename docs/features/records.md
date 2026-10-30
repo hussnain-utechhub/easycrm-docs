@@ -13,16 +13,22 @@ The part of the portal people spend their day in.
 
 **What it is.** Saved sets of records with their own columns, filters and sorting.
 
-**What it does.** People switch between views and pin one as their default.
+**What it does.** People switch between views, save their own, and pin one as their default.
+Administrators can share a view with everybody. A tab whose **Recently Viewed** list is empty
+opens on **All** instead, so nobody starts on a blank screen.
 
 **What you gain:** each person reaches the records they care about in one click instead of
 searching every time.
 
-## Filtering, with real logic
+## Filtering, the way Salesforce list views filter
 
-**What it is.** Filters on any field, with operators such as equals, contains and greater than.
+**What it is.** The same Filters panel, field set and operators as a Salesforce list view —
+including the owner, creator and last modifier by alias and name, a contact's account fields,
+Topics and Campaign Member Status.
 
-**What it does.** Several filters combine with **AND**, **OR**, **NOT** and brackets.
+**What it does.** Several filters combine with **AND**, **OR**, **NOT** and brackets. Blank
+values can be matched, and a filter the list cannot run is refused with a message that says
+why.
 
 **What you gain:** genuinely specific questions — "this region, this status, but not these two
 owners" — without exporting anything.
@@ -31,43 +37,66 @@ owners" — without exporting anything.
 
 **What it is.** Each person chooses which fields appear as columns, and in what order.
 
-**What it does.** The choice is remembered and affects nobody else.
+**What it does.** The choice is remembered and affects nobody else. An administrator can set the
+columns everybody starts with.
 
 **What you gain:** no arguments about one shared layout, and no scrolling past twenty
 irrelevant columns.
+
+## Editing in a list
+
+**What it is.** Changing values straight in a list, as in a Salesforce list view: one cell at a
+time, or one value into up to 200 ticked rows at once.
+
+**What it does.** Changes wait as drafts until **Save**; each record then saves on its own, and
+a refused one keeps its draft with the reason beside it. The same permissions, field access and
+validation rules apply as on the record page. On a kind of record with several record types,
+the list must first be filtered to one.
+
+**What you gain:** clean-ups that took an afternoon of opening records take minutes.
 
 ## Sorting
 
 **What it is.** Click a column heading to order by it.
 
-**What it does.** Text, numbers and dates sort naturally; picklists sort in their defined
-order rather than alphabetically.
+**What it does.** The whole list is sorted, not just the rows on screen. Text, numbers and dates
+sort naturally; picklists sort in their defined order; blanks go to the bottom.
 
 **What you gain:** the interesting rows come to the top without building a report.
 
 ## Search
 
-**What it is.** Two searches — one across every kind of record, one within the current list.
+**What it is.** Two searches — one across every kind of record and every report and dashboard
+you can open, one within the current list.
 
 **What you gain:** people find things without knowing which tab they live under.
 
-## Row actions
+## Row actions and list buttons
 
-**What it is.** A menu at the end of each row.
+**What it is.** A menu at the end of each row, and buttons an administrator adds beside **New**
+that start a guided process or open a web page.
 
-**What you gain:** acting on one record without opening it.
+**What you gain:** acting on records without opening them, and company-specific actions where
+people already work.
 
 ## Configurable record pages
 
 **What it is.** An administrator chooses which fields appear, grouped into sections, and which
-related records show underneath.
+related records show beside them.
+
+**What it does.** Fields carry the names Salesforce shows on its page layouts, and link formulas
+open as links.
 
 **What you gain:** a readable page showing the ten fields that matter instead of the hundred
 that exist.
 
-## Full and single-field editing
+## Full and on-the-page editing
 
-**What it is.** An **Edit** button for the whole record, and a pencil beside any single field.
+**What it is.** An **Edit** button for the whole record, and a pencil beside each field that
+opens every field you may change at once, as Salesforce does.
+
+**What it does.** Every editor starts from the value actually stored — a date and time opens
+with both — so saving never quietly changes a field you did not touch.
 
 **What you gain:** quick corrections without opening a whole form, and one save when changing
 several things.
@@ -89,7 +118,8 @@ form.
 
 ## Ownership and transfer
 
-**What it is.** Every record has an owner, and ownership can be moved.
+**What it is.** Every record has an owner, and an Admin or Super Admin can move it — one record
+at a time, or several from a related list.
 
 **What it does.** Ownership usually drives who can see the record.
 
@@ -99,6 +129,9 @@ form.
 
 **What it is.** Linked records shown on the page — the contacts at an account, the tasks on a
 contact.
+
+**What it does.** Each list can be sorted, refreshed, added to and opened in full. A list a
+person may not read shows a padlock, not its contents or even a count.
 
 **What you gain:** the whole picture of a customer on one screen.
 
@@ -110,10 +143,12 @@ contact.
 
 ## A configurable home page
 
-**What it is.** Record-count tiles, an announcement you write, each person's own open tasks,
-their recent records, upcoming events and quick links.
+**What it is.** Record-count tiles, an announcement you write, the open tasks and upcoming
+events on the records each person has opened most recently, their recent records and quick
+links.
 
-**What it does.** Cards can be turned on or off, and each app can have its own home page.
+**What it does.** Cards can be turned on or off, each app can have its own home page, and the
+**Home** tab can be hidden altogether.
 
 **What you gain:** a landing screen that tells each person what needs their attention today.
 
@@ -127,3 +162,5 @@ their recent records, upcoming events and quick links.
 
 - [Records](../use/records/index.md)
 - [List views](../use/records/list-views.md)
+- [Editing in a list](../use/records/list-editing.md)
+- [Filtering a list](../use/records/filtering.md)

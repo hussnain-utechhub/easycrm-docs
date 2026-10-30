@@ -27,9 +27,11 @@ somebody else's is unless you are an administrator.
 
 1. Click your name in the top right corner.
 2. Click **Settings**.
-3. Your role is shown with your other details.
+3. Your role is shown under your username at the top of the page — **Standard User**,
+   **Admin User** or **SuperAdmin User**.
 
 ![Your profile](../../img/shots/profile/view.png)
+<!-- SHOT-RETAKE: ../../img/shots/profile/view.png | The current picture is the Profiles object list, not the user's own settings. Capture Settings → Personal Information for a Standard user, showing the username and "Standard User" under it -->
 
 ## Why a tab might be missing
 
@@ -40,8 +42,10 @@ If a colleague has a tab you do not, one of these is true:
 | Your role does not include it. | Your administrator. |
 | Your administrator has hidden it for your company. | Your administrator. |
 | You have no permission for that kind of record. | Your administrator. |
+| You are in a different app. Each app shows its own set of tabs — switch app in the App Launcher. | You, if you have the other app; otherwise your administrator. |
 
-The **Admin** tab, for example, only appears for Admins and Super Admins.
+The **Admin** tab, for example, only appears for Admins and Super Admins. The **Home** tab can
+be hidden for the whole portal; everybody then starts on their first tab.
 
 ## Why a record might be missing
 

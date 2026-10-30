@@ -8,7 +8,8 @@ sidebar_position: 7
 **What it is.** The starting rule for each kind of record: who can see it before any other
 rule applies.
 
-**What it does.** It sets the floor. Everything else only ever raises access from here.
+**What it does.** It sets the floor. Sharing rules, groups and the role hierarchy only ever raise
+access from here — with one exception: **Field Scoped** narrows it.
 
 **Why it matters.** This is the most important setting in the portal. Get it wrong and either
 nobody can do their job, or everybody sees everybody else's customers.
@@ -23,14 +24,15 @@ nobody can do their job, or everybody sees everybody else's customers.
 
 ![Org-wide defaults](../../img/shots/admin/sharing-org-wide-defaults.png)
 
-Each kind of record has its own setting, so accounts and tasks can be different.
+Each kind of record has its own setting, so accounts and tasks can be different. A row marked
+**inherited default** has never been set; it shows the default the portal falls back to.
 
 ## Setting one
 
 1. Find the kind of record in the list.
-2. Click **Edit** beside it.
-3. Choose the default access.
-4. Click **Save**.
+2. Click the pencil (**Edit**) beside it. The **Org-Wide Default — *object*** dialog opens.
+3. Choose the **Default Access**.
+4. Click **Save**. The message **Org-wide default saved.** confirms it.
 
 | Setting | What it means |
 |---|---|
@@ -38,21 +40,39 @@ Each kind of record has its own setting, so accounts and tasks can be different.
 | **Public Read Only** | Everybody sees them. Only the owner can change them. |
 | **Public Read/Write** | Everybody sees and changes them. |
 | **Controlled by Parent** | This record has no access of its own. Whoever can see the record it belongs to can see it. |
+| **Field Scoped** | Each person sees only the records whose chosen field holds one of their values. Super Admin only — see [Field Scoped sharing](./field-scoped.md). |
 
 ## Controlled by Parent
 
 Choose this for records that only make sense as part of something else — a note on an account,
-a line on an order. Rather than deciding who can see them, you say **which field points at the
-parent**, and access follows that parent.
+a task on a contact. Rather than deciding who can see them, you say **which parent records**
+decide, and access follows those parents.
 
-Picking it reveals a second control: **the parent field**. Choose the lookup that points at the
-record this one belongs to.
+Picking it reveals a two-column picker, **Controlled by these parent objects**:
+
+- **Available** on the left — every portal object this one has a lookup to, shown with the lookup
+  it uses, for example **Account (via Account ID)**.
+- **Controls this object's records** on the right — the parents that decide.
+
+Move one or more parents to the right, then click **Save**.
+
+<!-- SHOT: admin/sharing-owd-controlled-by-parent.png | Sharing → Org-Wide Defaults → pencil on Tasks; dialog with Default Access = Controlled by Parent and the "Controlled by these parent objects" picker showing Account and Contact under "Controls this object's records" -->
 
 | | |
 |---|---|
-| **You set** | the parent field, not who can see the record |
-| **A person sees it** | whenever they can see the parent |
-| **They lose it** | the moment they lose the parent |
+| **You set** | which parents decide, not who can see the record |
+| **A person sees it** | when they can see **any one** of its selected parents — with the highest access any of them gives |
+| **They lose it** | when they can see none of them, or it points at none of them |
+
+A record that points at none of the selected parents is **hidden**. Under a Task controlled by
+Account and Contact, a task linked only to an opportunity is reached only through other grants,
+such as owning it.
+
+If the object has no lookups to other portal objects, the picker is replaced by **This object has
+no lookups to other portal objects, so there is no parent to control it by.**
+
+If a parent is itself [Field Scoped](./field-scoped.md), the children follow it: people see only the
+children of in-scope parents.
 
 :::note Why this is often better than Private
 With Private you would have to grant access twice — once to the account, once to every note on
@@ -60,10 +80,10 @@ it — and keep the two in step for ever. Controlled by Parent has one rule, on 
 children follow it automatically.
 :::
 
-:::caution Pick the parent field carefully
-Access flows down whichever field you choose. If it points at the wrong record, people will see
+:::caution Pick the parents carefully
+Access flows down every parent you select. Add one that does not belong and people will see
 children of records they were never meant to reach — and it will look like the sharing rules are
-wrong rather than the parent field.
+wrong rather than the parent list.
 :::
 
 ## How to choose
@@ -78,9 +98,14 @@ rarer than people expect.
 
 Use **Controlled by Parent** for records that have no meaning on their own.
 
+Use **Field Scoped** when each company or person should see only the records carrying their own
+value in one field — their region, their territory, their accounts. It is the only default that
+hides records from their owners.
+
 ## Grant via Hierarchy
 
-Beside each setting is **Grant via Hierarchy**.
+The list has a **Grant via Hierarchy** column; in the dialog it is the **Grant access using
+hierarchies** box.
 
 With it on, a manager automatically sees whatever the people they manage can see. Set who
 manages whom under [Roles](./roles.md).
@@ -92,6 +117,9 @@ rule for every manager, and keep adding to it as the team changes.
 
 You can, and the change takes effect immediately.
 
-**Tightening** a default — Public to Private — can make records disappear for people who could
-see them a minute ago. Tell people before you do it, and check with
-[Record Access](./record-access.md) first.
+**Tightening** a default — Public to Private, or anything to Field Scoped — can make records
+disappear for people who could see them a minute ago. Tell people before you do it, and check
+with [Record Access](./record-access.md) first.
+
+Every change is written to the [Audit Log](../operations/audit-log.md) as **Change Permission**,
+for example `OWD Account = Private`.

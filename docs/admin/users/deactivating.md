@@ -24,9 +24,14 @@ Deleting breaks two things that matter later:
 | Kept by deactivating | Lost by deleting |
 |---|---|
 | Their records, still owned by them | Ownership, leaving records orphaned |
-| Their history in the [Audit Log](../operations/audit-log.md) | The trail of who did what |
+| Their [Audit Log](../operations/audit-log.md) entries, linked to a user who still exists | The link — the entries stay, but keep only the username |
 
-Deactivating is reversible in one click. Deleting is not reversible at all.
+Deactivating is reversible in one click. Deleting is not reversible at all: **Delete** asks
+**Delete this portal user?**, and the person is e-mailed that their account was closed.
+
+A company's only Admin cannot be switched off while Standard users report to them — the portal
+refuses with **This is the only Admin in the company and *N* Standard user(s) report to it. Add
+another Admin before you deactivate this one.**
 
 ## What to do with their records
 

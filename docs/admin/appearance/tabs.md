@@ -22,11 +22,29 @@ records through search or a report. Use [Permissions](../access/permissions.md) 
 
 ![Tabs](../../img/shots/admin/tabs.png)
 
-You see two lists side by side:
+At the top is the **Show the Home tab** switch. Below it, under **Portal Objects**, are two lists
+side by side:
 
 - **Available objects** on the left — things not currently shown as tabs.
 - **Shown as tabs** on the right — the tabs people see, top to bottom matching left to right
   across the screen.
+
+The list is the same for the whole portal — every company sees the same set of object tabs.
+Icons are assigned for you.
+
+## Show the Home tab
+
+**Show the Home tab** (**Shown** / **Hidden**) decides whether the built-in Home tab appears at
+all. Turn it off to remove Home from the portal navigation entirely — for everyone, in the default
+tab bar and in every app. People then land on their first available tab.
+
+1. Click the switch so it reads **Hidden** (or **Shown** to bring Home back).
+2. Click **Save Tabs**. The switch is saved with the tab list.
+
+A company Admin given the **Tabs** tab can use it too, and it affects every company. The same
+switch is on the [Apps](./apps.md) screen for a Super Admin. Each change is written to the
+[Audit Log](../operations/audit-log.md) — `Home tab hidden in the portal navigation` or
+`Home tab shown in the portal navigation`.
 
 ## Adding a tab
 
@@ -55,7 +73,8 @@ use every day first.
 
 ## Nothing takes effect until you save
 
-Click **Save Tabs**. People see the change the next time they load a page.
+Click **Save Tabs**. The message **Tabs saved. Refresh the portal to see the navigation update.**
+confirms it. People see the change the next time they load a page.
 
 ## Tabs and apps
 

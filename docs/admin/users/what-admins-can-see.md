@@ -106,14 +106,20 @@ Under **Record type only**, expect them to appear. If that surprises you, the mo
 | A list is empty but a record opens fine | Older builds could disagree between the two. Re-check the mode. |
 | The change had no effect | The setting is cached. Reload; if it persists, check the audit log recorded it. |
 
-## The two settings beside it
+## The settings beside it
 
-The same screen carries two more settings that belong to a Super Admin.
+The same screen carries four more panels, above **Who manages whom**, that belong to a Super
+Admin. Nobody else sees them.
 
-### Who may log in as portal users
+### Log in as user — Who may log in as portal users
 
-Controls [support impersonation](./login-as.md). **Super Admins only** keeps the feature without
-handing it to company Admins. **Off** means nobody, whatever their role.
+Controls [support impersonation](./login-as.md).
+
+| Option | Means |
+|---|---|
+| **Off - nobody may log in as another user** | Nobody, whatever their role. The default. |
+| **Super Admins only** | Keeps the feature for Super Admins without handing it to company Admins. |
+| **Super Admins and company Admins** | Admins may too, for the Standard users they manage and other Admins at their company — never a Super Admin. |
 
 Changing it does not end a session already running — it decides who may start a new one.
 
@@ -135,9 +141,26 @@ rather than fast ones.
 Turning it on makes every report slower for everybody. Switch one company instead if only one
 needs it.
 
+### Long text filters on large reports
+
+Lets reports filter on a long text field across more than 40,000 records, by keeping prepared
+copies of the text. On by default. See
+[Long text filters on large reports](../operations/long-text-filters.md).
+
+### FrontSpin sync buttons
+
+**Show the Sync buttons on List Mappings** adds a **Sync** button to each active row of the
+**List Mappings** tab, and **Sync all** above it, for every company. Off by default. See
+[List Mappings](../../frontspin/portal/list-mappings.md#syncing-now).
+
+<!-- SHOT: admin/users-super-admin-panels.png | Super Admin; Admin → Users scrolled below the user list, showing the Long text filters on large reports card and the FrontSpin sync buttons panel one above the other -->
+
 ## Where this fits
 
 This setting narrows or widens what an Admin reaches **after**
 [permissions](../access/permissions.md) decide what they may do, and alongside
 [sharing](../sharing/index.md), which governs everybody. When they disagree,
 [Record access](../sharing/record-access.md) names the winner.
+
+On a [Field Scoped](../sharing/field-scoped.md) object an Admin sees the records carrying their
+values, whatever this mode says — the mode never reaches outside them.

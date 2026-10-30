@@ -17,24 +17,34 @@ day.
 
 1. Click your name in the top right corner.
 2. Click **Settings**.
-3. Click **Change Password**.
+3. Click **Change Password** in the menu on the left.
 
    ![Changing your password](../../img/shots/settings/change-password.png)
 
-4. Type your **current** password.
-5. Type your **new** password.
-6. Type the new password again to confirm it.
+4. Type your current password in **Current Password**.
+5. Type your new password in **New Password**.
+6. Type the new password again in **Confirm New Password**.
 7. Click **Save**.
 
-You stay signed in. Use the new password next time.
+The portal says **Your password has been updated.** You stay signed in. Use the new password
+next time.
+
+## The rule
+
+A new password must be **at least 8 characters** long. That is the only rule the portal
+enforces — it does not demand numbers or symbols. See "Choosing a password" below for what
+actually makes one strong.
 
 ## If it will not save
 
+The message appears in red under the boxes.
+
 | Message | What to do |
 |---|---|
-| The current password is wrong | Check for typing mistakes and Caps Lock. |
-| The two new passwords do not match | Retype both. |
-| The new password is not acceptable | Make it longer, and mix letters and numbers. |
+| **Enter your current password.** | The **Current Password** box is empty. |
+| **New password must be at least 8 characters.** | Make it longer. |
+| **The new passwords do not match.** | **New Password** and **Confirm New Password** differ. Retype both. |
+| **Your current password is incorrect.** | Check for typing mistakes and Caps Lock. |
 
 ## If you cannot remember the current one
 

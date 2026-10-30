@@ -20,14 +20,25 @@ names, and it muddies who actually did what.
 
 ## Using it
 
-**Where:** In the portal → **Admin** → **Users** → the person's row → the person icon
+**Where:** In the portal → **Admin** → **Users** → the person's row → **Log in as this user**
 
 1. Click **Admin**, then **Users**.
 2. Find the person in the list.
-3. Click the **person icon** in the **Actions** column.
+3. Click **Log in as this user** in the **Actions** column — the first button on the row.
+4. The **Log in as *username*** window explains what follows: anything you create or change is
+   recorded as them, the audit log also records that it was you, they stay signed in, and
+   **Return to my account** brings you back.
+5. Click **Log in as user**.
 
-You are now seeing their portal. A banner shows whose account you are in. Leave it to return
-to your own.
+<!-- SHOT: admin/login-as-confirm.png | Super Admin with Log in as switched on; Users → "Log in as this user" on a Standard user's row; the "Log in as acmeuser" window with its four points and the Log in as user button -->
+
+You are now seeing their portal. A banner across the top reads **You are logged in as *username*.
+Everything you do is recorded as them.** Click **Return to my account** in it to come back to your
+own.
+
+<!-- SHOT: admin/login-as-banner.png | The portal while logged in as acmeuser: the banner "You are logged in as acmeuser. Everything you do is recorded as them." with the Return to my account button -->
+
+If the attempt is refused, the reason shows inside the window and is written to the audit log.
 
 ## What is recorded
 
@@ -51,8 +62,18 @@ The person is **not** signed out and does not notice.
 | **Admin** | Standard users they manage, and other Admins at their own company |
 | **Admin** | **Never** a Super Admin |
 
-It is switched **off** until a Super Admin turns it on, and that is the right default — it is a
-powerful capability and should be a decision rather than something that was always there.
+A Super Admin decides who may use it at all, under **Admin** → **Users** → **Log in as user** →
+**Who may log in as portal users**:
+
+| Option | Who may start a session |
+|---|---|
+| **Off - nobody may log in as another user** | Nobody, whatever their role. The default. |
+| **Super Admins only** | Super Admins. Company Admins may not. |
+| **Super Admins and company Admins** | Both, within the limits in the table above. |
+
+It is **off** until a Super Admin turns it on, and that is the right default — it is a powerful
+capability and should be a decision rather than something that was always there. Changing it does
+not end a session already running; it decides who may start a new one.
 
 ## Using it well
 
@@ -68,6 +89,6 @@ question you could not answer from your own screen.
 
 | Symptom | Cause |
 |---|---|
-| The icon is missing | The feature is off, or that person is above you. |
+| **Log in as this user** is missing | **Who may log in as portal users** is **Off**, or limited to Super Admins, or that person is outside what you may log in as. |
 | You see your own data | You left the session. Check the banner. |
 | The problem does not reproduce | It may be browser-side — ask them to reload, or compare [view settings](../../use/start/the-screen.md). |

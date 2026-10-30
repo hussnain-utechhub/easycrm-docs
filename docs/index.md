@@ -30,7 +30,7 @@ EasyCRM gives those people the small part.
 | Licences | One per person who needs to look | Only for people who work in Salesforce |
 | What they see | The whole of Salesforce | The records and fields you choose |
 | Training | A large product built for specialists | A screen most people learn in ten minutes |
-| Reporting | Exports that go stale | Reports that read live data every time |
+| Reporting | Exports that go stale | Reports on your live data, refreshed whenever you ask |
 
 ## Your data never leaves Salesforce
 
@@ -40,7 +40,9 @@ EasyCRM **reads and writes your own Salesforce org directly**. There is no secon
 nightly sync, and no copy of your records anywhere else.
 
 Change something in EasyCRM and it changes in Salesforce. Change it in Salesforce and EasyCRM
-shows it the moment somebody opens the page. It is the same data, not a mirror of it.
+shows it the moment somebody opens the record. It is the same data, not a mirror of it. (Reports
+and dashboards may reuse a result worked out earlier, to stay fast — **Refresh** works it out
+again.)
 
 If you stop using EasyCRM, your records are already where they always were.
 
@@ -56,9 +58,9 @@ Everybody who signs in has one of three roles, and the role decides what they ca
 
 ## Built for more than one company
 
-Every user belongs to a **company**, and almost every setting can be made company by company —
-which apps they see, which report folders they reach, which administration tabs their own
-admins get, even the branding.
+Users belong to a **company**, with Super Admins above them all, and almost every setting can be
+made company by company — which apps they see, which report folders they reach, which
+administration tabs their own admins get, even the branding.
 
 One installation can serve many client companies, each seeing only its own world. That makes
 it work for an agency or service provider as well as for a single business.
@@ -73,7 +75,7 @@ it work for an agency or service provider as well as for a single business.
 | **Dashboards** | Several charts and numbers on one screen |
 | **Files** | Documents, attached to records or standing alone |
 | **Admin Console** | Eighteen areas controlling users, access, appearance and integrations |
-| **API** | A read-only way for another system to fetch your data |
+| **API** | A way for another system to read your data — and, where you allow it, to create, update and delete records |
 
 See [Features](./features/index.md) for the complete catalogue.
 

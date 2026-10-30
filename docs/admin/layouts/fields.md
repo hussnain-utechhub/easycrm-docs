@@ -82,6 +82,7 @@ That makes removing fields low-risk and reversible — the opposite of deleting 
 | A field is missing from **Available** | It does not exist on that object, or you lack permission for it. |
 | Your change did not appear | **Save Layout** was not clicked, or people need to reload. |
 | Somebody still cannot edit a field | Layout shows a field; **Editable Fields** permission decides if they may change it. |
+| A field's name differs from its name in Object Manager | The layout keeps the label from the Salesforce page layout it was synced from, or the label Salesforce's own page shows for a lookup (**Account Name** for **Account ID**). See [Field names in the editor](./index.md#field-names-in-the-editor). |
 
 That last row is the common confusion: putting a field on a layout does **not** grant edit
 access. See [Permissions](../access/permissions.md).

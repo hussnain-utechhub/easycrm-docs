@@ -6,9 +6,9 @@ sidebar_position: 0
 # The EasyCRM app in Salesforce
 
 Most of what you do as an administrator happens in the **portal's own admin console**. A few
-things do not. Publishing a portal report into Salesforce, pulling row-level formulas back out of
-it, provisioning fields and checking your licence all happen **inside Salesforce**, in an app
-called **EasyCRM**.
+things do not. Bringing Salesforce reports into the portal, publishing a portal report into
+Salesforce, pulling row-level formulas back out of it, provisioning fields and checking your
+licence all happen **inside Salesforce**, in an app called **EasyCRM**.
 
 If you have been looking for these screens in the portal, that is why you could not find them.
 
@@ -35,8 +35,51 @@ The app opens on its first tab and the five tabs sit across the top.
 | **[Sync Report Formulas](./sync-formulas.md)** | Pulls row-level formulas out of Salesforce and into the matching portal report. |
 | **[License Console](../operations/licence.md)** | Your licence, seat counts and limits. Behind its own password. |
 
-:::note Who can open this app
+Two more pages cover Salesforce-side matters that have no tab of their own:
+
+- [What a report sync brings across](./what-syncs.md) — what survives the trip from a Salesforce
+  report into the portal, and what every sync message means.
+- [Settings only Salesforce can change](./switches.md) — switches on the **Portal Branding**
+  record that no portal screen offers.
+
+## Who can open this app
+
 These tabs are part of the managed package and are controlled by Salesforce permissions, not by
-portal roles. Being a portal Super Admin does **not** give you access — a Salesforce administrator
-grants it in Salesforce.
+portal roles. Being a portal Super Admin does **not** give you access.
+
+| To do this | You need, in Salesforce |
+|---|---|
+| See the **EasyCRM** app and its five tabs | The **Portal Admin Access** permission set. It grants the app and all five tabs. |
+| Use **Portal Setup** at all — the checks as well as **Run auto-configure** | **Modify All Data** or **Customize Application**. **Portal Admin Access** alone is not enough. |
+| Change anything in **License Console** | The console's own username and password. See [Licence limits](../operations/licence.md). |
+
+A Salesforce administrator assigns **Portal Admin Access** in Setup → **Permission Sets**.
+Pressing **Run auto-configure** on Portal Setup also assigns it to whoever pressed it.
+
+:::note Why Portal Setup asks for more
+Setup assigns permission sets and writes org-wide settings, and Salesforce only lets an
+administrator do that. Without either permission, Portal Setup shows:
+*You need "Modify All Data" or "Customize Application" to run portal setup. The Portal Admin
+permission set alone is not enough — setup touches org-wide configuration, so the platform
+requires a Salesforce administrator.*
 :::
+
+## What you do here is recorded in the portal
+
+Syncing, refreshing or removing a report, adding or changing a snapshot, sharing reports with
+companies, syncing row-level formulas and publishing all write a row to the portal's
+[Audit Log](../operations/audit-log.md). Those rows carry your **Salesforce username** rather
+than a portal one, and their **Details** start with **In Salesforce (not the portal).** — so a
+change made here is never mistaken for one made in the portal.
+
+To find them, choose one of these in the Audit Log's **Action** list:
+
+| Action | Covers |
+|---|---|
+| **Report: Import from Salesforce** | Every sync and re-sync from the **Portal Users** tab. |
+| **Report: Publish to Salesforce** | Every publish, by hand or automatic. |
+| **Report: Publish schedule** | Changes to the [Publish Schedule](../data/publish-schedule.md). |
+
+Automatic publishing has no person behind it, so its rows carry the username **System**.
+
+<!-- SHOT: admin/audit-log-sf-import.png | Portal → Admin → Audit Log, Action set to "Report: Import from Salesforce", showing a row whose User is a Salesforce username and whose Details begin "In Salesforce (not the portal)." -->

@@ -34,15 +34,17 @@ Almost everything follows the same path:
 | Narrow it down | [Filtering](./filtering.md) |
 | Change what the table shows | [Columns](./columns.md) · [Sorting](./sorting.md) |
 | Open one record | [Opening a record](./opening-a-record.md) |
-| Change it | [Editing](./editing.md) |
+| Change it | [Editing](./editing.md) · [Editing one field](./inline-editing.md) |
+| Change many at once, from the list | [Editing in a list](./list-editing.md) |
 | Add a new one | [Creating](./creating.md) |
 | Move it to somebody else | [Changing the owner](./changing-owner.md) |
 | See what is linked to it | [Related records](./related-records.md) |
 
 ## Two things worth knowing before you start
 
-**There is no draft.** When you save a change it is live for everybody who can see the record.
-No approval step, no undo.
+**Saved means live.** When you save a change it is live for everybody who can see the record.
+No approval step, no undo. (Edits in a list wait as yellow drafts until you click **Save** —
+and are lost if you leave the list first.)
 
 **Blue text does something.** A record name opens that record, an email address starts an
 email, a phone number starts a call. If it is blue, it is a link.

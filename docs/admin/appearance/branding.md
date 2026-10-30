@@ -55,9 +55,14 @@ the preview is where to notice that.
 
 ![Navigation](../../img/shots/admin/branding-navigation.png)
 
-Sets whether people get the menu **across the top** or **down the left** by default.
+**Default layout** sets whether people get the menu **across the top** — **Top bar (like
+Salesforce)** — or **down the left** — **Left sidebar** — by default.
 
 It is only a default. Anybody can change it for themselves with the gear in the top bar.
+
+**Items before “Show more”** sets how many object tabs are shown before the rest are tucked away:
+behind the **Show more** toggle in the sidebar, or in the **More** menu on the top bar. Any number
+from 1 to 50; it starts at 7. It applies to everybody.
 
 ## The sign-in page
 
@@ -78,6 +83,14 @@ For full control over the sign-in page, including building it out of blocks. See
 
 ## Saving
 
-Click **Save All Branding** at the bottom. One button saves every panel.
+Click **Save All Branding** at the bottom. One button saves every panel. The message **Saved.
+Reload the portal to see theme, navigation and login changes.** confirms it.
 
 People see the change the next time they load a page. They do not need to sign out.
+
+## Settings that are not here
+
+A few portal-wide settings are kept on the same Portal Branding record but have no control on this
+tab — **Extension Class**, for example, which some FrontSpin messages tell you to set "in Admin,
+Branding". They are changed in Salesforce. See
+[Settings only Salesforce can change](../salesforce/switches.md).

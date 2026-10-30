@@ -38,10 +38,25 @@ rest.
 
 ## Org-wide defaults
 
-**What it is.** The starting access for each object — private, public read, or public read and
-write.
+**What it is.** The starting access for each object — **Private**, **Public Read Only**,
+**Public Read/Write**, **Controlled by Parent** (a child record follows the access of the record
+it belongs to) or **Field Scoped** (below).
 
 **What you gain:** a floor you set deliberately, rather than one you inherit.
+
+## Field Scoped
+
+**What it is.** An org-wide default under which each person sees only the records whose chosen
+field holds one of their values — set per company for all its users, or per user in place of
+the company's.
+
+**What it does.** It is strict: a record outside someone's values stays hidden even if they own
+it or it is shared with them, and somebody with no values sees none. Saves have to keep the
+record inside the person's own values, and the API, reports, lists and record pages all honour
+it. Only a Super Admin sets it up, and Super Admins always see everything.
+
+**What you gain:** one setting that splits a shared object between customers — each sees only
+their own rows — without a rule per customer.
 
 ## Sharing rules
 
@@ -66,8 +81,9 @@ manager.
 
 ## Restriction rules
 
-**What it is.** The one mechanism that **narrows** access — of the records somebody could
-otherwise see, keep only those matching your criteria.
+**What it is.** A rule that **narrows** access — of the records somebody could otherwise see,
+keep only those matching your criteria. Together with Field Scoped, it is one of the two things
+that take access away rather than add it.
 
 **What you gain:** contractors and partners given broad capability on a deliberately narrow
 slice of data.
@@ -77,6 +93,10 @@ slice of data.
 **What it is.** Tying a portal user to an Account, so they see only that account's records —
 with child records following through a parent field, and an optional user-match field tying
 records directly to a person.
+
+**What it does.** Account scoping that is already configured keeps working, but the portal no
+longer offers screens to set it up. For a new arrangement of this kind, use **Field Scoped** —
+for example, Contacts scoped on their Account.
 
 **What you gain:** the classic customer-portal arrangement. Every client signs in to the same
 portal and sees only their own data, with no rule written per client.
@@ -92,7 +112,7 @@ other records.
 ## Access diagnostics
 
 **What it is.** Pick any record and see everybody who can access it, with the reason for each —
-owner, default, a named sharing rule, or the hierarchy.
+owner, default, a named sharing rule, the hierarchy, or whether it is inside their field scope.
 
 **What you gain:** access questions answered with evidence in seconds, and you know exactly
 which setting to change.
@@ -100,4 +120,5 @@ which setting to change.
 ## Where to do it
 
 - [Sharing](../admin/sharing/index.md)
+- [Field Scoped sharing](../admin/sharing/field-scoped.md)
 - [Permission sets](../admin/access/permission-sets.md)

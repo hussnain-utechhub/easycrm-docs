@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## What a task is
 
-Something still to do, with a due date and somebody responsible.
+Something still to do, with a due date, attached to the record it concerns.
 
 ## When to use it
 
@@ -23,7 +23,7 @@ is an [event](./events.md).
 **Where:** In the portal → **Accounts** → the record's name → **New Task**
 
 1. Open the record.
-2. Click **New Task** in the panel on the right.
+2. Click **New Task** in the activity panel. A panel opens at the bottom of the screen.
 
    ![A new task](../../img/shots/records/new-task.png)
 
@@ -32,55 +32,66 @@ is an [event](./events.md).
 | Field | Notes |
 |---|---|
 | **Subject** | What needs doing. Specific enough to act on. |
-| **Due Date** | When. Tasks without one never surface as overdue. |
-| **Assigned To** | Who. Defaults to you. |
+| **Due Date** | When. Tasks without one are never shown as overdue. |
+| **Assigned To** | Shows your name. It cannot be changed here. |
+| **Status** | **Not Started** unless you choose **In Progress**, **Completed**, **Waiting on someone else** or **Deferred**. |
+| **Priority** | **Normal** unless you choose **High** or **Low**. |
 | **Comments** | Anything the person needs to know. |
+| **Name** | The contact (or lead) it concerns. Pick **Contacts** or **Leads**, then type in **Search Contacts…**. |
+| **Related To** | Usually starts as the record you are on; click the cross to choose another. If you leave both **Name** and **Related To** empty, the task is still attached to the record you are on. |
 
 4. Click **Save**.
 
-The task now appears under **My Tasks** on that person's home page.
+The portal says **Activity saved.** and the task appears in the record's timeline under
+**Upcoming & Overdue**.
 
 ## Always set a due date
 
-A task with no due date cannot be overdue, so it never appears in the one place people
-actually look. It exists, and it is invisible.
+A task with no due date can never be overdue, so it never gets the red flag people actually
+look for. On the home page it only ever shows as **Open**. It exists, and it is easy to miss.
 
 If you genuinely do not know when, pick a date to review it rather than leaving it blank.
 
-## Assigning to somebody else
+## Handing a task to somebody else
 
-Change **Assigned To**. It moves to their **My Tasks** immediately.
-
-They are not notified by the portal, so tell them. A task appearing silently in somebody's list
-is not a handover.
+The portal does not let you choose who a task is assigned to. If somebody else should do it, put
+their name in the subject or comments, and tell them — a task appearing silently on a record is
+not a handover.
 
 ## Completing one
 
-1. Open the task — from **My Tasks**, the **Task** tab, or the record's timeline.
-2. Click **Edit**.
-3. Set the status to **Completed**.
-4. Click **Save**.
+The quickest way:
 
-It leaves **My Tasks** and stays in the record's history, which is the point: the record keeps
-the fact that it was done.
+1. Open the record the task is on.
+2. In the timeline, tick the box beside the task — **Mark complete**.
 
-## Finding yours
+It is marked **Completed** at once, moves out of **Upcoming & Overdue** into its month, and
+leaves **My Tasks** on the home page. It stays in the record's history, which is the point: the
+record keeps the fact that it was done.
+
+You can also click ▾ beside the task → **Edit**, set **Status** to **Completed**, and click
+**Save**.
+
+## Finding them
 
 | Where | Shows |
 |---|---|
-| **My Tasks** on the home page | Your open tasks, overdue flagged in red |
+| **My Tasks** on the home page | Up to six open tasks on the 20 records you opened most recently, soonest first — whoever they are for |
 | The **Task** tab | Every task you can see — see [Lists](../records/lists.md) |
-| A record's timeline | Tasks on that record only |
+| A record's timeline | Tasks on that record (and on an account, its contacts' tasks too) |
+
+**My Tasks** marks each one **Overdue**, **Today**, **Upcoming** or **Open** (no due date).
 
 ## What goes wrong
 
 | Symptom | Cause |
 |---|---|
-| Not in My Tasks | Assigned to somebody else, already completed, or no due date. |
-| Overdue but not red | Red marks past the due date. Check the date is set. |
-| Cannot change the assignee | Permissions. Ask your administrator. |
+| Not in **My Tasks** | It is completed, or you have not opened its record lately — **My Tasks** follows the 20 records you opened most recently. Only six show. |
+| In **My Tasks** but not yours | **My Tasks** shows open tasks on your recent records, whoever they are for. |
+| Never shown as overdue | It has no due date. |
+| Cannot change the assignee | The portal does not offer it. See above. |
 
 ## Where this fits
 
 Tasks and [events](./events.md) both appear on the home page — tasks under **My Tasks**, events
-under **Upcoming Events**.
+under **Upcoming Events** — and in the record's [timeline](./index.md).

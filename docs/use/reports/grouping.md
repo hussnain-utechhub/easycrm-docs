@@ -35,14 +35,18 @@ export and manipulate. Grouping gets in the way of both. Leave it ungrouped and 
 The preview changes shape. Instead of a flat list you get one block per value, each with a
 subtotal, and a grand total at the bottom.
 
+You can also group from the preview: click the chevron beside a column's heading
+(**Column options**) and choose **Group Rows by This Field**.
+
 ### Grouping further
 
 Add a second group and each block is broken down inside itself — owner, then within each
-owner, by stage. Three levels is usually the practical limit before it stops being readable.
+owner, by stage. A summary report can have up to **three** row groupings.
 
 ### Removing a group
 
-Click the small cross beside it, or **Remove all groups** to clear them at once.
+Click the small cross beside it, or the bin beside **Groups** (**Remove all groups**) to clear
+them all at once.
 
 ## Grouping across the top as well
 
@@ -59,6 +63,37 @@ in every cell.
 
 Owner down the side and month across the top gives you "how much did each rep do each month"
 in one screen.
+
+A matrix can have up to **two** column groupings and up to **two** row groupings. A summary
+report with three row groupings has to lose one before it can become a matrix.
+
+## The limits, and what the builder says
+
+| Limit | Message |
+|---|---|
+| A summary report: 3 row groupings | **This report groups by at most 3 rows.** |
+| A matrix: 2 row groupings | **This report groups by at most 2 rows.** |
+| A matrix: 2 column groupings | **A matrix report groups by at most 2 columns.** |
+| Adding a column grouping to a report with 3 row groupings | **A matrix report groups by at most 2 rows — remove a row grouping first.** |
+
+In the preview's column menus, the grouping items are simply greyed out once a limit is
+reached.
+
+## How the rows are ordered
+
+- Groups are in order of their value, A first.
+- [Sorting](./columns.md#sorting-a-report) a summary report orders the **detail rows inside
+  each group**.
+- Sorting **descending by the grouping column** itself reverses the order of the groups.
+
+## Reading a grouped report
+
+On a summary report the records sit under their group headings. Switch **Detail Rows** off at
+the bottom of the report to see only the groups and their totals.
+
+On a matrix report the records are listed in a **Details** pane docked below the grid. Click a
+figure in the grid to narrow the Details to that cell. See
+[Running a report](./running.md#matrix-reports-the-details-pane).
 
 ## Choosing what to group by
 
@@ -95,6 +130,8 @@ You never pick the shape from a menu. It follows from what you group.
 | Values that should be one group are several | Free text with inconsistent spelling or spacing. |
 | Subtotals are blank | Nothing is being totalled yet. See [Totals](./totals.md). |
 | The chart option does nothing | A chart needs a grouping. Add one first. |
+| **This report groups by at most 3 rows.** | A summary report already has three row groupings. Remove one first. |
+| **A matrix report groups by at most 2 columns.** | The matrix already has two column groupings. |
 
 ## Where this fits
 

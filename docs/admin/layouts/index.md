@@ -66,6 +66,18 @@ There can be hundreds of fields.
 The list narrows as you type. Fields you have already chosen stay on the right — searching
 can never lose your work.
 
+## Field names in the editor
+
+The editor lists each field under the name the record page shows for it.
+
+- **A layout synced from a Salesforce page layout keeps that layout's own field labels.** Saving it
+  here never replaces them with the field's plain name.
+- **When you save**, a lookup field whose plain name ends in **ID** is given the label Salesforce's
+  own record page shows — **Account Name** rather than **Account ID**, for example. A label the
+  layout already has always wins.
+
+You cannot rename a field here. The names come from Salesforce.
+
 ## Sections
 
 A section is a heading with fields grouped under it, such as "Billing" or "System

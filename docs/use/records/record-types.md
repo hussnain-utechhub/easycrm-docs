@@ -20,12 +20,17 @@ customer and a supplier can both be accounts without sharing one cluttered form.
 
 1. Click **Accounts** (or any tab) in the top menu.
 2. Click **New** at the top right of the list.
-3. If there is more than one kind available, you are asked to choose before the form appears.
+3. If there is more than one kind available, you are asked to choose before the form appears:
+   **Select a record type**.
+
+   <!-- SHOT: records/record-type-picker.png | Accounts → New on an org with two or more Account record types available to the user: the "New Account" window at its first step, "Select a record type" with the kinds as round buttons, Cancel / Next -->
+
+4. Pick the kind, then click **Next**.
 
    ![Creating a record](../../img/shots/records/new-window.png)
 
-4. Pick the kind.
-5. Fill in the form and click **Save**.
+5. Fill in the form — its title now names the kind, such as **New Account: Partner** — and
+   click **Save**.
 
 ## If you are not asked
 
@@ -34,11 +39,17 @@ portal skips the question rather than showing you a list of one.
 
 ## Changing the kind later
 
-Open the record, click **Edit**, and change the record type field if it is there. If it is
-not, you do not have permission to change it.
+The portal cannot change a record's kind once it exists. The record type is shown on the record
+but has no pencil, and the edit window does not offer it. Ask your administrator, who can change
+it in Salesforce.
 
 Changing the kind can change which fields are shown, so a value may stop being visible. It is
 not deleted — it just is not on the new layout.
+
+## The kind and lists
+
+On a kind of record with several record types, a list can only be edited in place once it is
+filtered to one record type. See [Editing in a list](./list-editing.md).
 
 ## Who decides which kinds are available
 

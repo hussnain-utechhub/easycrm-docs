@@ -68,6 +68,14 @@ Two ways, both `PATCH`:
 
 Both reach the same record and answer identically.
 
+The address is the only thing that decides which record changes. An `Id` inside the body
+cannot redirect the update: it is refused as a field the key may not write, or — if your
+administrator did make `Id` writable — ignored.
+
+On a **Field Scoped** object the record must keep one of your portal user's own values in the
+scope field. Change it to anything else and the update is refused with a `400` — see
+[Errors and limits](./errors-and-limits.md#field-scoped-objects).
+
 ## There is no upsert
 
 You cannot say "create this, or update it if it already exists" in one call.

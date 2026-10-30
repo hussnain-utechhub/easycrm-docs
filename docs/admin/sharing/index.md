@@ -27,21 +27,27 @@ Inside Sharing there are several areas, each with its own page here:
 | Area | What it is for |
 |---|---|
 | [Org-Wide Defaults](./defaults.md) | The starting rule for each kind of record. |
+| [Field Scoped](./field-scoped.md) | A default, set under Org-Wide Defaults, that shows each person only the records carrying their own values. Super Admin only. |
 | [Sharing Rules](./rules.md) | Standing rules that open access up. |
 | [Public Groups](./public-groups.md) | Named lists of people, used by rules. |
 | [Roles](./roles.md) | Who reports to whom. |
-| [Restriction Rules](./restriction-rules.md) | The only thing that takes access away. |
+| [Restriction Rules](./restriction-rules.md) | Rules that take access away. |
 | [Record Access](./record-access.md) | Check who can see one record, and why. |
 
 ## How the pieces fit together
 
-Think of it as a floor, then things that raise it.
+Think of it as a floor, then things that raise it, then two things that can lower it.
 
 1. **The default** sets the floor for everybody.
 2. **Sharing rules**, **groups** and the **role hierarchy** raise it for particular people.
-3. **Restriction rules** are the only thing that lowers it again.
+3. Two things lower it again:
+   - **Field Scoped** — an object set to this default shows each person only the records whose
+     chosen field holds one of their values. Nothing reaches outside those values: not ownership,
+     not a rule, not a share.
+   - **Restriction rules** — of the records somebody could otherwise see, they keep only those
+     matching the rule.
 
-Everything except restriction rules can only ever **add** access. Nothing you do in a sharing
+Sharing rules, groups and the hierarchy can only ever **add** access. Nothing you do in a sharing
 rule will hide a record somebody can already see.
 
 ## The order to set it up
@@ -70,7 +76,12 @@ The starting position for every object: what somebody can see before any rule wi
 | **Object** | The object this row is about. |
 | **Default Access** | The baseline — what everyone gets without a rule. |
 | **Grant access using hierarchies** | Whether a manager inherits what the people below them can see. |
-| **Controls this object's records** / **Controlled by these parent objects** | Where an object takes its access from a parent instead of having its own. |
+| **Controls this object's records** / **Controlled by these parent objects** | Where an object takes its access from one or more parents instead of having its own. |
+| **Scope field** / **Access to records in scope** | For **Field Scoped**: the field that decides, and whether in-scope records are **Read/Write** or **Read Only**. Super Admin only. |
+| **Values** | For **Field Scoped**: which values each company and person has. Super Admin only. |
+
+The line at the top of this tab says every other layer only grants more access. That holds for
+every default except **Field Scoped** — see [Field Scoped sharing](./field-scoped.md).
 
 Set defaults **tight** and open them with rules. A default that is too broad cannot be narrowed
 by adding rules on top.
@@ -80,9 +91,9 @@ by adding rules on top.
 | Control | What it does |
 |---|---|
 | **New Sharing Rule** | Creates a rule that widens access. |
-| **Rule Type** / **Owned By / Criteria** | Share by who owns the record, or by what is in its fields. |
+| **Rule Type** (**Owner-based** / **Criteria-based**) / **Records owned by** | Share by who owns the record, or by what is in its fields. |
 | **Filter Criteria** / **Field** / **Operator** / **Add Filter** / **Filter Logic** | Which records a criteria rule covers. |
-| **Applies To** | Who gains the access. |
+| **Share with** | Who gains the access. |
 | **Access Level** | How much they gain. |
 
 ### Groups and roles
@@ -92,23 +103,25 @@ by adding rules on top.
 | **New Group** / **Group Name** / **Public Group** | A named set of people to share with. |
 | **Member** / **Members** / **Add** | Who is in the group. |
 | **New Role** / **Role Name** | A position in the hierarchy. |
-| **Grant via Hierarchy** | Whether this role inherits from below. |
+| **Reports To** | The role above this one. Whether managers inherit is set per object, by **Grant via Hierarchy** under Org-Wide Defaults. |
 
 ### Restriction rules
 
 | Control | What it does |
 |---|---|
 | **New Restriction Rule** | Narrows what somebody can see, even where another rule grants it. |
-| **Object (optional)** | What it applies to. |
+| **Object** / **Applies To** | Which kind of record, and whose view of it. |
+| **Records must match** / **Add Filter** / **Filter Logic** | What a record must match to stay visible. |
 | **Active** / **Inactive** | Whether it is enforced. |
 
-A restriction rule **wins**. If access is missing and the rules look right, check here first.
+A restriction rule **wins** over every grant. If access is missing and the rules look right, check
+here first — and check whether the object is [Field Scoped](./field-scoped.md).
 
 ### One record at a time
 
 | Control | What it does |
 |---|---|
-| **Find a record** / **Find record** / **Browse by owner** | Locate a specific record. |
+| **Find a record** / **Find record** / **Browse by owner** / **Owned by** / **Object (optional)** | Locate a specific record, by name or Id, or among one person's records. |
 | **Owner** / **Current owner:** / **New owner** / **Set Owner** | See and change who owns it. |
 | **Access** | Who can reach this record now, and why. |
 

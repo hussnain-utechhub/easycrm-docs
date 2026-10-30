@@ -38,7 +38,8 @@ anybody keys to the whole portal.
 
 ## Multi-company
 
-**What it is.** Every user belongs to a company, and most settings apply per company.
+**What it is.** People belong to companies, and most settings apply per company. Super Admins
+sit above every company.
 
 **What it does.** Apps, tabs, report folders, admin tabs and branding can all differ by company.
 
@@ -50,7 +51,8 @@ the difference between a product and a deployment per customer.
 **What it is.** Admins manage only their own company's people.
 
 **What it does.** A Super Admin also decides which Admin Console tabs each company's admins can
-see at all.
+see at all. **Companies**, **Apps** and **Publish Schedule** are never handed out: they stay with
+Super Admins, because each one reaches every company at once.
 
 **What you gain:** client companies run their own users without reaching anything else.
 
@@ -65,12 +67,14 @@ history stays intact.
 
 ## Administrator password resets
 
-**What it is.** A key icon beside each user.
+**What it is.** A key icon beside each user in the portal, and **Reset Password** on the
+Salesforce-side Portal Users tab.
 
-**What it does.** Generates a new password and emails it to the person. The administrator never
-sees it.
+**What it does.** The administrator types a new password, and the person is emailed their new
+login details. The old password is never shown — it is stored only as a hash.
 
-**What you gain:** an administrator can unblock somebody without ever knowing their password.
+**What you gain:** an administrator can unblock somebody in a minute, without ever learning the
+password they had.
 
 ## Support impersonation
 
@@ -84,17 +88,25 @@ record of who did it.
 
 ## Account lockout
 
-**What it is.** Repeated failed sign-ins lock an account for a period.
+**What it is.** Five wrong passwords in a row lock an account for 15 minutes.
 
-**What it does.** The person is emailed that it happened.
+**What it does.** The person is emailed that it happened. An administrator can unlock it at
+once — on the Salesforce-side Portal Users tab, **Unlock** appears on a locked user.
 
 **What you gain:** brute-force attempts stop automatically, and the account's owner finds out.
 
-## Session expiry
+## Sessions that warn before they end
 
-**What it is.** Sessions end on their own after a period.
+**What it is.** A session lasts two hours. Five minutes before the end a countdown appears and
+a warning offers **Stay signed in**, which adds another two hours — up to twelve hours after
+signing in, when the person has to sign in again.
 
-**What you gain:** an abandoned browser on a shared machine does not stay signed in.
+**What it does.** When a session does end, the person signs in again in a box over the page they
+were on, and anything they had not saved is still there. Signing in somewhere else ends the
+earlier session.
+
+**What you gain:** an abandoned browser on a shared machine does not stay signed in, and nobody
+loses half-typed work to a timeout.
 
 ## Sign-in hours and IP ranges
 
@@ -109,18 +121,27 @@ touching anybody's permissions.
 
 **What you gain:** people arrive where their work is instead of navigating there every morning.
 
-## Linking to a Salesforce user
+## Managers, and linking to a Salesforce user
 
-**What it is.** A portal user can be linked to a Salesforce user, and users have their own
-manager relationship.
+**What it is.** Each Standard user can have a manager — the Admin who looks after them and sees
+their records. A portal user can also be linked to a Salesforce user, so that records that
+person owns in Salesforce count as theirs in the portal.
 
-**What you gain:** actions stay attributable across both systems.
+**What it does.** The manager is set in the portal's Users tab or on the Salesforce-side Portal
+Users tab. The Salesforce link is the **Salesforce User** field on the portal user's record in
+Salesforce; the portal's own control for it is currently hidden.
+
+**What you gain:** ownership and responsibility carry over from Salesforce without re-assigning
+records by hand.
 
 ## In-portal notifications
 
 **What it is.** A bell with an unread count.
 
-**What you gain:** people notice what needs them without anybody sending a chasing email.
+**What it does.** Lists the latest records created, updated, deleted or given a new owner — a
+Standard user's own, an Admin's whole group, and everyone's for a Super Admin.
+
+**What you gain:** people notice what has changed without anybody sending a chasing email.
 
 ## Automatic emails
 
@@ -135,3 +156,5 @@ passwords by hand.
 
 - [Users](../admin/users/index.md)
 - [Permissions](../admin/access/index.md)
+- [Staying signed in](../use/start/session.md)
+- [Portal Users in Salesforce](../admin/salesforce/portal-users.md)
