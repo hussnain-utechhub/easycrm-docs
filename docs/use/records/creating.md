@@ -47,6 +47,32 @@ Some records come in more than one kind, and you are asked which before the form
 **Select a record type**, then **Next**. Choose, then carry on. The window's title then names
 the kind — **New Account: Partner**, for example. See [Kinds of record](./record-types.md).
 
+## Copying a record
+
+When your administrator has put a **Clone** button at the top of a record page, you can start a
+new record from an existing one.
+
+**Where:** In the portal → **Accounts** → the record's name → **Clone**
+
+1. Open the record you want to copy.
+2. Click **Clone** at the top right. It may be under the ▾ menu there.
+3. A window titled **Clone Account** opens — the same fields as the **New** window, already
+   filled in with this record's values. It keeps the record's kind without asking, when that
+   kind is open to you.
+
+   <!-- SHOT: records/clone-window.png | The "Clone Account" window opened from an Account record whose builder header shows Clone (needs the layout builder switch on and Clone moved to Shown in the Highlights Panel), fields filled with the record's values -->
+
+4. Change what should differ, such as the name.
+5. Click **Save**.
+
+The portal says **Record created.** and opens the new record. The original is untouched.
+
+Only values you could change on the original are copied, and only into the fields the window
+shows; a field Salesforce does not let a new record be given starts empty. **Save & New** saves
+the copy and then opens an empty **New** window.
+
+**Clone** appears only for people who may create that kind of record.
+
 ## If Save is refused
 
 | Message | What it means |

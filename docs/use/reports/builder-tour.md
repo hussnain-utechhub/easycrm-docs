@@ -57,6 +57,13 @@ it reads **To see the latest edits, refresh the preview.** — click its **Refre
 
 Nothing is saved until you click **Save**, so you can experiment freely.
 
+Fields and columns carry the names Salesforce gives them in this kind of report — **Phone**, not
+"Business Phone" — see [Column names](./columns.md#column-names).
+
+At high browser zoom the builder's pop-ups — the filter editor, the field lists, the column menus,
+**Chart Properties** and the formula editor — move to stay inside the window, and a tall one
+scrolls while its buttons stay in view.
+
 ### While the report is still loading
 
 Opening an existing report takes a moment. Until it has loaded, **Save**, **Save & Run** and
@@ -90,7 +97,8 @@ It appears in the preview straight away.
 - **To reorder:** drag a column in the Outline list into a new position.
 - **To remove one:** click the **X** (**Remove column**) on it in the Outline.
 - **To sort the report:** click a column's name in the preview. Click again to reverse. The sort
-  is saved with the report.
+  is saved with the report. A column the report is grouped by always shows an arrow — its groups
+  are listed ascending — so its first click turns it descending.
 
 Each column heading in the preview has a chevron (**Column options**) with a menu: sorting,
 grouping, a bucket column, totals (**Sum**, **Average**, **Max**, **Min**, **Median**),

@@ -67,6 +67,12 @@ in one screen.
 A matrix can have up to **two** column groupings and up to **two** row groupings. A summary
 report with three row groupings has to lose one before it can become a matrix.
 
+The matrix is laid out as Salesforce lays it out: one heading row per column grouping, each name
+followed by →; with two row groupings, each outer group is one shaded block, closed by a row
+reading **Subtotal**; and a column subtotal is headed **Subtotal**. A matrix with two row
+groupings shows its first 2,000 rows — see
+[Large reports](./running.md#large-reports).
+
 ## The limits, and what the builder says
 
 | Limit | Message |
@@ -81,10 +87,40 @@ reached.
 
 ## How the rows are ordered
 
-- Groups are in order of their value, A first.
+Groups are listed in the order Salesforce's own report lists them, which depends on the kind of
+field:
+
+| Grouped by | Order |
+|---|---|
+| A date or date/time | Earliest first — 2 January before 10 January, not in the order the text sorts |
+| A number, currency or percent | Smallest first — 9 before 10 |
+| A picklist | The picklist's own order, the order its values are set up in. A value no longer in the list comes after the others. |
+| Text, and a lookup shown by its name | A to Z, ignoring capitals and accents. Punctuation comes before digits, and digits before letters. |
+| A [bucket column](./buckets.md) | The buckets in the order they were defined, then **Other** |
+| A record ID | In record ID order |
+
+Whatever the field, the group of records with nothing in it is shown as **-** and comes first.
+
 - [Sorting](./columns.md#sorting-a-report) a summary report orders the **detail rows inside
   each group**.
-- Sorting **descending by the grouping column** itself reverses the order of the groups.
+- Sorting **descending by the grouping column** itself reverses the order of the groups
+  exactly: the **-** group moves to the end, and an inner grouping is reversed inside each outer
+  group. A report has one sort, so only one grouping can be descending at a time.
+
+### Values that differ only in capitals
+
+Text that differs only in capitals is one group, as in Salesforce: "london" and "London" are
+counted together, under one of the two spellings. Any other difference — a space, a hyphen, an
+accent — makes a separate group.
+
+### Groupings by a lookup or a record ID
+
+A grouping by a lookup (an owner, an account) shows each group by the related record's name.
+
+On a matrix report you are reading, the row groupings go further, as Salesforce's do: when a row
+grouping is one of the report's own lookups, each group name is a link that opens that record in a
+new tab, and a grouping by a record ID shows the 15-character ID and links to the record. A record
+type is shown as text, not a link.
 
 ## Reading a grouped report
 
@@ -106,7 +142,7 @@ figure in the grid to narrow the Details to that cell. See
 | Poor grouping fields | Why |
 |---|---|
 | Anything unique, like a record name | One group per record — worse than no grouping |
-| A free-text field | "London", "london" and "London " become three groups |
+| A free-text field | "London", "London, UK" and "Londn" become three groups. Capitals alone do not split one. |
 | An exact date | 365 groups a year. Group by month instead |
 
 If the field you want to group by has too many values, invent your own categories with a
@@ -127,7 +163,9 @@ You never pick the shape from a menu. It follows from what you group.
 | Symptom | Cause |
 |---|---|
 | Hundreds of groups with one row each | Grouped by something nearly unique. |
-| Values that should be one group are several | Free text with inconsistent spelling or spacing. |
+| Values that should be one group are several | Free text with inconsistent spelling or spacing. Only capitals are ignored. |
+| Dates or numbers out of order | The column is text that holds dates or numbers, so it sorts as text. A real date or number field sorts by value. |
+| A group called **-** | The records with nothing in the grouped field. |
 | Subtotals are blank | Nothing is being totalled yet. See [Totals](./totals.md). |
 | The chart option does nothing | A chart needs a grouping. Add one first. |
 | **This report groups by at most 3 rows.** | A summary report already has three row groupings. Remove one first. |

@@ -108,7 +108,7 @@ Under **Record type only**, expect them to appear. If that surprises you, the mo
 
 ## The settings beside it
 
-The same screen carries four more panels, above **Who manages whom**, that belong to a Super
+The same screen carries five more panels, above **Who manages whom**, that belong to a Super
 Admin. Nobody else sees them.
 
 ### Log in as user — Who may log in as portal users
@@ -153,7 +153,19 @@ copies of the text. On by default. See
 **List Mappings** tab, and **Sync all** above it, for every company. Off by default. See
 [List Mappings](../../frontspin/portal/list-mappings.md#syncing-now).
 
+### Page layout editor
+
+**Use the new layout builder** decides what the **Edit Page Layout** button on record pages opens,
+for every company. Off *(default)*: the classic editor, and every record page looks exactly as
+it does today. On: the new layout builder, where fields, sections, related lists, Activities and
+Files can be placed anywhere on the page. Today's layouts open in it as they are, and turning it
+off again keeps the builder's arrangement for later. The message confirms it — **The layout
+button on record pages now opens the new layout builder.** or **The layout button on record pages
+opens the classic editor again.** See [The layout builder](../layouts/layout-builder.md).
+
 ![The Super Admin settings below the user list](../../img/shots/admin/users-super-admin-panels.png)
+<!-- SHOT-RETAKE: admin/users-super-admin-panels.png | The Super Admin settings now have a fifth panel, "Page layout editor" with the "Use the new layout builder" tick box, between FrontSpin sync buttons and Who manages whom. Recapture the panels so it shows -->
+
 
 ## Where this fits
 

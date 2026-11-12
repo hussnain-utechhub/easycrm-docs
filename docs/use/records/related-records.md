@@ -20,7 +20,8 @@ connected records without searching for them.
 1. Click **Accounts** (or any tab) in the top menu.
 2. Click the record's **name** to open it.
 3. Look at the right-hand column, under the activity panel. On a narrow screen, scroll down
-   past the fields.
+   past the fields. If your administrator has arranged the page differently, they may be
+   elsewhere — in a tab, for example.
 
 Each related list is a small table with its own heading, such as **Contacts (3)**.
 
@@ -33,9 +34,23 @@ Each related list is a small table with its own heading, such as **Contacts (3)*
 | **Contacts (3)** | Three linked records, all shown. |
 | **Contacts (5+)** | The table shows the first five and there are more. Use **View All**. |
 | **Contacts (0)** | Nothing is linked yet — not that something is broken. |
+| **Contacts (…)**, with a spinner | Still loading. On a record with many lists, some arrive a moment after the page. |
 | **Contacts** with a padlock, and no number | You may not see this kind of record. See below. |
 
 Your administrator sets how many rows each table shows; five is the usual.
+
+A list is called what Salesforce calls it, so its heading is not always the plural of what it
+lists: a contact's **Campaign History**, for example, lists campaign members. (If Salesforce does
+not pass a list's own name to the portal, the plural is used.)
+
+## Lists of links between records
+
+Some lists show the links between this record and records of another kind — the outbound lists a
+contact belongs to, say. Each row is one link, not the other record itself. Some such lists show
+columns from both kinds of record, each named with its kind first — **Project Member: Role**
+beside **Project: Status**, for example. The other record's name opens it.
+
+Where you may not see the other record in a row, its columns in that row are empty for you.
 
 ## Using them
 
@@ -85,6 +100,7 @@ Nothing from that list is sent to your screen — not even how many there are.
 | Reason | Who fixes it |
 |---|---|
 | It is not on the page layout. | An administrator, under [Page layouts](../../admin/layouts/index.md). |
+| It is in a tab, or a closed accordion heading, on an arranged page. | Nobody — choose the tab, or open the heading. |
 | The page has no layout, and the list is empty. | Nobody needs to — see below. |
 | You have no permission for that kind of record, and it was not placed on the layout. | An administrator, under [Permissions](../../admin/access/permissions.md). |
 
@@ -94,3 +110,11 @@ Once an administrator sets up a layout, it shows exactly the lists chosen, empty
 
 An administrator chooses which related lists appear, their columns, and how many rows each
 shows — see [Related lists](../../admin/layouts/related-lists.md).
+
+## What goes wrong
+
+| Message or symptom | What it means |
+|---|---|
+| **Could not load the list.** in a table | That list did not arrive with the page. Click its **Refresh** to try again. |
+| **Could not refresh the list.** | **Refresh** failed. Try again, or reopen the record. |
+| A column of a links list is empty in some rows | You may not see the other record in those rows. |

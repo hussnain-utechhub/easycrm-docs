@@ -24,6 +24,7 @@ portal.
 2. Click **API Integration** in the row of tabs.
 
 ![API Integration](../../img/shots/admin/api-integration.png)
+<!-- SHOT-RETAKE: admin/api-integration.png | The row action is now labelled "Regenerate keys" (was "Regenerate"). Recapture the API Integration list with at least one key, showing Edit, Regenerate keys and Revoke on its row -->
 
 Everybody who currently holds a key is listed.
 
@@ -48,8 +49,8 @@ Everybody who currently holds a key is listed.
 When the key is created, the **Secret** is shown **once**.
 
 Copy it immediately and give it to whoever needs it, through something secure. If it is lost,
-you cannot look it up — you have to **Regenerate**, which produces a new secret and stops the
-old one working.
+you cannot look it up — you have to regenerate the keys, which produces a new Client ID and
+secret and stops the old ones working. See [Regenerating keys](#regenerating-keys).
 
 ## Giving a key less, not more
 
@@ -66,14 +67,43 @@ Two habits worth keeping:
 
 | Button | What it does |
 |---|---|
-| **Edit** | Change which records and fields the key may reach, and what it may do with them. |
-| **Regenerate** | Issue a new secret. The old one stops working at once. |
-| **Revoke** | Switch the key off completely. |
+| **Edit** | Change which records and fields the key may reach, and what it may do with them. The only way to change a key's setup. |
+| **Regenerate keys** | Issue a new Client ID and secret, and show them to copy. The old ones stop working at once. A revoked key is switched back on. Nothing else about the key changes. |
+| **Revoke** | Switch the key off completely. Only on a key that is active. |
 
-**Regenerate** when a secret may have been seen by the wrong person. **Revoke** when the other
-system is being retired.
+**Regenerate keys** when a secret may have been seen by the wrong person, or has been lost.
+**Revoke** when the other system is being retired.
 
 Either one breaks the other system immediately, so tell whoever runs it first.
+
+### Regenerating keys
+
+**Where:** **Admin** → **API Integration** → the key's row → **Regenerate keys**
+
+1. Click **Regenerate keys** on the person's row.
+2. Confirm. The question names the person — *Regenerate the API keys for* (username)*?* — and
+   warns that *the current ones stop working at once. Anything using them stops until it is
+   updated.* On a revoked key it adds that this **turns it back on**.
+3. A window titled **New API keys for** (username) shows the new **Client ID** and **Secret**,
+   each with a **Copy** button (it changes to **Copied ✓**). On a key that was revoked it also
+   says **API access for** (username) **is active again.**
+4. Copy both, then click **Done**.
+
+**Copy both now.** *The secret is shown only this once — after you close this window it can
+never be shown again. The old Client ID and secret have stopped working.* Where the browser does
+not allow copying, the window says *Copy is not available here — select the value and copy it
+manually.*
+
+The list stays as it was underneath and refreshes, showing the new state. What the key may reach
+— its objects, fields, filters, operations and limits — is untouched: to change any of that, use
+**Edit**.
+
+<!-- SHOT: admin/api-regenerate-keys.png | API Integration list, the "New API keys for …" window open after Regenerate keys on a row, showing the "Copy both now." warning bar, the Client ID and Secret boxes with Copy buttons, and Done -->
+
+:::caution Give the other system both values
+The Client ID changes as well as the secret. Whoever runs the other system needs the new pair,
+not just the new secret.
+:::
 
 ## Documentation for developers
 
@@ -105,12 +135,12 @@ it.
 | **Copy** | Copies a value. |
 | **Copy endpoint** | Copies the full address the caller uses — the real one, not a guess. |
 | **Endpoint the user calls** | The address itself. |
-| **Regenerate** / **Regenerate secret** | Issues a new Secret and stops the old one immediately. |
+| **Generate keys** / **Regenerate secret** | Issues a new Client ID and Secret, after asking first on a key that already exists, and stops the old pair immediately. |
 | **Revoke** / **Revoke access** | Switches the key off. |
 
 :::caution The Secret is shown once
-It cannot be looked back up. If it is lost, **Regenerate** — which also stops whatever was using
-the old one.
+It cannot be looked back up. If it is lost, regenerate the keys — which also stops whatever was
+using the old ones.
 :::
 
 ### What a key can reach

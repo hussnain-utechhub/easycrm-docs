@@ -47,7 +47,8 @@ Editing belongs to the report you are reading. Opening another report starts wit
 ## Changing a value
 
 1. Click the **pencil** in the cell.
-2. A small editor opens under the cell, labelled with the column's name. It says
+2. A small editor opens under the cell — or above it, when the window has no room below, at high
+   zoom for example — labelled with the column's name. It says
    **Loading...** while it reads the value stored on the record, and **Apply** stays grey until
    that value arrives.
 3. Change the value.
@@ -160,7 +161,7 @@ you save — see the first row below.
 | **You can edit up to 12 fields in one row before saving.** | You have staged 12 values on that row. Save, then carry on. |
 | **You can edit up to 100 values before saving.** | You have staged 100 values. Save, then carry on. |
 | Your staged values vanished | You clicked **Field Editing Enabled** while values were staged. That throws them away at once, **without asking** — editing stays on, and a second click turns it off. Leaving the report (**Back**, another tab, another report) also throws them away without a warning. |
-| A highlighted new value is on a different row after a sort | Staged values stay pinned to their position on screen, not to the record. Sorting, changing a filter, or regrouping or removing a column before you save can put the highlight on another row — and editing that cell then stages the value against the wrong record. **Save or Cancel before you re-sort or re-filter.** |
+| The bar counts more changes than you can see | A staged value belongs to its record's field, not to a place on screen. After a sort or a regroup it moves with its record's row. If you change a filter so that row is no longer shown, the value is still staged, still counted in the bar, and **Save** still writes it. Click **Cancel** in the bar if you no longer want it. |
 | No **Enable Field Editing** button | The report shows no editable rows — for example a matrix with **Detail Rows** switched off. |
 | Every cell has a padlock | None of the report's columns can be edited, or you have no edit access to these records or fields. Point at a padlock: the message says which. |
 

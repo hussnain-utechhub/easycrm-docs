@@ -28,8 +28,8 @@ Three things, all from a portal administrator:
 | **Client ID** | identifies the key. Safe to share. |
 | **Secret** | shown once, when the key is created. Treat it like a password. |
 
-If the Secret is lost it cannot be looked up. An administrator presses *Regenerate*,
-which issues a new one and immediately stops the old one working.
+If the Secret is lost it cannot be looked up. An administrator presses *Regenerate keys*,
+which issues a new Client ID and Secret and immediately stops the old pair working.
 
 ## What a key can reach
 

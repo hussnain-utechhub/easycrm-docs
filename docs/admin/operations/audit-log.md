@@ -119,9 +119,9 @@ records what really happened, not what was asked for.
 | **Report Share** / **Dashboard Share** | One line per person or company: `user jo@acme.com: now Read/Write`, `Read Only -> Read/Write`, or `Read/Write -> no access`. |
 | **Report Favorite** / **Dashboard Favorite** | `Added to favorites` or `Removed from favorites`. |
 | **Report Folder** / **Dashboard Folder** | `Created report folder "Q3"`, and folders matched to Salesforce. Sharing a folder is logged as **Report Share** or **Dashboard Share**, with **Report Folder** or **Dashboard Folder** as the object. |
-| **Report Import** | A report synced from Salesforce, and what changed. |
+| **Report Import** | A report synced from Salesforce, and what changed. Also each report [auto-sync](../data/report-auto-sync.md) adds, and **Try again** or **Ignore** on its list — `Auto-sync: Ignore pressed (result was NoFolder)`. |
 | **Report Publish** | `Published to Salesforce - updated Salesforce report …`, or `Publish to Salesforce failed - nothing in Salesforce was changed by the portal: …`. |
-| **Report Schedule** | Changes on the [Publish Schedule](../data/publish-schedule.md) tab: `Schedule: Off -> Daily at 02:00`, `Publish on save: off -> on`. |
+| **Report Schedule** | Changes on the [Publish Schedule](../data/publish-schedule.md) tab: `Schedule: Off -> Daily at 02:00`, `Publish on save: off -> on`, `Check for due reports every: 1 minute -> 15 minutes`, `Skip unchanged reports: off -> on`, `New reports get: Off -> Daily at 09:00`, `Auto-sync new Salesforce reports: off -> on`. |
 
 ![The Audit Log filtered to Reports — every action, showing Report Edit details over several lines, failed publishes and a Denied edit](../../img/shots/admin/audit-log-reports.png)
 
@@ -141,9 +141,10 @@ Some report work happens in Salesforce rather than in the portal: syncing a repo
 removing a snapshot, publishing, the Sync & Share wizard. Those entries carry the **Salesforce
 user's** username, and their details begin **In Salesforce (not the portal).**
 
-Background jobs — scheduled publishing and publishing on save — are logged under the user
-**System**, with the job's name first: `Scheduled auto-publish. …` or `Auto-publish on save. …` —
-a failure reads, for example, `Auto-publish on save. Auto-publish on save failed: Analytics API 403: …`.
+Background jobs — scheduled publishing, publishing on save and auto-sync — are logged under the
+user **System**, with the job's name first: `Scheduled auto-publish. …`, `Auto-publish on save. …`
+or `Auto-sync of new Salesforce reports. Added to the portal folder "…" …` — a failure reads, for
+example, `Auto-publish on save. Auto-publish on save failed: Analytics API 403: …`.
 
 ## Log in as user, in detail
 

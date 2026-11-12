@@ -14,10 +14,25 @@ Everything shaped on screen, without code.
 **What it is.** Choosing which fields appear, grouping them into named sections, ordering them,
 and choosing which related lists show beside them.
 
-**What it does.** A separate, shorter field set is configured for the new-record window.
+**What it does.** A separate, shorter field set is configured for the new-record window. Each
+person can keep a layout of their own, and an admin can save one for everybody.
 
 **What you gain:** record pages matched to how your company actually works — and a creation
 form short enough that people use it.
+
+## The layout builder
+
+**What it is.** A second, drag-and-drop layout editor in the style of Salesforce's Lightning App
+Builder, switched on for everybody by a Super Admin. Off by default.
+
+**What it does.** Anything goes anywhere on the page: sections, related lists, the activity
+panel and Files, in tabs, an accordion, one of Salesforce's page templates or free form, with a
+field allowed more than once. It adds fields of related records, a header with chosen fields and
+buttons (including **Delete** and **Clone**), undo, copy and paste, and a phone preview. It edits
+the same layouts as the classic editor, so either can be used, and switching it off loses
+nothing.
+
+**What you gain:** record pages that put each team's information where they look for it.
 
 ## Tabs
 
@@ -40,7 +55,8 @@ loaded, start a Salesforce flow, create a linked child record, open a screen of 
 a background action. Web-address and flow buttons can go on list pages too.
 
 **What it does.** Each button can be limited by role and by record type, and can ask for
-confirmation first. Developers add bespoke screens and background actions through an extension
+confirmation first. A flow is given the record, the portal user, and — from a list button, which
+opens it full page as Salesforce does — the rows the user ticked. Developers add bespoke screens and background actions through an extension
 class named in Salesforce — see
 [Settings only Salesforce can change](../admin/salesforce/switches.md#extension-class).
 
@@ -107,7 +123,8 @@ related-list headings and filters, and the layout editor preserves them.
 
 **What it does.** Nothing to set up for layouts already brought over. The screen that imported a
 Salesforce page layout is not currently offered, so new layouts are built in the portal's own
-layout editor.
+layout editors. Related lists carry the titles Salesforce gives them — **Campaign History** for
+campaign members, for example — where Salesforce passes them to the portal.
 
 **What you gain:** people see the names they already know from Salesforce.
 
@@ -115,5 +132,6 @@ layout editor.
 
 - [Branding](../admin/appearance/branding.md)
 - [Layouts](../admin/layouts/index.md)
+- [The layout builder](../admin/layouts/layout-builder.md)
 - [Buttons](../admin/appearance/buttons.md)
 - [Setup Assistant](../admin/operations/setup-assistant.md)

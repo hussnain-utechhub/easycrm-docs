@@ -36,6 +36,7 @@ undo.
 | [Grouping](./grouping.md) | Rows, columns, and the three report shapes |
 | [Totals](./totals.md) | Sum, average, minimum, maximum |
 | [Filters](./filters.md) | Which records are included |
+| [Date ranges](./date-ranges.md) | Every standard date range, and exactly which days it covers |
 | [Filter logic](./filter-logic.md) | AND, OR, NOT and brackets |
 | [Bucket columns](./buckets.md) | Categories you invent |
 | [Formula columns](./formulas.md) | Row-level and summary calculations |

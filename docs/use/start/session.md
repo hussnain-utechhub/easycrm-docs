@@ -54,6 +54,8 @@ with a countdown in minutes and seconds, then:
 
 > Anything you haven't saved will be lost. Choose **Stay signed in** to keep working - you'll get another 2 hours.
 
+In a zoomed-in or very short browser window the box scrolls, so its buttons stay within reach.
+
 ### Keeping going
 
 **Where:** the warning → **Stay signed in**

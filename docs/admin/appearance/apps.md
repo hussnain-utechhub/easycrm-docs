@@ -86,8 +86,13 @@ set separately.
 
 ## Switching app
 
-People switch using the grid symbol beside the logo, top left. If somebody has only one app,
-there is nothing to switch to and the control does not appear.
+People switch using the **App Launcher** — the nine-dot square at the start of the tab row in the
+**Top bar** layout, or beside the logo at the top left in the **Left sidebar** layout. It appears
+for anybody with at least one app; somebody with no app at all does not get it.
+
+In the **Top bar** layout the App Launcher also has a search box that finds apps, the person's
+tabs, and every kind of record they may read — see
+[Getting around](../../use/start/the-screen.md#the-app-launcher).
 
 ## Giving an app its own home page
 

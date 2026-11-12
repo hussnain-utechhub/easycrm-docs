@@ -20,7 +20,9 @@ once — so they are kept off the portal's own console.
 | **Extension Class** | Blank — a class named `PortalExtension` | Which Apex class the portal calls for your organisation's own buttons and integrations | No |
 
 Every other field on the record is either set from a portal screen — mostly **Admin** →
-**Branding** — or is the portal's own working storage. Leave those alone.
+**Branding**, and the publishing and auto-sync fields on **Admin** →
+[Publish Schedule](../data/publish-schedule.md) — or is the portal's own working storage. Leave
+those alone.
 
 ## Changing one
 

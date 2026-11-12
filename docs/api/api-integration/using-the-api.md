@@ -160,7 +160,8 @@ which Client IDs exist.
 ## Lost the Secret?
 
 It cannot be looked up — it is stored hashed. Ask your administrator to press
-**Regenerate**, which gives you a new one. The old Secret stops working the moment they do.
+**Regenerate keys**, which gives you a new Client ID and Secret. The old pair stops working the
+moment they do.
 
 ## Full reference
 

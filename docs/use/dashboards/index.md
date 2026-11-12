@@ -33,12 +33,13 @@ Finding, starring, filing and sharing dashboards works exactly as it does for re
 
 ## The one setting that is worth understanding first
 
-**View Dashboard As** decides whose records the dashboard counts — each viewer's own, or
-everybody's. Getting it wrong produces numbers that look entirely plausible and are completely
-wrong, with no error anywhere.
+Every dashboard counts, for each viewer, only the records that viewer may see — so two people can
+open the same dashboard and get different numbers, with no error anywhere. **View Dashboard As**
+can scope every tile to the viewer further still (**The logged-in user**), but no setting shows
+somebody records their own sharing hides.
 
-Admins and Super Admins always see every record whichever way it is set. So you cannot check a
-"logged-in user" dashboard by looking at it as an admin.
+Admins and Super Admins are never narrowed by **The logged-in user**. So you cannot check what a
+Standard user sees by looking at the dashboard as an admin.
 
 [Settings](./settings.md) covers it properly. If you build dashboards, read that page before
 you share one.

@@ -85,6 +85,18 @@ the other columns. **Hide Unique Count** takes one off.
 Every grouped report shows a **record count** per group whether or not you total anything. If
 the question is "how many", you do not need a total at all — the count is already there.
 
+## How totals are worked out
+
+The portal totals exactly as Salesforce's own reports do:
+
+- **Every record counts.** A big report may show only its first 2,000 rows, but every subtotal,
+  every count and the grand total are worked out over every record the report covers.
+- **A blank counts as 0** in **Average**, **Min**, **Max** and **Median**, as in Salesforce. Ten
+  records with values and ten blanks average to half what the ten values alone would. **Sum** is
+  unaffected.
+- **A report with no grouping** shows its totals in the boxes above the table, worked out over
+  every record, not just the rows loaded so far.
+
 ## What goes wrong
 
 | Symptom | Cause |
@@ -93,10 +105,11 @@ the question is "how many", you do not need a total at all — the count is alre
 | **Show Unique Count** is greyed out | Three columns already show one. Hide one first. |
 | The total is far too large | A matrix counts each record once per cell it belongs to. Check the grouping. |
 | Average looks wrong | It averages the records, not the subtotals. An average of averages is not the same number. |
+| Average, Min or Median is lower than the values suggest | Records with the field blank count as 0, as in Salesforce. Filter them out if you want only the records with a value. |
 | The grand total is not the sum of groups | Some records fall outside every group, or a filter changed after the groups were set. |
 
 ## Where this fits
 
 A total is the input a [chart](./charts.md) plots, and the figure a
-[summary formula](./formulas.md) calculates from. A dashboard **Metric** tile is usually a
-report with one total on it — see [Dashboard tiles](../dashboards/builder.md).
+[summary formula](./formulas.md) calculates from. A dashboard **Metric** tile shows a report's
+grand total of one measure — see [Dashboard tiles](../dashboards/tiles.md#metric-tiles-need-context).

@@ -98,6 +98,11 @@ A **Table** tile drawn from a summary or matrix report shows one row per group, 
 measure (and per column group, with a **Total** column for a matrix), and a **Total** row at the
 bottom. Drawn from a report with no grouping, it shows the report's own rows.
 
+The **Total** row of a one-measure table adds up every group the tile reads (up to 1,000), not
+only the rows **Max Groups Displayed** leaves on show. A **Donut** works the same way: the total
+in its middle, and each slice's percentage, count every group, so trimming the slices does not
+shrink the whole. A group of records with nothing in the grouped field is shown as **-**.
+
 ## Adding one
 
 See [The dashboard builder](./builder.md). The short version: **+ Widget** → **Chart or Table**,
@@ -112,7 +117,9 @@ choose the report, choose how to display it, set the title, click **Add Widget**
 | A stacked bar chart is empty | The report has no series to stack. Use a plain bar, or base it on a matrix report. |
 | The gauge looks almost empty, or almost full | The dial runs to the next power of ten, not to a target. |
 | A table is cut off | The tile is too small, or the report returns too many rows. |
-| The tile ignores a dashboard filter | Its report is set to **— Not filtered —**. See [Filters](./filters.md). |
+| The tile says **The component can't be displayed because the field(s) you chose for the filter are unavailable.** | A ticked dashboard filter cannot be applied to its report. See [Filters](./filters.md#apply-to-each-component). |
+| The tile says **This component can't be displayed right now: its source report could not run. Refresh it to try again.** | Its report failed to run. Refresh the tile; see [When a tile cannot show its numbers](./viewing.md#when-a-tile-cannot-show-its-numbers). |
+| A **Metric** differs from the groups added up | It shows the report's grand total of the measure, as Salesforce does. For an Average, that is the report's overall average. |
 | Clicking the tile does nothing | **Table** and **Scatter** tiles cannot be clicked into. Use **View Report (…)**. |
 
 ## Where this fits

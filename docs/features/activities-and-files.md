@@ -85,6 +85,10 @@ Link** makes a link that people outside the portal can open.
 
 **What it is.** A file uploaded to a record stays with it, on the record's **Files** card.
 
+**What it does.** Administrators choose whether a record page shows the **Files** card and the
+activity panel, and where — above or below the related lists, or anywhere on the page, even in a
+tab, with the [layout builder](../admin/layouts/layout-builder.md).
+
 **What you gain:** anybody working on the customer finds the contract where they expect it.
 Note that every file uploaded through the portal is also listed under **All Files** for every
 portal user, whether or not they can open the record — see [Files](../use/files/index.md).

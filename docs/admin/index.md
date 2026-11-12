@@ -22,6 +22,10 @@ appear at all.
 Under the heading is a row of tabs — eighteen of them for a Super Admin, wrapping onto a second
 line. Each one is a separate area. Click a tab to open it.
 
+The tab you are on is kept in the browser's address. Reloading the page reopens it, the browser's
+**Back** and **Forward** move between the tabs you opened, and a saved link opens that tab — as
+long as you may see it; otherwise the console opens on your first tab.
+
 ## What each tab is for
 
 | Tab | What you do there | Who |
@@ -43,7 +47,7 @@ line. Each one is a separate area. Click a tab to open it.
 | [List Mappings](./data/list-mappings.md) | Link a report to a FrontSpin calling list, and sync it. | |
 | [API Integration](./data/api-integration.md) | Let another system read — or, if you allow it, change — your data. | |
 | [API Usage](./data/api-usage.md) | See how much the API is being used. | |
-| [Publish Schedule](./data/publish-schedule.md) | Send reports to Salesforce on a timetable. | Super Admin only |
+| [Publish Schedule](./data/publish-schedule.md) | Send reports to Salesforce on a timetable, and let new Salesforce reports [come in by themselves](./data/report-auto-sync.md). | Super Admin only |
 
 ## Who sees which tabs
 
@@ -68,8 +72,9 @@ Hiding a tab is tidiness, not a lock: every screen still checks the Admin's role
 - [Page layouts](./layouts/index.md) — reached from a record, not from this console.
 - [The sign-in page](./appearance/login-design.md) — reached from **Branding**.
 - Super Admin settings under the user list on **Users**: **Log in as user**, **Report speed**,
-  [Long text filters on large reports](./operations/long-text-filters.md) and **FrontSpin sync
-  buttons** — see [What an Admin can see](./users/what-admins-can-see.md#the-settings-beside-it).
+  [Long text filters on large reports](./operations/long-text-filters.md), **FrontSpin sync
+  buttons** and **Page layout editor** — see
+  [What an Admin can see](./users/what-admins-can-see.md#the-settings-beside-it).
 - Settings changed in Salesforce rather than here — see [In Salesforce](./salesforce/index.md).
 
 ## Where to start on a new portal

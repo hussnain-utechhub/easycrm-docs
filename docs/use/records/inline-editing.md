@@ -65,15 +65,19 @@ fields you actually changed are saved.
 
 ## When no pencil appears
 
-That is the portal telling you something, and there are three different reasons:
+That is the portal telling you something, and there are four different reasons:
 
 | Reason | How to tell |
 |---|---|
 | The system calculates the field | It has a value but never a pencil, for anybody |
 | You have no permission to edit it | Colleagues see a pencil and you do not |
 | Nobody may edit it from the portal | No pencil for anybody, including admins — system fields such as **Created By**, for example |
+| It belongs to another record | Your administrator put a field of a linked record on this page — the contact's account phone, say. It is read-only here, as in Salesforce; change it on that record |
 
 If no field has a pencil, you may not edit this kind of record at all.
+
+When a field appears in two places on the page, both open for editing and show the same value —
+changing one changes the other.
 
 The second is the common one, and it is set per person — see
 [Permissions](../../admin/access/permissions.md) and, specifically,

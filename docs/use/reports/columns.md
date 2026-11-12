@@ -55,10 +55,41 @@ If a field you expect is missing, the usual reasons are:
 | The field is hidden from you | A field you may not read is not offered at all, anywhere in the builder. Ask your administrator. |
 | It is on a related record the type does not reach | A different type may pair them. |
 
+### Fields one step further away
+
+On an **Activities** report the field list also holds the contact's fields, and among them the
+contact's owner (**Contact Owner**) and, where contacts have record types, the contact's record
+type (**Contact Record Type**). They work on an **Activities with Contact** report too, so you can
+show activities by whoever owns the contact rather than whoever was assigned the activity.
+
+## Column names
+
+A column carries the name Salesforce gives it in the same kind of report, not the field's own
+label. The two often differ, and the name can change from one report type to another:
+
+| Field | The field's label | The column's name |
+|---|---|---|
+| A contact's phone | Business Phone | **Phone** on a Contacts or Contacts & Accounts report; **Contact: Phone** on an Activities with Contact report |
+| A contact's mobile | Mobile Phone | **Mobile** |
+| A contact's owner | Owner ID | **Contact Owner** |
+| A contact's account | Account ID | **Account Name** |
+| A contact's record type | Record Type ID | **Contact Record Type** |
+| The account's phone, on a Contacts & Accounts report | Account Phone | **Account: Phone** |
+| The account's created date, on a Contacts & Accounts report | Created Date | **Account: Created Date** |
+
+The field list, the outline, the preview, the **Filters** panel and the dashboard pickers all use
+the same names, so search the field list for **Phone**, not "Business Phone". A report saved before
+picks them up the next time it runs.
+
+Two exceptions keep the field's own label:
+
+- **Custom fields** your company added — Salesforce shows those under their own label too.
+- **A renamed field.** If your organisation has renamed a standard field, or the portal runs in a
+  language other than English, the column keeps the label the field has.
+
 ### Column names on activity reports
 
-Activity reports name some columns the way Salesforce's own activity reports do, so they do
-not match the field names on a task or event:
+Activity reports name these columns the way Salesforce's own activity reports do:
 
 | Column | What it holds |
 |---|---|
@@ -66,9 +97,12 @@ not match the field names on a task or event:
 | **Name** | The contact or lead it is about. |
 | **Related To** | The account, opportunity or other record it is related to. |
 | **Date** | A task's due date, or an event's date. |
+| **Due Time** | An event's date and time. |
+| **Completed Date/Time** | When a task was completed. |
 | **Full Comments** | The whole of the Comments field. Searching the field list for "Comments" finds it too. |
 | **Call Duration (seconds)** | How long the call lasted. |
 | **Call Result** | The call's result. |
+| **Activity Type** | The task's or event's Type, on an **Activities** report. On an **Activities with Contact** report the column is **Type**. |
 
 A report brought across from Salesforce may also show **Assigned Alias** and **Created Alias**.
 
@@ -129,7 +163,8 @@ line breaks, so a paragraph reads as a paragraph. Shorter text areas wrap too.
 | The column shows but is always empty | The field is genuinely empty on those records. |
 | Numbers will not total | It is a text field that looks numeric. Totals need a number field. |
 | The report is very wide | Too many columns. Group instead — see [Grouping](./grouping.md). |
-| **Sort Ascending** is greyed out | Long text, bucket and row-level formula columns cannot be sorted. |
+| **Sort Ascending** is greyed out | Long text, bucket and row-level formula columns cannot be sorted. On a grouping column, it is greyed out because the groups are already ascending. |
+| A column's name is not the field's label | Columns carry Salesforce's report names — see [Column names](#column-names). |
 | A colleague sees a column you do not | That field is hidden from you, so every report hides it. You cannot save over a report that uses it — use **Save As**. See [Saving](./saving.md). |
 
 ## Where this fits

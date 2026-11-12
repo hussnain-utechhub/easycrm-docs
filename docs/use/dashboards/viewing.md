@@ -46,6 +46,21 @@ five reports opened one after another.
 If a figure looks wrong, open the report behind the tile. That is where the number comes
 from, and the dashboard is only drawing it.
 
+### When a tile cannot show its numbers
+
+A tile that cannot draw its figures says why in place of its chart, as Salesforce's do:
+
+| The tile says | Because |
+|---|---|
+| **The component can't be displayed because the field(s) you chose for the filter are unavailable.** | A dashboard filter value is ticked that this tile's report cannot use. Put that filter back to **All** to see the tile, or ask the dashboard's author to set a field for it — see [Dashboard filters](./filters.md#apply-to-each-component). |
+| **This component can't be displayed right now: its source report could not run. Refresh it to try again.** | Its report failed to run. Click the tile's **Refresh**. If it keeps happening, open **View Report (…)** to see why. |
+
+A refresh of one tile that fails shows the reason on that tile, too. Such a tile cannot be clicked
+into, but its **View Report (…)** link still works.
+
+<!-- SHOT: analytics/tile-cannot-display.png | a dashboard with one filter whose Apply to Each Component leaves one report on "— None (can't be displayed while filtered) —" (set that up in the builder first), a value of that filter ticked in the filter bar: that tile shows "The component can't be displayed because the field(s) you chose for the filter are unavailable." while the other tiles show their charts -->
+
+
 ## How old the numbers are
 
 Each tile shows the result it last worked out. Results are stored so that even a dashboard with
@@ -155,7 +170,7 @@ the chart click. See [Exporting](../reports/exporting.md).
 - Only the values you have ticked. If you ticked several on one filter, a record matching any of
   them counts. Each filter narrows on top of the report's own filters.
 - Only filters set up for this report under **Apply to Each Component**. A report set to
-  **— Not filtered —** gets nothing from that filter.
+  **— None (can't be displayed while filtered) —** gets nothing from that filter.
 - A filter on a field you are not allowed to see is not passed on.
 - A filter that cannot be applied to this report is left out, without a card. The cards are the
   honest list of what was applied.
@@ -179,7 +194,7 @@ report opens **whole**, with a pale yellow note above it saying why. Click ✕ o
 
 | The note says **Showing the full report —** … | Because |
 |---|---|
-| **an empty group on a chart cannot be written as a filter.** | you clicked **(blank)** |
+| **“-” stands for an empty value (or the text “-”), which a chart click cannot filter on.** | you clicked **-**, the group of records with nothing in the field |
 | **“Others” stands for several values, not one.** | **Others** is everything that did not fit, not a value |
 | **this chart is grouped by something the report cannot filter on directly.** | the grouping is not a field the report can filter on |
 | **a date/time grouping cannot be written as one filter value.** | a date-and-time group stands for more than one moment |
@@ -194,7 +209,9 @@ cannot be filtered from a chart yet, so this shows the whole group.**
 
 ## Changing a dashboard
 
-Click **Edit** at the top to open the builder. See [The dashboard builder](./builder.md).
+Click **Edit** at the top to open the builder. With no filter value ticked it opens straight
+away, with the tiles exactly as the dashboard shows them — nothing is worked out again. See
+[The dashboard builder](./builder.md).
 
 **Edit** is always shown. If you only have read access, clicking it opens nothing and shows:
 **You have read-only access to this dashboard. Ask its owner or a Super Admin for edit access, or
@@ -224,7 +241,8 @@ owner or a Super Admin.**
 |---|---|
 | **As of** is days old | Stored results do not expire. Click the refresh button at the top. |
 | A tile spins for a while | Nobody had worked it out yet for this filter selection, or the dashboard or its report was just edited. It fills in on its own. |
-| A tile stopped spinning and is empty | Its report failed to run. Click **View Report (…)** to see why. |
+| A tile says **This component can't be displayed right now: its source report could not run. Refresh it to try again.** | Its report failed to run. Click the tile's **Refresh**; if it repeats, click **View Report (…)** to see why. |
+| A tile says **The component can't be displayed because the field(s) you chose for the filter are unavailable.** | A ticked filter value cannot be applied to this tile's report. Click **Clear all**, or ask the author to map the filter for it. |
 | The dashboard opened with filters already set | That is your selection from last time. Click **Clear all**. |
 | A colleague sees different numbers | They have different filters set, or an older **As of**, or the dashboard is set to **The logged-in user**. See [Settings](./settings.md). |
 | Clicking a chart opened the whole report, with a note | That group cannot be written as one filter. The note says why. |

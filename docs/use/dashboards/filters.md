@@ -89,6 +89,7 @@ a dashboard with no report tiles offers none.
 8. Click **Save** on the builder. Nothing is stored until you save the dashboard.
 
 ![Adding a relative date value to a dashboard filter](../../img/shots/dashboard-builder/add-filter-relative-date.png)
+<!-- SHOT-RETAKE: ../../img/shots/dashboard-builder/add-filter-relative-date.png | the Apply to Each Component lists now read "— None (can't be displayed while filtered) —" (was "— Not filtered —") and the donut legend behind shows the empty group as "-" (was "(blank)"); recapture the same Add Filter dialog with a relative date value open -->
 
 ### The value box
 
@@ -115,6 +116,11 @@ editing. The 24 choices are:
 **This Year**, **Last Year**, **Next Year**, **This Fiscal Quarter**, **Last Fiscal Quarter**,
 **This Fiscal Year**, **Last Fiscal Year**.
 
+They are read the way Salesforce reads a relative value in a filter on a field: **Last 7 Days** is
+today and the 7 days before it, and **Next 30 Days** starts tomorrow. A report's own date
+**Range** counts these slightly differently — see
+[Date ranges](../reports/date-ranges.md#relative-values-in-other-filters).
+
 ### Operators by field type
 
 | Field | Operators |
@@ -140,12 +146,25 @@ is the field that report should filter on.
 
 - The field is filled in for you when the report is on the same object as the filter, or has a
   lookup straight to it.
-- Anything else starts as **— Not filtered —**. Pick the right field from the list, which shows
-  every field the report can filter on, grouped by object and section.
-- **A report left on — Not filtered — ignores the filter** and keeps showing everything.
+- Anything else starts as **— None (can't be displayed while filtered) —**. Pick the right field
+  from the list, which shows every field the report can filter on, grouped by object and section.
+- **A tile whose report is left on None cannot be filtered, so it stops showing numbers while the
+  filter is in use.** As in Salesforce, a dashboard filter applies to every tile. While a value of
+  that filter is ticked, the tile shows **The component can't be displayed because the field(s)
+  you chose for the filter are unavailable.** instead of its chart. With the filter on **All** it
+  shows its numbers as usual.
 
-That last point is what makes a dashboard look broken: nine tiles narrow and one does not.
-If that happens, this is where to look.
+While any report is on None, the dialog says so under the list: *As in Salesforce, a dashboard
+filter applies to every widget. While a value of this filter is chosen, a widget set to “None”
+shows “The component can't be displayed because the field(s) you chose for the filter are
+unavailable.” Pick a field for it, or remove the widget or the filter.*
+
+<!-- SHOT: dashboard-builder/filter-none-help.png | Add Filter dialog on step 2 for a Date filter with one value added, Apply to Each Component listing two reports, one set to a field and one left on "— None (can't be displayed while filtered) —", the help text under the list visible -->
+
+A tile added **after** the filter was set up has no entry here until you edit the filter. Until
+then it is filtered on the filter's own field when its report has that field, or reaches it
+through a lookup — an account field on a contacts report, say. If it has neither, it shows the
+same message while the filter is in use.
 
 ## Editing or removing a filter
 
@@ -172,7 +191,7 @@ Then **Save** the dashboard.
 
 | Symptom | Cause |
 |---|---|
-| One tile ignores the filter | Its report is set to **— Not filtered —** under **Apply to Each Component**. |
+| A tile shows **The component can't be displayed because the field(s) you chose for the filter are unavailable.** | A filter value is ticked that this tile's report cannot use: it is on **— None (can't be displayed while filtered) —** under **Apply to Each Component**, or the field chosen there is no longer on the report. Pick a field for it, or put the filter back to **All**. |
 | **+ Filter** is greyed out | The dashboard already has five filters, or it is still loading. |
 | **Select Field to Filter By** lists nothing | The dashboard has no tiles reading a report yet. Add the tiles first. |
 | **Add** stays greyed out | Pick a field and add at least one value. |
@@ -189,3 +208,4 @@ Then **Save** the dashboard.
 | [Viewing a dashboard](./viewing.md) | using the filter bar, and the report behind a tile |
 | [The dashboard builder](./builder.md) | the rest of the builder |
 | [Report filters](../reports/filters.md) | filters inside a single report |
+| [Date ranges](../reports/date-ranges.md) | a report's own date range, and how it differs from a relative date here |

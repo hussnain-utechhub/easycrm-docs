@@ -152,7 +152,10 @@ Stars are saved on your portal user, so they follow you to any computer.
 
 ## The row menu
 
-Click ▾ at the end of a row.
+Click ▾ at the end of a row (**Show actions**). The menu opens under the button, or above it when
+there is no room below, and is never cut off by the list — on a short list or on the last row
+too. The first item is ready to choose: the arrow keys, **Home** and **End** move through the
+menu, **Enter** chooses, and **Esc** or **Tab** closes it.
 
 ![The row menu of a report in the Reports list](../../img/shots/analytics/list-row-menu.png)
 
@@ -161,7 +164,7 @@ Click ▾ at the end of a row.
 | **Open** | Opens the report. |
 | **Edit** | Opens it in the builder. You need edit access. Otherwise a message says you have read-only access. |
 | **Edit Properties** | Changes the name, description, folder and **Shared** box. See [Folders](./folders.md#moving-a-report-into-a-folder). |
-| **Clone** | Opens the builder on a new, unsaved copy named "<name> (copy)". Read access is enough. The copy is yours and starts private. Nothing is stored until you save it. |
+| **Clone** | Opens the builder on a new, unsaved copy named after the original with " (copy)" added. Read access is enough. The copy is yours and starts private. Nothing is stored until you save it. |
 | **Favorite** | Turns the star on or off. |
 | **Delete** | Asks **Delete this report?** in a browser box. **OK** deletes it for everybody. You need edit access. |
 
@@ -170,17 +173,14 @@ If you only have read access, **Delete** is refused with:
 
 ## Reports synced from Salesforce
 
-Below the list, both tabs can show a section headed **Synced from Salesforce**. It holds cards
-for Salesforce reports that an administrator added to the portal as a snapshot. On the
-**Dashboards** tab you see only the ones they also marked for the dashboard.
+A Salesforce report that an administrator has synced into the portal is listed like any other
+report. The lists show only reports and dashboards the portal runs itself: a Salesforce report
+kept only as a snapshot is not shown on either tab.
 
-Each card shows the report's name, **Updated** with the date and time of its last refresh, and
-the stored result as a bar, column or pie chart or a table. If there is nothing to draw it says
-**No data.**
-
-These cards are a picture taken in Salesforce, not live reports. They do not open, they do not
-follow the folders or views on the left, and every portal user sees the same cards. When nothing
-has been synced, the section does not appear at all.
+If your administrator has switched on auto-sync, a report saved in Salesforce can join the list by
+itself. Opening the **Reports** list — or coming back to its browser tab — asks for a check
+straight away, and if a new report arrives within about 45 seconds the list reloads once to show
+it. See [New Salesforce reports join the portal by themselves](../../admin/data/report-auto-sync.md).
 
 ## Making a folder
 
@@ -205,6 +205,8 @@ company to share it with you. See [Sharing a report](./sharing.md).
 | There is no **New Folder** button | Only Admins and Super Admins can make folders. |
 | A report shows under **Private Reports** although my company can see it | Those two views only check the **Shared** box, not the company **Visibility** setting. |
 | **Delete** or **Edit** says I have read-only access | It was shared with you for reading. Use **Clone** to make your own copy. |
+| A report just saved in Salesforce is not in the list | It joins by itself only when your administrator has switched auto-sync on. Give it a minute, then open the **Reports** list again. |
+| The **Synced from Salesforce** cards have gone | Snapshots of Salesforce reports are no longer shown under the lists. |
 
 ## Where this fits
 

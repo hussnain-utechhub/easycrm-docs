@@ -27,6 +27,8 @@ that instead:
 | A rich text field | The first 254 characters |
 
 Records saved since a copy was prepared are always read live, so results stay exact and current.
+When more than 20,000 records have been saved since — after a mass update, an import or a sync —
+the copy is prepared afresh first, so that report is a few seconds slower once.
 
 It makes no difference to a report with 40,000 matching records or fewer: those are checked
 directly, exactly as before.
@@ -109,6 +111,7 @@ In the [Audit Log](./audit-log.md):
 | The card is not on the Users tab | You are not a Super Admin. |
 | A report with a long text filter is refused | The switch is off — here, or **Long Text Notebooks Off** is ticked in Salesforce. Or narrow the report below 40,000 records. |
 | A large report is slow the first time only | The copy was being prepared. Later runs are fast. |
+| A large report is slow once again after a big import or mass update | More than 20,000 records changed since the copy was made, so it was prepared afresh. |
 | **Delete prepared copies** is greyed out | There are no copies to delete. |
 
 ## Where this fits

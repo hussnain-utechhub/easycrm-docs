@@ -124,10 +124,10 @@ to share.
 | **Refresh All Data** | Re-runs every **active** snapshot. Toast **All active reports updated.** |
 | **Find a report** | Searches **Salesforce** report names — up to 200 matches — so you can bring one in. It does not search what is already synced. |
 | **Sync to Site** / **Snapshot** | The two ways to bring a search result in. See below. |
-| **Synced Live — runs on the site** | The reports that run live against your data each time somebody opens them. |
+| **Synced Live — runs on the site** | The reports that run live against your data each time somebody opens them. An **Added automatically** badge marks one that [auto-sync](../data/report-auto-sync.md) brought in by itself. |
 | **Report** / **Object** / **Chart** / **Folder** / **Updated** | What each live report is, its Salesforce folder (click it to open that folder in Salesforce) and when the portal copy last changed. |
 | The bin icon, on a live report | **Deletes the portal copy.** See [Removing a report](#removing-a-report). |
-| **Snapshots — cached results** | The reports stored as a picture of their results. See [Snapshots](#snapshots). |
+| **Snapshots — cached results** | The reports stored as a picture of their results. The portal no longer lists them. See [Snapshots](#snapshots). |
 
 ### Bringing one Salesforce report in
 
@@ -140,12 +140,18 @@ to share.
 3. Read the toast. **Synced live** means it runs live in the portal; **Snapshot synced** means it
    could only come across as a snapshot. Either way the message says what, if anything, did not
    come across — every message is explained in
-   [What a report sync brings across](./what-syncs.md).
+   [What a report sync brings across](./what-syncs.md). When the portal copy differs from the
+   Salesforce report in any way, the toast is a warning that stays until you close it, so you can
+   read it all.
 
-Syncing a report that is already on the site live updates the same portal copy in place, so
-anything already pointing at it — company grants, re-shares, dashboard tiles — keeps working. The
-exception is a report that can no longer run live: see the caution under
-[Changing or removing access later](#changing-or-removing-access-later).
+Syncing a report that is already on the site updates the same portal copy in place, so anything
+already pointing at it — company grants, re-shares, dashboard tiles — keeps working, and who can
+see it does not change. A report nobody has changed in Salesforce since the portal published it
+is left exactly as it is; and a report that can no longer run live keeps its portal copy rather
+than turning into a snapshot. See [What a re-sync does](./what-syncs.md#what-a-re-sync-does).
+
+New reports saved in shared Salesforce folders can also come in by themselves — see
+[Auto-sync of new Salesforce reports](../data/report-auto-sync.md).
 
 ![Find a report with matching Salesforce reports and their Sync to Site and Snapshot buttons](../../img/shots/sf/portal-reports-search.png)
 
@@ -162,30 +168,34 @@ not choosing, you are being told which one you got.
 |---|---|---|
 | What the portal holds | The report's definition | A copy of its results |
 | Data | Current every time it runs | As of **Last Refreshed** |
-| Where it appears in the portal | In **Reports**, like any portal report | Under **Synced from Salesforce**, below the Reports list — and below the Dashboards list too when **Dashboard** is ticked |
-| Who can open it | See [Who can see a synced report](#who-can-see-a-synced-report) | Everybody who can sign in |
+| Where it appears in the portal | In **Reports**, like any portal report | Nowhere — see below |
+| Who can open it | See [Who can see a synced report](#who-can-see-a-synced-report) | Nobody in the portal |
 
-:::tip A number that disagrees with Salesforce
-Check whether the report is live or a snapshot. A snapshot is a picture from its last refresh, so
-disagreeing with Salesforce is normal and means only that the data has moved since. **Refresh**
-on its row, or **Refresh All Data**, brings it up to date.
+:::caution The portal no longer lists snapshots
+The **Reports** and **Dashboards** lists show the portal's own reports and dashboards only. The
+**Synced from Salesforce** cards that used to sit below them are gone, so a snapshot is stored
+but nobody can open it in the portal. To put a Salesforce report in front of portal users it has
+to come across **live**: when **Sync to Site** falls back to a snapshot, the toast names what
+stopped it running live.
 :::
 
 ### Who can see a synced report
 
 This is the one fact about syncing that surprises administrators, so it is said plainly:
 
-**A report brought in with Sync to Site is readable by every Admin of every company, and by
-every portal user who belongs to no company.** Standard users who belong to a company do not get
-it. The same happens again every time the report is re-synced or refreshed from the
-**Already shared** list — even if you had narrowed it to particular companies before.
+**A report brought in for the first time with Sync to Site is readable by every Admin of every
+company, and by every portal user who belongs to no company.** Standard users who belong to a
+company do not get it.
 
-The **Sync & Share Folders** wizard is the one route that narrows a report it brings in: a
-report the wizard syncs is limited to the companies you share it with. A later re-sync or
-**Refresh** of that report opens it to every Admin again.
+The **Sync & Share Folders** wizard narrows a report it brings in: a report the wizard syncs is
+limited to the companies you share it with. [Auto-sync](../data/report-auto-sync.md) narrows
+too: a report it adds is seen only through grants on its folder.
 
-If a report must stay with particular companies, bring it in through the wizard, and do not
-re-sync it from **Find a report**.
+A later re-sync — from **Find a report**, or with **Refresh** on the **Already shared** list —
+keeps whatever the report's sharing already is. It does not open a narrowed report to everybody.
+
+If a report must stay with particular companies, bring it in through the wizard rather than with
+**Sync to Site**.
 
 ### Snapshots
 
@@ -195,8 +205,8 @@ The **Snapshots — cached results** table lists every snapshot.
 |---|---|
 | **Report** | The Salesforce report's name. |
 | **Show as** | **Table**, **Bar**, **Column** or **Pie**. Saved as soon as you choose. |
-| **Active** | Unticked, the snapshot is hidden from the portal and skipped by **Refresh All Data**. |
-| **Dashboard** | Ticked, it also appears under **Synced from Salesforce** on the portal's Dashboards list. |
+| **Active** | Unticked, the snapshot is skipped by **Refresh All Data**. |
+| **Dashboard** | Kept with the snapshot. It used to list it under the portal's Dashboards too; the portal no longer lists snapshots, so it changes nothing there. |
 | **Last Refreshed** | When its results were last read from Salesforce. |
 | **Refresh** | Re-runs that one report now. Toast **Report data updated.** |
 | The bin icon | Removes it, after asking *Remove this report from the portal?* |
@@ -251,6 +261,10 @@ something chosen.
    - Click **▸** to open a folder and tick single items instead.
    - An item marked **not on site — will sync** is a Salesforce report the portal does not have
      yet. Sharing it brings it onto the site first.
+   - A Salesforce report is matched to its portal copy by the report's **Id**, so two reports
+     with the same name in different folders are told apart. Only a portal copy linked to no
+     existing Salesforce report in this org — built in the portal and never published, linked to
+     a report since deleted, or copied in from another org — is matched by name.
 
    The count at the bottom reads **N reports selected** (dashboards are counted in it too).
 4. Click **Next: choose companies**. **Cancel** closes the wizard and changes nothing.
@@ -302,7 +316,10 @@ added to that folder next month is **not** covered — run the wizard again for 
 The wizard first brings every **will sync** report onto the site, one at a time, then writes the
 grants. A toast confirms it — for example **6 grants written to 2 companies.** If any report could
 only come across as a snapshot, the toast adds **1 report synced as a snapshot and couldn’t be
-shared.** A snapshot has no company sharing.
+shared.** A snapshot has no company sharing. If a report it synced differs from Salesforce in any
+way, the toast becomes a warning that stays until you close it, adding for example **This report
+differs from Salesforce: Pipeline by Stage. Sync one on its own to see what could not be brought
+across.** — sync that report with **Find a report** to read exactly what.
 
 <!-- SHOT: sf/sync-share-step3.png | Sync & Share Folders, step 3 Review, Will share with two items, Current sharing showing Existing company grants with Read/Edit/Revoke -->
 
@@ -350,10 +367,13 @@ different filter.*
 <!-- SHOT: sf/sync-share-already-shared.png | Sync & Share Folders, Already shared tab, Reports filter on, a search typed, showing "N grants of M" and rows with Read/Edit, Refresh and Revoke -->
 
 :::caution Before you press Refresh
-**Refresh** is a full re-sync. It opens the report to every Admin of every company again — see
-[Who can see a synced report](#who-can-see-a-synced-report). And if the report can no longer run
-live, it comes back **as a snapshot**: the live portal copy is deleted, and every company grant
-and re-share on it goes with it.
+**Refresh** is a full re-sync: the portal copy takes the Salesforce report's columns, groupings,
+filters and the rest, replacing changes made to those in the portal — unless nobody has changed
+the report in Salesforce since the portal last published it, in which case the copy is kept
+exactly as it is. What Salesforce cannot hold — the portal's own formulas, an "ends with" filter,
+a long name and so on — is kept, and the message lists it. Who can see the report does not
+change. If the report can no longer run live, the portal copy is **kept exactly as it
+was** and the message says so. See [What a re-sync does](./what-syncs.md#what-a-re-sync-does).
 :::
 
 ## What goes wrong
@@ -367,12 +387,14 @@ and re-share on it goes with it.
 | **Password must be at least 8 characters.** | On a new user or a reset. |
 | *You have reached the maximum number of … users allowed for this company …* | A licence limit. Use **Contact support**, or see [Licence limits](../operations/licence.md). |
 | A user created here does not appear for any company Admin | They belong to no company. Give a Standard user a **Manager**, or add the user to a company in the portal. |
-| A company Admin can open a report you never shared with their company | It was brought in with **Sync to Site**, or re-synced or refreshed, which makes it readable by every Admin. |
+| A company Admin can open a report you never shared with their company | It was first brought in with **Sync to Site**, which makes it readable by every Admin. A later re-sync keeps that. |
 | Standard users cannot see a report shared to their company | A company grant reaches Admins only. An Admin re-shares it under **Admin** → **Reports & Dashboards**. |
 | A company cannot be ticked in step 2 | It shows **needs an Admin**: it has no active Admin to receive the grant. |
-| A report added to a shared folder is missing in the portal | The wizard shares item by item. Run it again for the new report. |
+| A report added to a shared folder is missing in the portal | The wizard shares item by item. Run it again for the new report — or turn on [auto-sync](../data/report-auto-sync.md), which brings new reports in by itself. |
 | *… synced as a snapshot and couldn’t be shared.* | That report can only come across as a snapshot, and snapshots have no company sharing. |
-| A company lost a report after **Refresh** | It came back **as a snapshot**, which deleted the live copy and its grants. |
+| A sync or **Refresh** says *… so it was not synced: the portal copy was kept exactly as it was …* | The report now uses something the portal cannot run live. The live copy and its sharing are untouched. To have a snapshot instead, remove the live copy and sync the report again. |
+| A warning toast stays on screen after a sync | The portal copy differs from the Salesforce report. Read it — it says how — then close it. |
+| Two Salesforce reports with the same name, and only one shows as on the site | Reports are matched to portal copies by Id: the other one has not been synced yet. Sync or share it. |
 | A snapshot's numbers are out of date | Snapshots only refresh when somebody presses **Refresh** or **Refresh All Data**. |
 | *The portal integration can't run "…". This report is built on a report type or folder you don't have access to …* | Your Salesforce user cannot run that report. Share its folder with yourself, or pick another report. |
 | Everybody in the portal can see a snapshot | Snapshots are not shared per company. Untick **Active** to hide one. |
@@ -381,6 +403,8 @@ and re-share on it goes with it.
 
 - [What a report sync brings across](./what-syncs.md) — what survives the trip, and every sync
   message.
+- [Auto-sync of new Salesforce reports](../data/report-auto-sync.md) — new reports brought in
+  without anybody pressing a button.
 - [Reports and Dashboards](../data/report-folders.md) — passing shared reports on to Standard
   users, inside the portal.
 - [Publishing a portal report to Salesforce](./publish-reports.md) — the opposite direction.

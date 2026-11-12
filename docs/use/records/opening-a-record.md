@@ -67,6 +67,29 @@ your administrator can move them.
 On a narrow screen — under about 1,024 pixels wide, such as a tablet held upright — the two
 columns stack, and the right-hand column follows the fields.
 
+## Pages your administrator arranged
+
+Your administrator can arrange a kind of record's page more freely. If yours is, some of this
+may differ from the description above:
+
+| What you may see | What it means |
+|---|---|
+| One, two or three columns of different widths, a full-width row under the header, or blocks placed freely | The page's arrangement. On a narrow screen it still stacks into one column. |
+| A row of **tabs** | Click a tab to see what it holds. A related list in a tab loads when you choose the tab. |
+| Headings with an arrow that open and close (an **accordion**) | Click a heading to open or close it. The ones you leave open are remembered in this browser, for that kind of record, so the next record opens the same way. Some accordions keep only one open at a time. |
+| Fields under the record's name, at the top | The fields your administrator picked to see at a glance. |
+| Fewer buttons at the top, and a ▾ button (**More actions**) | The other buttons are in that menu. |
+| **Delete** at the top | Asks **Delete this record? This cannot be undone.**, then says **Record deleted.** and returns to the list. Only if you may delete this kind of record. |
+| **Clone** at the top | A **New** window that starts with this record's values — see [Copying a record](./creating.md#copying-a-record). Only if you may create this kind of record. |
+| The same field in two places | Both show the same value. Changing one changes both. |
+| Fields without a section heading | They cannot be folded away. |
+| A field from another record — a contact's **account** phone, for example | It is read-only here; change it on that record. You see it only if you may see that record and that field. |
+
+<!-- SHOT: records/arranged-page.png | A Contact record page arranged in the layout builder (switch on): fields under the record name in the header, Delete and Clone among the header buttons, a Tabs component in the right column with its first tab open, and an account field in a section -->
+
+**Back to list** and, for people who may change layouts, **Edit Page Layout** are always at the
+top.
+
 ## Field names
 
 When your administrator has set up a page layout for this kind of record, fields carry the names
@@ -105,7 +128,8 @@ Click **Back to list** at the top right, or your browser's back button. Both wor
 ## Scrolling through everything
 
 A record can be long. Scroll to see the rest of either column — nothing is hidden behind a
-click, apart from sections you folded away.
+click, apart from sections you folded away and, on an arranged page, other tabs and closed
+accordion headings.
 
 Empty fields are still shown, with nothing beside their name. If a field you expect is missing
 altogether, your administrator has left it off this layout, or you do not have permission to
@@ -118,5 +142,6 @@ read it. See
 |---|---|
 | **Record not found.** | The record was deleted, or you are not allowed to see it. The portal does not say which. |
 | **Could not load the record.** | Something went wrong loading it. Try **Back to list** and open it again. |
-| There is no **Edit** button | You may not edit this kind of record. |
-| There is no **Change Owner** button | Only Admins and Super Admins can change owners. |
+| There is no **Edit** button | You may not edit this kind of record — or, on an arranged page, it is under the ▾ menu at the top, or your administrator left it off. |
+| There is no **Change Owner** button | Only Admins and Super Admins can change owners. On an arranged page, look under the ▾ menu. |
+| A field a colleague sees is missing for you | It comes from another record, and you may not see that record or field. |

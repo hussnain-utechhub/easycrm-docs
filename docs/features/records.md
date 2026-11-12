@@ -67,7 +67,8 @@ sort naturally; picklists sort in their defined order; blanks go to the bottom.
 ## Search
 
 **What it is.** Two searches — one across every kind of record and every report and dashboard
-you can open, one within the current list.
+you can open, one within the current list. The App Launcher also finds, as you type, any app,
+tab or kind of record you may open, A to Z.
 
 **What you gain:** people find things without knowing which tab they live under.
 
@@ -76,8 +77,11 @@ you can open, one within the current list.
 **What it is.** A menu at the end of each row, and buttons an administrator adds beside **New**
 that start a guided process or open a web page.
 
-**What you gain:** acting on records without opening them, and company-specific actions where
-people already work.
+**What it does.** As in Salesforce, a list button's flow opens full page in place of the list and
+is handed the rows the user ticked; finishing it returns to the list, refreshed.
+
+**What you gain:** acting on records without opening them — one or many at a time — and
+company-specific actions where people already work.
 
 ## Configurable record pages
 
@@ -89,6 +93,30 @@ open as links.
 
 **What you gain:** a readable page showing the ten fields that matter instead of the hundred
 that exist.
+
+## A layout builder like Lightning App Builder
+
+**What it is.** An optional drag-and-drop editor for record pages, modelled on Salesforce's
+Lightning App Builder.
+
+**What it does.** Fields, sections, related lists, the activity panel and Files go anywhere on
+the page — in one to three columns, in tabs or an accordion, or placed freely on a grid — and a
+field can appear more than once. The header can show chosen fields under the record's name and
+the buttons in any order, including **Delete** and **Clone**. Fields of a related record — a
+contact's account phone, for example — can sit on the page, read-only and only for people allowed
+to see them. Today's layouts open in it as they are, and the classic editor keeps working on the
+same layouts.
+
+**What you gain:** record pages arranged the way your teams read them, without a developer.
+
+## Copying a record
+
+**What it is.** A **Clone** button an administrator can put at the top of a record page.
+
+**What it does.** It opens the **New** window filled with the record's values and record type,
+copying only what the person could change.
+
+**What you gain:** similar records created in seconds rather than retyped.
 
 ## Full and on-the-page editing
 
@@ -131,7 +159,12 @@ at a time, or several from a related list.
 contact.
 
 **What it does.** Each list can be sorted, refreshed, added to and opened in full. A list a
-person may not read shows a padlock, not its contents or even a count.
+person may not read shows a padlock, not its contents or even a count. Lists carry the titles
+Salesforce gives them where Salesforce passes them to the portal — **Campaign History** rather
+than "Campaign Members" — and a list
+through a junction object that is master-detail to both sides can show the other record's
+fields as columns, as Salesforce's own many-to-many lists do. On a record with very many lists, some fill in a moment after the page
+opens, each on its own.
 
 **What you gain:** the whole picture of a customer on one screen.
 
@@ -164,3 +197,4 @@ links.
 - [List views](../use/records/list-views.md)
 - [Editing in a list](../use/records/list-editing.md)
 - [Filtering a list](../use/records/filtering.md)
+- [The layout builder](../admin/layouts/layout-builder.md)

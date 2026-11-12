@@ -36,17 +36,23 @@ Everything EasyCRM does, on one page. Each group links to the detail.
 - Filter fields matching Salesforce list views, including owner and parent fields
 - Per-person column selection, with admin defaults for everyone
 - Sorting, with picklists in defined order
-- Search within a list, and global search across all objects, reports and dashboards
+- Search within a list, global search across all objects, reports and dashboards, and an App
+  Launcher that finds apps, tabs and objects as you type
 - Row-level action menus
 - Editing straight in a list — one cell, or the same change on up to 200 records at once
-- Configurable record pages with sections and related lists
+- Configurable record pages with sections and related lists, and an optional drag-and-drop
+  layout builder: tabs, accordions, page templates, header fields and buttons, fields from
+  related records
+- Related lists under Salesforce's own titles, including lists through a junction object
 - Separate, shorter field set for the new-record window
 - Full editing, and inline editing of every editable field on the record page
 - Field-level edit control
 - Record types, assignable per company
 - Ownership and transfer
+- Clone and Delete buttons in the header of a page arranged in the layout builder
 - Clickable emails, phone numbers, addresses, linked records and formula links
-- Custom buttons on list pages as well as record pages
+- Custom buttons on list pages as well as record pages; a list button's flow opens full page with
+  the ticked rows
 - Configurable home page, per app, with an announcement
 - Personal display settings: menu position, theme, row density
 
@@ -69,8 +75,11 @@ Everything EasyCRM does, on one page. Each group links to the detail.
 - Tabular, summary and matrix reports
 - Multi-level grouping down the side and across the top
 - Sum, average, minimum, maximum, median and unique counts, with subtotals and grand totals
+- Column names, group order and totals as Salesforce's own reports give them, exact over every
+  record
 - Report filters with filter logic
-- Relative date ranges
+- Salesforce's 49 standard date ranges, each covering the same days as in Salesforce, on any date
+  field including a related record's
 - Long text filters, including on very large reports
 - Locked filters readers cannot change
 - Reader-side filtering that does not alter the saved report
@@ -86,8 +95,10 @@ Everything EasyCRM does, on one page. Each group links to the detail.
 - Export as formatted report or details only, to Excel or CSV
 - Sharing with companies or named users, at read or edit, revocable
 - Sync of existing Salesforce reports, naming anything that could not come across
+- New Salesforce reports added to their portal folder automatically (auto-sync)
 - Formula sync between portal and Salesforce reports
-- Publishing portal reports to Salesforce — by hand, on a schedule or on save
+- Publishing portal reports to Salesforce — by hand, on a schedule (every minute to weekly) or on
+  save
 
 ## [Dashboards](./dashboards.md)
 
@@ -96,8 +107,11 @@ Everything EasyCRM does, on one page. Each group links to the detail.
 - Separate page and tile themes, light or dark
 - Dashboard-wide filters with per-tile field mapping, remembered for each person
 - Clicking a chart opens the report behind it, filtered to what was clicked
-- Run as the viewer, or across all data
+- Each viewer sees only the records they may see, optionally with every tile scoped to the viewer
+  (dynamic dashboard)
 - Cached results with on-demand refresh
+- An editor that opens at once from stored results, and asks before overwriting a colleague's save
+- Tiles that cannot use a filter, or whose report fails, say so on the tile
 
 ## [Security](./security.md)
 
@@ -118,7 +132,8 @@ Everything EasyCRM does, on one page. Each group links to the detail.
 
 ## [Configuration and branding](./configuration.md)
 
-- Page layouts: fields, sections, related lists, new-record window
+- Page layouts: fields, sections, related lists, new-record window — in the classic editor or the
+  Lightning App Builder-style layout builder
 - Tab selection and ordering; the Home tab can be hidden
 - Apps, set up by a Super Admin and assignable per company
 - Custom buttons — web address, Salesforce flow, new child record, your own screen, background
@@ -141,13 +156,16 @@ Everything EasyCRM does, on one page. Each group links to the detail.
   failed rows
 - Report-to-calling-list mappings for FrontSpin, per company
 - REST API that reads, creates, updates and deletes, granted per object
-- Scoped, filterable keys; one-time secrets; edit, regenerate and revoke
+- Scoped, filterable keys; one-time secrets; edit, regenerate (new Client ID and secret, shown once
+  to copy) and revoke
 - Separate hourly ceilings for reads and writes
 - API usage analytics by period, company and user, with export
 - Automatic retention and tidy-up of API request logs
-- Syncing Salesforce reports into the portal, and sharing them with companies
-- Publishing portal reports into Salesforce — by hand, on a schedule or on save — with an
-  email to Super Admins when anything fails
+- Syncing Salesforce reports into the portal — by hand, or new ones automatically — and sharing
+  them with companies
+- Publishing portal reports into Salesforce — by hand, on a schedule or on save — with skipping
+  of unchanged reports, a starting schedule for new reports, a chosen Salesforce folder, an
+  estimate of the Salesforce API calls it uses, and an email to Super Admins when anything fails
 - Activity emails sent from a record, plain or formatted
 
 ## [Operations and scale](./operations.md)

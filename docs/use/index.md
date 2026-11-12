@@ -34,6 +34,7 @@ after two hours unless you choose **Stay signed in**, and it tells you five minu
 | Change the same field on many records at once | [Editing in a list](./records/list-editing.md) |
 | Correct a value I spotted in a report | [Editing values in a report](./reports/editing.md) |
 | Add a new record | [Adding a record](./records/creating.md) |
+| Start a new record from a copy of another | [Copying a record](./records/creating.md#copying-a-record) |
 | Keep working when the session is about to end | [Staying signed in](./start/session.md) |
 | Record a call I just had | [Calls, tasks and meetings](./activities/index.md) |
 | Set a reminder for myself | [Calls, tasks and meetings](./activities/index.md) |

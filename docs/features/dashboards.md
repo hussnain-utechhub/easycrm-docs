@@ -39,8 +39,9 @@ values per filter, and up to five filters can sit on one dashboard.
 
 **What it does.** Because each tile reads a different report, the author maps the filter to the
 matching field on each one. Where a report is on the same object, or has a lookup straight to it,
-the field is filled in automatically. Date filters can use relative ranges such as **This Month**
-or **Last 30 Days**.
+the field is filled in automatically. As in Salesforce, a filter applies to every tile: one whose
+report cannot be narrowed by it says so on the tile rather than showing unfiltered numbers. Date
+filters can use relative ranges such as **This Month** or **Last 30 Days**.
 
 **What you gain:** one dashboard serves every team and every region, instead of a copy for each.
 
@@ -74,11 +75,22 @@ somebody needs it.
 
 ## Audience control
 
-**What it is.** A dashboard either shows each person their own numbers, or shows everybody the
-same company-wide totals. Admins always see everything.
+**What it is.** Every dashboard counts, for each viewer, only the records that viewer may see — no
+setting shows anybody records their sharing hides. **The logged-in user** scopes every tile to the
+viewer further still, as a dynamic dashboard. Admins are never narrowed by it.
 
-**What you gain:** one dashboard can be a personal worklist for twenty people, or a shared
-company view, from the same definition.
+**What you gain:** one dashboard can be a personal worklist for twenty people from a single
+definition, and nobody sees records their sharing hides.
+
+## Figures that match the report
+
+**What it is.** A **Metric** or **Gauge** shows its report's grand total of the measure — an
+average stays the report's overall average. A table tile's total and a donut's centre count every
+group, even when only the top ones are drawn. A tile that cannot show its numbers says why on the
+tile.
+
+**What you gain:** a figure on a dashboard is the same figure the report gives, and an empty tile
+is never mistaken for zero.
 
 ## Stored results with refresh
 
@@ -88,14 +100,22 @@ company view, from the same definition.
 **What you gain:** a thirty-tile dashboard opens without waiting, everybody can see how old each
 number is, and anybody who needs the very latest figure can ask for it.
 
+## An editor that opens at once
+
+**What it is.** **Edit** opens the builder with every tile as the dashboard already shows it,
+without working any of them out again. Tiles with no stored result fill in behind while you work.
+
+**What you gain:** a twenty-tile dashboard is ready to edit in a moment.
+
 ## Safe editing
 
-**What it is.** The builder will not save until the dashboard has finished loading, warns before
-you leave with unsaved changes (including the browser's Back button), and lets anyone with read
-access **Clone** a dashboard into their own copy.
+**What it is.** The builder will not save until the dashboard has finished loading, asks before
+your save replaces changes somebody else saved meanwhile, warns before you leave with unsaved
+changes (including the browser's Back button), and lets anyone with read access **Clone** a
+dashboard into their own copy.
 
-**What you gain:** nobody wipes a dashboard by saving too early, or loses an afternoon's layout
-by clicking away.
+**What you gain:** nobody wipes a dashboard by saving too early, overwrites a colleague's work
+without knowing, or loses an afternoon's layout by clicking away.
 
 ## Where to do it
 

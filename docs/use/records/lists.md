@@ -113,14 +113,27 @@ ticked rows at once. Changes stay as yellow drafts until you click **Save**. See
 Your administrator can put buttons of their own beside **New** — to start a guided process or
 open a web page, for example.
 
-- A button that runs a process opens a window titled **Action**. When it finishes, the window
-  closes, the list says **Done.** and reloads.
-- A button that opens a web page opens it in a new browser tab.
-- Some buttons ask first — **Are you sure?** unless your administrator wrote another question.
+**A button that runs a guided process** opens it in place of the list, as a page of its own.
+
+1. Tick the rows the process should work on, if it works on records — some do, some do not.
+2. Click the button. The process fills the page, with the button's name as its title.
+3. Work through its screens. When it finishes, the list comes back with nothing ticked, says
+   **Done.** and reloads.
+
+<!-- SHOT: lists/list-button-flow-page.png | An Accounts list with an admin-added List page Flow button: two rows ticked, the button clicked, the flow open full page in place of the list with "Back to Accounts" and the button's label as the title (needs a List page Flow button set up under Admin → Buttons) -->
+
+To leave without finishing, click **Back to Accounts** (the name of the list's records) at the
+top, or your browser's back button. The list is as you left it, ticks and all.
+
+The process page cannot be reopened by reloading the browser if it works on ticked rows — the
+ticks are not kept. The list then says **Select the records again, then click** and the button's
+name, followed by **The ticked rows are not kept when the page is reloaded.**
+
+**A button that opens a web page** opens it in a new browser tab.
+
+Some buttons ask first — **Are you sure?** unless your administrator wrote another question.
 
 Which buttons you see can depend on your role. See [Buttons](../../admin/appearance/buttons.md).
-
-<!-- SHOT: lists/list-button-action.png | Accounts list with an admin-added list button beside New, clicked: the "Action" window showing the first screen of a flow -->
 
 ## Opening a record from the list
 

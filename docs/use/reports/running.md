@@ -31,9 +31,16 @@ from scratch whenever you need the very latest numbers.
 - A chart above the table, if the report has one. On a matrix report it sits beside the grid.
   Point at a bar or slice to see its exact figures — see [Charts](./charts.md#reading-a-chart).
 - The table itself. If the report is grouped, each group has a heading and a subtotal.
-- **Blue text is clickable.** A record's name opens that record in a new browser tab, so the
-  report stays where it was. Email addresses and phone numbers open your mail or phone app.
+- **Blue text is clickable.** A record's name or record ID opens that record in a new browser
+  tab, so the report stays where it was. On a matrix report, a row grouping by a lookup (an
+  owner, an account) or by a record ID makes each group's name a link to that record too. Email
+  addresses and phone numbers open your mail or phone app.
+- **An empty value is shown as -**, as Salesforce shows it: a group of records with nothing in the
+  grouped field is the **-** group.
 - **Switches along the bottom**, and on the right how many records the report found.
+
+Columns are named as Salesforce names them in the same kind of report — see
+[Columns](./columns.md#column-names).
 
 ### The switches along the bottom
 
@@ -54,8 +61,16 @@ saved them.
 - A summary report with more than 2,000 records shows no more than 2,000 rows and says so:
   **This report has more results than we can show (up to 2,000 rows). Summary information is
   calculated from full report results.** The totals still count every record.
+- With **Detail Rows** on, such a summary shows its **first 2,000 records in group order**, as
+  Salesforce's own report does, and only the groups those records reach. The last group shown can
+  be cut short. Its subtotal, like every other, still counts all of its records.
 - A matrix report with more than 2,000 records shows the same notice, and its **Detail Rows**
   switch is turned off and greyed out. The figures in the grid still count every record.
+- A matrix with two row groupings shows at most **2,000 rows**: each outer group counts as one
+  row, and so does each row inside it. They are the first 2,000 in grouping order, as Salesforce
+  shows them. A group cut short still shows its whole subtotal.
+- A report too big to total in one go is totalled in several steps behind the spinner, so its
+  numbers are exact. It takes longer to open.
 
 ## Sorting and reshaping while you read
 
@@ -63,11 +78,15 @@ saved them.
 
 - **Click a column's name** to sort by it, smallest or A first. Click it again to reverse. An
   arrow beside the name shows which column is sorted.
+- **A column the report is grouped by always shows an arrow**, because its groups are always in
+  order — ascending, unless the report is sorted descending by it. So the first click on a
+  grouping column's name turns it descending.
+- A report has one sort. Sorting by another column puts every grouping back to ascending.
 - **Click the chevron** beside the name (**Column options**) for a menu:
 
 | Item | What it does |
 |---|---|
-| **Sort Ascending** / **Sort Descending** | Sorts by this column. |
+| **Sort Ascending** / **Sort Descending** | Sorts by this column. On a grouping column, the direction it already has is greyed out. |
 | **Group Rows by This Field** | Groups the report by it. A tabular report becomes a summary. |
 | **Group Columns by This Field** | Groups across the top. The report becomes a matrix. |
 | **Remove Column** | Takes the column off the report you are looking at. |
@@ -78,10 +97,15 @@ column groupings).
 
 On a matrix report the grouping headings have their own menu: **Sort Ascending**,
 **Sort Descending**, **Group Rows by This Field**, **Group Columns by This Field**,
-**Make a Detail Column** and **Remove Group**. The column headings in its **Details** pane have
-the same menu as a tabular report.
+**Make a Detail Column** and **Remove Group**. Each column grouping has a heading row of its own,
+its name followed by →. Click a grouping's name to sort by it: the first click lists its groups
+descending, the next ascending again, and an arrow marks the grouping the report is sorted by.
+The column headings in the **Details** pane have the same menu as a tabular report.
 
 ![Column options on a sorted column](../../img/shots/report-viewer/report-column-options.png)
+
+At high browser zoom these menus move to stay inside the window, and scroll if they still do not
+fit.
 
 **None of this is saved.** It changes only what you are looking at. Open the report again and it
 is back as saved, for you and for everybody else. To sort a report for good, set the sort in the
@@ -97,7 +121,8 @@ out. A row-level formula column has no menu at all.
 
 - **Every row is sorted**, not just those on screen. Rows loaded as you scroll carry on in the
   same order.
-- **Blanks come last**, whether you sort ascending or descending.
+- **Blanks come first when you sort ascending, and last when you sort descending**, as in
+  Salesforce. (A checkbox is never blank.)
 - Rows with the same value keep a fixed order (by record ID), so nothing jumps about between
   pages.
 - **Text ignores capitals.** A **picklist sorts in its own order** — the order its values are
@@ -106,7 +131,10 @@ out. A row-level formula column has no menu at all.
   shows. On a report about one kind of record, a lookup column (an owner, say) sorts by the
   record behind it, so it will not look alphabetical.
 - On a **summary report**, a sort orders the detail rows inside each group. Sorting
-  **descending by a grouping column** reverses the order of the groups.
+  **descending by a grouping column** reverses the order of its groups exactly: an inner grouping
+  is reversed inside each outer group, and the **-** group moves from first to last. The same
+  goes for a matrix's row and column groupings. How groups are ordered to begin with is on
+  [Grouping](./grouping.md#how-the-rows-are-ordered).
 - Some sorts have to read every row first: on an **Activities** report, sorting by a contact or
   account column or by a field only tasks have; on an **Activities with Contact** report, sorting
   by a contact column. Up to 45,000 rows they are exact. Above that the rows are shown unsorted,
@@ -127,12 +155,20 @@ the grid, headed **Details (N Rows)**.
   view.
 - The Details load 200 rows at a time as you scroll down.
 - **Click a figure in the grid** to narrow the Details to that cell. The pane's heading then
-  names what it is narrowed to — "Stage = Prospecting" — with a **Clear** button beside it.
+  names what it is narrowed to — "Stage = Prospecting", or "Stage = -" for the empty group —
+  with a **Clear** button beside it.
+- Before narrowing, the pane loads any Details rows it has not loaded yet, so none of the cell's
+  records is missed. Meanwhile the heading reads **Details (… Rows)** and
+  **Loading all rows for this cell…**.
+- A grid groups text that differs only in capitals as one group, and the Details match the cell
+  the same way: a record spelled "engineering" is listed under the "Engineering" cell.
 - On a phone-sized screen the Details simply follow the grid instead of docking.
 
 You can [edit values](./editing.md) in the Details rows.
 
 ![The Details pane of a matrix report narrowed to one group, with Clear](../../img/shots/report-viewer/report-matrix-details-pane.png)
+<!-- SHOT-RETAKE: ../../img/shots/report-viewer/report-matrix-details-pane.png | the grid's header is now one row per column grouping (e.g. "Date →" above "Contact: Bucket Status →", each with its own ▾), and a nested matrix's subtotal rows read "Subtotal" in bold; recapture the same matrix narrowed to one cell, Details pane showing its chips and Clear -->
+
 
 ## Changing what it shows, just for now
 
@@ -150,6 +186,10 @@ You can [edit values](./editing.md) in the Details rows.
 **This does not change the saved report.** The panel says so: **Changes here are temporary -
 they are not saved to the report. Use Edit to change it for everyone.** Everybody else still
 sees the report as it was saved. **Reset** puts the filters back as saved.
+
+If the report has a date filter, its range sits at the top of the panel, under **Standard**,
+beside the date field's name. Pick another range there, or **Custom** and your own dates — see
+[Date ranges](./date-ranges.md).
 
 You can change values and operators here, but not add or remove filters. The report's
 **Filter Logic** is shown but cannot be changed.
@@ -221,7 +261,7 @@ note across the top saying why. Dismiss it with its **✕**.
 
 | Note | What it means |
 |---|---|
-| **Showing the full report — an empty group on a chart cannot be written as a filter.** | You clicked the "(blank)" group. |
+| **Showing the full report — “-” stands for an empty value (or the text “-”), which a chart click cannot filter on.** | You clicked the **-** group. |
 | **Showing the full report — “Others” stands for several values, not one.** | You clicked the group that combines the small values. |
 | **Showing the full report — this chart is grouped by something the report cannot filter on directly.** | The chart's grouping is not a field the report can filter. |
 | **Showing the full report — a date/time grouping cannot be written as one filter value.** | The chart is grouped by a date and time. |
@@ -272,6 +312,10 @@ Click **Export** to download it as a spreadsheet — see [Exporting a report](./
 | A sort or grouping you set has gone | Sorting and regrouping on this screen are never saved. Set them in the builder. |
 | **Detail Rows** is greyed out | A matrix report with more than 2,000 records. The grid's totals are still exact. |
 | **These rows are not sorted by …** | More than 45,000 rows for a sort that has to read every row. Add a filter, then sort again. |
+| A grouping column shows a sort arrow nobody set | Groupings are always in order, ascending unless the report is sorted descending by them. Clicking the name turns it descending. |
+| A big summary stops part-way through a group | With **Detail Rows** on it shows its first 2,000 records and only the groups they reach, as Salesforce does. The subtotals and grand total still count everything. Switch **Detail Rows** off to see the groups alone. |
+| **This report could not finish its exact totals this time. Please run it again in a minute.** | A report totalled in steps did not finish. Open it again shortly. |
+| **This report needs to be run again.** | The steps a big report was being totalled in were no longer available. Click **Refresh**, or open the report again. |
 | A sorted lookup column does not look sorted | On a report about one kind of record, a lookup column sorts by the record behind it, not by the name it shows. |
 | **Invalid Report. You cannot run this report …** | The report uses filter logic and filters on a field hidden from you. Ask your administrator. |
 | A column a colleague sees is missing for you | That field is hidden from you, so every report hides it. |

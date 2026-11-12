@@ -19,7 +19,8 @@ concern, grouped by date.
 1. Click **Accounts** (or any tab) in the top menu.
 2. Click the record's **name** to open it.
 3. Look at the right-hand column of the page — the panel is usually at the top of it. The four
-   buttons along its top are how you add something.
+   buttons along its top are how you add something. If your administrator has arranged the page
+   differently, it may be elsewhere — in a tab, for example.
 
 ![A record](../../img/shots/records/accounts-detail.png)
 
@@ -191,6 +192,9 @@ Under the four buttons is a line reading **Filters: All time • All activities 
 
 The middle words, **All activities**, never change. The filter is not kept: open the record
 again and it is back to everything.
+
+In a zoomed-in browser window, this panel and an entry's ▾ menu scroll, or open upwards, rather
+than run off the edge of the screen.
 
 ## Seeing the whole history
 

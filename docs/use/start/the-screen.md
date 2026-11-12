@@ -69,11 +69,24 @@ tabs for one kind of work.
    |---|---|
    | **Files** | The files area. This is the way into it — see [Files](../files/index.md). |
    | **Apps** | Your apps. Click one to switch to its tabs; you land on its home page. |
-   | **Items** | Your record tabs. Type in the search box to look across every kind of record you can read. |
+   | **Items** | Your record tabs. |
 
 3. Click what you want.
 
 <!-- SHOT: shell/app-launcher.png | Top bar layout, a user with two apps, App Launcher open showing the search box and the Files, Apps and Items sections -->
+
+**Searching it.** Type in **Search apps and items...** and the lists narrow as you type, to
+whatever has those letters in its name:
+
+- your apps;
+- every tab of yours — record tabs, and screens such as **Reports** and **Dashboards**;
+- every other kind of record you are allowed to read, even one with no tab of yours;
+- **Files**, if its name matches.
+
+**Items** is then in alphabetical order, and **contacts**, **Contact** or **con** all find
+**Contacts**. When nothing matches, the launcher says **No results**. Clicking an item opens its
+list — for **Reports**, the list of reports rather than the last report you had open — just as
+clicking its tab does.
 
 The portal remembers which app you were in, in this browser.
 
@@ -190,6 +203,16 @@ When the list is empty, it says **You're all caught up.**
 
 What you have read is remembered in this browser, so on another computer the same entries can
 show as unread.
+
+**Super Admins also see new Salesforce reports** that the portal brought over by itself, mixed
+in by time: **Added "Pipeline by Region" to the portal folder "Sales Reports"**, or, when it
+could not, **"Pipeline by Region" was not added: the portal has no folder "Sales Reports"**. Each
+is marked **From Salesforce**, followed in brackets by the Salesforce user who created the report.
+Click an added one to open the report; the other kind does not open. See
+[New Salesforce reports join the portal](../../admin/data/report-auto-sync.md).
+
+In a zoomed-in browser window, the bell's list, the App Launcher and the other menus at the top
+scroll rather than run off the bottom of the screen.
 
 ## Changing how the portal looks
 

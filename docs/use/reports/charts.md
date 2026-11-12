@@ -58,6 +58,12 @@ To change the chart later, click the chart icon again, or the gear on the chart 
 
 A pie chart with twenty slices tells nobody anything. Use a bar chart.
 
+A **Metric** or **Gauge** shows the report's grand total of its measure — the same figure as the
+report's own grand total — not its groups added up. So a Metric of "Amount (Average)" reads the
+report's overall average, as in Salesforce.
+
+A group of records with nothing in the grouped field is drawn as **-**.
+
 ## What each type asks for
 
 | Type | Boxes under **Chart Attributes** |
@@ -91,7 +97,9 @@ Point at a bar, slice or point and a dark box beside it gives the exact figures:
 - the group's name and value — "Call Result" and "Connected";
 - the **full** value — "1,151", even where the axis shows "1.2K" — usually with the measure's
   name, such as "Record Count" (the builder's preview can show the value without its name);
-- on a donut, pie or funnel, its share of the whole too — "(25.88% of 4.4K)";
+- on a donut, pie or funnel, its share of the whole too — "(25.88% of 4.4K)". On a dashboard
+  donut or pie, the whole is every group (up to 1,000), even those **Max Groups Displayed**
+  leaves out;
 - on a stacked or matrix chart, which series the segment belongs to;
 - on a scatter plot, the group and both of its values;
 - on a **Metric**, the number in full; on a **Gauge**, also how far round the dial it is.

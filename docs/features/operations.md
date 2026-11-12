@@ -19,7 +19,9 @@ owner.
 exported, shared, favourited and filed, and every save listed change by change. A deleted report
 or dashboard keeps its whole definition in the log, so it can be rebuilt. An attempt the portal
 refused is recorded as **Denied**, with the reason. Changes made in the EasyCRM app in Salesforce
-— syncing, sharing and publishing reports — are logged under the Salesforce user who made them.
+— syncing, sharing and publishing reports — are logged under the Salesforce user who made them,
+and the portal's own background work — scheduled publishing, publishing on save and adding new
+Salesforce reports — under **System**.
 Filter by action, by user, and by a report, dashboard or record name or Id. The log cannot be
 edited, deleted or disabled by anybody, including a Super Admin.
 

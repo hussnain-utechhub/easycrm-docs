@@ -72,6 +72,11 @@ Click **Apply**, then **Save** — the change takes effect when you save. Only t
 (or a Super Admin) can change who a report is shared with. See
 [Sharing a report](./sharing.md).
 
+**Save** touches the sharing only when you changed **Visibility**. Somebody with edit access who is
+not the owner can therefore save the report as usual. If they did change **Visibility**, the report
+still saves and the builder says the sharing part was refused:
+**Only the report owner can change who it is shared with. The report itself was saved.**
+
 ## Save As is the one to reach for
 
 If the report is not yours, **Save As** is almost always correct. It takes a copy, leaves the
@@ -128,6 +133,7 @@ See [The report builder](./builder-tour.md#seeing-the-whole-result).
 | **Enter a name.** | The name box is empty. |
 | **You have read-only access to this report. …** | You may read it but not change it. Use **Clone** from the report list to make your own copy. |
 | **This report uses fields you don't have access to, so you can't save over it. Use Save As to save your own copy.** | Some of its fields are hidden from you. Use **Save As**. |
+| **Only the report owner can change who it is shared with. The report itself was saved.** | You changed **Visibility** on a report you do not own. Your other changes are saved; the sharing is as it was. |
 | Your changes vanished | The tab was closed, **Leave & Discard** was clicked, or you left a **Run** without coming **Back**. |
 | Somebody else's dashboard changed | You used **Save** on a shared report. Use **Save As** next time. |
 

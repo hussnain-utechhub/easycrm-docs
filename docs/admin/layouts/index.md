@@ -5,21 +5,33 @@ sidebar_position: 0
 
 # Page layouts
 
-**What it is.** The editor that decides what a record page looks like for everybody.
+**What it is.** The editor that decides what a record page looks like.
 
 **What it does.** You choose which fields appear, in what order, grouped into sections, and
-which related lists show underneath.
+which related lists show beside them.
 
 **Why it helps.** Most records have far more fields than anybody needs. A layout shows the ten
 that matter and hides the rest, so the page is readable.
+
+## Two editors
+
+There are two ways to edit a layout, and both work on the same layouts:
+
+| Editor | Is | When **Edit Page Layout** opens it |
+|---|---|---|
+| **The classic editor** | A window of lists: the fields in each section, the related lists and their columns, and where Activity and Files sit. | Unless a Super Admin has turned the builder on. With the builder on, its **Classic editor** link opens this one. |
+| **[The layout builder](./layout-builder.md)** | A full-window editor like Salesforce's Lightning App Builder: drag fields and components anywhere, with tabs, an accordion, page templates, fields from related records and a header of your own. | When a Super Admin has ticked **Use the new layout builder** under **Admin** → **Users**. Off by default. |
+
+This page covers the classic editor. The [layout builder](./layout-builder.md) has its own page.
 
 ## In this section
 
 | Page | Covers |
 |---|---|
+| [The layout builder](./layout-builder.md) | The drag-and-drop editor: turning it on, tabs, templates, the header, fields from related records |
 | [Choosing fields](./fields.md) | Which fields appear, and in what order |
 | [Sections](./sections.md) | Grouping fields under headings |
-| [Related lists](./related-lists.md) | The tables at the bottom of a record |
+| [Related lists](./related-lists.md) | The tables of linked records on a record, including lists through a junction object |
 | [The new-record window](./new-record-window.md) | What the **New** form asks for |
 
 ## Opening the editor
@@ -33,11 +45,16 @@ It is **not** in the Admin Console. You reach it from a record.
    all of them.
 3. Click the small button at the far right of the record's button row, next to **Change
    Owner**. Its tooltip reads **Edit Page Layout**.
-4. The editor opens.
+4. The editor opens, titled **Edit Page Layout —** and the kind of record. (With the builder
+   turned on, the builder opens instead; its **Classic editor** link opens this one.)
 
 ![The layout editor](../../img/shots/layout/editor.png)
 
-**What you change here applies to everybody** who sees that kind of record, not just you.
+The button appears for people with **Edit Layout** on that kind of record — see
+[Permissions](../access/permissions.md).
+
+**Who sees your change** depends on **Apply as default for all users** at the foot of the
+editor — see [Saving, and starting again](#saving-and-starting-again).
 
 ## Choosing which fields appear
 
@@ -97,7 +114,7 @@ to delete one. Removing a section does not delete its fields or any data.
 
 ## Related lists
 
-These are the tables at the bottom of a record — the contacts at this account, for example.
+These are the tables of linked records on a record — the contacts at this account, for example.
 
 **Where:** In the portal → the layout editor → **Related Lists** → **Add related list…**
 
@@ -107,7 +124,8 @@ These are the tables at the bottom of a record — the contacts at this account,
 
 ![Adding a related list](../../img/shots/layout/add-related-list.png)
 
-**Above related lists** controls where the activity panel sits relative to them.
+**Activity position** — **Above related lists** or **Below related lists** — controls where the
+activity panel sits relative to them; **Files position** does the same for Files.
 
 ## The New Record window
 
@@ -120,9 +138,9 @@ just what is required — so creating a record is quick.
 
 | Button | What it does |
 |---|---|
-| **Save Layout** | Keeps your changes, for everybody. |
+| **Save Layout** | Keeps your changes — for you only, or for everybody when **Apply as default for all users** is ticked. |
 | **Cancel** | Leaves without changing anything. |
-| **Reset to Default** | Puts the layout back to how it started. |
+| **Reset to Default** | Deletes your own layout for this kind of record, straight away, so you see the one everybody sees. |
 
 **Reset to Default** loses your field arrangement but touches no record data.
 
@@ -133,15 +151,15 @@ just what is required — so creating a record is quick.
 | **Fields & Sections** | The record page itself. |
 | **Add Section** / **Section title** | Groups fields under a heading. |
 | **Available** / **Shown (in order)** | Which fields appear, and in what order. |
-| **Components** | Non-field blocks on the page. |
-| **Activity position** / **Files position** | Where activities and files sit relative to the fields. |
+| **Components** | **Files (view + upload files on this record)** and **Activity (New Task, Log a Call, New Event, Email + timeline)** — tick each to put it on the page. |
+| **Activity position** / **Files position** | Whether each sits **Above related lists** or **Below related lists**. |
 
 ### Related lists
 
 | Control | What it does |
 |---|---|
 | **Related Lists** | Lists of connected records on the page. |
-| **Available columns** / **Shown columns (in order)** | Which columns each list shows. |
+| **Available columns** / **Shown columns (in order)** | Which columns each list shows. **Leave columns empty to use the default columns.** |
 | **Rows to show** | How many rows before it needs expanding. |
 
 ### The New Record window
@@ -159,11 +177,23 @@ anything not required is better filled in afterwards on the record itself.
 | Control | What it does |
 |---|---|
 | **Save Layout** | Saves your changes. |
-| **Apply as default for all users** | Makes this the layout everyone gets. |
-| **Your personal layout for this object** | Indicates you are editing only your own view. |
+| **Apply as default for all users** | Makes this the layout everyone gets. Its tip: **Saves this as the default layout for everyone on this object, and clears any personal layouts other users have already set for it.** |
+| **Your personal layout for this object** | The line under the editor's title. Without the tick above, you are editing only your own view. |
 | **Reset to Default** | Discards your personal layout. |
 
 :::note Personal, or everybody's
 Without **Apply as default for all users**, you are changing only what **you** see. That is the
 usual reason a colleague reports that a layout change "did not work".
+
+The box starts ticked when you have no layout of your own, and unticked when you do. Only Admins
+and Super Admins may save for everybody.
 :::
+
+## What goes wrong
+
+| Message or symptom | What it means |
+|---|---|
+| **Only an admin can set the default layout for all users.** | You saved with **Apply as default for all users** ticked but are not an Admin or Super Admin. Untick it and save again — the layout is then yours alone. |
+| **Could not save the layout.** / **Could not reset the layout.** / **Could not load the layout editor.** | The save, reset or load failed. Close the editor and try again. |
+| A colleague still sees the old page | You saved for yourself only, or they have not reloaded the page. |
+| Tabs, the header or fields from related records are not in this editor | They belong to the [layout builder](./layout-builder.md), and this editor does not show them — but saving here keeps them. See [Moving between the two editors](./layout-builder.md#moving-between-the-two-editors). |

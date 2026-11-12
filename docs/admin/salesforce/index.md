@@ -11,6 +11,9 @@ Salesforce, pulling row-level formulas back out of it, provisioning fields and c
 licence all happen **inside Salesforce**, in an app called **EasyCRM**.
 
 If you have been looking for these screens in the portal, that is why you could not find them.
+The exceptions are the unattended ones — scheduled publishing and
+[auto-sync of new Salesforce reports](../data/report-auto-sync.md) — which a Super Admin sets up
+on the portal's **Publish Schedule** tab.
 
 ## Getting to the app
 
@@ -52,6 +55,7 @@ portal roles. Being a portal Super Admin does **not** give you access.
 | See the **EasyCRM** app and its five tabs | The **Portal Admin Access** permission set. It grants the app and all five tabs. |
 | Use **Portal Setup** at all — the checks as well as **Run auto-configure** | **Modify All Data** or **Customize Application**. **Portal Admin Access** alone is not enough. |
 | Change anything in **License Console** | The console's own username and password. See [Licence limits](../operations/licence.md). |
+| Be the user unattended publishing and auto-sync run as | API access, the right to edit reports, and the **Portal Admin Access** permission set — see [The setup step in Salesforce](../data/publish-schedule.md#the-setup-step-in-salesforce). |
 
 A Salesforce administrator assigns **Portal Admin Access** in Setup → **Permission Sets**.
 Pressing **Run auto-configure** on Portal Setup also assigns it to whoever pressed it.
@@ -76,10 +80,11 @@ To find them, choose one of these in the Audit Log's **Action** list:
 
 | Action | Covers |
 |---|---|
-| **Report: Import from Salesforce** | Every sync and re-sync from the **Portal Users** tab. |
+| **Report: Import from Salesforce** | Every sync and re-sync from the **Portal Users** tab, and every report [auto-sync](../data/report-auto-sync.md) adds. |
 | **Report: Publish to Salesforce** | Every publish, by hand or automatic. |
-| **Report: Publish schedule** | Changes to the [Publish Schedule](../data/publish-schedule.md). |
+| **Report: Publish schedule** | Changes to the [Publish Schedule](../data/publish-schedule.md), auto-sync's included. |
 
-Automatic publishing has no person behind it, so its rows carry the username **System**.
+Automatic publishing and auto-sync have no person behind them, so their rows carry the username
+**System**.
 
 ![The Audit Log filtered to Report: Import from Salesforce, a row by a Salesforce username starting In Salesforce (not the portal)](../../img/shots/admin/audit-log-sf-import.png)

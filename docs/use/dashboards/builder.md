@@ -34,14 +34,25 @@ use Save As to make your own copy.** To get a copy you can change, use **Clone**
 
 ## While it loads
 
-A dashboard opens in the builder in two stages, and the toolbar follows them.
+The builder opens with what the dashboard already has. It does not work out every tile again.
+
+- **From the dashboard's own Edit**, with no filter value ticked, it opens straight away, with
+  every tile exactly as the dashboard was showing it.
+- **From the list**, or with a filter value ticked, it fetches the dashboard and each tile's last
+  stored result in one go. For a moment the canvas reads **Loading dashboard…**.
+- The tiles are drawn a few at a time, those on screen first. A tile with no stored result yet
+  shows a spinner and fills in behind, a few tiles at a time.
+- **As of** under each tile gives the age of the oldest result on the canvas.
 
 | Stage | You see | You can |
 |---|---|---|
 | The layout is still arriving | **Loading dashboard…** on the canvas | nothing yet. **Save**, **Save As**, **+ Widget**, **+ Filter** and **Properties** are greyed out. **Close** works. |
-| The tiles' data is still arriving | the tiles in place, each with a spinner | **Save** and **Save As**. Editing waits: adding, changing, moving, resizing and removing tiles and filters, **Undo**, **Redo** and typing in text tiles are all off until every tile has drawn. |
+| Some tiles are still filling in | the tiles in place, the unfinished ones with a spinner | everything: save, add, change, move, resize and remove tiles and filters, **Undo** and **Redo**. A tile you change or remove before its data arrives keeps your change. |
 
 ![The dashboard builder while the dashboard is still loading, its buttons greyed out](../../img/shots/dashboard-builder/dashboard-loading.png)
+
+At high browser zoom the toolbar's buttons wrap onto a second line rather than run off the edge,
+and the **+ Widget** menu scrolls rather than lose items.
 
 This protects your dashboard. A save made before the layout had arrived used to store an empty
 dashboard. Now it is refused:
@@ -75,7 +86,9 @@ Removing every widget yourself and then saving is fine. That save goes through.
 4. Under **Display As**, choose how to draw it — see [the kinds](#the-kinds-of-tile) below.
 5. Fill in the settings for that kind. They change depending on what you picked. Every one of
    them is listed in [the settings](#every-setting-and-what-it-does). The **Preview** on the right
-   follows your choices.
+   follows your choices. While it is catching up with a change, **Updating…** shows beside its
+   heading. The report's other measures are fetched ahead while the dialog is open, so switching
+   **Measure** back and forth is usually instant.
 6. Click **Add Widget** at the bottom of the dialog.
 
 ![The Add Widget dialog with Donut chosen under Display As](../../img/shots/dashboard-builder/widget-dialog-display-as.png)
@@ -232,18 +245,19 @@ More on these in [Dashboard settings](./settings.md).
 
 | Option | Shows the dashboard with |
 |---|---|
-| **All data** | the same data for everybody |
-| **The logged-in user** | only the records the person looking at it is allowed to see |
+| **All data** | the records each viewer has access to |
+| **The logged-in user** | the same, with every tile also scoped to the person looking at it — a dynamic dashboard |
 
-The dialog puts it like this: *“The logged-in user” runs the dashboard as whoever is viewing it, so
-each person sees only the records they have access to (a dynamic dashboard). “All data” shows
-everyone the same data.*
+The dialog puts it like this: *Either way, each person sees only the records they have access to:
+the portal never shows a viewer records their sharing hides, so it has no “run as one person”
+(Salesforce's “Me” or “Another person”). “The logged-in user” also scopes every widget to the
+viewer (a dynamic dashboard).*
 
-:::caution This changes what people see, not just what you see
-**The logged-in user** means two people can open the same dashboard and get different figures —
-which is usually right, and occasionally a surprise when somebody reports that "the numbers
-changed". Admins and Super Admins always see all the data either way. So you cannot check it by
-looking at it yourself as an admin. Decide it deliberately.
+:::caution Two people can see different figures
+Whichever option you choose, each viewer's tiles count only the records that viewer may see, so
+two people can open the same dashboard and get different figures. Admins and Super Admins are
+never narrowed by **The logged-in user**, so you cannot check what a Standard user sees by looking
+at it yourself as an admin. See [Dashboard settings](./settings.md#view-dashboard-as).
 :::
 
 ## Adding a dashboard filter
@@ -254,8 +268,10 @@ Click **+ Filter**, pick the field, add the values viewers can choose from, chec
 [Dashboard filters](./filters.md) walks through it step by step, with every operator and the
 relative date ranges.
 
-A filter only affects a tile whose report is set up for it. A report left on
-**— Not filtered —** quietly ignores it.
+A filter applies to every tile. A tile whose report is left on
+**— None (can't be displayed while filtered) —** cannot be narrowed, so while a value of that filter
+is ticked it shows **The component can't be displayed because the field(s) you chose for the filter
+are unavailable.** instead of its chart.
 
 ## Undo and redo
 
@@ -271,6 +287,21 @@ until you click **Save**, so you can rearrange freely.
 | **Save As** | Makes a copy under a new name, leaving the original alone. It appears only on a dashboard that has already been saved. |
 
 After either one, the builder closes and the saved dashboard opens.
+
+### If somebody else saved it meanwhile
+
+If another person saved the dashboard after you opened it in the builder, **Save** asks before
+replacing their work. The **Saved by Someone Else** dialog says, for example,
+**Alex Rivera saved this dashboard after you opened it. Saving now replaces their changes.** (When
+the portal does not know who it was, the message begins **Someone**.)
+
+| Button | What it does |
+|---|---|
+| **Cancel** | Saves nothing. You stay in the builder with your changes. |
+| **Save As a Copy** | Opens **Save Dashboard As**, so your version becomes a new dashboard and theirs stays. |
+| **Save Anyway** | Saves your version over theirs. |
+
+<!-- SHOT: dashboard-builder/saved-by-someone-else.png | two admins open the same dashboard in the builder; the first saves, the second then clicks Save: the "Saved by Someone Else" dialog with Cancel, Save As a Copy and Save Anyway -->
 
 ### The Save Dashboard dialog
 
@@ -347,10 +378,11 @@ Any other way out asks first too:
 | A chart is empty | The report has no grouping. Charts plot groups. |
 | A chart is unreadably busy | Set **Max Groups Displayed**, or group the categories in the report with a [bucket column](../reports/buckets.md). |
 | A table is cut off | The tile is too small, or the report returns too many rows. |
-| The tile ignores a dashboard filter | Its report is set to **— Not filtered —**. See [Filters](./filters.md). |
-| Two people see different numbers | **View Dashboard As** is set to **The logged-in user**, or they have different filters set. |
+| On the dashboard, a tile says **The component can't be displayed because the field(s) you chose for the filter are unavailable.** | A filter value is ticked and the tile's report is set to **— None (can't be displayed while filtered) —** for that filter. Pick a field for it. See [Filters](./filters.md#apply-to-each-component). |
+| Two people see different numbers | Each sees only the records they may see, whichever **View Dashboard As** says, or they have different filters set. |
 | **Save** and **+ Widget** are greyed out | The dashboard is still loading. Wait for **Loading dashboard…** to clear. |
-| I can save but cannot move or edit tiles | Tiles are still loading their data. Editing comes back once every tile has drawn. |
+| Some tiles still have a spinner | They had no stored result, so they are being worked out. Carry on editing meanwhile. |
+| **Saved by Someone Else** appears when you save | Somebody else saved the dashboard after you opened it. **Save As a Copy** keeps both versions. |
 | **Edit** says I have read-only access | Use **Clone** from the list. |
 | **Cancel** in **Properties** did not undo my change | It only closes the dialog. Use **Undo**. |
 | I cannot find where to set the description | It is not in the builder. Use **Edit Properties** in the list's row menu. |

@@ -92,7 +92,9 @@ What it does:
 **Save As**. See [The dashboard builder](../dashboards/builder.md#saving).
 
 **Only the owner or a Super Admin can change Visibility.** If somebody else with edit access
-changes it and saves, their change is quietly ignored. Their other edits are saved.
+changes it and saves, their other edits are saved and the builder says the sharing change was
+refused: **Only the report owner can change who it is shared with. The report itself was saved.**
+A save that leaves **Visibility** as it was does not touch the sharing at all.
 
 A new report, a new dashboard and a **Clone** always start as **Only me (private)**, with the
 **Shared** box unticked.
@@ -152,7 +154,7 @@ company. Those people keep their access until the Admin removes it.
 | I ticked **Shared** and my colleagues still cannot see it | They are Standard users at a company. The box never reaches them. Use **My company**, then ask an Admin to share it with them. |
 | I ticked **Shared**, edited the report, and now the list says **Private** again | Saving a report in the builder clears its **Shared** box. Tick it again in **Edit Properties** after each save. |
 | There is no **My company** choice | You do not belong to a company. Only **Only me (private)** is offered. |
-| My **Visibility** change did nothing | You are not the owner. Only the owner or a Super Admin can change it. |
+| **Only the report owner can change who it is shared with. The report itself was saved.** | You changed **Visibility** on a report you do not own. Only the owner or a Super Admin can change it. Your other edits are saved. |
 | I cannot find where to change a dashboard's **Visibility** | It is only asked in the **Save Dashboard** dialog, which appears on the first save and on **Save As**. To change it later, use **Save As** and set it on the copy. A Super Admin can also change your company's level between **Read** and **Edit** under **Admin** → **Reports & Dashboards**. |
 | An Admin at another company can see my report | Its **Shared** box is ticked. That box reaches every Admin in the portal. |
 | I set **Only me** and a colleague can still open it | An Admin shared it with them by name. Those shares stay until the Admin removes them. |

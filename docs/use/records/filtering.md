@@ -42,6 +42,9 @@ The list now shows only matching records, and the count at the top changes.
 Until you click **Save** at the top, nothing has changed. **Cancel** at the top throws away
 everything you did since you opened the panel.
 
+In a zoomed-in browser window, where the small box no longer fits, it scrolls and keeps its own
+**Cancel** and **Save** in view.
+
 ## Which fields you can filter on
 
 The panel offers the fields a Salesforce list view offers for that kind of record, in

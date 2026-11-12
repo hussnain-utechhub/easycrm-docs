@@ -28,6 +28,25 @@ records at all.
 3. Move fields in and out, exactly as for the [record page](./fields.md).
 4. Click **Save Layout**.
 
+**One set, for everybody.** The New window's fields are the same for everyone, whether the layout
+was saved for you or for all users, and only Admins and Super Admins can set them. Anybody else
+can move fields in the box, but the change is not kept. With no fields chosen, the window asks
+for the page layout's fields.
+
+### In the layout builder
+
+**Where:** In the builder → nothing selected → **New record window** → **Choose fields**
+
+1. With nothing selected on the page, find **New record window** in the page settings. It says
+   how many fields are chosen, or **Not set - the window shows the layout**.
+2. Click **Choose fields**. A window titled **New record window fields** opens.
+3. Drag fields from **Available fields** into **In the window**. That side is drawn in the New
+   window's own two columns — left to right, then the next row — so a field lands exactly where
+   it will appear. Drag one back, or click its cross, to remove it.
+4. Click **Done**, then **Save** in the builder's toolbar.
+
+System fields — created and modified dates, owner, record type and the like — are not offered.
+
 ## What belongs on it
 
 | Include | Why |
@@ -59,6 +78,7 @@ If people report they cannot create records and the error names a field, this is
 | Save refused for an invisible field | A required field missing from this form. |
 | Records are created mostly empty | The form asks for too much; people skip. |
 | **New** does not appear | Create permission, not layout. See [Permissions](../access/permissions.md). |
+| Your choice of fields was not kept | Only Admins and Super Admins can set them. |
 
 ## Where this fits
 

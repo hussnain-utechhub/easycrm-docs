@@ -72,13 +72,13 @@ release.
 | Area | Covers |
 |---|---|
 | [Access and users](./access-and-users.md) | Sign-in, sessions, roles, multi-company, delegated administration |
-| [Records](./records.md) | Lists, views, filters, record pages, editing in lists and on records, ownership |
+| [Records](./records.md) | Lists, views, filters, record pages, editing in lists and on records, cloning, ownership |
 | [Activities and files](./activities-and-files.md) | Calls, tasks, events, timelines, documents |
 | [Reporting](./reporting.md) | The report builder in full |
 | [Dashboards](./dashboards.md) | Tiles, filters, audience control |
 | [Security](./security.md) | Permissions, sharing, field scoping, diagnostics |
-| [Configuration and branding](./configuration.md) | Layouts, tabs, apps, buttons, white-labelling |
-| [Data and integration](./data.md) | Import, the read-and-write API, Salesforce report sync and publishing |
+| [Configuration and branding](./configuration.md) | Layouts and the layout builder, tabs, apps, buttons, white-labelling |
+| [Data and integration](./data.md) | Import, the read-and-write API, Salesforce report sync (by hand or automatic) and publishing |
 | [Operations and scale](./operations.md) | Audit, health checks, performance, licensing |
 | [Checklist](./checklist.md) | Everything, on one page |
 

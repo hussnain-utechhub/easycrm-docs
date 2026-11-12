@@ -42,7 +42,7 @@ Each row is a kind of record. Each column is something that person may do with i
 | **Create** | Add new ones. |
 | **Edit** | Change existing ones. |
 | **Delete** | Remove them permanently. |
-| **Edit Layout** | Change the [page layout](../layouts/index.md) for everybody. |
+| **Edit Layout** | Rearrange the [record page](../layouts/index.md) — their own, or, for an Admin, everybody's. |
 | **Editable Fields** | A gear opening field-by-field control over what they may change. |
 
 Tick what the person should have, then click **Save Permissions** at the top right.
@@ -51,10 +51,15 @@ If there are many objects, use **Search objects...** to find one.
 
 ## Edit Layout is more powerful than it looks
 
-**Edit Layout** does not change that person's own view. It lets them change the record page
-**for everybody** who sees that kind of record.
+For a Standard user, **Edit Layout** changes only their own record pages: what they save is a
+personal layout nobody else sees.
 
-Give it only to people who should be deciding what the whole company's record pages look like.
+For an Admin or Super Admin it goes much further. Saving with **Apply as default for all users**
+ticked makes that layout the one **every portal user** gets for that kind of record — there is one
+shared layout per object, not one per company — and it clears the personal layouts everyone else
+had made for it. See [Page layouts](../layouts/index.md).
+
+Give it to an Admin only if they should be deciding what everybody's record pages look like.
 
 ## Editable Fields
 

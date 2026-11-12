@@ -118,6 +118,10 @@ a report added to that folder later is not passed on until you share it too.
 A company's own grant can be on a whole folder, and then it does cover reports added later — for
 the company's Admins. Their Standard users still need each new report shared with them here.
 
+That includes reports [auto-sync](./report-auto-sync.md) adds from Salesforce. Such a report is
+not shared with everybody: a company's Admins see it only through a grant on its whole folder,
+and Standard users only once it is shared with them here.
+
 ## What is recorded
 
 Every re-share, level change and revoke — and any refused attempt — is written to the
@@ -142,6 +146,8 @@ Every re-share, level change and revoke — and any refused attempt — is writt
 - [Publishing a portal report to Salesforce](../salesforce/publish-reports.md) — the opposite
   direction: a report built in the portal, pushed out to Salesforce.
 - [Publish Schedule](./publish-schedule.md) — doing that automatically, on a timetable.
+- [Auto-sync of new Salesforce reports](./report-auto-sync.md) — new Salesforce reports added to
+  their portal folder by themselves.
 - [Sharing a report](../../use/reports/sharing.md) — what a report's author can and cannot do
   without you. Worth reading: the **Shared** tick box they can reach does nothing for Standard
   users once companies are in use, so those requests have to come to this screen.

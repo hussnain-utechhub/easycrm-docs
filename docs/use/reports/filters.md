@@ -51,8 +51,8 @@ Above the **Custom** filters sit the **Standard** ones every report has:
 
 | Filter | Choices |
 |---|---|
-| **Date Field** | Any date field on the report, or **— No date filter —**. |
-| **Range** | **All Time**, **Custom…** (two dates of your own), fiscal and calendar years, quarters, months and weeks, **Today**, **Yesterday**, and **Last 7 Days** to **Last 90 Days**. |
+| **Date Field** | Any date or date/time field the report offers, including one on a related record such as an account's **Account: Created Date**, or **— No date filter —**. |
+| **Range** | **All Time**, **Custom** (a start date, an end date, or both), and the 49 ranges a Salesforce report offers — fiscal and calendar years and quarters, months, weeks, days, and **Last** and **Next** 7 to 120 days. Each covers exactly the days it covers in Salesforce. See [Date ranges](./date-ranges.md). |
 | **Show** (Activities only) | **All Activities**, **Open**, **Completed**. |
 | **Type** (Activities only) | **Tasks and Events**, **Tasks only**, **Events only**. |
 
@@ -66,13 +66,22 @@ blank and every filter must match. See [Filter logic](./filter-logic.md).
 
 ## Date filters
 
-A custom filter on a date offers ranges that move with time: **Today**, **Yesterday**,
-**This Week**, **Last Week**, **This Month**, **Last Month**, **This Quarter**,
+For most date questions use the **Range** under **Standard** — it offers every range a Salesforce
+report does. See [Date ranges](./date-ranges.md).
+
+A custom filter on a date offers a shorter list of values that move with time: **Today**,
+**Yesterday**, **This Week**, **Last Week**, **This Month**, **Last Month**, **This Quarter**,
 **Last Quarter**, **This Year**, **Last Year**, and **Last 7 Days**, **Last 14 Days**,
 **Last 30 Days** or **Last 90 Days**. "Last quarter" stays correct next month without anybody
-editing the report.
+editing the report. These are read as Salesforce reads them in a field filter, so **Last 7 Days**
+here is today and the 7 days before it — one day more than the **Range** of the same name. See
+[Relative values in other filters](./date-ranges.md#relative-values-in-other-filters).
 
 Choose **Specific date…** when you need an exact date that should not move.
+
+A date compared with a date/time field means that whole day, in the portal's time zone: **less or
+equal** 5 January includes everything on 5 January, and **greater than** 5 January starts on
+6 January.
 
 ## Which operators each kind of field has
 

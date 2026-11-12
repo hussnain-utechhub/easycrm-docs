@@ -26,7 +26,8 @@ developer.
 points to — contacts with their account, activities with their contact.
 
 **What it does.** Both forms are available: only records that **have** a match, or **every**
-record whether or not it has one.
+record whether or not it has one. Columns can reach one step further, as Salesforce's do — an
+activity report can show the contact's owner and the contact's record type.
 
 **What you gain:** you can report on what exists *and* on what is missing — contacts with no
 account, activities with no contact.
@@ -67,9 +68,27 @@ the text, which a Super Admin can switch off.
 
 ## Relative date ranges
 
-**What it is.** This month, last quarter, this year — rather than two typed dates.
+**What it is.** The 49 standard date ranges a Salesforce report offers — fiscal and calendar years
+and quarters, months, weeks, days, and the last or next 7 to 120 days — with the same names, each
+showing the dates it covers today. They apply to any date field on the report, a related record's
+included.
 
-**What you gain:** "last quarter" stays correct next month without anybody editing the report.
+**What it does.** Each range covers exactly the days it covers in Salesforce: **Last 7 Days** is
+seven days ending today, fiscal ranges follow your organisation's fiscal year.
+
+**What you gain:** "last quarter" stays correct next month without anybody editing the report, and
+a report counts the same records as its Salesforce counterpart.
+
+## The same answers as Salesforce
+
+**What it is.** Reports follow Salesforce's own rules for the details that change a number or a
+name: columns carry the names Salesforce gives them in that report type (**Phone**, not "Business
+Phone"); dates group in date order and numbers in number order; a descending sort reverses the
+groups exactly; a blank counts as 0 in an average; a big report's totals count every record while
+it shows its first 2,000 rows in Salesforce's order.
+
+**What you gain:** a report built in the portal and the same report in Salesforce read the same,
+column for column and total for total.
 
 ## Locked filters
 
@@ -85,9 +104,9 @@ the text, which a Super Admin can switch off.
 
 ## Sorting and reshaping while reading
 
-**What it is.** Click a column's name to sort by it; a menu on every heading sorts, groups by
-that field, or removes the column — on tabular and summary reports, a matrix's groupings and its
-Details pane.
+**What it is.** Click a column's name to sort by it — a grouping's name too, on a matrix as well;
+a menu on every heading sorts, groups by that field, or removes the column — on tabular and
+summary reports, a matrix's groupings and its Details pane.
 
 **What it does.** Every row is sorted, not just the ones on screen, and later pages carry on in
 the same order — on Activities reports too, including by a contact or account column. None of it
@@ -215,3 +234,4 @@ counterpart.
 - [The report builder](../use/reports/builder-tour.md)
 - [Running a report](../use/reports/running.md)
 - [Editing values in a report](../use/reports/editing.md)
+- [Date ranges](../use/reports/date-ranges.md)

@@ -74,22 +74,42 @@ also shares them with chosen companies.
 
 **What it does.** The report's definition is translated so the portal runs it live: columns with
 Salesforce's own labels, groupings, filters including relative dates and multi-select
-includes/excludes, record types, the sort, formulas and the chart. Activity columns such as
-**Call Duration (minutes)** come across too. Anything that cannot is **named** in the message
-the sync shows, rather than quietly dropped. A report the portal cannot run live comes across as
-a stored snapshot instead.
+includes/excludes, record types, the sort, summaries and unique counts, bucket columns, formulas
+and the chart. Activity columns such as **Call Duration (minutes)** come across too. Anything
+that cannot is **named** in the message the sync shows, with which way it moves the count,
+rather than quietly dropped. A report the portal cannot run live is stored only as a
+snapshot, which the portal no longer lists — so the message saying why is the thing to act on. Syncing a report again keeps what the portal copy has that Salesforce cannot
+hold, keeps its sharing, and leaves a copy alone when nothing changed in Salesforce.
 
 **What you gain:** the reports your company already relies on, in front of portal users,
 without anybody rebuilding them.
+
+## New Salesforce reports, brought in by themselves
+
+**What it is.** A switch for Super Admins: a report saved in a shared Salesforce folder is added to
+the portal folder of the same name, within about a minute — or seconds, when somebody opens the
+Reports tab.
+
+**What it does.** Every new report is listed with what happened to it — added, or why not, such as
+no portal folder of that name — with **Try again** and **Ignore**. An added report runs live and is
+seen through its folder's company grants, never by everybody. It never changes anything already in
+the portal, and never makes a snapshot. Off until deliberately enabled.
+
+**What you gain:** reports built in Salesforce reach the portal without waiting for anybody to
+sync them.
 
 ## Publishing reports back to Salesforce
 
 **What it is.** Portal reports written into your org as real Salesforce reports — by hand from
 the EasyCRM app, on a schedule, or within seconds of being saved.
 
-**What it does.** Columns, groupings, filters, row-level and summary formulas and the chart all
-go across. Where Salesforce cannot reproduce the portal's count exactly, the publish says so and
-in which direction. Automatic publishing is off until deliberately enabled. If a published report
+**What it does.** Columns, groupings, filters, the sort, buckets, row-level and summary formulas
+and the chart all go across. Where Salesforce cannot reproduce the portal's count exactly, the
+publish says so and in which direction. Automatic publishing is off until deliberately enabled;
+schedules run from every minute to weekly, and a Super Admin chooses how often the schedule is
+checked, whether unchanged reports are skipped, whether only reports not yet in Salesforce are
+published, which schedule new portal reports start with, and which Salesforce folder new reports
+go to. An estimate shows what the schedules cost in Salesforce API calls. If a published report
 is deleted in Salesforce, its schedule pauses rather than silently re-creating it. When anything
 fails or publishes with a warning, Super Admins get one summary email.
 
@@ -111,3 +131,4 @@ anybody maintaining the report twice.
   reports in
 - [Publishing a portal report to Salesforce](../admin/salesforce/publish-reports.md)
 - [Publish Schedule](../admin/data/publish-schedule.md)
+- [Auto-sync of new Salesforce reports](../admin/data/report-auto-sync.md)

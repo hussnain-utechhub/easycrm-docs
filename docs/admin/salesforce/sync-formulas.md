@@ -13,7 +13,7 @@ Salesforce and writes them into the portal's copy, so the portal report calculat
 columns.
 
 **Why it helps.** A sync normally brings row-level formulas across by itself. When it cannot —
-the sync message then says *Row-level formulas and the chart setting could not be read* — this
+the sync message then says *Row-level formulas and the chart settings could not be read* — this
 screen fetches them the long way round, through Salesforce's Metadata API, using the API session
 this page has. It is also the quickest way to pick up a formula you have just changed in
 Salesforce without re-syncing the whole report.
@@ -57,8 +57,8 @@ row-level formulas.*
 On an activity report that shows **Call Duration (minutes)**, the sync adds a row-level formula of
 its own to display it — see [What a report sync brings across](./what-syncs.md#activity-report-columns).
 It is counted here too, so such a report can show **1** under **Row Formulas** when Salesforce has
-no row-level formulas at all, and is always one higher than the formulas that came from
-Salesforce.
+no row-level formulas at all. Row-level formulas added to the report in the portal are counted
+as well.
 :::
 
 ## Syncing one
@@ -67,27 +67,28 @@ Salesforce.
 2. Click **Sync formulas**.
 3. Wait for the page to come back, then read the message at the top.
 
-The usual result is **2 of 2 row-level formula(s) synced.** — how many came across, out of how
-many the Salesforce report has. If some could not, it adds
-*(The rest reference fields the portal cannot compute and were skipped.)*
+The usual result is **2 of 2 row-level formula(s) synced.** — how many of Salesforce's came
+across, out of how many the Salesforce report has. It may add:
 
-On an activity report with **Call Duration (minutes)**, the first number includes that column, so
-a report with two Salesforce formulas can read **3 of 2**. That is not an error. The same extra
-column also means a skipped formula is not always announced — compare the formula columns with
-Salesforce's if a count looks odd.
+| Added | Means |
+|---|---|
+| *Kept 1 made in the portal.* | Row-level formulas added to the report in the portal stay, after Salesforce's. |
+| *Skipped "…": they use fields the portal cannot compute.* | The named formulas were not brought across, rather than brought across wrongly. |
+| *Removed the summary formula(s) "…": they used a row formula that is no longer brought across.* | A summary formula built on a row-level formula that has gone was taken out with it. |
 
-Syncing again is safe. It re-reads Salesforce and replaces the formulas it found before (the
-portal's own Call Duration (minutes) column is kept), so it is the right thing to do after
-changing a formula in Salesforce.
+Syncing again is safe. It re-reads Salesforce and replaces Salesforce's formulas with their
+current versions; formulas made in the portal and the portal's own Call Duration (minutes)
+column are kept, and summary formulas and totals that use a row-level formula are pointed at the
+right one again. So it is the right thing to do after changing a formula in Salesforce.
 
-<!-- SHOT: sf/sync-formulas-activity-row.png | Sync Report Formulas after pressing Sync formulas on an activity report with Call Duration (minutes): message "3 of 2 row-level formula(s) synced." and the row's Row Formulas count -->
+<!-- SHOT: sf/sync-formulas-activity-row.png | Sync Report Formulas after pressing Sync formulas on an activity report with Call Duration (minutes): the green message, for example "2 of 2 row-level formula(s) synced.", and the row's Row Formulas count, which includes the Call Duration (minutes) column -->
 
 ## Messages you may see
 
 | Message | What it means |
 |---|---|
-| *N of M row-level formula(s) synced.* | It worked. See above for why N can be higher than M. |
-| *This report has no row-level formulas in Salesforce.* | Nothing to bring across. Summary formulas do not count here. |
+| *N of M row-level formula(s) synced.* | It worked — N of the Salesforce report's M row-level formulas came across. See above for what may follow it. |
+| *This report has no row-level formulas in Salesforce.* | Nothing to bring across, and the portal copy has none of its own. Summary formulas do not count here. |
 | *The portal does not run this report type live, so its row-level formulas are not synced.* | The portal cannot run this report live, so it has nowhere to put formulas. |
 | *Could not retrieve the report from Salesforce. Open this from the "Sync Report Formulas" Visualforce tab (it supplies the API session), and make sure the report is in a shared folder.* | Usually a personal folder. Move the report and sync again. |
 | *Could not read the report definition:* … | The Salesforce report could not be read. The rest of the message is Salesforce's reason. |
@@ -105,7 +106,7 @@ In order of likelihood:
 1. **The Salesforce report has no row-level formulas.** Summary formulas do not count here.
 2. **The report is in a personal folder.** Move it to a shared folder and sync again.
 3. **The formulas use fields the portal cannot calculate.** They are skipped rather than
-   brought across wrongly.
+   brought across wrongly, and the message names them.
 
 Every sync is recorded in the portal's [Audit Log](../operations/audit-log.md) under
 **Report: Import from Salesforce**, with your Salesforce username.

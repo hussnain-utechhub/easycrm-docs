@@ -134,7 +134,8 @@ Send the person **all three**. Without the endpoint they have nowhere to send a 
 
 :::caution The Secret is shown once
 It is stored hashed, so it genuinely cannot be looked up later. If it is lost, press
-**Regenerate** — the old Secret stops working immediately and a new one is shown.
+**Regenerate keys** on the key's row — the old Client ID and Secret stop working immediately and
+a new pair is shown.
 :::
 
 ## Limiting which rows come back
@@ -185,7 +186,7 @@ Each row in the list has three actions:
 | Action | What it does |
 |---|---|
 | **Edit** | change objects, operations, fields, filters, sort or either ceiling at any time |
-| **Regenerate** | issue a new Secret — the old one stops working straight away |
+| **Regenerate keys** | asks first, then issues a new Client ID and Secret and shows them once, with **Copy** buttons — the old pair stops working straight away. Nothing else about the key changes; a revoked key is switched back on |
 | **Revoke** | switch the key off until you switch it back on |
 
 To see whether a key is actually being used, and what it has been doing, use the

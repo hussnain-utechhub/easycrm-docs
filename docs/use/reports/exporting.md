@@ -86,7 +86,9 @@ the box stays open and says **Your export is ready** — with the number of rows
 it — and a **Download file** link. Click the link.
 
 A **Formatted Report** of a summary or matrix report is built by the portal's server instead.
-Your browser may open a new tab briefly to download it.
+Your browser may open a new tab briefly to download it. If the report is too big to total in one
+go, its exact totals are worked out first, in steps, and then the file is built, so the file's
+totals are exact too. That takes longer.
 
 ## What the messages mean
 
@@ -96,6 +98,7 @@ Your browser may open a new tab briefly to download it.
 | **This export holds the first N rows - the most this browser export allows.** | A CSV reached its 5,000,000-row limit. Add a filter to the report and export in parts. |
 | **Some rows could not be read past the first page, so this export may be incomplete.** | Part of the report could not be read while exporting. Export again; if it repeats, narrow the report. |
 | **Your export is ready (N rows).** or **Your export is ready.** | Your browser blocked the automatic download. Click **Download file**. |
+| **The exact totals could not be finished. Please try the export again.** | A **Formatted Report** of a big summary or matrix report could not finish its totals. Export again. |
 
 ## A word about what leaves the portal
 

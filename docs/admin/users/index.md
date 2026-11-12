@@ -152,6 +152,7 @@ In all three, leaving everything unticked means "everything allowed", not "nothi
 
 ## The settings below the list
 
-A Super Admin also sees five panels under the user list: **Log in as user**, **Report speed**,
-**Long text filters on large reports**, **FrontSpin sync buttons**, and **Who manages whom**.
+A Super Admin also sees six panels under the user list: **Log in as user**, **Report speed**,
+**Long text filters on large reports**, **FrontSpin sync buttons**, **Page layout editor**, and
+**Who manages whom**.
 They are described in [What an Admin can see](./what-admins-can-see.md#the-settings-beside-it).
