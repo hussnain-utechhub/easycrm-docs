@@ -89,7 +89,6 @@ a dashboard with no report tiles offers none.
 8. Click **Save** on the builder. Nothing is stored until you save the dashboard.
 
 ![Adding a relative date value to a dashboard filter](../../img/shots/dashboard-builder/add-filter-relative-date.png)
-<!-- SHOT-RETAKE: ../../img/shots/dashboard-builder/add-filter-relative-date.png | the Apply to Each Component lists now read "— None (can't be displayed while filtered) —" (was "— Not filtered —") and the donut legend behind shows the empty group as "-" (was "(blank)"); recapture the same Add Filter dialog with a relative date value open -->
 
 ### The value box
 
@@ -159,7 +158,7 @@ filter applies to every widget. While a value of this filter is chosen, a widget
 shows “The component can't be displayed because the field(s) you chose for the filter are
 unavailable.” Pick a field for it, or remove the widget or the filter.*
 
-<!-- SHOT: dashboard-builder/filter-none-help.png | Add Filter dialog on step 2 for a Date filter with one value added, Apply to Each Component listing two reports, one set to a field and one left on "— None (can't be displayed while filtered) —", the help text under the list visible -->
+![Add Filter with a value added: one report set to Date, the other left on None, and the help text under the list](../../img/shots/dashboard-builder/filter-none-help.png)
 
 A tile added **after** the filter was set up has no entry here until you edit the filter. Until
 then it is filtered on the filter's own field when its report has that field, or reaches it

@@ -30,7 +30,7 @@ range of that name in a Salesforce report, so the two count the same records.
    **Current and Next FY (Jan 1, 2026 - Dec 31, 2027)**.
 5. Click **Save**.
 
-<!-- SHOT: report-builder/date-range-picker.png | the builder's Filters tab on a Contacts report, Standard section: Date Field set to Created Date, the Range list open, Current FY chosen and showing its first and last day beside its name -->
+![The Standard filters of a Contacts report: Date Field set to Created Date and the Range list open, with Current FY chosen and its first and last day shown](../../img/shots/report-builder/date-range-picker.png)
 
 Somebody reading the report can change the range for themselves in its **Filters** panel, under
 **Standard**. That change is not saved — see

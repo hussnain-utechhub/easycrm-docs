@@ -164,7 +164,6 @@ button on record pages now opens the new layout builder.** or **The layout butto
 opens the classic editor again.** See [The layout builder](../layouts/layout-builder.md).
 
 ![The Super Admin settings below the user list](../../img/shots/admin/users-super-admin-panels.png)
-<!-- SHOT-RETAKE: admin/users-super-admin-panels.png | The Super Admin settings now have a fifth panel, "Page layout editor" with the "Use the new layout builder" tick box, between FrontSpin sync buttons and Who manages whom. Recapture the panels so it shows -->
 
 
 ## Where this fits

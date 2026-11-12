@@ -30,7 +30,7 @@ It decides what reaches the portal from Salesforce for every company at once.
 3. The **Auto-sync new Salesforce reports** card is below **Auto-publish** (and below **Publish on
    save**, when that card is shown).
 
-<!-- SHOT: admin/auto-sync-panel.png | Publish Schedule tab, the "Auto-sync new Salesforce reports" card with the switch ON (it is OFF by default, so turn it on first), the "Check for new Salesforce reports" row showing Every minute and its status line, and the "New Salesforce reports" list with one Added row and one "No portal folder" row -->
+![The Auto-sync new Salesforce reports card: the switch on, Check for new Salesforce reports set to Every minute, and the New Salesforce reports list with Added and Not in a shared folder results](../../img/shots/admin/auto-sync-panel.png)
 
 ## Before it can work
 
@@ -212,7 +212,7 @@ in case it is the portal publishing that report into Salesforce at that moment.
 | Salesforce → **Portal Users** → **Synced Live — runs on the site** | An **Added automatically** badge beside the report's name. |
 | The [Audit Log](../operations/audit-log.md) | Each report added, under **Report: Import from Salesforce**, by **System**, beginning `Auto-sync of new Salesforce reports. Added to the portal folder "…"`. The switch, the interval and **Check now** are under **Report: Publish schedule**; **Try again** and **Ignore** under **Report: Import from Salesforce**, by the Super Admin who clicked them. |
 
-<!-- SHOT: sf/portal-reports-added-automatically.png | Salesforce, EasyCRM app, Portal Users tab, Portal Reports card, the "Synced Live — runs on the site" table with one row carrying the "Added automatically" badge (needs auto-sync ON in the portal and one new report saved in a shared Salesforce folder that has a portal folder of the same name) -->
+![Portal Reports in Salesforce: the live reports, several marked Added automatically](../../img/shots/sf/portal-reports-added-automatically.png)
 
 ## What goes wrong
 

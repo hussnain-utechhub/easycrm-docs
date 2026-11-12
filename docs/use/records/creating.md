@@ -60,7 +60,7 @@ new record from an existing one.
    filled in with this record's values. It keeps the record's kind without asking, when that
    kind is open to you.
 
-   <!-- SHOT: records/clone-window.png | The "Clone Account" window opened from an Account record whose builder header shows Clone (needs the layout builder switch on and Clone moved to Shown in the Highlights Panel), fields filled with the record's values -->
+![The Clone Account window, filled in from the record](../../img/shots/records/clone-window.png)
 
 4. Change what should differ, such as the name.
 5. Click **Save**.

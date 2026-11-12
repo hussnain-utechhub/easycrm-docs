@@ -85,7 +85,7 @@ may differ from the description above:
 | Fields without a section heading | They cannot be folded away. |
 | A field from another record — a contact's **account** phone, for example | It is read-only here; change it on that record. You see it only if you may see that record and that field. |
 
-<!-- SHOT: records/arranged-page.png | A Contact record page arranged in the layout builder (switch on): fields under the record name in the header, Delete and Clone among the header buttons, a Tabs component in the right column with its first tab open, and an account field in a section -->
+![A Contact record page arranged in the layout builder: fields under the record name, Delete and Clone in the header, and the account's fields in a section](../../img/shots/records/arranged-page.png)
 
 **Back to list** and, for people who may change layouts, **Edit Page Layout** are always at the
 top.

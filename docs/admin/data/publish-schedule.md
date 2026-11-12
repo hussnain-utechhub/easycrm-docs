@@ -41,7 +41,6 @@ Salesforce into the portal by themselves.
 2. Click **Publish Schedule** in the row of tabs.
 
 ![Publish Schedule](../../img/shots/admin/publish-schedule.png)
-<!-- SHOT-RETAKE: admin/publish-schedule.png | The tab now has more above the report table: the Auto-sync new Salesforce reports card, then the settings block (Check for due reports with its countdown and Check now, the two tick boxes, New reports get, New Salesforce reports go to, Estimated load). Capture the whole tab with Auto-publish ON and a few reports scheduled, the table showing a Run now button -->
 
 ## What must be in place before anything publishes
 
@@ -139,8 +138,7 @@ minute. If this message stays, ask a Salesforce administrator to check that the
 `Portal Publish Request` event subscriber runs as a licensed admin user - publishing runs as
 that user. The optional hourly backup job (`PortalPublishScheduler`) is not installed either.*
 
-![Publish Schedule with Auto-publish on and the banner saying automatic publishing is not checking](../../img/shots/admin/publish-schedule-not-installed.png)
-<!-- SHOT-RETAKE: admin/publish-schedule-not-installed.png | The old "The hourly job is not installed in Salesforce yet" banner no longer exists. Capture the new warning banner "Automatic publishing is not checking right now. …" — it shows only with Auto-publish ON, the automatic check stopped (for example no Platform Event Subscriber Configuration) and no hourly job installed -->
+<!-- SHOT: admin/publish-schedule-not-installed.png | Replaces the old picture of this name, which shows a banner that no longer exists (it is no longer linked). Capture the new warning banner "Automatic publishing is not checking right now. …" — it shows only with Auto-publish ON, the automatic check stopped (for example no Platform Event Subscriber Configuration) and no hourly job installed -->
 
 ## How often it checks
 
@@ -378,7 +376,7 @@ That is also why the delay is a second or two rather than instant, and why it ne
 Under **Check for due reports** are four more settings. Each saves as soon as you change it and
 applies to every report.
 
-<!-- SHOT: admin/publish-schedule-settings.png | Publish Schedule, the settings block under the Auto-sync card: Check for due reports with its countdown and Check now, both tick boxes, New reports get set to Daily at 09:00, New Salesforce reports go to set to "That folder - or, if Salesforce has none, this folder:" with a folder chosen, and the Estimated load line -->
+![The Publish Schedule settings: Check for due reports, the two tick boxes, New reports get, New Salesforce reports go to, and Estimated load](../../img/shots/admin/publish-schedule-settings.png)
 
 ### Skip reports that have not changed
 

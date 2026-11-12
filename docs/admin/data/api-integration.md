@@ -24,7 +24,6 @@ portal.
 2. Click **API Integration** in the row of tabs.
 
 ![API Integration](../../img/shots/admin/api-integration.png)
-<!-- SHOT-RETAKE: admin/api-integration.png | The row action is now labelled "Regenerate keys" (was "Regenerate"). Recapture the API Integration list with at least one key, showing Edit, Regenerate keys and Revoke on its row -->
 
 Everybody who currently holds a key is listed.
 

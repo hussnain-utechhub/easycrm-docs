@@ -32,7 +32,7 @@ The builder is off until a Super Admin turns it on. It is one switch for every c
    sees it.
 3. Tick **Use the new layout builder**.
 
-<!-- SHOT: layout-builder/switch.png | Admin → Users as a Super Admin, scrolled to the "Page layout editor" panel with "Use the new layout builder" ticked (the switch is off by default — tick it for the capture, untick it afterwards) -->
+![The Page layout editor panel with Use the new layout builder ticked](../../img/shots/layout-builder/switch.png)
 
 The panel reads:
 
@@ -77,7 +77,7 @@ arrangement returns.
 The button appears for people with **Edit Layout** on that kind of record — see
 [Permissions](../access/permissions.md).
 
-<!-- SHOT: layout-builder/overview.png | Switch on, an Account record's Edit Page Layout opened as an Admin: Fields tab on the left, the page with two sections, Activity and two related lists in the middle, the Page properties on the right; nothing selected -->
+![The layout builder on an Account record: Fields on the left, the record page in the middle, the page's properties on the right](../../img/shots/layout-builder/overview.png)
 
 The builder opens on your own layout for that kind of record if you have one, otherwise on the
 one everybody sees:
@@ -159,7 +159,7 @@ industry — as Salesforce's own record pages can.
 4. A lookup in that list opens one level further — **Contact > Account Name > Parent Account**.
    Click an earlier step of the trail to go back.
 
-<!-- SHOT: layout-builder/lookup-fields.png | Layout builder switch on (off by default), builder open on a Contact record without saving, Fields tab opened into Account Name: the trail "Contact > Account Name", the box "Search Account...", and one account field (Phone) placed in a section and selected, its properties showing Object "Contact > Account Name" and the read-only note -->
+![The Fields tab opened into Account Name (Contact > Account Name), with an account field on the page selected and its properties on the right](../../img/shots/layout-builder/lookup-fields.png)
 
 Selected on the page, such a field shows **Object** — where it comes from, such as **Contact >
 Account Name** — and the note **A field from a related record. It is read-only on the record
@@ -297,7 +297,7 @@ The buttons on offer, and whether each starts shown:
 | **Delete** | Not shown | **Asks first; for people who may delete the record** |
 | **Clone** | Not shown | **A new record with this one's values; for people who may create** |
 
-<!-- SHOT: layout-builder/highlights-panel.png | Layout builder switch on (off by default), nothing saved: builder with the header selected: two fields under the record name, the properties showing Fields in the header (2 of 6) and Buttons with Delete moved to Shown, and Buttons before the ▾ menu set to 3 -->
+![The header selected: the fields in the header and the buttons, in order, in the properties on the right](../../img/shots/layout-builder/highlights-panel.png)
 
 As the panel says, **A button still shows only to people who may use it. Buttons added later in
 Admin Console › Buttons appear at the end.** **Back to list** and the layout button are always
@@ -347,7 +347,7 @@ between 10% and 90% wide and add up to 100%; **Next** stays greyed out until the
 Salesforce's templates without a header are not offered: the record's name and buttons live in
 the header.
 
-<!-- SHOT: layout-builder/templates.png | Layout builder switch on (off by default): the "Select a new template" window with "Header and Right Sidebar" chosen: the template list on the left, the drawing and description on the right -->
+![Select a new template, with Header and Right Sidebar picked and its drawing and description shown](../../img/shots/layout-builder/templates.png)
 
 A region that the chosen template does not have — left over from an earlier template — sits in a
 strip under the page marked **Not in this template - drag these into the page**. Until you move
